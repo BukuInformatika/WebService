@@ -48,6 +48,29 @@ protocol/internet protocol (TCP/IP) merupakan protocol untuk mengirim data antar
 yang digunakan untuk akses internet dan digunakan untuk komunikasi lobal. TCP/IP terdiri atas dua protocol yang terpisah. TCP/IP 
 menggunakan pendekatan lapisan (layer) pada saat membangun protocol ini. Dengan adanya pendekatan berlapis ini memungkinkan dibangunnya 
 beberaa layanan kecil untuk tugas-tugas khusus.
+
+TCP/IP terdiri dari lima layer, yaitu :
+\begin{enumerate}
+\item   Layer Application, di dalam layer ini aplikasi seperti FTP, Telnet, SMTP, dan NFS dilaksanakan.
+\item   Layer Transport, di dalam layer ini TCP dan UDP menambah data transport ke paket dan melewatkannya ke layer Internet.
+\item    Layer Internet, Layer ini mengambil paket dari layer transport dan menambahkah informasi alamat sebelum mengirimkankannya ke layer network interface.
+\item     Layer Network Interface, di dalam layer ini data dikirim ke layer physical melalui device jaringan.
+\item     Layer Physical, layer ini merupakan system kabel yang digunakan untuk proses mengirim dan menerima data.
+\end{enumerate}
+
+\begin{table} [H]
+\begin {tabular} {|c|}
+hline
+Lapisan Model OSI \\
+\hline
+Application atau Presentation & \\
+Session & \\
+Transport & \\
+Network & \\
+Data Link atau Physical & \\
+\hline
+\end{tabular}
+\end{table} 
   
  \subsection{AppleTalk} 
 Protokol AppleTalk diciptakan oleh perusahann Apple Computer, diterapkan pada jaringan dengan komputer mesin Apple, yang diperkenalkan 
