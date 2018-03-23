@@ -80,4 +80,16 @@ web scraping yaitu dengan cara sebagai berikut:
 	   ditentukan (Automate Navigation and Extraction), informasi yang didapat tersebut akan disimpan dalam 
 	   tabel basis data (Extracted Data and Package History).
 
+\section{Perbandingan Metode Web Scraping}
+Berikut perbandingan antara metode Web Scraping menggunakan CSS Selector dan Xpath Selector
+	1.	Penggunaan metode XPATH Selector untuk web scraping menghasilkan artikel yang lebih lengkap dibandingkan dengan
+		menggunakan metode CSS Selector, Ditunjukkan dengan jumlah item dan ukuran file yang didapatkan lebih besar.
+		Namun juga menyisakan proses lain untuk menghilangkan kode HTML yang tidak diinginkan dari artikel
+		yang dihasilkan menggunakan metode XPATH Selector.
+	2.	Dalam penggunaan memori baik metode XPATH Selector dan CSS Selector tidak memiliki perbedaan yang signifikan
+		(cenderung sama). Disebabkan karena engine scrapy yang baik dalam penggunaan resource-nya. 
+	3.	Metode XPATH Selector memiliki waktu proses yang lebih cepat daripada menggunakan metode CSS Selector.
+	4.	Pada metode XPATH, selector cukup mengikuti node pada halaman web, sehingga waktu yang dibutuhkan
+		relatif lebih singkat.
+
 \end{document}
