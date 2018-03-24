@@ -1,8 +1,9 @@
 %Resume penggunaan aplikasi testing webservice
 %judul jurnal hari ke 1  IMPLEMENTASI REST WEB SERVICE UNTUK SALES ORDER DAN SALES TRACKING BERBASIS MOBILE
 %judul jurnal hari ke 2  Penerapan Teknologi Web Service Untuk Integrasi Layanan Puskesmas dan Rumah Sakit
+%judul jurnal hari ke 3  PEMANFAATAN GOOGLE MAPS API UNTUK PEMBANGUNAN SISTEM INFORMASI MANAJEMEN BANTUAN LOGISTIK PASCA BENCANA ALAM BERBASIS MOBILE WEB( Studi Kasus : Badan Penanggulangan Bencana Daerah Kota Yogyakarta ) 
 %Kelompok 5 D4 TI - 2B
-%Fransiscus Ivan Martongam      1164039
+%Fransiscus Ivan Martongam      1164039 
 %Lalita Chandiany Adiputri      1164043
 %Eko Cahyono Putro              1164035
 %Lidwina Triniska Gulo          1164044
@@ -42,19 +43,32 @@ dan concurrency.
 
 
 \section{Perancangan Sistem}
-Aplikasi yang akan dibuat terdiri dari dua bagian besar yaitu aplikasi yang ada pada bagian client dan bagian server. Aplikasi yang ada di server bertugas menyediakan data yang dapat digunakan oleh aplikasi client, aplikasi client digunakan untuk meminta data dari aplikasi yang ada di server. Web services dipilih dengan beberapa pertimbangan yaitu agar memudahkanpembangunan proses bisnis yang dapat digunakan untuk berbagai macam client tanpa harus membuat proses tersebut secara spesifik berdasarkan teknologi client yang digunakan.
+Aplikasi yang akan dibuat terdiri dari dua bagian besar yaitu aplikasi yang ada pada bagian client dan bagian server. 
+Aplikasi yang ada di server bertugas menyediakan data yang dapat digunakan oleh aplikasi client, aplikasi client digunakan
+untuk meminta data dari aplikasi yang ada di server.Web services dipilih dengan beberapa pertimbangan yaitu agar 
+memudahkanpembangunan proses bisnis yang dapat digunakan untuk berbagai macam client tanpa harus membuat proses 
+tersebut secara spesifik berdasarkan teknologi client yang digunakan.
 
 
 \section{Implementasi Web service Berbasis ASP.NET}
-Dalam proses pembuatan Web Services berbasis ASP.NET terdapat beberapa services atau fungsi-fungsi yang dibuat untuk mengakses database SQL Server. Services-services tersebut yang nantinya dipanggil dan digunakan untuk membangun sistem integrasi layanan puskesmasdan rumah sakit berbasis Web Services.Proses integrasi sistem dengan Web Services berbasis asp dapat dilakukan dengan penggunaan dokumen WSDL yang dapat diakses pada alamat WSDL-nya http://192.168.1.100:8080/wsrs/Service.asmx?WSDL dan hasil dari skema WSDLnya.
+Dalam proses pembuatan Web Services berbasis ASP.NET terdapat beberapa services atau fungsi-fungsi
+yang dibuat untuk mengakses database SQL Server. Services-services tersebut yang nantinya dipanggil 
+dan digunakan untuk membangun sistem integrasi layanan puskesmasdan rumah sakit berbasis Web Services.
+Proses integrasi sistem dengan Web Services berbasis asp dapat dilakukan dengan penggunaan dokumen WSDL
+yang dapat diakses pada alamat WSDL-nya http://192.168.1.100:8080/wsrs/Service.asmx?WSDL dan hasil dari skema WSDLnya.
 
 
 \section{Implementasi Web service Berbasis PHP}
-Pembuatan Web Services berbasis PHP dan database MySQL, terdapat  services atau fungsi yang sama dengan Web Services yang dibuat dengan ASP.NET. Sevices tersebut akan dipanggil dan digunakan untuk integrasi kedalam system berbasis Web Services. Beberapa fungsi yang terbentuk adalah sama dengan fungsi yang terbentuk pada hasil pembuatan Web Services berbasis ASP NET.
+Pembuatan Web Services berbasis PHP dan database MySQL, terdapat  services atau fungsi yang sama 
+dengan Web Services yang dibuat dengan ASP.NET. Sevices tersebut akan dipanggil dan digunakan untuk 
+integrasi kedalam system berbasis Web Services. Beberapa fungsi yang terbentuk adalah sama dengan fungsi 
+yang terbentuk pada hasil pembuatan Web Services berbasis ASP NET.
 
 
 \section{Hasil Integrasi Web Services}
-Sistem integrasi  layanan yang terdapat pada rumah sakit yang dimaksudkan menggunakan teknologi Web Services yang berbeda dan database yang berbeda pula. Rumah sakit AMC menggunakan database MySQL, dan PHP sebagai Web Servicesnya. Kemudian untuk Rumah sakit umum menggunakan SQL Server sebagai databasenya, dan ASP.NET sebagai tool untuk membuat Web Servicesnya.
+Sistem integrasi  layanan yang terdapat pada rumah sakit yang dimaksudkan menggunakan teknologi Web Services 
+yang berbeda dan database yang berbeda pula. Rumah sakit AMC menggunakan database MySQL, dan PHP sebagai Web Servicesnya.
+Kemudian untuk Rumah sakit umum menggunakan SQL Server sebagai databasenya, dan ASP.NET sebagai tool untuk membuat Web Servicesnya.
 
 
 \section{Hasil Sistem integrasi  layanan puskesmas dan rumah sakit}
@@ -65,6 +79,20 @@ Setelah Itu pengguna melakukan pemilihan kriteria kelengkapan rumah sakit, pengg
 
 \section{Analisis Hasil Pengujian dan Implementasi}
 Aplikasi berjalan sesuai dengan analisis masalah dan kebutuhan sistem.
-Pengujian sistem yang pertama dilakukan adalah testing pada web service itu sendiri dan dilanjutkan dengan testing pada fungsi-fungsi  yang terdapat pada masing-masing web service. 
+Pengujian sistem yang pertama dilakukan adalah testing pada web service itu sendiri 
+dan dilanjutkan dengan testing pada fungsi-fungsi  yang terdapat pada masing-masing web service. 
 selanjutnya dilakukan testing aplikasi web service melalui aplikasi web interface yang menggunakan bahasa pemrograman ASP.NET dan PHP.
 Web Service yang berfungsi sebagai Middleware serta melakukan pertukaran data dalam format XML melalui sebuah jaringan dengan menggunakan protokol standar internet.
+
+\section {Google Map Service}
+Google Map Service adalah sebuah jasa peta global virtual gratis dan online yang
+disediakan oleh perusahaan Google. Google Maps dapat ditemukan di alamat
+http://maps.google.com.Google Maps menawarkan peta yang dapat diseret dan gambar
+satelit untuk seluruh dunia.Google Maps juga menawarkan pencarian suatu tempat dan
+rute perjalanan.
+\subsection {Google Maps API }
+Google Maps API adalah sebuah layanan (service) yang diberikan oleh Google
+kepada para pengguna untuk memanfaatkan Google Map dalam mengembangkan
+aplikasi. Google Maps API menyediakan beberapa fitur untuk memanipulasi peta, dan
+menambah konten melalui berbagai jenis services yang dimiliki, serta mengijinkan
+kepada pengguna untuk membangun aplikasi enterprise di dalam websitenya.
