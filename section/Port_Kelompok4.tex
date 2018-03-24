@@ -30,9 +30,14 @@ Pada terminologi komputer ada dua jenis port yaitu:
 \item Port Logika atau non fisik, adalah port pada jaringan yang digunakan sebagai jalur penghubung ke komputer lain.
 \end{enumerate}
 
-\hspace{1cm}
-Klasikafikasi port yang ada saat ini tentulah sangat banyak, salah satu contohnya adalah port knocking, Port Knocking adalah port yang menjaga akses  dari user yang tidak diketahui, sebenarnya system kinerja port knocking bisa membuat user tertentu saja yang bisa mengakses yang telah ditetapkan dan kelebihan port knocking ini dapat menghubungkan semua port yang tidak terbuka meski tidak terbuka, service yang tersedia tetap berlangsung.
+\subsubsection{Pengklasifikasian Penomoran di dalam PORT TCP dan UDP}
 
+\hspace{1cm}
+Port TCP dan UDP dalam pengklasifikasian penomorannya di bedakan menjadi tiga jenis
+\begin{enumerate}
+\item Well-known Port Merupakan port yang dipakai secara internal oleh sebuah system windows, seperti contoh port yang digunakan untuk pengkoneksian internet, service,FT dan lain sebagainya. Port yang digunakan pada penomoran ini adalah port 0 sampai dengan port 1023. Penomoran port yang berada dalam lingkup well-known port, selalu menggambarkan jaringan yang sama, dan ditetapkan oleh Internet Assigned Number Authority (IANA).
+
+\end{enumerate}
 \hspace{1cm}
 Sesuai dengan kegunaan sebuah Port yaitu media penghubung untuk melewatkan data masuk atau keluar pada jaringan komunikasi. Sebagai contoh jenis-jenis port yang digunakan pada beberapa protokol jaringan :\\
 \begin{enumerate}
@@ -69,18 +74,6 @@ Sedangkan
 \item Port 3128 adalah Server Proxy Squid.
 \item Port 3306 adalah Server MySQL.
 \item Port 5432 adalah Server PostgreSQL.
-
-\end{enumerate}
-
-
-
-
-\subsection{Pengklasifikasian Penomoran di dalam PORT TCP dan UDP}
-
-\hspace{1cm}
-Port TCP dan UDP dalam pengklasifikasian penomorannya di bedakan menjadi tiga jenis
-\begin{enumerate}
-\item Well-known Port Merupakan port yang dipakai secara internal oleh sebuah system windows, seperti contoh port yang digunakan untuk pengkoneksian internet, service,FT dan lain sebagainya. Port yang digunakan pada penomoran ini adalah port 0 sampai dengan port 1023. Penomoran port yang berada dalam lingkup well-known port, selalu menggambarkan jaringan yang sama, dan ditetapkan oleh Internet Assigned Number Authority (IANA).
 
 \end{enumerate}
 \end{document}
