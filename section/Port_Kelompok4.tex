@@ -23,21 +23,20 @@ Port adalah tatacara yang memberi ijin sebuah komputer yang memberi dukungan unt
 
 
 \subsection{Jenis-jenis Port}
-\hspace{1cm}
 Pada terminologi komputer ada dua jenis port yaitu:
+\subsubsection {Port Fisik}
+Port Fisik, adalah colokan/slot dibagian belakang cpu sebagai output-input dari komputer ke hardware pendukung lainnya. 
 \begin{enumerate}
-\item Port Fisik, adalah colokan/slot dibagian belakang cpu sebagai output-input dari komputer ke hardware pendukung lainnya.
-\item Port Logika atau non fisik, adalah port pada jaringan yang digunakan sebagai jalur penghubung ke komputer lain.
+\item Port SCSI (small computer system interface) adalah port berfungsi untuk melakukan transmisi data secara cepat dan dapat dipakai untuk 7 alat sekaligus atau “daisy chain“. Contoh daisy chain : dari SCSI kontroller kemudian disambungkan ke perangkat hardisk drive eksternal, dari HDD eksternal disambungkan secara seri ke perangkat yang lain.
 \end{enumerate}
-
-\subsubsection{Pengklasifikasian Penomoran di dalam PORT TCP dan UDP}
-
+\subsubsection {Port Logika}
+Port Logika atau non fisik, adalah port pada jaringan yang digunakan sebagai jalur penghubung ke komputer lain. \\ \\
 \hspace{1cm}
 Port TCP dan UDP dalam pengklasifikasian penomorannya di bedakan menjadi tiga jenis
 \begin{enumerate}
 \item Well-known Port Merupakan port yang dipakai secara internal oleh sebuah system windows, seperti contoh port yang digunakan untuk pengkoneksian internet, service,FT dan lain sebagainya. Port yang digunakan pada penomoran ini adalah port 0 sampai dengan port 1023. Penomoran port yang berada dalam lingkup well-known port, selalu menggambarkan jaringan yang sama, dan ditetapkan oleh Internet Assigned Number Authority (IANA).
 \item Dynamically Assigned Port adalah sebagian dari port yang telah ditetapkan oleh sistem operasi atau aplikasi yang akan digunakan pengguna untuk meminta suatu permintaan atau layanan sesuai dengan yang di perlukan olehnya. Dynamically Assigned Port juga dapat di perkirakan sekisar 1024 sampai 65536 dan dapat digunakan atau dilepaskan oleh pengguna sesuai kebutuhannya.
-\end{enumerate}
+\end{enumerate} 
 \hspace{1cm}
 Sesuai dengan kegunaan sebuah Port yaitu media penghubung untuk melewatkan data masuk atau keluar pada jaringan komunikasi. Sebagai contoh jenis-jenis port yang digunakan pada beberapa protokol jaringan :\\
 \begin{enumerate}
