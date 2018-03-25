@@ -128,6 +128,7 @@ Web service pada penelitian ini dapat diakses menggunakan SOAP (Simple Object Ac
 Tiap client yang mengakses harus membuat instance dari kelas WSClient dan mengirim XML format request. 
 Untuk dapat digunakan aplikasi desktop, sebuah consumer bertindak sebagai intermediate untuk mengembalikan format XML.
 
+
 \section{Aspek manajerial}
 Dari sisi manajerial, pemanfaatan data warehouse dengan distribusi web service
 memberikan beberapa perubahan pada proses bisnis analisa data. Pihak manajemen
@@ -136,3 +137,7 @@ peningkatan kualitas informasi yan dijadikan basis pengambilan keputusan. Pihak 
 campur tangan pengembang EIS dari akses skema data yang tidak berhak. Tanggungjawab pengembangan dan web service
 menjadi terpisah dari EIS. 
 
+
+\section{Aspek sistem}
+Dari sisi sistem, keuntungan utama ialah adanya data warehouse yang terpisah dari data operasional, sehingga meningkatkan kesederhanaan proses retrieve data dan peningkatan kinerja sistem. Skalabilitas dari sistem menjadi lebih baik, karena jika ada perubahan teknologi atau perubahan struktur pada sisi data warehouse, tidak akan mempengaruhi aplikasi pengguna (tidak perlu dilakukan perubahan). 
+Penggunaan web service sebagai intermediate antara data warehouse dan aplikasi pengguna meningkatkan modularitas dan fleksibilitas dari data yang disajikan.
