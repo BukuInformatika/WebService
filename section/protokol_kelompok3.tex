@@ -124,6 +124,12 @@ membangun suatu jaringan VoIP adalah protocol H.323 dan Session initiation Proto
 mempunyai peranan yang sangat penting dalam membangun komunikasi menggunakan VoIP. Kualitas suara pada VoIP sangat dipengaruhi oleh 
 beberapa parameter, diantaranya adalah bandwidth, delay, filter dan packet loss.
 
+Konsep cara kerja VoIP yaitu dengan melakukan pengiriman sebuah sinyal secara digital, sebelum proses transmisi (pengiriman) dilakukan 
+data yang berupa sinyal analog akan dikonversikan terlebih dahulu dengan ADC (Analog to Digital Converter) menjadi bentuk data digital. 
+Setelah proses konversi dilakukan data digital akan ditransmisikan ke sumber tujuan.Setelah sampai, data sinyal digital tersebut akan 
+dikonversi kembali menjadi data sinyal analog dengan DAC (Digital to Analog Converter) sehingga dapat diterima oleh sumber tujuan 
+sesuai dengan data sinyal yang ditransmisikan.
+
 \subsection{NetBIOS}
 NetBIOS digunakan dalam Microsoft Work Group dengan metode peer to peer. Protockol NetBIOS memberikan layanan pada session layer dan 
 transport layer (layer 4 dan 5 model OSI). NetBIOS tidak menyediakan format frame untuk kelebihan transmisi jaringan dikarenakan adanya 
