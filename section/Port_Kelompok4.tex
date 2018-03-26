@@ -97,10 +97,77 @@ Sedangkan
 \item Port 6000 mencakup port 6000 - 6009 dan X11 TCP port untuk meremotenya. Dapat mensupport berbagai macam tampilan yang memiliki port single.
 \item Port 6346 Gnutella, gnutella ialah protocol yang dapat membagi kertas dan mempunyai penyimpanan sendiri, tersedia diunduh bagi semuanya
 \item Port 6667 sejenis IRC yang merupakan perangkat lunak server, yang memungkinkan bertukar pesan teks secara real time.
-\item Port 6699 memungkinkan orang banyak saling berbagi informasi melalui dunia maya dan  merupakan sistem file sharing peer-to-peer yang sempurna  disebut Napster.
+\item Port 6699 memungkinkan orang banyak saling berbagi informasi melalui dunia maya dan  merupakan sistem file sharing peer-to-peer.
+ini merupakan contoh tabel \ref{table:contoh} ukuran kecil.
+\paragraph{•}
+Tabel 1 Perbedaan UDP dan TCP\\
+\begin{tabular}{|p{4.5cm}|p{5cm}|p{5cm}|}
 
+\hline
+Karakteristik/Deskripsi & UDP & TCP \\
+\hline
+Deskripsi Umum & "Pembungkus paket" yang
+memiliki kecepatan tinggi
+namun rendah dalam
+fungsi. &Protokol dengan fitur
+lengkap yang
+memungkinkan aplikasi
+untuk mengirim data
+dengan terpercaya tanpa
+khawatir tentang masalah
+pada network layer.\\
+\hline
 
+\hline
+Data Interface Ke
+Aplikasi & Message base-based dikirim
+dalam paket dengan ciri
+tersendiri oleh aplikasi. & Stream-based; Data dikirim
+oleh aplikasi tanpa
+struktur khusus.\\
+\hline
 
+\hline
+Pengiriman Ulang & Tidak dilakukan. Aplikasi
+harus mendeteksi
+kehilangan data dan
+mengirim kembali jika
+dibutuhkan. & Pengiriman dari seluruh
+data telah diatur, dan
+kehilangan data akan
+dikirim kembali secara
+otomatis.\\
+\hline
+
+\hline
+Fitur yang
+disediakan untuk
+mengatur flow o f
+Data & Tidak ada. & Flow control menggunakan
+sliding windows,
+pengaturan ukuran jendela
+heuristics, algoritma
+penghindar kemampatan.\\
+\hline
+
+\hline
+Overhead & Sangat kecil. & Kecil, tetapi lebih besar dari
+UDP.\\
+\hline
+
+\hline
+Kecepatan
+pengiriman & Sangat tinggi. & Tinggi tetapi tidak setinggi
+UDP.\\
+\hline
+
+\hline
+Kesesuaian
+kuantitas data & Kuantitas data kecil hingga
+sedang. & Kuantitas data kecil hingga
+sangat besar.\\
+\hline
+\end{tabular}
 
 \end{enumerate}
 \end{document}
