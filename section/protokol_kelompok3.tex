@@ -100,10 +100,12 @@ Protokol ini didesain sehingga pengguna dapat dengan mudah memantau kondisi jari
 Pemantauan kondisi jaringan dapat dilakukan dengan cara pengumpulan nilai-nilai informasi dari kondisi jaringan secara jarak jauh atau menggunakan satu pusat pengamatan.
   
  \subsection{AppleTalk} 
-Protokol AppleTalk diciptakan oleh perusahann Apple Computer, diterapkan pada jaringan dengan komputer mesin Apple, yang diperkenalkan 
-pada tahun 1985. Protokol ini menduung teknologi milik Apple. Metode akses LocalTalk berfungsi sebaik Ethernet dan Token Ring. Manajemen 
-jaringan AppleTalk dan metode akses LocalTalk telah digabungkan ke dalam semua mesin Macintosh dan LaserWriter. Bersama produk lainnya 
-dari Apple dan mesin tipe lain, AppleTalk dapat dijalankan di PC, VAX dan workstation UNIX.
+Protokol AppleTalk dibuat oleh sebuah perusahann Apple Computer, digunakan pada jaringan dengan komputer mesin Apple, dipublikasikan 
+pada tahun 1985. Teknologi Protokol ini milik Apple. Metode akses LocalTalk berfungsi sebaik Ethernet dan Token Ring. 2 metode yaitu 
+Manajemen jaringan AppleTalk dan metode akses LocalTalk telah disatukan ke dalam semua mesin Macintosh dan LaserWriter. Bersama produk 
+lainnya dari Apple dan mesin tipe lain, AppleTalk dapat kita aplikasikan  baik di PC, VAX maupun  pada workstation UNIX. Sejak AppleTalk 
+diperkenalkan (setelah model OSI), protocol Appletalk merupakan routable protocol yang terkandung dalam sebuah network layer (OSI layer 
+3). 
 
 \subsection{IPX/SPX(Internet Packet Exchgange/Sequenced Packet)}  
 IPX dan SPX adalah protocol standar pada jaringan Novell Netware,untuk mengatasi masalah internetworking pada jaringan 
@@ -117,11 +119,13 @@ lain.Sebuah paket IPX terkadang dapat terlewatkan ketika terjadi crossing networ
 terselesaikan. Salah satu dari aplikasi yang tersedia adalah control yang berarti prttokol SPX NetWare harus digunakan. Protokol IPX ini 
 berjalan pada layer 3 dan 4 dari model OSI.
 
-AppleTalk Filling Protocol (AFP) adalah protocol untuk  mengatur penerimaan dan pengiriman file dari komputer Apple.
-Zone Information Protocol (ZIP) merupakan protocol untuk mengatur suatu daerah (zone) yang dibuat jaringan AppleTalk. Zip memetakan 
-nomor network ke suatu zone.
-Routing Table Maintenance Protokol (RTMP) merupakan protocol routing bagi AppleTalk yang berjenis distance vector.
-Name Binding Protokol (NBP) berfungsi untuk mengadakan translasi suatu nama dari alamat AppleTalk seperti DNS di TCP/IP).
+AppleTalk Filling Protocol (AFP) adalah sebuah protocol yang digunakan untuk mengatur penerimaan file dan pengiriman file dari komputer 
+Apple.
+Zone Information Protocol (ZIP) merupakan sebuah  protocol yang digunakan  untuk mengatur sebuah  daerah (zone) yang dibuat  oleh 
+jaringan AppleTalk. Zip berfungsi untuk memetakan nomor network ke suatu zone.
+Routing Table Maintenance Protokol (RTMP) adalah sebuah  protocol yang digunakan untuk  routing bagi AppleTalk yang berjenis distance 
+vector.
+Name Binding Protokol (NBP) dapat kita gunakan untuk mengadakan translasi suatu nama dari alamat AppleTalk seperti DNS di TCP/IP).
 
 \subsection{Voice Over Internet Protocol(VoIP)}
 Voice Over Internet Protocol merupakan suatu teknologi yang dapat mengirimkan paket suara melalui jaringan Internet Protocol . Jaringan 
@@ -160,11 +164,11 @@ ICMP melakukan tes koneksi dengan mengirimkan sebuah request packet ke host tuju
 ICMP merupakan protocol pesan pada TCP/IP. ICMP menyediakan pesan control dan error yang digunakan oleh ping dan traceroute yang bekerja pada layer jaringan.
 
 \subsection{SNMP(Simple Network Management Protocol)
-SNMP adalah sebuah protocol yang digunakan untuk memantau dana mengontrol jaringan dari tempat lain(jauh). Data dilewatkan dari SNMP 
-agent yang berupa hardware atau software yang melaporkan suatu aktivitas/proses pada beberapa perangkat jaringan seperti hub, 
-router,bridge, dll. Monitoring ini dilakukan melalui console dari workstation. Agent mengembalikan informasi yang terdapat pada 
-MIB(management information Base) yang merupakan sebuah struktur data yang menggambarkan data apa yang diperoleh dari perangkat dana pa 
-yang dapat dikontrol(dimatikan,dihidupkan,dall).
+SNMP adalah sebuah protocol yang kita pakai untuk  dapat memantau dan mengontrol jaringan dari tempat lain(jauh). Data dilewatkan dari 
+SNMP agent yaitu hardware atau software yang melaporkan suatu aktivitas/proses kepada beberapa perangkat jaringan lainnya seperti hub, 
+router, maupun bridge, .Monitoring ini dapat kita  dilakukan melalui console dari workstation. Agent mengembalikan informasi yang 
+terdapat pada MIB (management information Base) dimana merupakan sebuah struktur data yang menggambarkan data apa saja yang kita 
+dapatkan  dari perangkat dan apa  saja yang dapat dikontrol(dimatikan,dihidupkan,dall).
 
 \subsection{SLIP (Serial Line IP)}
 Dalam sebuah data link protocol untuk akses ke jaringan TCP/IP. Biasanya digunakan untuk mendapatkan akses internet.SLIP mengirimkan 
