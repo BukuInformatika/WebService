@@ -2,7 +2,7 @@
 \usepackage[left=3.00cm, right=2.00cm, bottom=2.00cm, top=3.00cm]{geometry}
 \linespread{1.5}
 \begin{document}
-\title{PORT JARINGAN}
+\title{PORT}
 \date{}
 \maketitle
 
@@ -43,6 +43,15 @@ Port Logika atau non fisik, adalah port pada jaringan yang digunakan sebagai jal
 
 \paragraph{}
 \hspace{1cm}
+Konsep TCP/IP adalah kebutuhan dari DoD (Departement of Defense) AS untuk berlangsungnya komunikasi di antara berbagai komputer yg telah ada. Komputer DoD ini seringkali harus berhubungan antara satu organisasi peneliti dengan organisasi peneliti lainnya, dan harus tetap berhubungan sehingga pertahanan negara tetap berjalan tanpa kendala selama terjadi bencana, seperti ledakan nuklir, gangguan radio. Pada tahun 1969 dilakukan penelitian tentang protokol TCP/IP. Tujuan dari penelitian ini adalah sebagai berikut :\\
+1.	Diciptakannya protokol-protokol umum, DoD memerlukan suatu protokol yg dapat dipakai untuk semua jaringan. \\
+2.	Meningkatkan efisiensi komunikasi. \\
+3.	Dapat dipadukan dengan teknologi WAN (Wide Area Network) yg telah ada. \\
+4.	Mudah dipakai dan dikonfigurasi. \\
+
+
+\paragraph{}
+\hspace{1cm}
 Karakteristik dari TCP adalah :
 Reliable memiliki arti yaitu data yang ditransfer ke tempat tujuan,  dengan urutan yang sama seperti saat dikirimkan.
 Berorientasi sambungan (connection-oriented) ialah dimana sebelum data bisa ditransmisikan antara dua host, dua proses yang sedang berjalan pada lapisan aplikasi ini harus melakukan kesepakatan untuk membuat tahap koneksi terlebih dahulu. Koneksi TCP bisa ditutup dengan menggunakan proses terminasi koneksi TCP (TCP connection termination). Aplikasi-aplikasi yang menggunakan TCP yaitu:
@@ -50,14 +59,11 @@ Berorientasi sambungan (connection-oriented) ialah dimana sebelum data bisa ditr
 \begin{enumerate}
 \item WWW adalah kumpulan layanan dan dokumen yang menjadi lapisan terluar dari Internet yang berfungsi sebagai penyedia data dan informasi berupa gambar, suara, video dan animasi. 
 \item Archie adalah sebuah sistem pencarian  yang berfungsi untuk mengumpulkan file indeks di internet. Archie hanya berguna untuk mencari file. 
-\item Wide Area Information Server (WAIS) adalah sebuah sistem pencarian didalam internet yang berbasis sistem operasi UNIX yang bisa digunakan untuk mencari informasi berbentuk dokumen.
+\item Wide Area Information Server (WAIS) adalah sebuah sistem pencarian didalam internet yang berbasis sistem operasi UNIX yang bisa digunakan untuk mencari informasi berbentuk dokumen.\\
 \end{enumerate}
-
-
 \paragraph{}
 \hspace{1cm}
-User Datagram Protocol (UDP) adalah sebuah protokol transport yang menggunakan port dan menyediakan konektivitas end-to-end antara aplikasi server dan aplikasi client . UDP berbeda dengan TCP, yaitu UDP tidak menjamin pengiriman datanya, oleh karena itu aplikasi harus mengimplementasikan mekanisme error recovery-nya sendiri.
-
+User Datagram Protocol (UDP) adalah sebuah protokol transport yang menggunakan port dan menyediakan konektivitas end-to-end antara aplikasi server dan aplikasi client . UDP berbeda dengan TCP, yaitu UDP tidak menjamin pengiriman datanya, oleh karena itu aplikasi harus mengimplementasikan mekanisme error recovery-nya sendiri.\\
 \paragraph{}
 \hspace{1cm}
 Kegunaan UDP : \\
@@ -199,13 +205,4 @@ ini merupakan contoh tabel \ref{table:contoh} ukuran kecil.
 
 
 \end{enumerate}
-\end{document}
-
-
-\documentclass[a4paper, times new roman]{article}
-\begin{document}
-UDP tidak akan menyediakan mekanisme penyanggaan dari data yang masuk ataupun data yang keluar. Tugas buffering merupakan tugas yang harus dikerjakan oleh protokol lapisan aplikasi yang sedang berjalan di atas UDP.
-UDP tidak akan menyediakan mekanisme segmentasi data yang besar ke dalam segmen - segmen data, seperti yang terjadi dalam protokol TCP. Karena itulah, protokol lapisan aplikasi yang sedang berjalan di atas UDP wajib mengirimkan data yang berukuran lebih kecil atau tidak lebih besar dari nilai Maximum Transfer Unit (MTU) yang dimiliki oleh sebuah interface di mana data tersebut dikirim. Karena, jika ukuran paket data yang dikirim lebih besar dibandingkan nilai MTU, paket data yang dikirimkan bisa saja terpecah menjadi beberapa fragmen yang akhirnya tidak jadi terkirim dengan benar.
-UDP tidak akan menyediakan mekanisme flow-control, seperti yang dimiliki oleh TCP.
-
 \end{document}
