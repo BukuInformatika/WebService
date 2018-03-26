@@ -49,6 +49,10 @@ Berorientasi sambungan (connection-oriented) ialah dimana sebelum data bisa ditr
 
 \paragraph{}
 \hspace{1cm}
+Kegunaan UDP : UDP merupakan singkatan dari user datagram protocol, suatu protkol dilapisan transport yang menyediakan  layanan pengantar connectionless dengan usaha yang terbaiknya, UDP biasaya bekerja dengan model client atau server, diterapkan juga di Komputer dan pada ponsel berbasis system operasi, Aplikasi UDP dapat menghasilkan IP Address pada ponsel sehingga ponsel dapat terkoneksi dengan komputer menggunakan protokol IP.UDP tingkatannya di atas Ip karena sifatnya connectionless.
+
+\paragraph{}
+\hspace{1cm}
 Port TCP dan UDP dalam pengklasifikasian penomorannya di bedakan menjadi tiga jenis
 \begin{enumerate}
 \item Well-known Port Merupakan port yang dipakai secara internal oleh sebuah system windows, seperti contoh port yang digunakan untuk pengkoneksian internet, service,FT dan lain sebagainya. Port yang digunakan pada penomoran ini adalah port 0 sampai dengan port 1023. Penomoran port yang berada dalam lingkup well-known port, selalu menggambarkan jaringan yang sama, dan ditetapkan oleh Internet Assigned Number Authority (IANA).
@@ -68,38 +72,8 @@ Sesuai dengan kegunaan sebuah Port yaitu media penghubung untuk melewatkan data 
 \item IMAP (Internet Message Access Protocol) menggunakan port 143.
 \end{enumerate}
 
-\subsection{Fungsi Port}
 \paragraph{}
-\hspace{1cm}
-Port mempunyai fungsi sangat vital dalam sebuah jaringan sebagai pintu masuk atau jalur yang digunakan untuk melakukan koneksi masuk dan keluar ke komputer lain pada jalur komunikasi. Setiap port mempunyai fungsi masing masing contohnya sebagai berikut:
-\begin{enumerate}
-\item Port 21 adalah port FTP yang berfungsi untuk tukar menukar data dalam suatu jaringa.
-\item Port 22 adalah port SSH yang berfungsi untuk  melakukan koneksi amandalam suatu jaringan.
-\item Port 80 adalah port Http yang berfungsi untuk mentransfer dokumen dalam World Wide Web (WWW).
-\item Port 81 adalah port yang digunakan sebagai Port altenatifhosting website ketika Port 80 diblok.
-\item Port 23 adalah port yang digunakan untuk Telnet . Port 23 digunakan oleh client telnet untuk berhubungan dengan server telnet.
-\item Port 25 adalah port yang digunakan ketika pengirim email  mengirim email ke server email.
-\item Port 110 adalah POP Server  jika menggunakan Mail server dan pengguna login ke dalam mesin tersebut menggunakan POP3 (Post Office Protokol) atau IMAP4 (Internet Message Access Protocol) untuk menerima emailnya, sedangkan POP3 merupakan protokol untuk mengakses mail box.
-\item Port 3389 adalah Remote Desktop Port yang  mempunyai fungsi untuk remote desktop di dalam sistem operasinya Windows XP.
-\item Port 389 adalah LDAP Server LDAP atau Protokol Akses Direktori Ringan yang telah
-menjadi populer untuk akses Direktori, Nama, Telepon, dan Alamat direktori.
-\item Port 143, IMAP4 digunakan untuk Mail Server dimana disitu terdapat tiga komponen antara lain MTA (Mail Transfer Agent), MDA (Mail Dilivery Agent), dan MUA (Mail User Agen). Zimbra adalah software opensource mail server yang sering digunakan karena mudahnya dalam instalasi dan pengelolaannya, sehingga di masa depan kemungkinan akan semakin umum dan popular penggunannya postfix, sendmail, dan qmail adalah beberapa contohnya.
-\item Port 443, atau biasa disebut port HTTPS webserver (SSL) yang digunakan untuk menerima permintaan dari HTTP.
-\item Port 5631 dapat menjalankan server PCAanywhere menggunakan internet untuk menghubungkan PC dari jarak yang tidak dekat.
-Sedangkan 
-\item Port 5900 dapat menjalankan sebuah server yaitu VNC yang berguna untuk menjalankan sebuah server dari jarak jauh.
-\item Port 111 atau disebut juga port portmapper digunakan oleh Network Information Service atau NFS.
-\item Port 3306 merupakan port yang biasanya para programmer gunakan untuk mengelola database karena port ini terhubung dengan Mysql
-\item Port 1080 adalah Socks Proxy Server.
-\item Port 3128 adalah Server Proxy Squid.
-\item Port 3306 adalah Server MySQL.
-\item Port 5432 adalah Server PostgreSQL.
-\item Port 6000 mencakup port 6000 - 6009 dan X11 TCP port untuk meremotenya. Dapat mensupport berbagai macam tampilan yang memiliki port single.
-\item Port 6346 Gnutella, gnutella ialah protocol yang dapat membagi kertas dan mempunyai penyimpanan sendiri, tersedia diunduh bagi semuanya
-\item Port 6667 sejenis IRC yang merupakan perangkat lunak server, yang memungkinkan bertukar pesan teks secara real time.
-\item Port 6699 memungkinkan orang banyak saling berbagi informasi melalui dunia maya dan  merupakan sistem file sharing peer-to-peer.
-ini merupakan contoh tabel \ref{table:contoh} ukuran kecil.
-\paragraph{•}
+
 Tabel 1 Perbedaan UDP dan TCP\\
 \begin{tabular}{|p{4.5cm}|p{5cm}|p{5cm}|}
 
@@ -167,7 +141,43 @@ kuantitas data & Kuantitas data kecil hingga
 sedang. & Kuantitas data kecil hingga
 sangat besar.\\
 \hline
+
 \end{tabular}
+
+
+
+\subsection{Fungsi Port}
+\paragraph{}
+\hspace{1cm}
+Port mempunyai fungsi sangat vital dalam sebuah jaringan sebagai pintu masuk atau jalur yang digunakan untuk melakukan koneksi masuk dan keluar ke komputer lain pada jalur komunikasi. Setiap port mempunyai fungsi masing masing contohnya sebagai berikut:
+\begin{enumerate}
+\item Port 21 adalah port FTP yang berfungsi untuk tukar menukar data dalam suatu jaringa.
+\item Port 22 adalah port SSH yang berfungsi untuk  melakukan koneksi amandalam suatu jaringan.
+\item Port 80 adalah port Http yang berfungsi untuk mentransfer dokumen dalam World Wide Web (WWW).
+\item Port 81 adalah port yang digunakan sebagai Port altenatifhosting website ketika Port 80 diblok.
+\item Port 23 adalah port yang digunakan untuk Telnet . Port 23 digunakan oleh client telnet untuk berhubungan dengan server telnet.
+\item Port 25 adalah port yang digunakan ketika pengirim email  mengirim email ke server email.
+\item Port 110 adalah POP Server  jika menggunakan Mail server dan pengguna login ke dalam mesin tersebut menggunakan POP3 (Post Office Protokol) atau IMAP4 (Internet Message Access Protocol) untuk menerima emailnya, sedangkan POP3 merupakan protokol untuk mengakses mail box.
+\item Port 3389 adalah Remote Desktop Port yang  mempunyai fungsi untuk remote desktop di dalam sistem operasinya Windows XP.
+\item Port 389 adalah LDAP Server LDAP atau Protokol Akses Direktori Ringan yang telah
+menjadi populer untuk akses Direktori, Nama, Telepon, dan Alamat direktori.
+\item Port 143, IMAP4 digunakan untuk Mail Server dimana disitu terdapat tiga komponen antara lain MTA (Mail Transfer Agent), MDA (Mail Dilivery Agent), dan MUA (Mail User Agen). Zimbra adalah software opensource mail server yang sering digunakan karena mudahnya dalam instalasi dan pengelolaannya, sehingga di masa depan kemungkinan akan semakin umum dan popular penggunannya postfix, sendmail, dan qmail adalah beberapa contohnya.
+\item Port 443, atau biasa disebut port HTTPS webserver (SSL) yang digunakan untuk menerima permintaan dari HTTP.
+\item Port 5631 dapat menjalankan server PCAanywhere menggunakan internet untuk menghubungkan PC dari jarak yang tidak dekat.
+Sedangkan 
+\item Port 5900 dapat menjalankan sebuah server yaitu VNC yang berguna untuk menjalankan sebuah server dari jarak jauh.
+\item Port 111 atau disebut juga port portmapper digunakan oleh Network Information Service atau NFS.
+\item Port 3306 merupakan port yang biasanya para programmer gunakan untuk mengelola database karena port ini terhubung dengan Mysql
+\item Port 1080 adalah Socks Proxy Server.
+\item Port 3128 adalah Server Proxy Squid.
+\item Port 3306 adalah Server MySQL.
+\item Port 5432 adalah Server PostgreSQL.
+\item Port 6000 mencakup port 6000 - 6009 dan X11 TCP port untuk meremotenya. Dapat mensupport berbagai macam tampilan yang memiliki port single.
+\item Port 6346 Gnutella, gnutella ialah protocol yang dapat membagi kertas dan mempunyai penyimpanan sendiri, tersedia diunduh bagi semuanya
+\item Port 6667 sejenis IRC yang merupakan perangkat lunak server, yang memungkinkan bertukar pesan teks secara real time.
+\item Port 6699 memungkinkan orang banyak saling berbagi informasi melalui dunia maya dan  merupakan sistem file sharing peer-to-peer.
+ini merupakan contoh tabel \ref{table:contoh} ukuran kecil.
+
 
 \end{enumerate}
 \end{document}
