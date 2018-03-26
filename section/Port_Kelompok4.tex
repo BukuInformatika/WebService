@@ -49,7 +49,15 @@ Berorientasi sambungan (connection-oriented) ialah dimana sebelum data bisa ditr
 
 \paragraph{}
 \hspace{1cm}
-Kegunaan UDP : UDP merupakan singkatan dari user datagram protocol, suatu protkol dilapisan transport yang menyediakan  layanan pengantar connectionless dengan usaha yang terbaiknya, UDP biasaya bekerja dengan model client atau server, diterapkan juga di Komputer dan pada ponsel berbasis system operasi, Aplikasi UDP dapat menghasilkan IP Address pada ponsel sehingga ponsel dapat terkoneksi dengan komputer menggunakan protokol IP.UDP tingkatannya di atas Ip karena sifatnya connectionless.
+Kegunaan UDP : \\
+UDP merupakan singkatan dari user datagram protocol, suatu protkol dilapisan transport yang menyediakan  layanan pengantar connectionless dengan usaha yang terbaiknya, UDP biasaya bekerja dengan model client atau server, diterapkan juga di Komputer dan pada ponsel berbasis system operasi, Aplikasi UDP dapat menghasilkan IP Address pada ponsel sehingga ponsel dapat terkoneksi dengan komputer menggunakan protokol IP.UDP tingkatannya di atas Ip karena sifatnya connectionless.\\
+
+Kelemahan UDP :
+\begin{enumerate}
+\item UDP tidak akan menyediakan mekanisme penyanggaan dari data yang masuk ataupun data yang keluar. Tugas buffering merupakan tugas yang harus dikerjakan oleh protokol lapisan aplikasi yang sedang berjalan di atas UDP.
+\item UDP tidak akan menyediakan mekanisme segmentasi data yang besar ke dalam segmen - segmen data, seperti yang terjadi dalam protokol TCP. Karena itulah, protokol lapisan aplikasi yang sedang berjalan di atas UDP wajib mengirimkan data yang berukuran lebih kecil atau tidak lebih besar dari nilai Maximum Transfer Unit (MTU) yang dimiliki oleh sebuah interface di mana data tersebut dikirim. Karena, jika ukuran paket data yang dikirim lebih besar dibandingkan nilai MTU, paket data yang dikirimkan bisa saja terpecah menjadi beberapa fragmen yang akhirnya tidak jadi terkirim dengan benar.
+\item UDP tidak akan menyediakan mekanisme flow-control, seperti yang dimiliki oleh TCP.
+\end{enumerate}
 
 \paragraph{}
 \hspace{1cm}
@@ -180,4 +188,13 @@ ini merupakan contoh tabel \ref{table:contoh} ukuran kecil.
 
 
 \end{enumerate}
+\end{document}
+
+
+\documentclass[a4paper, times new roman]{article}
+\begin{document}
+UDP tidak akan menyediakan mekanisme penyanggaan dari data yang masuk ataupun data yang keluar. Tugas buffering merupakan tugas yang harus dikerjakan oleh protokol lapisan aplikasi yang sedang berjalan di atas UDP.
+UDP tidak akan menyediakan mekanisme segmentasi data yang besar ke dalam segmen - segmen data, seperti yang terjadi dalam protokol TCP. Karena itulah, protokol lapisan aplikasi yang sedang berjalan di atas UDP wajib mengirimkan data yang berukuran lebih kecil atau tidak lebih besar dari nilai Maximum Transfer Unit (MTU) yang dimiliki oleh sebuah interface di mana data tersebut dikirim. Karena, jika ukuran paket data yang dikirim lebih besar dibandingkan nilai MTU, paket data yang dikirimkan bisa saja terpecah menjadi beberapa fragmen yang akhirnya tidak jadi terkirim dengan benar.
+UDP tidak akan menyediakan mekanisme flow-control, seperti yang dimiliki oleh TCP.
+
 \end{document}
