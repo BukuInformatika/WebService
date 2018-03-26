@@ -55,6 +55,10 @@ NuSOAP itu merupakan gabungan dari sekumpulan kelas  PHP yang digunakan oleh pen
 \subsection{201 (Accepted)}
 Kode 202 (Accepted) artinya request diterima tapi server tidak melakukan apapun. Kode 202 juga biasa digunakan untuk tindakan yang prosesnya lama. Maksudnya , permintaan telah diterima untuk di proses, tetapi proses belum selesai. 
 Maksud dari itu semua juga, server menerima permintaan dari beberapa proses lainnya (misalkan batch-oriented proses yang hanya berjalan sehari sekali) tanpa membutuhkan agen user penghubung server hingga proses selesai.
-\subsection{201 (Created)}
+\subsection{202 (Created)}
 Sebuah rest api akan merespon dengan kode status 201 setiap sebuah koleksi diciptakan, atau menambahkan toko, sumber daya baru atas permintaan klien. Mungkin juga ada waktu ketika sumber daya baru dibuat sebagai hasil dari beberapa tindakan pengontrol, yang dalam hal ini 201 juga akan menjadi respons yang tepat dan akurat.
+\subsection{204 (No Content)}
+Kode status 204 (No Content) biasanya dikirim sebagai respons atas permintaan PUT, POST, atau DELETE, ketika API REST menolak untuk mengirim sebuah pesan status kembali atau perwakilan apa pun di response message’s body.\\
+ Respons 204 TIDAK HARUS menyertakan message’s body, karena selalu diakhiri oleh baris yang kosong pertama setelah bidang header.
+
 \end{document}
