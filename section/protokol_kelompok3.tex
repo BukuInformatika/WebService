@@ -34,7 +34,7 @@ karena pengadopsian protokol. Seperangkat aturan umum (atau bahasa) yang mengiji
 Protokol yang standart adalah TCP/IP (Transmission Control Protocol/Internet Protocol). Web menggunakan server protokol HTTP agar 
 komputer dapat mengakses file , melakukan pencetakan, berkomunikasi, dan menyediakan layanan lain bagi user lain dalam jaringan.
  
- \ref{osilayer} 
+ \ref{layer} 
     \begin{figure}[ht] 
     \centerline{\includegraphics[width=1\textwidth]{figures/layer.JPG}} 
     \caption{osi layer.} 
@@ -53,19 +53,28 @@ komputer dapat mengakses file , melakukan pencetakan, berkomunikasi, dan menyedi
  \section{Elemen Penting Protokol}
  \begin{enumerate}
  \item  Syntax, mengacu pada struktur atau format data, yang mana dalam urutan tampilannya memiliki makna tersendiri.
- \item  Semantics, mengacu pada maksud setiap section bit. Dengan kata lain adalah bagaimana bit-bit tersebut terpola untuk dapat diterjemahkan.
+ \item  Semantics, mengacu pada maksud setiap section bit. Dengan kata lain adalah bagaimana bit-bit tersebut terpola untuk dapat 
+ diterjemahkan.
  \item  Timing, mengacu pada 2 karakteristik, yakni kapan data harus dikirm dan seberapa cepat data tersebut dikirim.
- \end{enumarate}
+ \end{enumerate}
 
  
  \section{Pengertian Protokol}
 Protokol merupakan aturan dalam melakukan pengiriman data (berupa blok-blok data) dari sebuah node jaringan ke node jaringan lain.
-Protokol merupakan sarana komunikasi antara mesin melalui jaringan yang terstandarisasi. Protokol mengizinkan data untuk ambil bagian dalam transmisi kilat, kemudian ditransmisikan, lalu dikumpulkan kembali sesuai arah dengan perintah yang benar. 
-Protokol digunakan untuk mendeteksi kesalahan, tipe kompresi, dan bagaimana receiver (penerima) mengindikasikan bahwa pesan telah diterima. 
+Protokol merupakan sarana komunikasi antara mesin melalui jaringan yang terstandarisasi. Protokol mengizinkan data untuk ambil bagian 
+dalam transmisi kilat, kemudian ditransmisikan, lalu dikumpulkan kembali sesuai arah dengan perintah yang benar. 
+Protokol digunakan untuk mendeteksi kesalahan, tipe kompresi, dan bagaimana receiver (penerima) mengindikasikan bahwa pesan telah 
+diterima. 
 Protokol dapat mendeskripsikan detail level bawah dari interface machine to machine atau pertukaran level atas antara program alokasi. 
-Protokol level bawah meliputi observasi terhadap standar elektrik dan fisik, perintah bit dan byte, pendeteksian transmisi dan kesalahan, dan koreksi aliran bit. 
+Protokol level bawah meliputi observasi terhadap standar elektrik dan fisik, perintah bit dan byte, pendeteksian transmisi dan 
+kesalahan, dan koreksi aliran bit. 
 Protokol level atas berkaitan dengan pemformatan data, meliputi sintaks pesan, dialog dari terminal ke komputer, dan pengurutan pesan. 
- 
+
+Protocol merupakan seperangkat aturan komunikasi dimana dalam sebuah hubungan telekomunikasi dapat digunakan untuk menerima sinyal. 
+Dalam  koneksi telekomunikasi tersebut protocol dapat  koita bagi menjadi 7 level. Salah satunya yaitu hardware protocol telepon dan 
+berupa end point dalam sebuah program komunikasi dalam computer yang sama atau memiliki lokasi yang berbeda-beda. Jadi kedua end point 
+tersebut harus dapat mengenali satu sama lain dan mengobservasi protocol.
+
  \section{Jenis-Jenis Protokol}
 Protokol jaringan adalah berbagai protokol yang terdapat dari lapisan  teratas sampai terbawah yang ada dalam sederetan protocol.
 Di pandang dari sudut komunikasi data,ada beberapa protokol yang banyak digunakan pada jaringan computer, di antaranya:
@@ -104,7 +113,6 @@ Transport & \\
 \hline
 Network & \\
 \hline
-
 Data Link atau Physical & \\
 \hline
 \end{tabular}
@@ -112,13 +120,15 @@ Data Link atau Physical & \\
   
  \subsection{UDP(User Datagram Protocol)}
 UDP adalah salah satu protokol dari layer transport yang merupakan layer ketiga dalam model TCP/IP Layer.
-UDP mengirim paket berupa datagram yang terdiri dari sebuah header kecil dan data pengguna UDP memiliki karakteristik connectionless, yaitu pengirim mengirimkan paket secara langsung tanpa membangun koneksi ke server. 
+UDP mengirim paket berupa datagram yang terdiri dari sebuah header kecil dan data pengguna UDP memiliki karakteristik connectionless, 
+yaitu pengirim mengirimkan paket secara langsung tanpa membangun koneksi ke server. 
 Keunggulan lain dari UDP yaitu fleksibel karena rute pengiriman paket dapat dengan mudah diubah, apabila terjadi antrian pada suatu rute tertentu 
  
  \subsection{SNMP(Simple Network Management Protocol)}
 SNMP adalah sebuah protokol aplikasi pada jaringan TCP/IP yang menangani manajemen jaringan. 
 Protokol ini didesain sehingga pengguna dapat dengan mudah memantau kondisi jaringan komputer. 
-Pemantauan kondisi jaringan dapat dilakukan dengan cara pengumpulan nilai-nilai informasi dari kondisi jaringan secara jarak jauh atau menggunakan satu pusat pengamatan.
+Pemantauan kondisi jaringan dapat dilakukan dengan cara pengumpulan nilai-nilai informasi dari kondisi jaringan secara jarak jauh atau 
+menggunakan satu pusat pengamatan.
   
  \subsection{AppleTalk} 
 Protokol AppleTalk dibuat oleh sebuah perusahann Apple Computer, digunakan pada jaringan dengan komputer mesin Apple, dipublikasikan 
@@ -208,18 +218,21 @@ digunakan untuk solusi sementara yang bersifat darurat. Sayang segala informasi 
 dapat berkembang ISO/OSI tersendat, tidak seperti TCP/IP.
 
 \subsection{FTP (File Transfer Protocol)}
-FTP adalah sebuah protokol Internet yang berjalan di dalam lapisan aplikasi yang merupakan standar untuk pentransferan berkas antar mesin-mesin dalam sebuah Internetwork. 
-FTP didefinisikan sebagai sebuah protokol untuk mengirim dan menerima file antara host (dalam Advanced Research Project Agency Network (ARPANET). 
-Fungsi utama dari FTP adalah mengirim dan menerima file dengan efisien dan handal antara host dan mengijinkan penggunaan yang nyaman dari kemampuan untuk penyimpanan file secara remote.
+FTP adalah sebuah protokol Internet yang berjalan di dalam lapisan aplikasi yang merupakan standar untuk pentransferan berkas antar 
+mesin-mesin dalam sebuah Internetwork. 
+FTP didefinisikan sebagai sebuah protokol untuk mengirim dan menerima file antara host (dalam Advanced Research Project Agency Network 
+(ARPANET). 
+Fungsi utama dari FTP adalah mengirim dan menerima file dengan efisien dan handal antara host dan mengijinkan penggunaan yang nyaman 
+dari kemampuan untuk penyimpanan file secara remote.
 
-\subsection{elemen penting pada protokol}
+\subsection{elemen yang terdapat pada protokol}
 Elemen penting protocol adalah syntax,semantics,dan timing.
--Syntax dipusatkan pada struktur atau format data, yang mana dalam urutan tampilannya memiliki makna tersendiri. Sebagai contoh sebuha 
-protocol sederhana akan memilki urutan pada delapan bit pertama sebagai alamat pengirim,dan bit selanjutnya itu adalah informasi 
-tersendiri. 
--Yang kedua yaitu semantic yang mengacu pada maksud setiap section pada bit dapat dikatakan bahwa bagaimana bit bit tersebut terpola  
-untuk dapat diterjemahkan.
--Yang ketiga yaitu timing, timing lebih megacu kepada 2 karakteristik,yaury kapan suatu data tersebut harus dikirim dan yang kedua 
-seberapa cepat data tersebut dikirim.
+-Yang pertama Syntax maksudnya yaitu dipusatkan pada struktur atau format data, yang mana dalam urutan tampilannya memiliki makna 
+tersendiri. Sebagai contoh sebuah protocol sederhana akan memilki urutan pada 8 bit pertama sebagai alamat pengirim,dan bit selanjutnya 
+itu adalah informasi tersendiri. 
+-Yang kedua yaitu semantic yang mengacu pada maksud setiap section pada bit dapat dikatakan bahwa beberapa bit bit tersebut terpola  
+sehingga bit bit tersebut dapat  kita diterjemahkan.
+-Yang ketiga yaitu timing, timing lebih dipusatkan kepada 2 karakteristik,yaitu  kapan suatu data tersebut seharusnya dikirimkan dan 
+yang kedua seberapa cepat data tersebut dapat kita kirim.
 
 \end{document}
