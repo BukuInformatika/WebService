@@ -141,3 +141,15 @@ menjadi terpisah dari EIS.
 \section{Aspek sistem}
 Dari sisi sistem, keuntungan utama ialah adanya data warehouse yang terpisah dari data operasional, sehingga meningkatkan kesederhanaan proses retrieve data dan peningkatan kinerja sistem. Skalabilitas dari sistem menjadi lebih baik, karena jika ada perubahan teknologi atau perubahan struktur pada sisi data warehouse, tidak akan mempengaruhi aplikasi pengguna (tidak perlu dilakukan perubahan). 
 Penggunaan web service sebagai intermediate antara data warehouse dan aplikasi pengguna meningkatkan modularitas dan fleksibilitas dari data yang disajikan.
+
+
+\section{Aplikasi SIG Terintegrasi yang Dikembangkan Menggunakan “Big” Web Service}
+Pengembang aplikasi SIG akan menggunakan/memanfaatkan layanan (service) “Big” Web Service, karena “Big” Web Service memiliki standar
+pesan SOAP (Simple Object Access Protocol), maka data berformat GML yang ada di basis data XML
+terlebih dahulu harus diubah dulu ke format SOAP yang memiliki elemen XML peringkat teratas
+ (envelope) dan yang memuat di dalamnya elemenelemenheader dan body.Program Java yang pengembang aplikasi SIG buat harus mampu
+menyusun/merakit pesan SOAP yang berisi data berformat GML, dimana dalam hal ini XML Schema bisa digunakan untuk mendeskripsikan struktur internal pesan SOAP itu. Untuk melakukan hal ini, pada aras rendah pengembang aplikasi SIG bisa
+melakukannya dengan membuat suatu lapisan program kecil (adapter) yang memanfaatkan API
+SAAJ (Simple Object Access Protocol with Attachments API for Java), yang memiliki antarmuka DOM
+(Document Object Model) Node, yang merupakan kelas dasar dari semua kelas dan antarmuka
+(interface) yang ada di dalam pesan-pesan SOAP.
