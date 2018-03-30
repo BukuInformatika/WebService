@@ -42,4 +42,13 @@ Start Line merupakan bagian pertama dari HTTP message yang memberikan gambaran d
 Salah satu alasan mengapa penggunaan HTTP adalah kemampuannya untuk lulus melalui proksi, firewall, atau penerjemah alamat jaringan (NAT). Satu konsekuensi yang tidak menguntungkan dari firewall dan NAT adalah yang mereka dibuat lebih sulit untuk menyebarkan aplikasi Internet baru, dengan meminta eksplisit izin (atau bahkan peningkatan perangkat lunak firewall atau NAT) pada akomodasi setiap protokol baru. Keberadaan firewall dan NAT menciptakan insentif yang kuat untuk perancang protokol untuk lapisan baru aplikasi di atas protokol yang ada, termasuk HTTP. Namun, jika firewall situs mencegah penggunaan protokol yang tidak dikenal, ini agaknya merupakan keputusan kebijakan yang sadar dari pihak administrator firewall. Sementara itu dapat diperdebatkan bahwa kebijakan tersebut nilai terbatas dalam meningkatkan keamanan, di samping itu nomor port terkenal sangat berguna untuk berbagai tujuan, dan kelebihan nomor port mengikis utilitas ini. Mencoba untuk menghindari kebijakan keamanan situs tidak dapat diterima pembenaran untuk melakukannya. Akan berguna untuk menetapkan pedoman untuk "firewall-friendly" protokol, untuk memudahkan firewall yang ada agar kompatibel dengan protokol baru
 \cite{moore2002use}.
 
+\section{Konsep Web Client dan Web Server}
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/2http.jpg}}
+\caption{Client Server}
+\label{2http}
+\end{figure}
+
+Pada gambar \ref{2http} dijelaskan bahwa setiap web content berada pada web server. Web server berkomunikasi menggunakan HTTP sebagai protokol, maka sering disebut sebagai HTTP server. Proses pengiriman data dimulai dari HTTP client yang mengirimkan HTTP request ke server. HTTP request tersebut akan diterima dan diolah oleh server, kemudian server akan mengirimkan kembali HTTP response pada client. HTTP client dan HTTP server merupakan komponen yang membentuk World Wide Web (WWW).
 
