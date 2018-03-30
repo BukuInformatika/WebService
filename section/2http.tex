@@ -32,6 +32,9 @@ Sistem komunikasi langsung multimedia yang terhubung dengan Protokol HTTP terdir
 \section{Versi HTTP}
 Dalam skema penomoran, HTTP menggunakan skema "<Major>.<Minor>" untuk menunjukkan versi versi dari setiap prtotokol. Kebijakan dibuatnya versi protokol untuk memungkinkan pengirim untuk memilih format pesan dan kapasitas dalam memahami setiap komunikasi HTTP lebih lanjut, dari pada fitur-fitur yang diperoleh melalui komunikasi. Dan tidak hanya perbedaan yang dibuat ke nomor untuk setiap versi agar penambahan komponen-komponen pesan yang tidak mempengaruhi sifat dari komunikasi tersebut\cite{berners1996hypertext}.
 
+\subsection{Versi HTTP #2}
+Angka <minor> meningkat ketika terjadi perubahan saat protokol menambahkan fitur yang tidak mengubah algortima pesan, akan tetapi menambah makna pesan dan menyiratkan kemampuan pengirim tambahan. Angka <major> meningkat saat protokol dalam pesan telah diubah. Versi HTTP ditunjukan oleh bidang versi HTTP pada baris pertama pesan. Apabila versi protokol tidak ditentukan, penerima harus menggangap bahwa pesan tersebut dalam format HTTP/0,9 yang sederhana. HTTP-version = "HTTP" "/" 1*DIGIT "." 1*DIGIT. Perlu diperhatikan bahwa nomor besar dan kecil harus diperlakukan sebagai bilangan bulat terpisah dan masing-masing dapat meningkat lebih tinggi dari satu digit. Dengan begitu, HTTP/2.4 merupakan versi HTTP terendah dari HTTP/2.13. Memimpin 0 harus diabaikan oleh penerima dan tidak akan pernah dihasilkan oleh pengirim\cite{berner1996hypertext}. 
+ 
 \section{HTTP Message}
 Http Messages adalah rangkaian blok data yang dikirim antar aplikasi HTTP. Blok data diawali dengan teks yang berisi meta information. Teks ini menggambarkan konten pesan dari HTTP message. Setiap HTTP message berisi tentang request dari client atau response dari server. HTTP message terbagi menjadi 3 bagian, yaitu: start line, headers, dan body\cite{hartono2013desain}.
 
@@ -51,4 +54,3 @@ Salah satu alasan mengapa penggunaan HTTP adalah kemampuannya untuk lulus melalu
 \end{figure}
 
 Pada gambar \ref{2http} dijelaskan bahwa setiap web content berada pada web server. Web server berkomunikasi menggunakan HTTP sebagai protokol, maka sering disebut sebagai HTTP server. Proses pengiriman data dimulai dari HTTP client yang mengirimkan HTTP request ke server. HTTP request tersebut akan diterima dan diolah oleh server, kemudian server akan mengirimkan kembali HTTP response pada client. HTTP client dan HTTP server merupakan komponen yang membentuk World Wide Web (WWW).
-
