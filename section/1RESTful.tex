@@ -54,4 +54,9 @@ One  Chip  All  Operator adalah sebuah chip untuk pengisian pulsa kesemua operat
 
 \section{Implementasi Protocol Buffers pada Aplikasi Weblog Client dan Server}
 Web service yang digunakan untuk mengirimkan dan menerima   protobuf  messages adalah  RESTful  web service  yang  merupakan  teknologi  web  service  yang ringan dan mudah diimplementasikan. Client mengirimkan data yang telah diserialisasikan dalam bentuk protobuf message melalui  HTTP  request kepada RESTful  service pada server. Protobuf  message kemudian diubah menjadi data semula dengan program deserialisasi yang telah ada di server
-\cite{wibowo2011implementasi}
+\cite{wibowo2011implementasi} 
+
+\section{PENGEMBANGAN SISTEM INFORMASI KEPENDUDUKAN BERBASIS MOBILE DAN RESTFUL WEB SERVICE}
+Sensus biasa dilakukan secara manual, yaitu door-to-door ke setiap rumah warga namun hal tersebut membutuhkan waktu yang lama dan tidak cukup efektif, lalu dibuat solusi dari permasalahan tersebut dengan mengintegrasikan RESTful web service pada perangkat Android. Diimplementasikan pada Android karena Android memiliki kelebihan dapat mengakses database secara offline yaitu SQLite sehingga lokasi yang berada di pedalaman tetap dapat terinputkan ke database meski tidak ada jaringan internet.
+Cara kerjanya yaitu petugas sensus akan memasukan data di perangkat android, yang kemudian datanya akan dimasukkan kedalam database. Webservice RESTful ini berfungsi sebagai komunikator antara android dengan database pusat. Web service ini diletakkan di server pusat untuk mengolah data JSON. Parameter masukkan dari SQLite ke MySQL akan di parsing ke format array yang diubah lagi menjadi JSON sebagai hasil dari web servicenya. 
+\cite{kurniawati2016pengembangan}
