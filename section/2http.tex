@@ -54,3 +54,19 @@ Salah satu alasan mengapa penggunaan HTTP adalah kemampuannya untuk lulus melalu
 \end{figure}
 
 Pada gambar \ref{2http} dijelaskan bahwa setiap web content berada pada web server. Web server berkomunikasi menggunakan HTTP sebagai protokol, maka sering disebut sebagai HTTP server. Proses pengiriman data dimulai dari HTTP client yang mengirimkan HTTP request ke server. HTTP request tersebut akan diterima dan diolah oleh server, kemudian server akan mengirimkan kembali HTTP response pada client. HTTP client dan HTTP server merupakan komponen yang membentuk World Wide Web (WWW).
+
+\section{Blok bangunan Web Service}
+
+Gambar \ref{2webservicehttp} merupakan blok bangunan web service yang menyediakan fasilitas komunikasi jarak jauh antara dua aplikasi yang merupakan layer arsitektur web service, berikut penjelasannya:
+\begin{itemize}
+\item Layer 1 : protokol internet standar yang digunakan sebagai sarana transportasi yakni HTTP dan TCP/IP.
+\item Layer 2 : Simple Object Access Protocol (SOAP) yang berbasiskan XML dan digunakan untuk pertukaran informasi antar sekelompok layanan.
+\item Layer 3 : Web Service Definition Language (WSDL) digunakan untuk mendeskripsikan attribute layanan.
+\item Layer 4 : Universal Description, Discovery and Integration, yang mana merupakan direktori pusat untuk deskripsi suatu layanan\cite{deviana2013penerapan}.
+\end{itemize}
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/2webservicehttp.jpg}}
+\caption{Blok bangunan web service}
+\label{2webservicehttp}
+\end{figure}
