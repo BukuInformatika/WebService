@@ -1,5 +1,18 @@
+\begin{table}[h]
+    \caption{Model Arsitektur Client-Server}
+    \centering
+    \begin{tabular}{c|c|c}
+    \hline
+    Model - Model Arsitektur\\
+    \hline
+    Stand-Alone&Client-Server&Multi-Tier\\
+    \hline
+    \end{tabular}
+    \label{1table}
+    \end{table}
+
 \section{ArsitekturClientServer
-Arsitektur Client Server merupakan  sebuah model yang membedakan kinerja koputer sebagai client dan server. 
+Pada Table \ref{1table} terdapat beberapa model Arsitektur yang terdapat didalam Sebuah Web Service. Arsitektur Client Server merupakan  sebuah model yang membedakan kinerja koputer sebagai client dan server. 
 Arsitektur akan menyesuaikan komputer sebagai server dan server akan melayani client yang terhubung kedalam sebuah jaringan.
 Server dapat melayani berbagai file server, sebuah printer, bahkan jalur komunikasi.
 Client tidak dapat berfungsi sebagai server akan tetapi server dapat berfungsi menjadi client yang dinamakan `server non-dedicated`.
@@ -77,6 +90,16 @@ implemetasi Client-Server, cara kerja sistem yang ingin dibuat adalah sebagai be
     \end{itemize}
 \end{enumerate}
 
+\subsection{Arsitektur Layanan Perawatan Medis terprogram melalui Mobile}
+Pada penerapan arsitektur client-server yang satu ini bergerak di bidang kesehatan, dimana Pasien dapat melakukan check kesehatan
+walau terpantau jarak yang jauh sekalipun. Dengan menggunakan sebuah telepon selular dapat mencakup kegiatan pengecekan kesehatan.
+Dimana Layanan yang diberikan oleh aplikasi ini adalah :
+\begin{enumerate}
+    \item layanan kesehatan yang menamplkan dengan penggunaan sensor
+    \item menjamin dalam sistem keamanannya karena penggunaan software yang dinamik serta dapat diupgrade dengan terpaut data klinik
+    \item remote registrasi dimana data yang didapat oleh pasien didapat melalui proses upload dan download yang dilakukan oleh sensor
+\end{enumerate}
+
 \section{Arsitektur Database Server}
 Dalam Arsitekture Client Server juga membutuhkan atau menggunakan sebuah Database, terutama di dalam server ada yang
 dinamakan dengan Arsitekture Database Server yaitu dimana Client akan bertanggung jawab dalam pengelolaan antar muka pemakai
@@ -98,27 +121,40 @@ Dalam Arsitektur Client Server terdapat 3 model arsitektur yaitu :
 	\end{itemize}
 
 \subsection{Arsitektur Single-tier atau satu lapis}
-Arsitektur Single-tier ini merupakan model yang paling sederhana sehingga sangat mudah diginakan oleh pengguna atau user.
+Pada gambar \ref{1Stand} dijelaskan tentang Arsitektur Single-tier ini merupakan model yang paling sederhana sehingga sangat mudah diginakan oleh pengguna atau user.
 Arsitekur Single-tier ini adalah model aristektur yang paling sedikit memiliki alternatif, sehingga dalam Arsitektur Single-tier ini
 memiliki kelemahan yaitu seperti kurang aman dan kurang memiliki skalabilitas.
 
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=1\textwidth]{figures/2modelstandalone.jpg}}
+    \caption{Bahasa Pemrograman yang dipakai di Backend}
+    \label{1Stand}
+\end{figure}
+
 \subsection{Arsitektur Two-tier atau dua lapis}
-Dalam Arsitektur Two-tier ini dapat dibagi dua dalam pengelolaan informasinya, yaitu dalam UI `User Interface` lingkungan dan dalam
+Pada gambar \ref{2Tier2} dijelaskan bahwa dalam Arsitektur Two-tier ini dapat dibagi dua dalam pengelolaan informasinya, yaitu dalam UI `User Interface` lingkungan dan dalam
 lingkungan server manajemen databasenya. Dibandingkan dengan Arsitektur Single-tier, Arsitekur Two-tier ini mimiliki tingkat
 keamanan yang cukup tinggi serta teratur. Arsitektur Two-tier ini memiliki database terpisah pada setiap komputer sehingga dalam
 Arsitektur Two-tier ini dapat meningkatkan kinerja dalam keseluruhan situs. Kelemahan yang dimiliki oleh Arsitektur Two-tier ini
 adalah tentunya memiliki biaya yang cukup mahal, tidak adanya pembaharuan kode, serta arsitekturnya yang kompleks.
+
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=1\textwidth]{figures/2model2tier}}
+    \caption{Bahasa Pemrograman yang dipakai di Backend}
+    \label{2Tier2}
+\end{figure}
 
 \section{RestWebService}
 Pada umumnya penemuan yang menyediakan suatu metode dan sistem yang terkomputerisasi untuk memonitori layanan web rest yang termasuk membangkitkan lagi operasi pemanggilan klien layanan web yang berbasis rest yyang akan digunakan untuk memonitoring aktivitas pada layanan web. Metode atau sistem komputerisasi yang lebih lanjut mencakup pemantauan aktivitas layanan web dengan melalui suaru panggilan-panggikan dan tanggapan analisis.
 
 \section {Pemrograman aplikasi pemrograman web pada client server}
 Saat ini, perkembangan pada aplikasi yang berbasis Web sangat pesat karena memang memiliki beberapa kelebihan dibandingkan aplikasi berbasis deskop. Berikut adalah beberapa contoh kelebihan pada aplikasi yang berbasis web :
-•	Pada sisi client(pengguna), tidak emerlukan proses intalisasi. Jika terjadi perubahan pada aplikasi, client juga tidak perlu repot-repot melakukan proses update karena cukup dilakukan  pada server.
-•	Data disimpan di sisi server, sehingga akses terhadap data dari sisi client( pengguna) dapat di atur sesuai kebutuhan
-•	Dari sisi client, tidak memerlukan spesifikasi komputer yang besar karena hamper selruh proses aplikasi dilakukan di sisi server
-•	Client(pengguna) lebih aman dari virus atau gangguan keamanan lainnya karena aplikasi berjalan di atas browser.
-
+\begin{itemize}
+    \item Pada sisi client(pengguna), tidak emerlukan proses intalisasi. Jika terjadi perubahan pada aplikasi, client juga tidak perlu repot-repot melakukan proses update karena cukup dilakukan  pada server.
+    \item Data disimpan di sisi server, sehingga akses terhadap data dari sisi client( pengguna) dapat di atur sesuai kebutuhan
+    \item Dari sisi client, tidak memerlukan spesifikasi komputer yang besar karena hamper selruh proses aplikasi dilakukan di sisi server
+    \item Client(pengguna) lebih aman dari virus atau gangguan keamanan lainnya karena aplikasi berjalan di atas browser.
+\end{itemize}
 
 
     
