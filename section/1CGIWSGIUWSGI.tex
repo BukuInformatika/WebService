@@ -44,7 +44,9 @@ maka akan diberikan pesan error. lalu web browser akan menampilkan hasilnya, bai
 jadi halaman URL yang dituju tidak bisa diakses hal tersebut merupakan fungsi dari CGI script. supaya lebih paham dapat dilihat 
 pada arsitektir program CGI.
 
-\par Salah satu kekuatan utama yang memungkinkan developer web membangun aplikasi-aplikasi web yang dinamis adalah kemampuan server web untuk mengakses sistem database. Untuk keperluan pengembangan aplikasi web yang dinamis, pertama kali diperkenalkan Common Gateway Interface (CGI). CGI adalah bagian dari server web yang dapat berkomunikasi dengan program lain di luar server web. CGI memungkinkan server web memanggil suatu program, lalu mengirimkan data-data spesifik dari pengguna ke program tersebut. Hasil proses tadi diterima oleh CGI yang selanjutnya menyerahkannya kepada server web untuk kemudian, yang pada gilirannya akan mengirimkan informasi tersebut kembali dalam bentuk HTML ke browser web pengguna\cite{ibrahim2011sistem}.
+\par  CGI (Common Gateway Interface) memungkinkan server web memanggil suatu program, lalu mengirimkan data-data spesifik dari pengguna ke program tersebut.
+ Hasil proses tadi diterima oleh CGI yang selanjutnya menyerahkannya kepada server web untuk kemudian, yang pada gilirannya akan mengirimkan
+informasi tersebut kembali dalam bentuk HTML ke browser web pengguna, Server web kemudian mentransmisikan data berformat HTML ke klien untuk ditampilkan kepada pengguna. \cite{ibrahim2011sistem}.
 
 \section{PHP and Common Gateway Interface interconnections }
 Common Gateway Interface is a standard that is used to connect various application programs to web pages. One example of the programming language is PHP. PHP is a software that is open source and can pass across the various platform. Php can be run in 2 ways ie as apache module in web server and also as binary in Common Gateway Interface.This language was created in 1994 by Ramus Lerdoff.  Initially, PHP is a CGI program that is devoted to receiving input through forms displayed in web pages or browser. The PHP code is usually processed by a PHP interpreter which is usually executed as a native web server module or Common Gateway Interface\cite{nahado2015bumbu}.
@@ -70,3 +72,7 @@ Honeypot Dionaea merupakan salah satu Honeypot interaksi rendah yang bertujuan m
 Salah satu keunggulan yang dijelaskan sebelumnya adalah karena Google App Engine dan Django dirancang untuk menggunakan standar WSGI untuk menjalankan aplikasi.
 Django dapat berjalan dengan lingkungan server yang berbeda. Misalnya yang populer Server Apache didukung menggunakan mod python atau mod wsgi.
 Juga untuk python maprelational Objectperational mendukung PostgreSQL, MySQL, SQLite dan Oracle.
+
+\par Sebuah server web diatur di atas sistem operasi untuk mengirim permintaan HTTP, tetapi juga bisa melayani file statis seperti gambar, file JavaScript, halaman HTML, dll.
+ Itu memproses pesan JSON dengan Flask, yang merupakan kerangka mikro untuk Python yang difokuskan pada kode aplikasi web, Karena server web tidak dapat berkomunikasi
+ secara langsung dengan Flask, kami mengimplementasikan Web Server Gateway Interface (WSGI) untuk bertindak sebagai proxy antara server dan Python / Flask.
