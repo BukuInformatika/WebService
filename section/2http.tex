@@ -38,13 +38,15 @@ Angka <minor> meningkat ketika terjadi perubahan saat protokol menambahkan fitur
 \subsection{Versi HTTP #3}
 Dokumen ini yang membedakan kedua versi 0.9 dan 1.0 dari HTTP. Aplikasi mengirim pesan Full-Request atau Full-Response, sebagaimana didefinisikan oleh spesifikasi ini, harus menyertakan versi HTTP `HTTP/1.0`.
 Server HTTP/1.0 harus:
-- Mengetahui format Permintaan-Baris untuk meminta HTTP/0.9 dan HTTP/1.0;
-- Paham kepada permintaan yang valid dalam format HTTP/0.9 atau HTTP/1.0;
-- Respon secara tepat dengan pesan dalam versi protokol yang sama dengan klien.
+\begin{itemsize}
+	\item Mengetahui format Permintaan-Baris untuk meminta HTTP/0.9 dan HTTP/1.0;
+	\item Paham kepada permintaan yang valid dalam format HTTP/0.9 atau HTTP/1.0;
+	\item Respon secara tepat dengan pesan dalam versi protokol yang sama dengan klien.
+	\end{itemsize}
 Klien HTTP/1.0 harus;
--Kenal format Status-Line untuk menanggapi HTTP/1.0;
--Memahami respons valid baik dalam format HTTP/0.9 atau HTTP/1.0
-Proxy dan gateway harus teliti dalam meneruskan permintaan yang diterima dalam format yang berbeda dari HTTP yang asli. Karena setiap versi protokol punya kemampuan mengirim protokol, proxy atau gateway tidak bisa mengirim pesan dengan versi yang lebih besar dari versi asli; apabila permintaan versi yang lebih tinggi diterima, maka proxy atau gateway harus lebih dahulu menurunkan tingkatan versi dari format asli agar dapat diteruskan; proxy/gateway dapat diteruskan apabila mengikuti syarat-syarat server yang tadi\cite{berner1996hypertext}. 
+\begin{itemsize}Kenal format Status-Line untuk menanggapi HTTP/1.0;
+	\item Memahami respons valid baik dalam format HTTP/0.9 atau HTTP/1.0
+	\Item Proxy dan gateway harus teliti dalam meneruskan permintaan yang diterima dalam format yang berbeda dari HTTP yang asli. Karena setiap versi protokol punya kemampuan mengirim protokol, proxy atau gateway tidak bisa mengirim pesan dengan versi yang lebih besar dari versi asli; apabila permintaan versi yang lebih tinggi diterima, maka proxy atau gateway harus lebih dahulu menurunkan tingkatan versi dari format asli agar dapat diteruskan; proxy/gateway dapat diteruskan apabila mengikuti syarat-syarat server yang tadi\end{itemsize}\cite{berner1996hypertext}. 
 
  
 \section{HTTP Message}
@@ -113,4 +115,22 @@ Model OSI menerapkan konsep yang dikenal dengan enkapsulasi. Enkapsulasi itu sen
 \item Presentasi Layer
 \item Application Layer
 \end{itemize}
-Pada layer Application, terdiri dari beberapa protokol yang digunakan salah satunya yakni HTTP (Hypertext Transfer Protocol) Protokol yang dipergunakan untuk mentransfer dokumen dan web dalam sebuah web browser, yang biasa digunakan melalui www. HTTP juga merupakan protokol yang meminta sekaligus menjawab antara klien dan server\cite{sujana2015perangkat}. 
+Pada layer Application, terdiri dari beberapa protokol yang digunakan salah satunya yakni HTTP (Hypertext Transfer Protocol) Protokol yang dipergunakan untuk mentransfer dokumen dan web dalam sebuah web browser, yang biasa digunakan melalui www. HTTP juga merupakan protokol yang meminta sekaligus menjawab antara klien dan server\cite{sujana2015perangkat}.
+
+\section{Method HTTP/1.0}
+\begin{itemsize}
+\item GET
+Metode GET untuk mengambil informasi-informasi apa pun yang diidentifikasi oleh Request-URI. Apabila Request-URI mengacu pada proses produksi data, maka data yang dihasilkan adakn dikemabalikan sebagai etentitas dalam respon dan bukan dari sumber text dari proses tersebut, kecuali teks itu kebetulan jadi output dari prosesnya.
+
+\item HEAD
+Metode Head identik dengan Metode Get, terkecuali server tidak warus mengembalikan Badan Entitas dalam respon apapun. Metainformasi yang terkandung dalam head HTTP sebagai respon atas permintaan HEAD yang identtik dengan informasi yang dikirim sebagai tanggapan atas permintaan GET. Metode ini bisa digunakan untuk mengambil informasi tentang sumber daya yang diidentifikasi oleh Request-URI tanpa mentransfer Badan Entitas sendiri.
+
+\item POST
+Metode POST biasanya dipakai untuk meminta server tujuan  agar menerima entitas yang terlampir dalam permintaan baru dari Request-URI di Permintaan-Baris. Post dirancang untuk memungkinkan metode yang seragam untuk mencakup fungsi berikut;
+\begin{itemsize}
+	\item Anotasi sumber daya yang ada;
+	\item Memposting pesan ke buletin, newsgroup, atau kelompok artikel serupa;
+	\item Menyediakan blok data, seperti hasil mengirimkan formulir ke proses penanganan data;
+	\item Memperluas databse melalui operasi tambahan.
+	\end{itemsize}
+\end{itemsize}\cite{berner1996hypertext}.
