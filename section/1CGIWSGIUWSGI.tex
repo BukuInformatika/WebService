@@ -79,3 +79,31 @@ Juga untuk python maprelational Objectperational mendukung PostgreSQL, MySQL, SQ
 
 \section{ Python Program Langguage and Common Gateway Interface Interconnections }
 In an application development with python programming language can be seen the relationship between Common Gateway Interface with python itself. Python programming language that is intepreter so that supports access in realtime (right at the point) in the data retrieval or the results of monitoring data. Another reason that is taken and considered is because the Python programming language using the OOP approach of Object Oriented Pprogramming so ideal and suitable for dingunakan on web programming in the Common Gateway Interface (CGI). To run the monitoring system as in the application to be built is very possible once to use or utilize the program interface that can bridge and help users through the web browser on the remote terminal. The interface of this program is called CGI or Common Gateway Interface which can usually be found by users and available on linux.
+
+\section{Penyokong Aplikasi Web berbasis Python}
+\par Perlu anda ketahui bahwa web berbasis Python memiliki beberapa penyokong untuk membuat website yangbaik.
+Sebelum mengetahui apa saja penyokong webbsite Python alangkah lebih baiknya mengetahui apa Python itu.
+Python adalah bahasa pemerograman yang dinamik, yang banyak digunakan secara luas dari banyak domain aplikasi, 
+seperti pengembangan website dan internet, akses basisdat, Dekstop Graphical User Interface, ilmiah dan numerik, pendidikan,
+pemerograman jaringan, permainan, dan Grapik 3D. dapat berjalan pada semua sistem oprasi, seperti linux, Windows, Mac, dan lainnnya.
+bahasa pemerograman ini memiliki lisensi open-source yang dapat dengan gratis digunakan atau didistribusikan bahkan untuk penggunaan komersial\cite{andros2015implementasi}.
+
+\subsection{Supervisord}
+\par Perlu diketahui bahwa sebuah website memiliki tenggang waktu untuk tetap hidup, slah satu fungsi dari Supervisord adalah untuk mengaktifkan 
+kembali sebuah website. Jika terjadi banyak permintaan (request) dan web server mati, maka untuk mengaktifkannya kembali harus masuk masuk ke server secara manual.
+Dengan menggunakan supervisord hal trsebut dapat ditangani. Selain itu Supervisord merupakan alat untuk memonitoring sejumlah proses yang ada di bawahnya.  
+
+\subsection{Gunicorn}
+\par Green Unicorn yang kemudian disingkat menjadi `Gunicorn'merupakan sebuah HTTP Server yang digunakan untuk python, berbasis webserver gateway interface `WSGI' dan dikhususkan 
+untuk lingkungan Unix-Like. Sebenarnya Gunicorn merupakan proyek yang diambil dari proyek Unicron untuk Ruby. Gunicorn memiliki penyesuaian yang sangat tinggi terhadap web berbasis WSGI 
+seperti Django, Falcon dan lainnya. adapun beberapa fitur unggul dari Gunicorn antara lain :
+
+
+\begin{enumerate}
+\item Dukungan terhadap WSGI, Django, dan Paster
+\item Manajemen prose worker secaraotomatis
+\item Konfigurasi yang mudah
+\item Konfigurasi pada banyak worker
+\item Berbagai macam server hooks untuk extensibilitas
+\item Kopatibel dengan Python 2.x atau 3.x
+\end{enumerate}
