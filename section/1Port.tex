@@ -1,0 +1,198 @@
+%PORT
+
+%NAMA KELOMPOK 5
+%Ajis Trigunawan		1164031
+%Alimu Dzul Ikroom		1164032
+%Muhammad Hanafi		1164092
+%Riki Karnovi			1164052
+%Yoga Sakti Hadi P		1164059
+
+\section{PORT}
+\subsection{Pengertian Port}
+\paragraph{}
+\hspace{1cm}
+Port adalah tatacara yang memberi ijin sebuah komputer yang memberi dukungan untuk beberapa bagian koneksi dengan komputer yang lain. Port juga dapat mengenali sebuah aplikasi dan layanan yang sedang menggunakan koneksi di dalam sebuah jaringan TCP/IP. Sehingga port juga mengenali salah satu prosses yang di mana server memberikan layanan terhadap klien yang meminta layanan tersebut. Port adalah salah satu media penghubung untuk melewatkan atau mengirim data masuk atau keluar baik pada sebuah komputer maupun dalam penggunaan jaringan komunikasi. Port pada salah satu penggunaannya pada jaringan komunikasi merupakan nama yang diberikan pada titik akhir koneksi. Nama port yaitu berupa angka angka sebagai pembeda tiap  jenis port. Contoh dari penamaan port yang dipakai pada web sebagai transportasi data yaitu port 80.
+
+
+\subsection{Jenis-jenis Port}
+Pada terminologi komputer ada dua jenis port yaitu:
+\subsubsection {Port Fisik}
+\paragraph{}
+\hspace{1cm}
+Port Fisik, adalah colokan/slot dibagian belakang cpu sebagai output-input dari komputer ke hardware pendukung lainnya. \\
+\begin{enumerate}
+\item Port SCSI (small computer system interface) adalah port berfungsi untuk melakukan transmisi data secara cepat dan dapat dipakai untuk 7 alat sekaligus atau “daisy chain“. Contoh daisy chain : dari SCSI kontroller kemudian disambungkan ke perangkat hardisk drive eksternal, dari HDD eksternal disambungkan secara seri ke perangkat yang lain.
+\item Port Paralel adalah  salah satu jenis port pada komputer yang digunakan untuk berkomunikasi dengan peralatan luar untuk mengirim data digital dimana setiap bit menggunakan jalur yang terpisah. Pada Port paralel digunakan untuk mentransmisikan data dengan jarak yang pendek dengan cepat karena pemindahan informasi dapat dilakukan secara bersamaan. Contoh penggunaan port paralel yaitu untuk menghubungkan disk eksternal dan printer.
+\item Port midi Instrument Digital Interface biasanya disebut midi ialah sebuah sistem piano yang menggunakan synthesizer, dapat mengeluarkan suara instrument music yang lumayan bagus dari elemen music itu sendiri.
+\item Port serial port ini biasanya sedikit rumit dalam system kinerjanya , port ini sedikit sangat lambat dalam mengirim data biasanya mengirim data secara satu persatu 
+\end{enumerate}
+\subsubsection {Port Logika}
+
+\paragraph{}
+\hspace{1cm} 
+Port Logika atau non fisik, adalah port pada jaringan yang digunakan sebagai jalur penghubung ke komputer lain. TCP atau biasa disebut Transmission Control Protocol adalah bagian dari salah satu jenis protokol yang didalam protokol ini memungkingan terjadinya komunikasi anatara komputer satu dengan yang lainnya, dan dapat pula saling bertukar data. TCP ini berada pada lapisan transport pada 7 lapisan yang ada yang berasal dari OSI, dan pada protokol TCP ini beriorientasi pada sambungan (connection-oriented) sehingga dapat di andalkan (reliale).
+
+\paragraph{}
+\hspace{1cm}
+Konsep TCP/IP adalah kebutuhan dari DoD (Departement of Defense) AS untuk berlangsungnya komunikasi di antara berbagai komputer yg telah ada. Komputer DoD ini seringkali harus berhubungan antara satu organisasi peneliti dengan organisasi peneliti lainnya, dan harus tetap berhubungan sehingga pertahanan negara tetap berjalan tanpa kendala selama terjadi bencana, seperti ledakan nuklir, gangguan radio. Pada tahun 1969 dilakukan penelitian tentang protokol TCP/IP. Tujuan dari penelitian ini adalah sebagai berikut :\\
+1.	Diciptakannya protokol-protokol umum, DoD memerlukan suatu protokol yg dapat dipakai untuk semua jaringan. \\
+2.	Meningkatkan efisiensi komunikasi. \\
+3.	Dapat dipadukan dengan teknologi WAN (Wide Area Network) yg telah ada. \\
+4.	Mudah dipakai dan dikonfigurasi. \\
+
+
+\paragraph{}
+\hspace{1cm}
+Karakteristik dari TCP adalah :
+Reliable memiliki arti yaitu data yang ditransfer ke tempat tujuan,  dengan urutan yang sama seperti saat dikirimkan.
+Berorientasi sambungan (connection-oriented) ialah dimana sebelum data bisa ditransmisikan antara dua host, dua proses yang sedang berjalan pada lapisan aplikasi ini harus melakukan kesepakatan untuk membuat tahap koneksi terlebih dahulu. Koneksi TCP bisa ditutup dengan menggunakan proses terminasi koneksi TCP (TCP connection termination). Aplikasi-aplikasi yang menggunakan TCP yaitu:
+
+\begin{enumerate}
+\item WWW adalah kumpulan layanan dan dokumen yang menjadi lapisan terluar dari Internet yang berfungsi sebagai penyedia data dan informasi berupa gambar, suara, video dan animasi. 
+\item Archie adalah sebuah sistem pencarian  yang berfungsi untuk mengumpulkan file indeks di internet. Archie hanya berguna untuk mencari file. 
+\item Wide Area Information Server (WAIS) adalah sebuah sistem pencarian didalam internet yang berbasis sistem operasi UNIX yang bisa digunakan untuk mencari informasi berbentuk dokumen.\\
+\end{enumerate}
+\paragraph{}
+\hspace{1cm}
+User Datagram Protocol (UDP) adalah sebuah protokol transport yang menggunakan port dan menyediakan konektivitas end-to-end antara aplikasi server dan aplikasi client . UDP berbeda dengan TCP, yaitu UDP tidak menjamin pengiriman datanya, oleh karena itu aplikasi harus mengimplementasikan mekanisme error recovery-nya sendiri.\\
+\paragraph{}
+\hspace{1cm}
+Kegunaan UDP : \\
+UDP merupakan singkatan dari user datagram protocol, suatu protkol dilapisan transport yang menyediakan  layanan pengantar connectionless dengan usaha yang terbaiknya, UDP biasaya bekerja dengan model client atau server, diterapkan juga di Komputer dan pada ponsel berbasis system operasi, Aplikasi UDP dapat menghasilkan IP Address pada ponsel sehingga ponsel dapat terkoneksi dengan komputer menggunakan protokol IP.UDP tingkatannya di atas Ip karena sifatnya connectionless.\\
+
+Kelemahan UDP :
+\begin{enumerate}
+\item UDP tidak akan menyediakan mekanisme penyanggaan dari data yang masuk ataupun data yang keluar. Tugas buffering merupakan tugas yang harus dikerjakan oleh protokol lapisan aplikasi yang sedang berjalan di atas UDP.
+\item UDP tidak akan menyediakan mekanisme segmentasi data yang besar ke dalam segmen - segmen data, seperti yang terjadi dalam protokol TCP. Karena itulah, protokol lapisan aplikasi yang sedang berjalan di atas UDP wajib mengirimkan data yang berukuran lebih kecil atau tidak lebih besar dari nilai Maximum Transfer Unit (MTU) yang dimiliki oleh sebuah interface di mana data tersebut dikirim. Karena, jika ukuran paket data yang dikirim lebih besar dibandingkan nilai MTU, paket data yang dikirimkan bisa saja terpecah menjadi beberapa fragmen yang akhirnya tidak jadi terkirim dengan benar.
+\item UDP tidak akan menyediakan mekanisme flow-control, seperti yang dimiliki oleh TCP.
+\end{enumerate}
+
+\paragraph{}
+\hspace{1cm}
+Port TCP dan UDP dalam pengklasifikasian penomorannya di bedakan menjadi tiga jenis
+\begin{enumerate}
+\item Well-known Port Merupakan port yang dipakai secara internal oleh sebuah system windows, seperti contoh port yang digunakan untuk pengkoneksian internet, service,FT dan lain sebagainya. Port yang digunakan pada penomoran ini adalah port 0 sampai dengan port 1023. Penomoran port yang berada dalam lingkup well-known port, selalu menggambarkan jaringan yang sama, dan ditetapkan oleh Internet Assigned Number Authority (IANA).
+\item Registered Port yaitu port-port yang dipakai oleh vendor-vendor jaringan atau komputer yang berbeda, dimana bertujuan  untuk mendukung sistem operasi dan aplikasi yang dibuatnya. Range dari registered port berkisar dari 1024 sampai 49151. Registered port terdaftar pada organisasi dunia dibidang jaringan komputer yaitu IANA (Internet Assigned Number Authority).Salah satu contoh penggunaan registered port yaitu untuk layanan aplikasi seperti port 1194 untuk Open VPN  dan port 1080 untuk SOCKS proxy.
+\item Dynamically Assigned Port adalah sebagian dari port yang telah ditetapkan oleh sistem operasi atau aplikasi yang akan digunakan pengguna untuk meminta suatu permintaan atau layanan sesuai dengan yang di perlukan olehnya. Dynamically Assigned Port juga dapat di perkirakan sekisar 1024 sampai 65536 dan dapat digunakan atau dilepaskan oleh pengguna sesuai kebutuhannya.
+\end{enumerate} 
+
+\paragraph{}
+\hspace{1cm}
+Sesuai dengan kegunaan sebuah Port yaitu media penghubung untuk melewatkan data masuk atau keluar pada jaringan komunikasi. Sebagai contoh jenis-jenis port yang digunakan pada beberapa protokol jaringan :\\
+\begin{enumerate}
+\item HTTP (Hypertext Transfer Protocol) menggunakan port 80.
+\item HTTPS (HTTP Secure) menggunakan port 443.
+\item FTP (File Transfer Protocol menggunakan port 21.
+\item SSH (Secure Shell) menggunakan nama port 22.
+\item Telnet menggunakan port 23.
+\item IMAP (Internet Message Access Protocol) menggunakan port 143.
+\end{enumerate}
+
+\paragraph{}
+
+Tabel 1 Perbedaan UDP dan TCP\\
+\begin{tabular}{|p{4.5cm}|p{5cm}|p{5cm}|}
+
+\hline
+Karakteristik/Deskripsi & UDP & TCP \\
+\hline
+Deskripsi Umum & "Pembungkus paket" yang
+memiliki kecepatan tinggi
+namun rendah dalam
+fungsi. &Protokol dengan fitur
+lengkap yang
+memungkinkan aplikasi
+untuk mengirim data
+dengan terpercaya tanpa
+khawatir tentang masalah
+pada network layer.\\
+\hline
+
+\hline
+Data Interface Ke
+Aplikasi & Message base-based dikirim
+dalam paket dengan ciri
+tersendiri oleh aplikasi. & Stream-based; Data dikirim
+oleh aplikasi tanpa
+struktur khusus.\\
+\hline
+
+\hline
+Pengiriman Ulang & Tidak dilakukan. Aplikasi
+harus mendeteksi
+kehilangan data dan
+mengirim kembali jika
+dibutuhkan. & Pengiriman dari seluruh
+data telah diatur, dan
+kehilangan data akan
+dikirim kembali secara
+otomatis.\\
+\hline
+
+\hline
+Fitur yang
+disediakan untuk
+mengatur flow o f
+Data & Tidak ada. & Flow control menggunakan
+sliding windows,
+pengaturan ukuran jendela
+heuristics, algoritma
+penghindar kemampatan.\\
+\hline
+
+\hline
+Overhead & Sangat kecil. & Kecil, tetapi lebih besar dari
+UDP.\\
+\hline
+
+\hline
+Kecepatan
+pengiriman & Sangat tinggi. & Tinggi tetapi tidak setinggi
+UDP.\\
+\hline
+
+\hline
+Kesesuaian
+kuantitas data & Kuantitas data kecil hingga
+sedang. & Kuantitas data kecil hingga
+sangat besar.\\
+\hline
+
+\end{tabular}
+
+
+
+\subsection{Fungsi Port}
+\paragraph{}
+\hspace{1cm}
+Port mempunyai fungsi sangat vital dalam sebuah jaringan sebagai pintu masuk atau jalur yang digunakan untuk melakukan koneksi masuk dan keluar ke komputer lain pada jalur komunikasi. Setiap port mempunyai fungsi masing masing contohnya sebagai berikut:
+\begin{enumerate}
+\item Port 21 adalah port FTP yang berfungsi untuk tukar menukar data dalam suatu jaringa.
+\item Port 22 adalah port SSH yang berfungsi untuk  melakukan koneksi amandalam suatu jaringan.
+\item Port 80 adalah port Http yang berfungsi untuk mentransfer dokumen dalam World Wide Web (WWW).
+\item Port 81 adalah port yang digunakan sebagai Port altenatifhosting website ketika Port 80 diblok.
+\item Port 23 adalah port yang digunakan untuk Telnet . Port 23 digunakan oleh client telnet untuk berhubungan dengan server telnet.
+\item Port 25 adalah port yang digunakan ketika pengirim email  mengirim email ke server email.
+\item Port 110 adalah POP Server  jika menggunakan Mail server dan pengguna login ke dalam mesin tersebut menggunakan POP3 (Post Office Protokol) atau IMAP4 (Internet Message Access Protocol) untuk menerima emailnya, sedangkan POP3 merupakan protokol untuk mengakses mail box.
+\item Port 3389 adalah Remote Desktop Port yang  mempunyai fungsi untuk remote desktop di dalam sistem operasinya Windows XP.
+\item Port 389 adalah LDAP Server LDAP atau Protokol Akses Direktori Ringan yang telah
+menjadi populer untuk akses Direktori, Nama, Telepon, dan Alamat direktori.
+\item Port 143, IMAP4 digunakan untuk Mail Server dimana disitu terdapat tiga komponen antara lain MTA (Mail Transfer Agent), MDA (Mail Dilivery Agent), dan MUA (Mail User Agen). Zimbra adalah software opensource mail server yang sering digunakan karena mudahnya dalam instalasi dan pengelolaannya, sehingga di masa depan kemungkinan akan semakin umum dan popular penggunannya postfix, sendmail, dan qmail adalah beberapa contohnya.
+\item Port 443, atau biasa disebut port HTTPS webserver (SSL) yang digunakan untuk menerima permintaan dari HTTP.
+\item Port 5631 dapat menjalankan server PCAanywhere menggunakan internet untuk menghubungkan PC dari jarak yang tidak dekat.
+Sedangkan 
+\item Port 5900 dapat menjalankan sebuah server yaitu VNC yang berguna untuk menjalankan sebuah server dari jarak jauh.
+\item Port 111 atau disebut juga port portmapper digunakan oleh Network Information Service atau NFS.
+\item Port 3306 merupakan port yang biasanya para programmer gunakan untuk mengelola database karena port ini terhubung dengan Mysql
+\item Port 1080 adalah Socks Proxy Server.
+\item Port 3128 adalah Server Proxy Squid.
+\item Port 3306 adalah Server MySQL.
+\item Port 5432 adalah Server PostgreSQL.
+\item Port 6000 mencakup port 6000 - 6009 dan X11 TCP port untuk meremotenya. Dapat mensupport berbagai macam tampilan yang memiliki port single.
+\item Port 6346 Gnutella, gnutella ialah protocol yang dapat membagi kertas dan mempunyai penyimpanan sendiri, tersedia diunduh bagi semuanya
+\item Port 6667 sejenis IRC yang merupakan perangkat lunak server, yang memungkinkan bertukar pesan teks secara real time.
+\item Port 6699 memungkinkan orang banyak saling berbagi informasi melalui dunia maya dan  merupakan sistem file sharing peer-to-peer.
+ini merupakan contoh tabel \ref{table:contoh} ukuran kecil.
+
+
+\end{enumerate}
