@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{article} 
+\linespread{1.5}
+\begin{document}
+\title{APLIKASI WEB SERVICE}
+\maketitle
+
+%Nama Kelompok 1
+\begin{enumerate}
+\item Farid Ariyanto Saputra
+\item Nurgivani Syarifatul Husna
+\item Velariza Alvioletta
+\item Yogi Aditya Saputra
+\end{enumerate}
+
+\section{REST}
+\subsection{Pengertian REST}
+REST atau singkatan dari Representational State Transfer adalah salah satu model arsitektur web yang memiliki aturan berupa interface yang seragam sehingga jika diterapkan dalam web service akan meningkatkan dan memaksimalkan kinerja dalam web sevice, terutama dalam performa dan kemudahan dalam memodifikasi. Dalam arsitektur REST, data-data serta fungsinya dianggap sebagai sumber daya yang biasa di akses melalui URI, yang merupakan singkatan dari Uniform Resource Identifier yang biasanya berupa link pada web.
+\subsection{Konsep Kerja REST}
+REST merupakan salah satu jenis web service yang menerapkan konsep perpindahan antar state. Jika digambarkan state bisa dikatakan seperti, saat browser meminta suatu halaman web, lalu server akan mengirimkan state halaman web yang diminta kepada browser. (Tidwell, D., 2001) Begitu juga REST mempunyai konsep kerja, dengan bernavigasi dengan link-link HTTP untuk melakukan suatu aktivitas tertentu, seakan telah terjadi perpindahan state, dari state satu ke state lainnya. Perintah  HTTP yang biasanya digunakan adalah fungsi GET, POST, PUT dan DELETE. Respon yang akan dikirim berupa hasil dalam bentuk XML yang sederhana tanpa ada protokol pembagian paket data supaya informasi yang diterima lebih mudah dibaca dan tidak ada pemecahan data pada pengguna atau client.
+\subsection{Arsitektur REST}
+Representational State Transfer (REST)
+\begin{itemize}
+\item Aritektur REST \\
+REST adalah penyederhanaan dari HTTP. HTTP sering menjadi sesuatu yang tidak diperlukan atau sesuatu yang menyulitkan. Tetapi, dalam beberapa tahun sekarang, dengan kembalinya prinsip REST telah mengindikasikan bahwa HTTP telah cukup baik di atas segalanya.
+\item API Flexibility dan Simplicity 
+\item Keuntungan Arsitektur REST 
+\item Representasi JSON (JavaScript Object Notation) 
+\end{itemize}
+\subsection{Perintah Dalam REST}
+Perintah HTTP dalam REST antara lain :
+\subsubsection{GET}
+Dalam layanan RESTful webservices terdapat pemetaan metode HTTP yang salah staunya terdiri dari GET. GET merupakan salah satu fungsi CRUD dalam RESTful webservices. Fungsi GET adalah untuk menyediakan layanan read-only pada resource. Untuk kode respons sukses dan error yang digunakan untuk perintah GET adalah 200 untuk kode sukses dan 404 untuk kode error. 
+
+POST, salah satu perintah HTTP yang berfungsi untuk membuat resource baru.
+PUT, salah satu perintah HTTP yang berfungsi untuk memperbaharui resource yang sebelumnya sudah dibuat.
+DELETE, salah satu perintah HTTP yang berfungsi menghapus resource yang telah di buat.
+\subsubsection{PUT}
+PUT merupakan metode http request yang biasanya untuk melakukan update data sumber daya. Put digunakan untuk mengganti sumber daya asli pada interface dengan prinsip rest dengan definisi metode http. Permintaan yang dihasilkan berfungsi untuk memperbarui dengan cara  mengidentifikasi permintaan uri atau dalam artian transfer representasi baru dari sumber daya dari klien ke server akan meminta alih-alih mentransfer atribut sumber daya sebagai seperangkat nama parameter dan nilai pada permintaan uri.
+\subsubsection{DELETE}
+Dalam layanan web RESTful, ada pemetaan antara metode HTTP  yang salah satunya ada perintah DELETE. DELETE. DELETE biasa digunakan untuk removes a resource atau menghapus sumber daya. Untuk kode respons sukses dan error yang digunakan untuk perintah DELETE adalah 200 untuk kode sukses dan 400 atau 404 untuk kode error atau gagal. 
+\subsubsection{POST}
+HTTP POST adalah salah satu layanan request dalam RESTful. Penggunaan HTTP POST merupakan suatu layanan yang digunakan ketika ingin membuat resource baru atau sumber daya baru. Pada sisi client, request di proses dapat dengan menambahkan resource yang teridentifikasi melalui body sebagai sub body dengan resource dalam request URL(Uniform Resource Language).
+
+\section{HTTP Status Code}
+\subsection{200 (OK)}
+HTTP Status Code 200 memiliki arti permintaan yang dilakukan oleh pengguna telah sukses dieksekusi. Didalam RESTful, HTTP Status Code 200 sering digunakan untuk indikasi sukses dalam melakukan permintaan dari sisi client. Berbeda dengan 204, Status 200 mengembalikan informasi tergantung metode yang digunakan.
+Sedangkan pada Status 204, selalu mengirimkan informasi dengan metode PUT, POST, maupun DELETE.
+\subsection{201 (Accepted)}
+Kode 202 (Accepted) artinya request diterima tapi server tidak melakukan apapun. Kode 202 juga biasa digunakan untuk tindakan yang prosesnya lama. Maksudnya , permintaan telah diterima untuk di proses, tetapi proses belum selesai. 
+Maksud dari itu semua juga, server menerima permintaan dari beberapa proses lainnya (misalkan batch-oriented proses yang hanya berjalan sehari sekali) tanpa membutuhkan agen user penghubung server hingga proses selesai.
+\subsection{202 (Created)}
+Sebuah rest api akan merespon dengan kode status 201 setiap sebuah koleksi diciptakan, atau menambahkan toko, sumber daya baru atas permintaan klien. Mungkin juga ada waktu ketika sumber daya baru dibuat sebagai hasil dari beberapa tindakan pengontrol, yang dalam hal ini 201 juga akan menjadi respons yang tepat dan akurat.
+\subsection{204 (No Content)}
+Kode status 204 (No Content) biasanya dikirim sebagai respons atas permintaan PUT, POST, atau DELETE, ketika API REST menolak untuk mengirim sebuah pesan status kembali atau perwakilan apa pun di response message’s body.\\
+Respons 204 TIDAK HARUS menyertakan message’s body, karena selalu diakhiri oleh baris yang kosong pertama setelah bidang header.
+
+\end{document}
