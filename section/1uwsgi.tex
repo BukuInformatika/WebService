@@ -17,3 +17,6 @@ uWSGI merupakan protokol komunikasi untuk jaringan, maka uWSGI yang akan menangg
 \subsection{definisi uswgi}
 server aplikasi uWSGI dapat menangani permintaan dinamis. testbed dapat dikontrol dengan menentukan sinyal Simulink dan parameter (misalnya variabel referensi, gain factor, parameter fungsi transfer) atau fungsi (misalnya start / stop, reset, dan perpindahan aliran sinyal). Karena penggunaan UDP blok Simulink, para RCL dapat disalurkan ke testbeds Simulink dan dikontrol dengan mudah \cite{zumsandedesign}.
 
+\subsection{definisi uwsgi}
+Meskipun yang sangat konvensi penamaan membingungkan, uWSGI itu sendiri adalah sebuah proyek besar dengan banyak komponen, yang bertujuan untuk memberikan full [software] stackuntuk building hosting services. Salah satu komponen ini, server uWSGI, menjalankan aplikasi Python WSGI. Ini mampu menggunakan berbagai protokol, termasuk protokol kawat uwsgi sendiri , yang quasi-identik dengan SCGI. Dalam rangka memenuhi (dimengerti) permintaan untuk menggunakan server HTTP yang berdiri sendiri di depan server aplikasi, nginx dan Cherokee server web Modular untuk mendukung uWSGI (berperforma terbaik) 's uwsgi protokol untuk memiliki kontrol langsung atas proses nya\cite{dong2015chemdes}.
+
