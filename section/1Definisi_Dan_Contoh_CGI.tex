@@ -1,19 +1,22 @@
-%membuat dokumen 
-\documentclass{article} 
-\usepackage[indonesian]{babel} %untuk pemenggalan kata bahasa indonesia 
-\title{Definisi Dan Contoh CGI} 
-\author{Kelompok 2} 
-\date{4 April 2018} 
+%membuat dokumen
+\documentclass{article}
+\usepackage[indonesian]{babel} %untuk pemenggalan kata bahasa indonesia
+\title{Definisi Dan Contoh CGI}
+\author{Kelompok 2}
+\date{4 April 2018}
 
-\begin{document} 
-\maketitle 
-\section{Abstraksi} 
-Common Gateway Interface atau CGI adalah interface sederhana untuk menjalankan program external,perangkat lunak/software  atau gateway dibawah information server di dalam platform independen.saat ini information server telah didukung oleh HTTP Server 
-Antar muka ini telah digunakan oleh world wide web  atau www sejak 1993. Spesifikasinya didefinisikan sebagai parameter praktek terkini dari antarmuka CGI/1.1 yang dikembangkan dan didokumentasikan di Pusat Aplikasi supercomputer nasional AS. 
+\begin{document}
+\maketitle
+\section{Abstraksi}
+Common Gateway Interface atau CGI adalah interface sederhana untuk menjalankan program external,perangkat lunak/software  atau gateway dibawah information server di dalam platform independen.saat ini information server telah didukung oleh HTTP Server
+Antar muka ini telah digunakan oleh world wide web  atau www sejak 1993. Spesifikasinya didefinisikan sebagai parameter praktek terkini dari antarmuka CGI/1.1 yang dikembangkan dan didokumentasikan di Pusat Aplikasi supercomputer nasional AS.
 \section{Tujuan}
-Common Gateway Interface (CGI) mengijinkan HTTP server dan script CGI untuk berbagi tanggung jawab untuk menanggapi permintaan client. Permintaan client terdiri dari Uniform Resource Identifier (URI),  metode permintaan, dan berbagai informasi tambahan tentang permintaan yang disediakan oleh transport protocol. 
+Common Gateway Interface (CGI) mengijinkan HTTP server dan script CGI untuk berbagi tanggung jawab untuk menanggapi permintaan client. Permintaan client terdiri dari Uniform Resource Identifier (URI),  metode permintaan, dan berbagai informasi tambahan tentang permintaan yang disediakan oleh transport protocol.
 CGI mendefinisikan parameter abstrak, dikenal sebagai meta-variabel, yang menggambarkan permintaan client. Bersama  dengan programmer interface konkrit, ini menentukan platform-independent interface antara script dan HTTP server.
 Server bertanggung jawab untuk mengelola koneksi, transfer data, transportasi, dan masalah jaringan yang terkait dengan permintaan klien, sedangkan skrip CGI menangani masalah aplikasi, seperti pemrosesan pand dokumen akses data.
 \section{Persyaratan}
 Suatu implementasi tidak sesuai jika gagal memenuhi satu atau lebih persyaratan untuk protokol yang diimplementasikannya. Suatu implementasi yang memenuhi semua keharusan dan semua persyaratan untuk fitur-fiturnya dikatakan tanpa syarat sesuai. Salah satu yang memenuhi semua persyaratan tetapi tidak semua persyaratan untuk fitur-fiturnya dikatakan bersyarat secara kondisional.
-\end{document}
+\section{Spesifikasi}
+Tidak semua fungsi dan fitur CGI didefinisikan di bagian utama dari spesifikasi ini. Frase berikut digunakan untuk menggambarkan fitur yang tidak ditentukan.
+Fitur ini mungkin berbeda antara sistem, tetapi harus sama untuk implementasi yang berbeda menggunakan sistem yang sama. Suatu sistem biasanya akan mengidentifikasi kelas sistem operasi. Beberapa sistem didefinisikan di bagian 7 dokumen ini. Sistem baru dapat ditentukan oleh spesifikasi baru tanpa revisi  dokumen ini.
+\end{document} 
