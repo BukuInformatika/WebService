@@ -17,7 +17,7 @@ Modularitas dan portabilitas merupakan faktor pentig karena termasuk atribut kua
 \section{Paradigma Berorientasi Obyek}
 Paradigma berorientasi obyek adalah suatu cara mengorganisasikan perangkat lunak sebagai kumpulan obyek- obyek yang memiliki sifat (struktur data) dan perilaku (fungsi) yang saling berinteraksi melalui pesan (message). Konsep yang menjadi pilar paradigma berorientasi obyek adalah : abstraction, encapsulation, inheritance, polymorphism. Abstraksi dipresentasikan sebagai suatu kelas yang digunakan untuk instansiasi objek.
 
-\section{Obyek dan Class}
+\subsection{Obyek dan Class}
 Obyek (object) merupakan representasi dari entitas sebagai sarana pembungkusan karakteristik struktural
 yang dapat disebut atribut dan karakteristik perilaku yang disebut operasi (operation/method). Atribut 
 mempresentasikan karakteristik entitas yang menentukan keadaan suatu obyek jika menerima pesan.
@@ -25,8 +25,12 @@ Operasi tersebut dapat berupa prosedur maupun fungsi. Kelas merupakan deskripsi 
 saat implementasi (coding).
 
 
-\section{Penurunan Sifat}
+\subsection{Penurunan Sifat}
 Penurunan sifat (inheriatance) adalah kemampuan suatu obyek mewarisi sifat dari obyek yang lain. Kemampuan ini menghasilkan program yang efesien karena ada mekanisme pemakaian kembali (resauble) kode program. Pemograman yang dibuat dapat menggunakan fungsi yang ada dalam file DLL dengan mengirim parameter dan menerima balikan dari fungsi dan selama dapat mengikuti kesepakatan dalam pemangglan fungsi atau prosedure tersebut.
 
+
+\section{Dynamic link library}
+System operasi windows dapat menggunakan proses linker konvensional (proses linker secara statis) dengan file berinteraksi LIB dan dapat secara dinamis menggunakan dynamic link library (DLL).
+proses linking fungsi dari DLL secara fisik tidak disalin dan digabung kedalam executable file tetapi tetap terpisah dan dipanggil oleh executable file (“client”) pada saat runtime.
 
 \end{document}
