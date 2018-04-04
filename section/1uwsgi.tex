@@ -20,3 +20,13 @@ server aplikasi uWSGI dapat menangani permintaan dinamis. testbed dapat dikontro
 \subsection{definisi uwsgi}
 Meskipun yang sangat konvensi penamaan membingungkan, uWSGI itu sendiri adalah sebuah proyek besar dengan banyak komponen, yang bertujuan untuk memberikan full [software] stackuntuk building hosting services. Salah satu komponen ini, server uWSGI, menjalankan aplikasi Python WSGI. Ini mampu menggunakan berbagai protokol, termasuk protokol kawat uwsgi sendiri , yang quasi-identik dengan SCGI. Dalam rangka memenuhi (dimengerti) permintaan untuk menggunakan server HTTP yang berdiri sendiri di depan server aplikasi, nginx dan Cherokee server web Modular untuk mendukung uWSGI (berperforma terbaik) 's uwsgi protokol untuk memiliki kontrol langsung atas proses nya\cite{dong2015chemdes}.
 
+\subsection{definisi uwsgi}
+UWSGI adalah aplikasi yang memproses kode Python dan menyediakan WSGI (Layanan Web
+Gateway Interface) yang memungkinkan server web untuk berkomunikasi
+Dengan Django, yaitu, dalam prakteknya Nginx menawarkan traffic dan aplikasi Djangos ke uWSGI
+menangani lalu lintas yang diterima. WSGI adalah antarmuka standar untuk server
+dan komunikasi aplikasi.
+Untuk setiap aplikasi Django, konfigurasikan pengaturan uWSGI yang dapat digunakan
+Tentukan berbagai pengaturan terkait server. Gambar 16 menunjukkan
+definisi yang dibuat dalam file konfigurasi uWSGI dalam aplikasi perizinan\cite{wood2018ccbuilder}.
+
