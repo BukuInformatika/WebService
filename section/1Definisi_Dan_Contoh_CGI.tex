@@ -35,4 +35,13 @@ implementasi server tertentu dan konfigurasinya.Server mungkin untuk mengijinkan
 \item Memungkinkan untuk memilih URI Kanonis dari kumpulan kemungkinan nilai untuk setiap skrip,atau
 \item Dapat mengimplementasikan pilihan URI lain dari set.
 \end{enumerate}
+Dari meta-variabel yang dihasilkan, sebuah URI, 'Script-URI', dapat
+dibangun. Ini HARUS memiliki properti yang jika klien dapat
+mengakses URI ini, maka skrip akan dieksekusi
+dengan nilai yang sama untuk SCRIPT_NAME, PATH_INFO, dan QUERY_STRING
+meta-variabel. Script-URI memiliki struktur generic URI sebagai yang
+didefinisikan dalam bagian 3 dari RFC 2396 [2], dengan pengecualian objek itu
+parameter dan pengidentifikasi fragmen tidak diizinkan. Beragam
+komponen dari Script-URI didefinisikan oleh beberapa
+meta-variabel (lihat di bawah);
 \end{document} 
