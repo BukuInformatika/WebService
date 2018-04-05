@@ -43,6 +43,7 @@ dan diakhiri karakter tagar (#).  Modul dial up membutuhkan modul mikrokontroler
 sebagai antarmuka antara mikrokontroler dan kabel telepon. Modul ini hanya dapat dihubungkan dengan 
 sebuah mikrokontroler DT-51 MinSys.
 
+
 \section{Pembuatan Modul-modul Pengembangan}
 \subsection{Pembuatan Modul Pengiriman SMS}
 Pengiriman SMS dilakukan dengan cara menghubungkan telepon selular ke PC menggunakan kabel data. 
@@ -51,6 +52,13 @@ Program yang digunakan untuk mengirimkan SMS menggunakan bahasa pemrograman Micr
 Mekanisme dial up dilakukan dengan menambahkan sebuah modul mikrokontroler ke dalam rangkaian mikrokontroler yang ada
 Modul tambahan ini berfungsi sebagai antarmuka mikrokontroler ke kabel telepon atau ke pesawat telepon. Modul ini kompatibel penuh dengan mikrokontroler. 
 Program untuk mengoperasikan rangkaian mikrokontroler ini dibangun dengan menggunakan bahasa assembler untuk mikrokontroler yang selanjutnya dikompilasi menjadi format Hexadesimal.
+
+
+\section{Implementasi Modul}
+\subsection{Implementasi Modul Pengiriman SMS}
+Program yang dibuat berdasarkan algoritma pengiriman SMS dienkapsulasi menjadi sebuah modul. Penyisipan fungsi pemanggilan modul pengiriman SMS dilakukan sebelum program tersebut mengirimkan sinyal ke komputer server melalui jaringan nirkabel IEEE 802.11. Dengan demikian, diharapkan agar SMS diterima oleh pemilik rumah tidak lama setelah petugas keamanan mendapatkan sinyal. 
+\subsection{Implementasi Modul Dial Up}
+Modul dial up yang dibuat dengan bahasa assembler dienkapsulasi menjadi sebuah fungsi yang dapat digunakan dan dipanggil oleh program assembler lain. Pemanggilan fungsi dial up ini dilakukan setelah prosedur pengiriman data ke komputer melalui komunikasi serial.
 
 
 
