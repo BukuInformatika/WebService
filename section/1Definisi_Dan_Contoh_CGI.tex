@@ -26,4 +26,13 @@ Server harus menerjemahkan dan mengkonversikan protocol di request data client y
 Jika server menerapkan authentication untuk permintaan, maka jangan jalankan skrip kecuali permintaan melewati  yang telah ditentukan oleh access controls.
 \section{Script Selection}
 Server menentukan CGI mana yang akan dieksekusi berdasarkan URI bentuk generik yang disediakan oleh klien. URI ini mencakup jalur hierarkis dengan komponen yang dipisahkan oleh "/". Untuk setiap permintaan tertentu, server akan mengidentifikasi semua atau bagian utama dari jalur ini dengan skrip individu, sehingga menempatkan skrip pada titik tertentu dalam hierarki jalur. Sisa jalur, jika ada, pengidentifikasi sumber daya atau sub-sumber untuk ditafsirkan oleh skrip.
+Informasi mengenai bagian ini teresedia untuk skrip dalam variabel-variabel meta,di deskripsikan di bawah.Support atau dukungan untuk non hirarki skema URI diluar ruang lingkup spesifikasi ini
+\section{Script-URI}
+Pemetaan dari URI yg di minta klien ke skrip yang dipilih, ditentukan oleh
+implementasi server tertentu dan konfigurasinya.Server mungkin untuk mengijinkan script untuk di identifikasi dengan beberapa bagian URI hirarki yang berbeda,dan karna itu pula maka diizinkan untuk mengganti URI oleh anggota lain dalam satu set atau bagian selama pemrosesan variabel variabel meta.Server :
+\begin{enumerate}
+\item Mungkin untuk mempertahankan URI dalam permintaan atau request klien tertentu,atau
+\item Memungkinkan untuk memilih URI Kanonis dari kumpulan kemungkinan nilai untuk setiap skrip,atau
+\item Dapat mengimplementasikan pilihan URI lain dari set.
+\end{enumerate}
 \end{document} 
