@@ -40,5 +40,17 @@ yang sulit dibaca dan dimodifikasi sebaliknya. uWSGI digambarkan di situs webnya
 modul yang disertakan untuk berbicara dengan server uWSGI\cite{mulone2012web2py}.
 
 \subsection{cara instalasi USWGI}
-Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses\cite{true150828teaplot}
+Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses\cite{true150828teaplot}.
+
+\subsection{instalasi uWSGI}
+Untuk uWSGI kita perlu menginstallnya seperti berikut :
+Ketik, “ pip install uwsgi “, (tanpa tanda “ ”) untuk awal menginstall uWSGI,
+Sekarang, di dalam folder bin virtualenv kamu, akan ada perintah uWSGI. cari
+di mana letak perintah uWSGI itu karena kita akan membutuhkannya. Setelah itu
+Buat file wsgi.py di dalam folder proyek Anda dengan konten berikut: 
+# coding:utf-8
+from main import app_factory
+app = app_factory(name="myproject")
+Sebuah uWSGI menggunakan instance aplikasi dari file yang telah kita buat di atas untuk terhubung ke aplikasi kita. Sebuah app_factory adalah fungsi dari bawaan pabrik yang menciptakan aplikasi kita. Pastikan saja aplikasi yang dibuat sudah dikonfigurasi dengan benar. Selanjutnya, kita melanjutkan untuk menghubungkan uWSGI ke aplikasi kita \cite{maia2015building}.
+
 
