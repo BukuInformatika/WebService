@@ -33,4 +33,9 @@ Penurunan sifat (inheriatance) adalah kemampuan suatu obyek mewarisi sifat dari 
 System operasi windows dapat menggunakan proses linker konvensional (proses linker secara statis) dengan file berinteraksi LIB dan dapat secara dinamis menggunakan dynamic link library (DLL).
 proses linking fungsi dari DLL secara fisik tidak disalin dan digabung kedalam executable file tetapi tetap terpisah dan dipanggil oleh executable file (“client”) pada saat runtime.
 
+\section{Perancangan Modul-modul Pengembangan}
+\subsubsection{Perancangan Modul Pengiriman SMS}
+Mekanisme pengiriman SMS yang digunakan adalah pengiriman melalui telepon selular. Telepon selular yang digunakan tersebut dihubungkan ke Komputer menggunakan kabel data. Ketika sinyal datang, program yang berada pada Komputer akan menginstruksikan telepon selular untuk mengirimkan pesan ke nomor telepon selular pemilik rumah.
+mengenali instruksi ini sebagai instruksi AT Command untuk mengirim SMS. AT command merupakan instruksi-instruksi yang digunakan untuk mengendalikan telepon seluler atau modem GSM/GPRS yang dihubungkan ke Komputer.
+
 \end{document}
