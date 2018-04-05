@@ -1,17 +1,12 @@
-%membuat dokumen
-\documentclass{article}
-\usepackage[indonesian]{babel} %untuk pemenggalan kata bahasa indonesia
-\title{Install the Windows Subsystem for Linux}
-\author{Kelompok 4
-1. Farhan Maulana       1164012
-2. Seta Permana         1164027
-3. Dadi Hasanudin       1164006
-4. Septi Nurhidayah     1164027
-5. Wulan Dwi Hartati    1164030}
-\date{4 April 2018}
+%KELOMPOK 4
+%\begin{enumerate}
+%\item Dadi Hasanudin
+%\item Farhan Maulana
+%\item Septi Nurhidayah
+%\item Seta Permana
+%\item Wulan Dwi Hartati
+%\end{enumerate}
 
-\begin{document}
-\maketitle
 \section{Pengenalan Linux dan Windows}
 Sistem Operasi
 
@@ -23,9 +18,11 @@ Dan ada yang menjadi perbedaan Linux dengan sistem operasi lainnya yaitu mengena
 
 Tentang subsystem, beberapa aplikasi  seperti bash script atau FLOSS yang ada di linux tidak akan memanggil layanan sistem operasi contohnya adalah Windows NT yang asli secara langsung, tapi justru sebaliknya, aplikasi ini akan melalui satu atau lebih subsistem dynamic-link libraries (DLL). Yang dilakukan DLL subsistem disini adalah untuk menerjemahkan fungsi yang tidak terdokumentasi menjadi terdokumentasi ke dalam panggilan layanan sistem Windows NT.
 
+\section{Windows Subsystem for Linux}
+Windows Subsystem for Linux (WSL) atau yang biasa disebut dengan Bash on Ubuntu on Windows yang dimana WSL ini diluncurkan dan dikenalkan pada Windows 10. WSL menggunakan GNU/Linux dari Ubuntu. Hal inilah yang memungkinkan pengguna untuk dapat memakai manajer paket dari Ubuntu yaitu apt untuk install, update, dan uninstall aplikasi yang berasal dari repositori Ubuntu tersebut.
+
 Windows NT memiliki desain yang berlapis dengan bagian low-level dari sistem yang di mana arsitektur atau platform yang spesifik diisolasi ke dalam modul yang terpisah. Sehingga lapisan atas dari sistem dapat terlindungi dari adanya perbedaan-perbedaan antara platform dari hardware. Dua komponen penting yang menyediakan portabilitas system operasi adalah HAL dan kernel.
 
 \section{Integrating Flexible Support for Security Policies into the Linux Operating System}
 Mekanisme perlindungan sistem operasi utama saat ini tidak memadai untuk mendukung persyaratan kerahasiaan dan integritas untuk sistem akhir. Kontrol akses wajib (MAC) diperlukan untuk mengatasi persyaratan tersebut, tetapi keterbatasan MAC tradisional telah menghambat pengadopsiannya ke dalam sistem operasi utama. National Security Agency (NSA) bekerja dengan Secure Computing Corporation (SCC) untuk mengembangkan arsitektur MAC fleksibel yang disebut Flask untuk mengatasi keterbatasan MAC tradisional. NSA telah mengimplementasikan arsitektur ini dalam sistem operasi Linux, menghasilkan prototipe Protected-Enhanced Linux (SELinux), untuk membuat teknologi tersedia untuk komunitas yang lebih luas dan untuk memungkinkan penelitian lebih lanjut ke dalam sistem operasi yang aman. NAI Labs telah mengembangkan contoh konfigurasi kebijakan keamanan untuk menunjukkan manfaat arsitektur dan menyediakan landasan bagi orang lain untuk digunakan. Makalah ini menjelaskan arsitektur keamanan, mekanisme keamanan, antarmuka pemrograman aplikasi, konfigurasi kebijakan keamanan, dan kinerja SELinux.
 
-\end{document} 
