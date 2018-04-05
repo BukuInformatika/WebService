@@ -22,5 +22,6 @@ Fitur ini mungkin berbeda antara sistem, tetapi harus sama untuk implementasi ya
 \section{Invoking the Script}
 Tanggung Jawab Server
 Server bertindak sebagai gateway aplikasi. Ia menerima permintaan dari klien, memilih skrip CGI untuk menangani permintaan, mengubah permintaan klien menjadi permintaan CGI, mengeksekusi skrip dan mengubah respon CGI menjadi respons untuk klien. Saat memproses permintaan klien, itu bertanggung jawab untuk mengimplementasikan protokol atau otentikasi dan keamanan tingkat transportasi. Server juga dapat berfungsi dengan cara yang tidak transparan, memodifikasi permintaan atau tanggapan untuk menyediakan beberapa layanan tambahan, seperti transformasi jenis media atau pengurangan protocol.
-
+Server harus menerjemahkan dan mengkonversikan protocol di request data client yang dibutuhkan pada spesifikasi ini. Selanjutnya, server mempertahankan responsibilitynya kepada client untuk menyesuaikan dengan protocol network yang relevanbahkan ketika skrip CGI (Common Gateway Intrface) gagal menyesuaikan spesefikasi ini.
+Jika server menerapkan authentication untuk permintaan, maka jangan jalankan skrip kecuali permintaan melewati  yang telah ditentukan oleh access controls.
 \end{document} 
