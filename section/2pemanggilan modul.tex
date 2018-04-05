@@ -39,8 +39,15 @@ Mekanisme pengiriman SMS yang digunakan adalah pengiriman melalui telepon selula
 mengenali instruksi ini sebagai instruksi AT Command untuk mengirim SMS. AT command merupakan instruksi-instruksi yang digunakan untuk mengendalikan telepon seluler atau modem GSM/GPRS yang dihubungkan ke Komputer.
 
 \section{Pembuatan Modul-modul Pengembangan}
+
 \subsection{Pembuatan Modul Pengiriman SMS}
 Pengiriman SMS dilakukan dengan cara menghubungkan telepon selular ke PC menggunakan kabel data. 
 Program yang digunakan untuk mengirimkan SMS menggunakan bahasa pemrograman Microsoft Visual Basic.NET 2003. Program ini membutuhkan library tambahan yang berisi class-class yang dapat digunakan untuk komunikasi ke telepon selular. Library yang digunakan adalah GSMComm yang dapat diunduh secara gratis dari internet. 
+
+\subsection{Perancangan Modul Dial-Up}
+Modul dial merupakan modul didalam sebuah software isi ulang pulsa dengan metode dial atau call.Jika menggunakan handphone kita sering menggunakan metode dial ini ketika cek pulsa. Biasanya modul dial diawali dengan karakter bertanda bintang (*) 
+dan diakhiri karakter tagar (#).  Modul dial up membutuhkan modul mikrokontroler tambahan 
+sebagai antarmuka antara mikrokontroler dan kabel telepon. Modul ini hanya dapat dihubungkan dengan 
+sebuah mikrokontroler DT-51 MinSys.
 
 \end{document}
