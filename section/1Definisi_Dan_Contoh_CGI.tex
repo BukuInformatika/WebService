@@ -60,4 +60,8 @@ Kecuali jika tidak ditentukan , file yang berisi skrip akan dipanggil sebagai pr
 Server menyiapkan permintaan CGI seperti yang akan dijelaskan di bagian 4. Skrip ini terdiri dari permintaan meta-variabel yang telah tersedia untuk skrip pada eksekusi dan permintaan data pesan. Data permintaan tidak perlu segera tersedia untuk skrip karena skrip dapat dijalankan sebelum semua data ini telah diterima oleh server dari klien.
 (meta-variabel digunakan dalam pemrograman untuk menggambarkan variabel atau objek yang bisa berubah. Nama tersebut sering tidak memiliki makna langsung tetapi tersedia untuk memiliki sesuatu yang spesifik untuk dirujuk).
 Tanggapan dari skrip dikembalikan ke server seperti yang dijelaskan di bagian 5 dan 6. Jika terjadi kondisi kesalahan, server dapat mengganggu atau menghentikan eksekusi skrip kapan saja dan tanpa peringatan. Itu bisa saja terjadi, misalnya, jika terjadi kegagalan transportasi antara server dan klien: jadi skrip HARUS siap untuk menangani penghentian yang tidak normal.
+\section{Meta-Variables}
+Informasi tentang permintaan berasal dari dua sumber yang berbeda: yaitu permintaan meta-variabel dan setiap pesan-body yang terkait.
+\section{Meta-Variables}
+Meta-variabel berisi data tentang permintaan yang dikirimkan dari server ke skrip, dan diakses oleh skrip dengan cara yang ditentukan sistem. Meta-variabel diidentifikasi oleh nama-nama yang tidak sensitif huruf: tidak boleh ada dua variabel yang berbeda yang namanya berbeda hanya dalam kasus saja.
 \end{document}  
