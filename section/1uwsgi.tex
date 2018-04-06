@@ -109,5 +109,21 @@ Setelah sertifikat SSL diperoleh, maka sertifikat perlu direferensikan pada konf
 Flask micro-framework merupakan pustaka Python yang dapat membantu untuk pembuatan Web. uWSGI merupakan implementasi protokol WSGI, uWSGI dapat menangani transmisi data
 antara kode Python . Perbedaan diantara uWSGI dan Flask adalah bahwa uWSGI berfungsi sebagai aplikasi namun tidak hanya aplikasi sekarang UWSGI dapat dijalankan dimana saja sedangkan Flask berfungsi untuk membantu pembuatan web \cite{mulerolinked}.
 
+\section{contoh uWSGi}
+uWSGI mendukung berbagai protokol dan cara untuk mengambil file  konfigurasi seperti stdin dan http. contohnya
+# uwsgi [option] [option 2] .. -w [wsgi.py with application callable]
 
+# Simple server running *wsgi*
+uwsgi --socket 127.0.0.1:8080 -w wsgi
+
+# Running Pyramid (Paster) applications
+uwsgi --ini-paste production.ini
+
+# Running web2py applications
+uwsgi --pythonpath /path/to/app --module wsgihandler
+
+# Running WSGI application with specific module / callable names
+uwsgi --module wsgi_module_name --callable application_callable_name
+uwsgi -w wsgi_module_name:application_callable_name 
+Meskipun mudah membingungkan dan sulit untuk dikelola, cara paling dasar untuk menjalankan uWSGI sama seperti skrip shell lainnya - dengan menyediakan konfigurasi yang diperlukan sebagai argumen\cite{cencini2017data}.
 
