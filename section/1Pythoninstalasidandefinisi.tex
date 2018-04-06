@@ -86,4 +86,8 @@ perhatikan contoh sederhana berikut: Kami memiliki fungsi "foo" yang mengambil b
 mengembalikan pelampung.
 \end{document}
 
+\section{Dunia python}
+Di dunia Python, bilangan bulat dan pelampung adalah obyek. Agar bisa memanggil fungsi foo
+dari Python kita harus menulis fungsi dalam C yang akan: mengambil objek Python sebagai argumen, ekstrak bilangan bulat nilai dari objek ini, panggil fungsi foo untuk nilai integer ini, paket float yang dikembalikan ke Python objek yang mewakili float, dan akhirnya mengembalikan objek itu ke interpreter. Kode ini disebut "pembungkus kode". Setelah kita memiliki kode pembungkus kita dapat mengkompilasi bersama dengan fungsi foo dan membuat yang dibagikan objek (dll di dunia Windows) yang kemudian dapat diimpor ke interpreter Python. Tentu saja, ekstensi ini sekarang bergantung pada platform. Proses pembungkusan kode ini dapat diotomatisasi hingga tingkat yang wajar menggunakan SWI.
+\end{document}
 
