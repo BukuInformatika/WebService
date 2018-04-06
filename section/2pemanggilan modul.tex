@@ -39,7 +39,7 @@ Mekanisme pengiriman SMS yang digunakan adalah pengiriman melalui telepon selula
 mengenali instruksi ini sebagai instruksi AT Command untuk mengirim SMS. AT command merupakan instruksi-instruksi yang digunakan untuk mengendalikan telepon seluler atau modem GSM/GPRS yang dihubungkan ke Komputer.
 \subsection{Perancangan Modul Dial-Up}
 Modul dial merupakan modul didalam sebuah software isi ulang pulsa dengan metode dial atau call.Jika menggunakan handphone kita sering menggunakan metode dial ini ketika cek pulsa. Biasanya modul dial diawali dengan karakter bertanda bintang (*) 
-dan diakhiri karakter tagar (#).  Modul dial up membutuhkan modul mikrokontroler tambahan 
+dan diakhiri karakter tagar. Modul dial up membutuhkan modul mikrokontroler tambahan 
 sebagai antarmuka antara mikrokontroler dan kabel telepon. Modul ini hanya dapat dihubungkan dengan 
 sebuah mikrokontroler DT-51 MinSys.
 
@@ -59,9 +59,8 @@ Program untuk mengoperasikan rangkaian mikrokontroler ini dibangun dengan menggu
 Program yang dibuat berdasarkan algoritma pengiriman SMS dienkapsulasi menjadi sebuah modul. Penyisipan fungsi pemanggilan modul pengiriman SMS dilakukan sebelum program tersebut mengirimkan sinyal ke komputer server melalui jaringan nirkabel IEEE 802.11. Dengan demikian, diharapkan agar SMS diterima oleh pemilik rumah tidak lama setelah petugas keamanan mendapatkan sinyal. 
 \subsection{Implementasi Modul Dial Up}
 Modul dial up yang dibuat dengan bahasa assembler dienkapsulasi menjadi sebuah fungsi yang dapat digunakan dan dipanggil oleh program assembler lain. Pemanggilan fungsi dial up ini dilakukan setelah prosedur pengiriman data ke komputer melalui komunikasi serial.
-
-
-
+\subsection{Menerima Pesan dalam Bentuk PDU}
+Menerima pesan dalam bentuk PDU tidak hanya isi pesan saja, melainkan terdapat berbagai data di dalamnya seperti informasi mengenai pengirimnya (nomor telepon pengirim), SMSC, dan Waktu Pengiriman Pesan. Data yang masuk berupaHexa – Decimal Octets. SMSC yaitu menerangkan banyaknya informasi pengirim yang terdapat pada pesan yang digunakan oleh pengirim.
 \end{document}
 
 
