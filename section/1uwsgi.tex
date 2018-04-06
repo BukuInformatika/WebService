@@ -74,7 +74,30 @@ Buat file wsgi.py di dalam folder proyek Anda dengan konten berikut:
 # coding:utf-8
 from main import app_factory
 app = app_factory(name="myproject")
-Sebuah uWSGI menggunakan instance aplikasi dari file yang telah kita buat di atas untuk terhubung ke aplikasi kita. Sebuah app_factory adalah fungsi dari bawaan pabrik yang menciptakan aplikasi kita. Pastikan saja aplikasi yang dibuat sudah dikonfigurasi dengan benar. Selanjutnya, kita melanjutkan untuk menghubungkan uWSGI ke aplikasi kita \cite{maia2015building}.
+Sebuah uWSGI menggunakan instance aplikasi dari file yang telah kita buat di atas untuk terhubung ke aplikasi kita. Sebuah app_factory adalah fungsi dari bawaan pabrik yang menciptakan aplikasi kita. Pastikan saja aplikasi yang dibuat sudah dikonfigurasi dengan benar. Selanjutnya, kita melanjutkan untuk menghubungkan uWSGI ke aplikasi kita.
+
+kita dapat memanggil binary uWSGI kita dengan semua parameter yang diperlukan untuk memuat wsgi kita. file ‘py’ langsung dari baris perintah atau kita dapat membuat file ‘ini’ , dengan semua konfigurasi yang diperlukan, dan hanya memberikannya ke binary. Seperti yang Anda lihat, pendekatan kedua biasanya lebih baik, jadi buatlah file ‘ini’ seperti berikut:
+
+[uwsgi] 
+user-home = /home/your-system-username 
+project-name = myproject
+project-path = %(user-home)/%(myproject) 
+# make sure paths exist 
+socket = %(user-home)/%(project-name).sock 
+pidfile = %(user-home)/%(project-name).pid 
+logto = /var/tmp/uwsgi.%(prj).log 
+touch-reload = /tmp/reload 
+chdir = %(project-path) 
+wsgi-file = %(project-path)/wsgi.py 
+callable = app 
+chmod-socket = 664 
+master = true 
+processes = 5 
+vacuum = true 
+die-on-term = true 
+optimize = 2
+
+The user-home, project-name, dan project-path adalah alias yang kita gunakan untuk membuat pekerjaan kita lebih mudah. Opsi socket menunjuk ke file socket yang akan digunakan server HTTP kita untuk berkomunikasi dengan aplikasi kita. \cite{maia2015building}.
 
 \subsection{cara instalasi uWSGI}
 untuk menginstall uWSGI pertama yang di perlukan adalah Python dan kompiler C (gcc dan clang). Bergantung pada bahasa yang ingin anda dukung. Anda akan membutuhkan header pengembanganya. Pada sistem Debian/ Ubuntu Anda dapat mengistalnya(dan sisanya dari infrastruktur yang di perlukan untuk membangun perangkat lunak). Dan juga dapat menggunakan pip untuk membangun binary dengadukungan phyton\cite{berger2017usage}.
