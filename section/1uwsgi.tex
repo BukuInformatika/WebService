@@ -1,10 +1,10 @@
 %Resume uwsgi D4TI2A Kelompok 3
 %\begin{enumerate}
 %\Aldi Maulana Yusuf                		1164001
-%\Dieni Hanifah               			1164008 
+%\Dieni Hanifah               			1164008
 %\Ikrima Ningrumsari Mulyana    		1164013
-%\Muhammad Farid Alwan Assyifa         1164017 
-%\Rojasqi Fadilla              			1164026 
+%\Muhammad Farid Alwan Assyifa         1164017
+%\Rojasqi Fadilla              			1164026
 %\end{enumerate}
 
 \section{definisi uwsgi}
@@ -12,7 +12,7 @@ UWSGI merupakan antarmuka Gateway Server Web yang ditulis dalam C, Nginx merupak
 menjalankan skrip python dan Uwsgi merupakan antarmuka yang didukung oleh web server nginx yang biasanya di implementasikan dengan kerangka kerja flask. Nginx terhubung ke protokol uWSGI untuk mengaktifkan frontend web berbasis kinerja tinggi WSGI. uWSGI melengkapi NGiNX dengan menangani dinamika konten \cite{balaji2013sentinel}.
 
 \subsection{definisi uwsgi}
-uWSGI merupakan protokol komunikasi untuk jaringan, maka uWSGI yang akan menanggapi Nginx melalui protokol WSGI. Lalu data dinamis dari interaksi antara program komputasi pada Python dan uWSGI yang akan behubungan dengan Nginx, maka Nginx dapat berkomunikasi dengan kode Python backend menggunakan uWSGI lalu uWSGI akan menjalankan kode Python pada program tersebut\cite{hirschbergreal}. 
+uWSGI merupakan protokol komunikasi untuk jaringan, maka uWSGI yang akan menanggapi Nginx melalui protokol WSGI. Lalu data dinamis dari interaksi antara program komputasi pada Python dan uWSGI yang akan behubungan dengan Nginx, maka Nginx dapat berkomunikasi dengan kode Python backend menggunakan uWSGI lalu uWSGI akan menjalankan kode Python pada program tersebut\cite{hirschbergreal}.
 
 \subsection{definisi uswgi}
 server aplikasi uWSGI dapat menangani permintaan dinamis. testbed dapat dikontrol dengan menentukan sinyal Simulink dan parameter (misalnya variabel referensi, gain factor, parameter fungsi transfer) atau fungsi (misalnya start / stop, reset, dan perpindahan aliran sinyal). Karena penggunaan UDP blok Simulink, para RCL dapat disalurkan ke testbeds Simulink dan dikontrol dengan mudah \cite{zumsandedesign}.
@@ -37,7 +37,21 @@ Cherokee adalah webserver yang ditulis dalam bahasa C, serupa dengan maksud untu
 Cherokee hadir dengan antarmuka administratif yang memungkinkan seseorang untuk mengelola konfigurasinya,
 yang sulit dibaca dan dimodifikasi sebaliknya. uWSGI digambarkan di situs webnya sebagai cepat
 (murni C), penyembuhan diri sendiri, server aplikasi kontainer pengembang / sysadmin-friendly. Cherokee punya
-modul yang disertakan untuk berbicara dengan server uWSGI\cite{mulone2012web2py}.
+modul yang disertakan untuk berbicara dengan server uWSGI.
+
+Instal paket atau unduh, kompilasi, dan instal komponen yang diperlukan.
+Buat file berikut di root instalasi web2py, dan beri nama uwsgi.xml:
+<uwsgi>
+<pythonpath> / home / web2py </ python>
+<modul> wsgihandler </ modul>
+<socket> 127.0.0.1:37719 </ socket>
+<master />
+<processes> 8 </ processes>
+<memory-report />
+</ uwsgi>
+Konfigurasi ini memunculkan delapan proses untuk mengelola beberapa permintaan dari
+Server HTTP. Ubah sesuai kebutuhan, dan konfigurasikan <pythonpath> ke instalasi
+akar web2py.\cite{mulone2012web2py}.
 
 \subsection{cara instalasi USWGI}
 Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses\cite{true150828teaplot}.
@@ -47,18 +61,19 @@ Untuk uWSGI kita perlu menginstallnya seperti berikut :
 Ketik, “ pip install uwsgi “, (tanpa tanda “ ”) untuk awal menginstall uWSGI,
 Sekarang, di dalam folder bin virtualenv kamu, akan ada perintah uWSGI. cari
 di mana letak perintah uWSGI itu karena kita akan membutuhkannya. Setelah itu
-Buat file wsgi.py di dalam folder proyek Anda dengan konten berikut: 
+Buat file wsgi.py di dalam folder proyek Anda dengan konten berikut:
 # coding:utf-8
 from main import app_factory
 app = app_factory(name="myproject")
 Sebuah uWSGI menggunakan instance aplikasi dari file yang telah kita buat di atas untuk terhubung ke aplikasi kita. Sebuah app_factory adalah fungsi dari bawaan pabrik yang menciptakan aplikasi kita. Pastikan saja aplikasi yang dibuat sudah dikonfigurasi dengan benar. Selanjutnya, kita melanjutkan untuk menghubungkan uWSGI ke aplikasi kita \cite{maia2015building}.
+
+\subsection{cara instalasi uWSGI}
+untuk menginstall uWSGI pertama yang di perlukan adalah Python dan kompiler C (gcc dan clang). Bergantung pada bahasa yang ingin anda dukung. Anda akan membutuhkan header pengembanganya. Pada sistem Debian/ Ubuntu Anda dapat mengistalnya(dan sisanya dari infrastruktur yang di perlukan untuk membangun perangkat lunak). Dan juga dapat menggunakan pip untuk membangun binary dengadukungan phyton\cite{berger2017usage}.
 
 
 \section{Contoh uWSGI}
 Flask micro-framework merupakan pustaka Python yang dapat membantu untuk pembuatan Web. uWSGI merupakan implementasi protokol WSGI, uWSGI dapat menangani transmisi data
 antara kode Python . Perbedaan diantara uWSGI dan Flask adalah bahwa uWSGI berfungsi sebagai aplikasi namun tidak hanya aplikasi sekarang UWSGI dapat dijalankan dimana saja sedangkan Flask berfungsi untuk membantu pembuatan web \cite{mulerolinked}.
 
-\subsection{cara instalasi uWSGI}
-untuk menginstall uWSGI pertama yang di perlukan adalah Python dan kompiler C (gcc dan clang). Bergantung pada bahasa yang ingin anda dukung. Anda akan membutuhkan header pengembanganya. Pada sistem Debian/ Ubuntu Anda dapat mengistalnya(dan sisanya dari infrastruktur yang di perlukan untuk membangun perangkat lunak). Dan juga dapat menggunakan pip untuk membangun binary dengadukungan phyton\cite{berger2017usage}. 
 
 
