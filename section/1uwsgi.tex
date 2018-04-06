@@ -54,7 +54,16 @@ Server HTTP. Ubah sesuai kebutuhan, dan konfigurasikan <pythonpath> ke instalasi
 akar web2py.\cite{mulone2012web2py}.
 
 \subsection{cara instalasi USWGI}
-Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses\cite{true150828teaplot}.
+Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses
+
+1.	Jika TEACUP belum terintall maka bias didownload maelalui laman http://downloads.sourceforge.net/
+	project/teacup/teacup-1.0.tar.gz. Informasi tambahan dapat diperoleh dari laporan CAIA nya.
+2.	kemudian kita extract arsip instalasi Teaplotnya kedalam  TEACUP  dengan direktorinya ($TEACUP_DIR)dengan cara : 
+	$ cd $TEACUP_DIR
+	$ tar xvf teaplot-0.1.txz
+3.	Setelah itu untuk menerapkan patch Teaplot kedalam file fabfile.py didalam direktori yang sama menggunakan peintah :
+	$ patch -p1 < teaplot.patch
+\cite{true150828teaplot}.
 
 \subsection{instalasi uWSGI}
 Untuk uWSGI kita perlu menginstallnya seperti berikut :
