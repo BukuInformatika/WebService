@@ -65,6 +65,13 @@ Menerima pesan dalam bentuk PDU tidak hanya isi pesan saja, melainkan terdapat b
 \subsection{Mengirim Pesan dalam Format PDU}
 Pesan ditulis dalam format text akan di konversikan terlebih dahulu kedalam format PDU agar bisa di baca oleh HP. PDU, adalah proses yang akan memanggil modul konversi untuk merubah data dalam Format Text menjadi Format PDU.  Alur proses kirm SMS, masukan berupa Format Teks dikonversi ke bentuk Format PDU.
 
+\section{Perencanaan Modul Sistem}
+\subsection{Modul Terima SMS}
+Modul ini berfungsi untuk menerima data PDU yang masuk dan menampung masing-masing bagian dari data tersebut.
+input-an pada prosedur ini yaitu string data PDU yang belum dipisahkan sesuai dengan nama bagiannya, sedangkan pada output-nya
+berupa string PDU yang sudah dipisahkan yang terdiri dari panjang nomor SMSC, tipe alamat
+SMSC, nomor SMSC, Octet pertama dari pesan SMS-Deliver. Banyaknya suatu nomor berasal dari nomor pengirim, tipe alamat dari nomor pengirim, nomor telepon pengirim pesan, protokol identifier, data coding scheme, waktu pengiriman pesan, banyaknya
+pesan yang dikirim dan isi pesan sesuai dengan nama bagiannya. 
 \end{document}
 
 
