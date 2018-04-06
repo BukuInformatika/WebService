@@ -54,6 +54,16 @@ Beberapa aturan yang  digunakan dalam penamaan variabel adalah sebagai berikut:
 \item Tidak boleh menggunakan karakter-karakter khusus yang digunakan unutk operator, seperti +,-,*/,<,>,;,=,#,koma, dan lain-lain.
 \end{enumerate}
 
+\section{Deklarasi Variabel dan Variabel Dinamis}
+Variabel di PHP bisa digunakan meskipun belum dideklarasikan. Penamaan variabel harus diawali dengan tanda ($) dan diikuti oleh nama ringkas. Nama variabel tidak boleh diawali dengan angka, tetapi bisa berisi angka dan karakter underscore (_). 
+Untuk menghindari kesalahan dalam menggunakan variabel, perlu diketahui, nama variabel bersifat case sensitive.
+\begin{verbatim}
+//deklarasi dan inisialisasi variabel
+$result   = 1 + 5;	 // valid
+$Result   = 2 + 5;   // valid, beda dengan $result
+$_result  = 3 + 5;   // valid
+\end{verbatim}
+
 \section{Jenis – Jenis Pengukuran Variabel}
 Di dalam variable juga terdapat alat alat yang digunakan dalam pengukuran. Sehingga varibel dikelompokan menjadi empat menurut bentuk   
 pengukuran, itu dilakukan supaya banyak cara yang dilakukan dalam menentukan variable yang diinginkan. Variabel Nominal, yaitu variabel
