@@ -38,7 +38,7 @@ implementasi server tertentu dan konfigurasinya.Server mungkin untuk mengijinkan
 Dari meta-variabel yang dihasilkan, sebuah URI, 'Script-URI', dapat
 dibangun. Ini HARUS memiliki properti yang jika klien dapat
 mengakses URI ini, maka skrip akan dieksekusi
-dengan nilai yang sama untuk SCRIPT_NAME, PATH_INFO, dan QUERY_STRING
+dengan nilai yang sama untuk SCRIPT NAME, PATH INFO, dan QUERY STRING
 meta-variabel. Script-URI memiliki struktur generic URI sebagai yang
 didefinisikan dalam bagian 3 dari RFC 2396 [2], dengan pengecualian objek itu
 parameter dan pengidentifikasi fragmen tidak diizinkan. Beragam
@@ -48,8 +48,8 @@ meta-variabel (lihat di bawah);
 	script-URI = <scheme> "://" <server-name> ":" <server-port>
              	 <script-path> <extra-path> "?" <query-string>
 
-dimana <scheme> didapatkan dari SERVER_PROTOCOL, <server-name>,
-<server-port> dan <query-string> adalah nilai dari masing-masing meta-variabel.  The SCRIPT_NAME dan nilai-nilai PATH_INFO, URL-dikodekan dengan ";", "=" dan "?"  reserved, diberikan  <script-path> dan <extra-path>.
+dimana <scheme> didapatkan dari SERVER PROTOCOL, <server-name>,
+<server-port> dan <query-string> adalah nilai dari masing-masing meta-variabel. The SCRIPT NAME dan nilai-nilai PATH INFO, URL-dikodekan dengan ";", "=" dan "?"  reserved, diberikan  <script-path> dan <extra-path>.
 
 Skema dan protocol yang ada tidak identik karena skema mengidentifikasi metode akses selain protocol aplikasi.Sebagai contoh, sumber daya yang diakses menggunakan Transport Layer Security (TLS) akan memiliki permintaan URI dengan skema https ketika menggunakan HTTP protocol. CGI tidak menyediakan sarana generic kepada script untuk merekonstruksi ini, oleh karena itu Script-URI seperti yang didefinisikan meliputi protokol dasar yang digunakan. Tetpi, sebuah script memungkinkan dapat menggunakan skema khusus meta-variabel untuk lebih baik menyimpulkan skema URI.
 
@@ -59,4 +59,5 @@ Skrip ini dijalankan dengan cara yang ditentukan system.
 Kecuali jika tidak ditentukan , file yang berisi skrip akan dipanggil sebagai program yang dapat dijalankan
 Server menyiapkan permintaan CGI seperti yang akan dijelaskan di bagian 4. Skrip ini terdiri dari permintaan meta-variabel yang telah tersedia untuk skrip pada eksekusi dan permintaan data pesan. Data permintaan tidak perlu segera tersedia untuk skrip karena skrip dapat dijalankan sebelum semua data ini telah diterima oleh server dari klien.
 (meta-variabel digunakan dalam pemrograman untuk menggambarkan variabel atau objek yang bisa berubah. Nama tersebut sering tidak memiliki makna langsung tetapi tersedia untuk memiliki sesuatu yang spesifik untuk dirujuk).
+Tanggapan dari skrip dikembalikan ke server seperti yang dijelaskan di bagian 5 dan 6. Jika terjadi kondisi kesalahan, server dapat mengganggu atau menghentikan eksekusi skrip kapan saja dan tanpa peringatan. Itu bisa saja terjadi, misalnya, jika terjadi kegagalan transportasi antara server dan klien: jadi skrip HARUS siap untuk menangani penghentian yang tidak normal.
 \end{document}  
