@@ -44,4 +44,12 @@ didefinisikan dalam bagian 3 dari RFC 2396 [2], dengan pengecualian objek itu
 parameter dan pengidentifikasi fragmen tidak diizinkan. Beragam
 komponen dari Script-URI didefinisikan oleh beberapa
 meta-variabel (lihat di bawah);
+
+	script-URI = <scheme> "://" <server-name> ":" <server-port>
+             	 <script-path> <extra-path> "?" <query-string>
+
+dimana <scheme> didapatkan dari SERVER_PROTOCOL, <server-name>,
+<server-port> dan <query-string> adalah nilai dari masing-masing meta-variabel.  The SCRIPT_NAME dan nilai-nilai PATH_INFO, URL-dikodekan dengan ";", "=" dan "?"  reserved, diberikan  <script-path> dan <extra-path>.
+
+Skema dan protocol yang ada tidak identik karena skema mengidentifikasi metode akses selain protocol aplikasi.
 \end{document} 
