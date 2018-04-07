@@ -21,6 +21,15 @@ Dan ada yang menjadi perbedaan Linux dengan sistem operasi lainnya yaitu mengena
 Linux disusun dengan standar sistem operasi POSIX yang diturunkan berdasarkan fungsi kerja UNIX. Secara umum Linux lebih cepat dibanding UNIX lain pada hardware yang sama dan UNIX tidak bersifat free.
 MS-DOS mirip dengan Linux yaitu file sistem bersifat hirarkis. MS-DOS hanya dapat dijalankan pada prosesor x86 dan tidak adanya multi-user dan multi-tasking, yang juga tidak bersifat free. Kemudian ada MS Windows yang mempunyai kemampuan grafis yang ada di Linux dan juga kemampuan networking serta mempunyai kekurangan yang sama pada MS-DOS.
 
+\section{Kelebihan Linux}
+\begin{enumeratae}
+\item Adanya proses khusus yaitu terminal, printer dan device hardware lainnya bisa diakses seperti mengakses file yang tersimpan dalam harddisk.
+\item Sistem operasi yang menyediakan multi-tasking dan multi-user.
+\item Saat ada program yang berjalan dimulai dari harddisk ke dalam RAM dan setelah dijalankan disebut proses.
+\item Memberikan servis untuk membuat, memodifikasi program, proses dan file.
+\item Mendukung struktur file yang mempunyai sifat hirarki.
+\end{enumerate}
+
 Tentang subsystem, beberapa aplikasi  seperti bash script atau FLOSS yang ada di linux tidak akan memanggil layanan sistem operasi contohnya adalah Windows NT yang asli secara langsung, tapi justru sebaliknya, aplikasi ini akan melalui satu atau lebih subsistem dynamic-link libraries (DLL). Yang dilakukan DLL subsistem disini adalah untuk menerjemahkan fungsi yang tidak terdokumentasi menjadi terdokumentasi ke dalam panggilan layanan sistem Windows NT.
 
 Windows NT memiliki desain yang berlapis dengan bagian low-level dari sistem yang di mana arsitektur atau platform yang spesifik diisolasi ke dalam modul yang terpisah. Sehingga lapisan atas dari sistem dapat terlindungi dari adanya perbedaan-perbedaan antara platform dari hardware. Dua komponen penting yang menyediakan portabilitas system operasi adalah HAL dan kernel.
@@ -39,7 +48,7 @@ WSL adalah kumpulan komponen yang memungkinkan biner ELF64 Linux asli untuk berj
 Layanan pengelola sesi mode pengguna yang menangani siklus hidup instance Linux
 Pengandar penyedia Pico (lxss.sys, lxcore.sys) yang meniru kernel Linux dengan menerjemahkan syscalls Linux
 Proses Pico yang menghosting mode pengguna Linux yang tidak dimodifikasi (mis. / Bin / bash)
-Ini adalah ruang antara mode pengguna Linux binari dan komponen kernel Windows di mana keajaiban terjadi. 
+Ini adalah ruang antara mode pengguna Linux binari dan komponen kernel Windows di mana keajaiban terjadi.
 
 \section{Integrating Flexible Support for Security Policies into the Linux Operating System}
 Mekanisme perlindungan sistem operasi utama saat ini tidak memadai untuk mendukung persyaratan kerahasiaan dan integritas untuk sistem akhir. Kontrol akses wajib (MAC) diperlukan untuk mengatasi persyaratan tersebut, tetapi keterbatasan MAC tradisional telah menghambat pengadopsiannya ke dalam sistem operasi utama. National Security Agency (NSA) bekerja dengan Secure Computing Corporation (SCC) untuk mengembangkan arsitektur MAC fleksibel yang disebut Flask untuk mengatasi keterbatasan MAC tradisional. NSA telah mengimplementasikan arsitektur ini dalam sistem operasi Linux, menghasilkan prototipe Protected-Enhanced Linux (SELinux), untuk membuat teknologi tersedia untuk komunitas yang lebih luas dan untuk memungkinkan penelitian lebih lanjut ke dalam sistem operasi yang aman. NAI Labs telah mengembangkan contoh konfigurasi kebijakan keamanan untuk menunjukkan manfaat arsitektur dan menyediakan landasan bagi orang lain untuk digunakan. Makalah ini menjelaskan arsitektur keamanan, mekanisme keamanan, antarmuka pemrograman aplikasi, konfigurasi kebijakan keamanan, dan kinerja SELinux.
@@ -52,7 +61,7 @@ Bagian ini memberikan gambaran implementasi SELinux dari bagian arsitektur. Dala
 
 Mekanisme Keamanan
 Kontrol Proses
-Prosesnya mengeksekusi izin digunakan untuk mengontrol kemampuan suatu proses untuk dieksekusi dari gambar yang dapat dieksekusi. Izin ini dicentang antara label proses transformasi dan label yang dapat dieksekusi pada setiap eksekusi program. 
+Prosesnya mengeksekusi izin digunakan untuk mengontrol kemampuan suatu proses untuk dieksekusi dari gambar yang dapat dieksekusi. Izin ini dicentang antara label proses transformasi dan label yang dapat dieksekusi pada setiap eksekusi program.
 Kontrol File
 Karena deskripsi file terbuka dapat diwariskan di seberang atau di alihkan melalui UNIX socket IPC, SELinux label dan kontrol buka deskripsi file. Deskripsi file terbuka diberi label dengan SID dari proses pembuatannya, karena negara bagiannya biasanya diperlakukan sebagai bagian dari proses privat.
 Kontrol Soket
