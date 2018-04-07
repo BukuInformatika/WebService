@@ -76,4 +76,14 @@ meta-variable-name = "AUTH_TYPE" | "CONTENT_LENGTH" |
                            "SERVER_PORT" | "SERVER_PROTOCOL" |
                            "SERVER_SOFTWARE" | scheme |
                            protocol-var-name | extension-var-name
+protocol-var-name = ( protocol | scheme ) "_" var-name
+scheme = alpha *( alpha | digit | "+" | "-" | "." )
+var-name = token
+extension-var-name = token
+
+meta-variabel dengan nama yang sama dengan skema, dan nama yang diawali 
+dengan nama protokol atau skema (misalnya, HTTP_ACCEPT) juga 
+didefinisikan. Jumlah dan makna dari variabel-variabel ini dapat berubah 
+secara independen dari spesifikasi ini.
+
 \end{document}  
