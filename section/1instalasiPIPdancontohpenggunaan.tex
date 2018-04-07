@@ -1,4 +1,5 @@
 \documentclass[12pt,a4paper]{article} 
+\usepackage{graphicx}
 \linespread{1.5}
 \begin{document}
 \title{Instalasi PIP dan Contoh Penggunaan}
@@ -55,10 +56,44 @@ Disini saya akan memberitahu cara install PIP untuk mac x, caranya adalah : \\
 Pada Sistem Operasi Linux, proses instalasi Pyhton tidak bermain dengan skrip getpip.py seperti di windows dan mac. Berikut adalah tahapan instalasinya.
 \begin{itemize}
 \item Melakukan memperbaharui daftar paket dan perangkat lunak sistem.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1aptupdate.jpg} 
+\caption{sudo apt-get update}
+\label{update}
+\end{center}
+\end{figure}
+Pada Gambar \ref{update} menjelaskan tentang untuk memperbaharui daftar paket.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1aptupgrade.jpg} 
+\caption{sudo apt-get upgrade}
+\label{upgrade}
+\end{center}
+\end{figure}
+
+Pada Gambar \ref{upgrade} menjelaskan tentang untuk memperbaharui perangkat lunak sistem.
 \item Proses Instalasi PIP di linux \\
-Proses instalasi PIP di linux sangat sederhana karena hanya melakukan command satu perintah di Terminal.
+Proses instalasi PIP di linux sangat sederhana karena hanya melakukan command satu perintah di Terminal.\\
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1aptinstal.jpg} 
+\caption{sudo apt-get update}
+\label{instal}
+\end{center}
+\end{figure}
+Pada Gambar \ref{instal} menjelaskan tentang proses melakukan instalasi pyhton.
 \item Verifikasi PIP \\
-Proses ini untuk menverifikasi apakah pip dan semua dependensi sudah terinstal atau belum agar dapat berjalan dengan optimal.
+Proses ini untuk menverifikasi apakah pip dan semua dependensi sudah terinstal atau belum agar dapat berjalan dengan optimal.\\
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1aptver.jpg} 
+\caption{Pip -V}
+\label{versi}
+\end{center}
+\end{figure}
+
+Pada Gambar \ref{versi} menjelaskan tentang untuk menunjukkan versi pip yang telah diinstal.
 \subsection{Instalasi PIP di Linux}
 Pada umumnya perangkat python merupakan perangkat lunak yang termasuk di dalam disribusi Linux. Untuk linux distribusi slackware digunakan Python versi 2.4, yang terdapat pada CD I direktori/slackware/d. Menggunakan Toolkit untuk melakukan installasi paket di slackware adalah installpkg, berikut langkah instalasinya.\\
 \item  mount/mnt/cdrom\\
@@ -74,5 +109,44 @@ Python adalah menyediakan modus interaktif yang sangat berguna dalam melakukan l
 \item  >>>\\
  Tanda “>>>” merupakan suatu prompt dalam modus interaktif Python, selanjutnya Python siap menerima input kode yang dimasukkan.\\
 
+\section{Perintah Dasar PIP}
+\subsection{Perintah Bantuan dalam PIP}
+Berikut beberapa fungsi yang dapat membantu pengguna ketika dalam menggunakan PIP, antara lain :
+\subsubsection{Help}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1help.jpg}
+\caption{Fungsi Help}
+\label{FungsiHelp}
+\end{center}
+\end{figure}
+Pada Gambar \ref{FungsiHelp} menjelaskan bahwa salah satu fungsi dalam PIP yang dapat menunjukkan bantuan.
+\subsubsection{Version}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1versi.jpg} 
+\caption{Fungsi Version}
+\label{fungsiversi}
+\end{center}
+\end{figure}
+Pada Gambar \ref{fungsiversi} menjelaskan tentang salah satu fungsi pada PIP yang dapat menunjukkan versi PIP yang kita gunakan.
+\subsubsection{Cache}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1cache.jpg} 
+\caption{Fungsi cache}
+\label{fungsicache}
+\end{center}
+\end{figure}
+Pada Gambar \ref{fungsicache} menjelaskan tentang salah satu fungsi pada PIP yang dapat mmenyimpan data cache ke direktori %<dir>
+\subsubsection{No Cache}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1nocache.jpg} 
+\caption{Fungsi NoCache}
+\label{fungsinocache}
+\end{center}
+\end{figure}
+Pada Gambar \ref{fungsinocache} menjelaskan tentang salah satu fungsi pada PIP untuk menonaktifkan cache
 \end{itemize}
 \end{document}
