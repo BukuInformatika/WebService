@@ -91,4 +91,9 @@ Server dapat menetapkan tambahan ekstensi meta-variabel implementasi, yang naman
 Spesifikasi ini tidak membedakan antara nilai-nilai nol-panjang (NULL) dan nilai-nilai yang hilang. Sebagai contoh, sebuah skrip tidak dapat membedakan antara dua permintaan http://host/skrip dan http://host/skrip?  seperti pada kedua kasus, meta-variabel QUERY_STRING akan menjadi NULL.
 
 meta-variable-value = "" | 1*<TEXT, CHAR or tokens of value>
+
+Sebuah meta-variabel opsional dapat dihilangkan (tidak disetel) jika nilainya adalah NULL. Nilai meta-variabel HARUS dianggap case-sensitive kecuali seperti yang dinyatakan sebaliknya. Representasi dari karakter dalam meta-variabel ditentukan system; server HARUS mengkonversi nilai ke representasi tersebut.
+
+\section{Request Message-Body}
+Permintaan data diakses oleh skrip dalam metode yang didefinisikan oleh system; kecuali sudah ditentukan, hal ini akan membuat system membaca request/permintaan dengan ‘standar masukan’ pendeskripsi file.
 \end{document}  
