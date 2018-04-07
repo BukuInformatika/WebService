@@ -49,9 +49,17 @@ Buat file berikut di root instalasi web2py, dan beri nama uwsgi.xml:
 <processes> 8 </ processes>
 <memory-report />
 </ uwsgi>
+
 Konfigurasi ini memunculkan delapan proses untuk mengelola beberapa permintaan dari
 Server HTTP. Ubah sesuai kebutuhan, dan konfigurasikan <pythonpath> ke instalasi
-akar web2py.\cite{mulone2012web2py}.
+akar web2py.
+1.	Sebagai pengguna yang memiliki instalasi web2py, mulai server uWSGI: $ uWSGI -d uwsgi.xml
+2.	Sekarang luncurkan antarmuka administratif Cherokee untuk membuat konfigurasi baru:
+$ cherokee-admin
+3.	Hubungkan ke antarmuka admin dengan browser di tautan berikut:
+http: // localhost: 9090 /
+4.	Pergi ke bagian Sumber - (A), lalu klik tombol + - (B).
+5.	Pilih Remote Host on (C), lalu isi kolom teks di (D) dengan alamat IP, dan port untuk mencocokkan konfigurasi dalam file uswgi.xml sebelumnya. Setelah mengkonfigurasi sumber uWGI, sekarang mungkin untuk mengkonfigurasi Virtual Host, dan mengalihkan permintaan melalui itu. Dalam resep ini, kita memilih Virtual Host default yang ada digunakan ketika tidak ada Virtual Host lain yang memiliki kecocokan yang lebih baik untuk permintaan yang masuk.\cite{mulone2012web2py}.
 
 \subsection{cara instalasi USWGI}
 Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses
