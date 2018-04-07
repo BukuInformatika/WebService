@@ -63,6 +63,9 @@ Modul dial up yang dibuat dengan bahasa assembler dienkapsulasi menjadi sebuah f
 Menerima pesan dalam bentuk PDU tidak hanya isi pesan saja, melainkan terdapat berbagai data di dalamnya seperti informasi mengenai pengirimnya (nomor telepon pengirim), SMSC, dan Waktu Pengiriman Pesan. Data yang masuk berupaHexa – Decimal Octets. SMSC yaitu menerangkan banyaknya informasi pengirim yang terdapat pada pesan yang digunakan oleh pengirim.
 \subsection{Mengirim Pesan dalam Format PDU}
 Pesan ditulis dalam format text akan di konversikan terlebih dahulu kedalam format PDU agar bisa di baca oleh HP. PDU, adalah proses yang akan memanggil modul konversi untuk merubah data dalam Format Text menjadi Format PDU.  Alur proses kirm SMS, masukan berupa Format Teks dikonversi ke bentuk Format PDU.
+\subsection{Modul Form Pendaftaran Antrian}
+Digunakan oleh konsumen untuk pendaftaran antrian. Berisi nomor antrian sebelumnya, waktu tunggu, pilihan untuk memilih jenis pelanggan (telpon/Flexi atau Speedy atau calon pelanggan), field untuk memasukkan nomor telpon/Flexi/selular, link menuju form Pendaftaran. Antrian 2 bagi calon pelanggan, pilihan jenis layanan berupa checkbox, tombol Daftar Antrian, tombol Batal.
+
 
 \section{Perencanaan Modul Sistem}
 \subsection{Modul Terima SMS}
@@ -74,8 +77,7 @@ pesan yang dikirim dan isi pesan sesuai dengan nama bagiannya.
 \subsection{Modul Kirim SMS}
 Modul kirim sms memiliki fungsi untuk menampung data yang akan dikirimkan yaitu dalam betuk format PDU, dimana dalam prosesnya akan memanggil modul konversi untuk merubah data dalam Format Text menjadi Format PDU. Alur proses kirm SMS, yakni dari masukan berupa Format Teks dikonversi ke bentuk Format PDU. 
 \subsection{ Modul Konversi}
-modul ini berfungsi untuk menerjemahkan data yang masuk dari modul terima sms  format PDU menjadi  text,  melakukan pengkonversian informasi dari srting hexa menjadi biner, biner menjadi decimal,decimal menjadi character. 
-modul ini juga menerjemahkan data yang masuk  dari modul kirim sms format text menjadi PDU, mengembalikan posisi data PDU dari character sampai menjadi string hexa. 
+Modul ini berfungsi untuk menerjemahkan data yang masuk dari modul terima sms  format PDU menjadi  text,  melakukan pengkonversian informasi dari srting hexa menjadi biner, biner menjadi decimal,decimal menjadi character. Modul ini juga menerjemahkan data yang masuk  dari modul kirim sms format text menjadi PDU, mengembalikan posisi data PDU dari character sampai menjadi string hexa. 
 
 
 
