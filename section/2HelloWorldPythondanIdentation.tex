@@ -46,6 +46,8 @@ Pada bahasa python terdapat kalimat "Hellow World" di layout awal untuk melihat 
 <Hello World!>
 \end{verbatim}
 
+Secara umum, tugas pemrosesan bahasa diformulasikan sebagai anotasi dan transformasi yang melibatkan Token. Secara khusus, setiap tugas pemrosesan membutuhkan token dan meluasnya untuk memasukkan informasi baru. Modifikasi ini biasanya monotonik; baru informasi ditambahkan tetapi informasi yang ada tidak dihapus atau diubah. Jadi, token berfungsi sebagai papan tulis, dimana informasi tentang sepotong teks disusun. Arsitektur ini berbeda dengan yang lainnya arsitektur pipa khas di mana setiap pemrosesan keluaran tugas membuang informasi masukannya. Kita memilih pendekatan papan tulis di atas pipa pendekatan karena memungkinkan lebih banyak fleksibilitas kapan menggabungkan tugas ke dalam satu system\cite{bird2004nltk}.
+
 \subsection{Membuat "Hello World" dengan Pyton menurut Perkel, Jeffrey M}
 Bahasa pemrograman Python lebih mudah dinyatakan, pengguna tidak harus menentukan variabel mana yang akan menyimpan angka atau teks, misalnya. Latihan pemrograman klasik Percetakan 'Hello, world!' ke layar sesederhana mungkin dengan Python - ketikkan saja
 
