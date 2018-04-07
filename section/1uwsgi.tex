@@ -73,7 +73,7 @@ Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk 
 \cite{true150828teaplot}.
 
 \subsection{instalasi uWSGI}
-Untuk uWSGI kita perlu menginstallnya seperti berikut :
+Instalasi uWSI menggunakan web server Nginx, Untuk uWSGI kita perlu menginstallnya seperti berikut :
 Ketik, “ pip install uwsgi “, (tanpa tanda “ ”) untuk awal menginstall uWSGI,
 Sekarang, di dalam folder bin virtualenv kamu, akan ada perintah uWSGI. cari
 di mana letak perintah uWSGI itu karena kita akan membutuhkannya. Setelah itu
@@ -104,7 +104,32 @@ vacuum = true
 die-on-term = true 
 optimize = 2
 
-The user-home, project-name, dan project-path adalah alias yang kita gunakan untuk membuat pekerjaan kita lebih mudah. Opsi socket menunjuk ke file socket yang akan digunakan server HTTP kita untuk berkomunikasi dengan aplikasi kita. \cite{maia2015building}.
+The user-home, project-name, dan project-path adalah alias yang kita gunakan untuk membuat pekerjaan kita lebih mudah. Opsi socket menunjuk ke file socket yang akan digunakan server HTTP kita untuk berkomunikasi dengan aplikasi kita.
+Kita sekarang dapat mengatur server HTTP kita, ini merupakan langkah yang mudah. Cukup instal Nginx sebagai berikut:
+“ sudo apt-get install nginx-full “ tanpa tanda (“”)
+Sekarang, server http kita sudah aktif dan berjalan di port 80. Mari kita pastikan Nginx tahu tentang aplikasi kita. Tuliskan kode berikut ke sebuah file di proyek kita di dalam / etc / nginx / sites-available:
+server { 
+listen 80; 
+server_name PROJECT_DOMAIN;
+location /media { 
+alias /path/to/media; 
+} 
+location /static { 
+alias /path/to/static; 
+} 
+location / { 
+include /etc/nginx/uwsgi_params; 
+uwsgi_pass unix:/path/to/socket/file.sock; 
+} 
+}
+File konfigurasi sebelumnya menciptakan server virtual yang berjalan pada port 80. Kita perlu membuat satu file terakhir di dalam / etc / init yang akan mendaftarkan proses uWSGI kita sebagai layanan. Bagian ini sangat mudah, buat saja file di project kamu dengan nama file conf dengan kode sebagai berikut:
+description "uWSGI application my project" 
+start on runlevel [2345] 
+stop on runlevel [!2345] 
+setuid your-user 
+setgid www-data 
+exec /path/to/uwsgi --ini /path/to/ini/file.ini
+Jika semuanya berjalan dengan baik, berarti instalasi berhasil \cite{maia2015building}.
 
 \subsection{cara instalasi uWSGI}
 untuk menginstall uWSGI pertama yang di perlukan adalah Python dan kompiler C (gcc dan clang). Bergantung pada bahasa yang ingin anda dukung. Anda akan membutuhkan header pengembanganya. Pada sistem Debian/ Ubuntu Anda dapat mengistalnya(dan sisanya dari infrastruktur yang di perlukan untuk membangun perangkat lunak). Dan juga dapat menggunakan pip untuk membangun binary dengadukungan phyton\cite{berger2017usage}.
