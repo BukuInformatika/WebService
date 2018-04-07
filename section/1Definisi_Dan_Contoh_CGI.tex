@@ -52,4 +52,9 @@ dimana <scheme> didapatkan dari SERVER_PROTOCOL, <server-name>,
 <server-port> dan <query-string> adalah nilai dari masing-masing meta-variabel.  The SCRIPT_NAME dan nilai-nilai PATH_INFO, URL-dikodekan dengan ";", "=" dan "?"  reserved, diberikan  <script-path> dan <extra-path>.
 
 Skema dan protocol yang ada tidak identik karena skema mengidentifikasi metode akses selain protocol aplikasi.Sebagai contoh, sumber daya yang diakses menggunakan Transport Layer Security (TLS) akan memiliki permintaan URI dengan skema https ketika menggunakan HTTP protocol. CGI tidak menyediakan sarana generic kepada script untuk merekonstruksi ini, oleh karena itu Script-URI seperti yang didefinisikan meliputi protokol dasar yang digunakan. Tetpi, sebuah script memungkinkan dapat menggunakan skema khusus meta-variabel untuk lebih baik menyimpulkan skema URI.
-\end{document} 
+
+Perhatikan bahwa definisi ini juga memungkinkan URI yang akan dikonstruksilah yang akan memanggil skrip dengan nilai yang diizinkan untuk info jalur/bagian atau query-string, dengan memodifikasi komponen yang sesuai
+\section{Eksekusi}
+Skrip ini dijalankan dengan cara yang ditentukan system.
+Kecuali jika tidak ditentukan , file yang berisi skrip akan dipanggil sebagai program yang dapat dijalankan
+\end{document}  
