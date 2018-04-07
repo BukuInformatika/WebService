@@ -81,9 +81,14 @@ scheme = alpha *( alpha | digit | "+" | "-" | "." )
 var-name = token
 extension-var-name = token
 
-meta-variabel dengan nama yang sama dengan skema, dan nama yang diawali 
-dengan nama protokol atau skema (misalnya, HTTP_ACCEPT) juga 
-didefinisikan. Jumlah dan makna dari variabel-variabel ini dapat berubah 
+meta-variabel dengan nama yang sama dengan skema, dan nama yang diawali
+dengan nama protokol atau skema (misalnya, HTTP_ACCEPT) juga
+didefinisikan. Jumlah dan makna dari variabel-variabel ini dapat berubah
 secara independen dari spesifikasi ini.
 
+Server dapat menetapkan tambahan ekstensi meta-variabel implementasi, yang namanya harus diawali dengan "X_".
+
+Spesifikasi ini tidak membedakan antara nilai-nilai nol-panjang (NULL) dan nilai-nilai yang hilang. Sebagai contoh, sebuah skrip tidak dapat membedakan antara dua permintaan http://host/skrip dan http://host/skrip?  seperti pada kedua kasus, meta-variabel QUERY_STRING akan menjadi NULL.
+
+meta-variable-value = "" | 1*<TEXT, CHAR or tokens of value>
 \end{document}  
