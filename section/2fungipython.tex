@@ -94,4 +94,14 @@ Keuntungan lain dari Python adalah bahwa perangkat lunak warisan antarmuka yang 
 
 Implementasi Python di Java terdiri dari tiga komponen-komponen kunci.Yang pertama adalah parser dan lexer untuk Python grammar. Ini adalah kode Java murni yang dihasilkan oleh generator parser JavaCC. tersedia secara bebas dari Sun. Mereka mirip dengan parser kode-C Python dan lexer. Ketika dijalankan pada file sumber Python parser menghasilkan koleksi objek Java yang mewakili pohon parser.
 
+\subsection{Organisasi Sistem}
+
+Tujuannya adalah membangun sistem yang sangat modular yang dapat melakukan simulasi, analisis data, dan visualisasi sering melakukan semua tugas ini secara bersamaan. 
+
+Tetapi, ada kecenderungan untuk melakukannya dengan membangun paket monolitik yang terintegrasi secara ketat (menggunakan hirarki kelas C ++ yang terstruktur dengan baik). Jadi membuat  terlalu formal dan restriktif.  Sehingga mendorong untuk mendukung modul yang mungkin hanya terkait secara longgar satu sama lain. Contoh, perpustakaan grafis tidak perlu bergantung pada struktur yang sama sebagai kode simulasi atau bahkan ditulis dalam bahasa yang sama.
+
+Riki Karnovi
+
+
+
 \end{document}
