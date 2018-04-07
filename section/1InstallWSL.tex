@@ -50,4 +50,14 @@ Arsitektur Keamanan
 Bagian ini memberikan gambaran implementasi SELinux dari bagian arsitektur. Dalam Implementasi SELinux, server keamanan hanya subsistem kernel dan kernel lainnya subsistem (mis. manajemen proses, sistem file, socket IPC, System V IPC) adalah manajer objek. Komponen dalam sistem yang menegakkan keamanan kebijakan disebut sebagai manajer objek dalam Flask Arsitektur.
 
 
+Mekanisme Keamanan
+Kontrol Proses
+Prosesnya mengeksekusi izin digunakan untuk mengontrol kemampuan suatu proses untuk dieksekusi dari gambar yang dapat dieksekusi. Izin ini dicentang antara label proses transformasi dan label yang dapat dieksekusi pada setiap eksekusi program. 
+Kontrol File
+Karena deskripsi file terbuka dapat diwariskan di seberang atau di alihkan melalui UNIX socket IPC, SELinux label dan kontrol buka deskripsi file. Deskripsi file terbuka diberi label dengan SID dari proses pembuatannya, karena negara bagiannya biasanya diperlakukan sebagai bagian dari proses privat.
+Kontrol Soket
+SELinux menyediakan kendali atas soket IPC melalui a mengatur kontrol berlapis atas soket, pesan, simpul, dan antarmuka jaringan. Saat ini, prototipe SELinux hanya menyediakan label dan kontrol untuk INET dan Soket domain UNIX. Pada lapisan soket, SELinux mengontrol kemampuan proses untuk melakukan operasi di soket. Pada lapisan transport, SELinux mengontrol kemampuan soket untuk berkomunikasi dengan soket lain. Di lapisan jaringan, SELinux mengontrol kemampuan untuk mengirim dan menerima pesan di antarmuka jaringan, dan itu mengontrol kemampuan untuk mengirim pesan ke node dan menerima pesan dari node. SELinux juga mengendalikan kemampuannya proses untuk mengkonfigurasi antarmuka jaringan dan memanipulasi tabel routing kernel.
+
+
+
 
