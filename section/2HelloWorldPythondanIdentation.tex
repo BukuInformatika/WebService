@@ -60,7 +60,7 @@ pada prompt Python dan tekan Enter\cite{perkel2015programming}.
 Python merupakan salah satu bahasa pemrograman tingkat tinggi dengan tipe bahasa interpreted karena program-program Python langsung dieksekusi oleh interpreter tanpa harus melalui tahap kompilasi. Python dapat dijalankan dengan dua cara, yakni:
 \begin{enumerate}
 \item Mode command-line
-dengan mode ini, program dapat dilakukan dengan memanggil interpreter, kemudian memberi statement Python dan interpreter akan menampilkan hasil, sebagai contoh:
+Dengan mode ini, program dapat dilakukan dengan memanggil interpreter, kemudian memberi statement Python dan interpreter akan menampilkan hasil, sebagai contoh:
 \begin{verbatim}
 bash-2.05a$ python
 Python 2.1.3 (#1, Apr 20 2002, 10:14:34)
@@ -73,6 +73,32 @@ on linux2 Type "copyright", "credits" or
 >>> print "Hello World!"
 Hello World!
 \end{verbatim}
+
+\item Mode Script
+Mode ini dilakukan dengan cara menuliskan keseluruhan program dalam file, kemudian interpreter akan mengeksekusi seluruh isi dari file. File seperti ini dinamakan script. Sebagai contoh, sebuah file yang ditulis dengan text editor dan diberi nama script01.py memiliki isi sebagai berikut:
+\begin{verbatim}
+print 1+1
+\end{verbatim}
+Dengan perjanjian bahwa file yang berisi program Python diberi nama dengan ekstensi .py. Eksekusi dari program dengan mode ini dapat dilakukan dengan cara sebagai berikut:
+\begin{verbatim}
+$ python script01.py
+2
+Contoh 1:
+# -------------------
+# Program Sederhana
+# by Ema dan Wawan
+# -------------------
+print "I Like Python"
+
+Contoh 1.1:
+# -------------------
+# Program Sederhana
+# by Kurnia Sandi
+# -------------------
+
+print "Hello World!"
+\end{verbatim}
+Catatan: Python tidak membutuhkan titik koma (semicolon) di belakang statement. Semicolon di sini sifatnya optional sehingga bisa digunakan, tetapi juga boleh tidak dipakai\cite{utami2004logika}.
 \end{enumerate}
 
 \subsection{Membuat "Hello World" Menurut Gario, Marco and Micheli, Andrea}
