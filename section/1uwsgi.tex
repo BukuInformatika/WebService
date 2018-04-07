@@ -63,6 +63,13 @@ Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk 
 	$ tar xvf teaplot-0.1.txz
 3.	Setelah itu untuk menerapkan patch Teaplot kedalam file fabfile.py didalam direktori yang sama menggunakan peintah :
 	$ patch -p1 < teaplot.patch
+4.	Menginstal system dependesi di FreeBSD dengan cara sebagai berikut :
+ 	# pkg install py27-django py27-scipy py27-numpy uwsgi spp
+5.	Setelah menginputkan data diatas, maka Instalasi telah selesai di FreeBSD. Teaplot sekarang bisa dijalankan melalui fabfile di
+	direktori ($FABFILE_DIR) atau memanggil tugas Fabric “animate” dengan cara :
+	$ cd $FABFILE_DIR
+	$ fab animate
+
 \cite{true150828teaplot}.
 
 \subsection{instalasi uWSGI}
