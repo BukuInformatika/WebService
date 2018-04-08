@@ -178,6 +178,16 @@ Hasil file yang di enkripsi adalah Namafile+’Compressed.txt’.
 \item	Fungsi DECODE
 Hasil file adalah NamaFile + ’decompressed.txt’.
 \subsection{Contoh penggunaan PIP}
-Kita dapat melakukan install package-package yang dibundel dengan file berekstensi whl melalui PIP,wheel adalah format arsip yang digunakan untuk mempercepat melakukan penginstalan package. Setelah melakukan penginstalan wheel, lakukan penginstalan paket dengan menggunakan perintah $pip install nipype-0.10.0-py2-none-any.whl . Untuk menampilkan package-package yang telah di install gunakan perintah $pip list dan untuk menguninstall package lakukan dengan perintah $pip uninstall <nama-package> .
+Kita dapat melakukan install package-package yang dibundel dengan file berekstensi whl melalui PIP,wheel adalah format arsip yang digunakan untuk mempercepat melakukan penginstalan package. Setelah melakukan penginstalan wheel, lakukan penginstalan paket dengan menggunakan perintah pip install nipype-0.10.0-py2-none-any.whl . Untuk menampilkan package-package yang telah di install gunakan perintah pip list dan untuk menguninstall package lakukan dengan perintah pip uninstall <nama-package>.
+\subsection{Instalasi Package Sekaligus}
+Pada PIP, kita dapat melakukan penginstalan package sekaligus lebih dari satu package dan  kita tdiak perlu repot untuk menginstal satu per satu package. Pada PIP, untuk menginstal package sekaligus menggunakan requirement.txt, dimana kita melakukan list package yang akan di list dan dimasukkan dalam requirement.txt tersebut. Lalu kita ketikkan perintah
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1\textwidth]{../figures/1requre.png}
+\caption{Perintah Instal Package Sekaligus}
+\label{1require} 
+\end{center}
+\end{figure}
+Pada gambar \ref{1require} menjelaskan tentang bagaimana cara instal package sekaligus dalam satu waktu.
 \end{itemize}
 \end{document}
