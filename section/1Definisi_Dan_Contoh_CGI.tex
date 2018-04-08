@@ -100,4 +100,8 @@ Permintaan data diakses oleh skrip dalam metode yang didefinisikan oleh system; 
       request-body   = <CONTENT_LENGTH>OCTET
       extension-data = *OCTET
 request-body disertaikan dengan permintaan jika CONTENT_LENGTH tersebut not NULL. Server harus membuat setidaknya banyak byte yang tersedia untuk membaca script. Server mungkin menandakan kondisi end-of-file. CONTENT_LENGTH byte telah dibaca atau mungkin menyediakan extention date. Oleh karena itu, script tidak harus mencoba untuk membaca lebih lanjut dari CONTENT_LENGTH byte, bahkan jika lebih banyak data tersedia. Namun, tidak wajib membaca data apa pun.
+
+Untuk skrip non-parsed header (NPH)(Bagian 5), server HARUS berusaha untuk memastikan bahwa data yang diberikan ke skrip adalah tepat seperti yang disediakan oleh klien dan tidak diubah oleh server.
+
+Seperti transfer-codings tidak didukung pada request-body, server HARUS menghapus setiap pengkodean tersebut dari message-body, dan mengatur ulang CONTENT-LENGTH. Jika hal ini tidak mungkin (misalnya, karena persyaratan buffering besar), server HARUS menolak permintaan klien. Hal ini MUNGKIN dapat menghapus content-codings dari message-body.
 \end{document}  
