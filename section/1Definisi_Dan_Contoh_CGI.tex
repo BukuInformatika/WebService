@@ -96,4 +96,8 @@ Sebuah meta-variabel opsional dapat dihilangkan (tidak disetel) jika nilainya ad
 
 \section{Request Message-Body}
 Permintaan data diakses oleh skrip dalam metode yang didefinisikan oleh system; kecuali sudah ditentukan, hal ini akan membuat system membaca request/permintaan dengan ‘standar masukan’ pendeskripsi file.
+	  Request-Data   = [ request-body ] [ extension-data ]
+      request-body   = <CONTENT_LENGTH>OCTET
+      extension-data = *OCTET
+request-body disertaikan dengan permintaan jika CONTENT_LENGTH tersebut not NULL. Server harus membuat setidaknya banyak byte yang tersedia untuk membaca script. Server mungkin menandakan kondisi end-of-file. CONTENT_LENGTH byte telah dibaca atau mungkin menyediakan extention date. Oleh karena itu, script tidak harus mencoba untuk membaca lebih lanjut dari CONTENT_LENGTH byte, bahkan jika lebih banyak data tersedia. Namun, tidak wajib membaca data apa pun.
 \end{document}  
