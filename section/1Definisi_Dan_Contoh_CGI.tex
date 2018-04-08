@@ -104,4 +104,10 @@ request-body disertaikan dengan permintaan jika CONTENT_LENGTH tersebut not NULL
 Untuk skrip non-parsed header (NPH)(Bagian 5), server HARUS berusaha untuk memastikan bahwa data yang diberikan ke skrip adalah tepat seperti yang disediakan oleh klien dan tidak diubah oleh server.
 
 Seperti transfer-codings tidak didukung pada request-body, server HARUS menghapus setiap pengkodean tersebut dari message-body, dan mengatur ulang CONTENT-LENGTH. Jika hal ini tidak mungkin (misalnya, karena persyaratan buffering besar), server HARUS menolak permintaan klien. Hal ini MUNGKIN dapat menghapus content-codings dari message-body.
+
+\section{Request Methods}
+Sebagaimana disediakan dalam meta-variabel REQUEST_METHOD, mengidentifikasi metode pemrosesan yang akan diterapkan pada skrip dalam menghasilkan respons. Penulis skrip dapat memilih untuk menerapkan metode yang paling sesuai untuk aplikasi tertentu. Jika skrip menerima permintaan dengan metode yang tidak mendukungnya harus menolaknya dengan kesalahan.
+
+\section{GET}
+Metode GET menunjukkan bahwa skrip harus menghasilkan dokumen berdasarkan nilai-nilai meta-variabel. Dengan konvensi, metode GET adalah 'aman' dan 'idempoten' dan seharusnya tidak memiliki arti penting mengambil tindakan selain menghasilkan dokumen.
 \end{document}  
