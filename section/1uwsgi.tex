@@ -215,4 +215,17 @@ uwsgi --module wsgi_module_name --callable application_callable_name
 uwsgi -w wsgi_module_name:application_callable_name
 Meskipun mudah membingungkan dan sulit untuk dikelola, cara paling dasar untuk menjalankan uWSGI sama seperti skrip shell lainnya - dengan menyediakan konfigurasi yang diperlukan sebagai argumen\cite{cencini2017data}.
 
+\subsection {Contoh uWSGI}
+uWSGI merupakan antarmuka yang menjembatani web server yang ditulis dalam bahasa C, dan biasanya juga digunakan untuk mengakses REST API, uWSGI juga yang menjadikan layanan tersedia sebagai aplikasi, dan antarmuka web Nginx yang membuatnya dapat diakses ke Internet dan memungkinkan manajemen koneksi. Berikut contoh pengimplementasian uWSGI terlihat
+sebagai berikut :
+[ uwsgi ]
+plugins = python
+chdir = /home/cuckoo/cuckoo
+f i l e = u t i l s /api . py
+uid = cuckoo
+gid = cuckoo
+c a l l a b l e = app
+\cite{beran2017analyza}.
+
+
 
