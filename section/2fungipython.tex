@@ -92,7 +92,9 @@ Keuntungan lain dari Python adalah bahwa perangkat lunak warisan antarmuka yang 
 
 \subsection{Implementasi Fungsi Pyhton di Java}
 
-Implementasi Python di Java terdiri dari tiga komponen-komponen kunci.Yang pertama adalah parser dan lexer untuk Python grammar. Ini adalah kode Java murni yang dihasilkan oleh generator parser JavaCC. tersedia secara bebas dari Sun. Mereka mirip dengan parser kode-C Python dan lexer. Ketika dijalankan pada file sumber Python parser menghasilkan koleksi objek Java yang mewakili pohon parser.
+Implementasi Python di Java terdiri dari tiga komponen-komponen kunci.Yang pertama adalah parser dan lexer untuk Python grammar. Ini adalah kode Java murni yang dihasilkan oleh generator parser JavaCC. tersedia secara bebas dari Sun. Mereka mirip dengan parser kode-C Python dan lexer. Ketika dijalankan pada file sumber Python parser menghasilkan koleksi objek Java yang mewakili pohon parser.\\
+
+Komponen kedua dari sistem ini adalah kompilator ditulis seluruhnya dengan Python yang melintasi pohon parse ini untuk menghasilkan bytecode Java yang sebenarnya. Ini berbeda dengan implementasi Python saat ini, yang menghasilkan bytecode pribadinya sendiri format. Dengan memproduksi Java bytecodes, di C-world akan dicapai langsung menghasilkan kode mesin. Tapi ini portabel kode mesin yang akan berjalan di semua platform Java.
 
 \subsection{Organisasi Sistem}
 
