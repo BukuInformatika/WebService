@@ -141,20 +141,79 @@ setgid www-data
 exec /path/to/uwsgi --ini /path/to/ini/file.ini
 Jika semuanya berjalan dengan baik, berarti instalasi berhasil \cite{maia2015building}.
 
-\subsection{cara instalasi uWSGI}
-untuk menginstall uWSGI pertama yang di perlukan adalah Python dan kompiler C (gcc dan clang). Bergantung pada bahasa yang ingin anda dukung. Anda akan membutuhkan header pengembanganya. Pada sistem Debian/ Ubuntu Anda dapat mengistalnya(dan sisanya dari infrastruktur yang di perlukan untuk membangun perangkat lunak). Dan juga dapat menggunakan pip untuk membangun binary dengadukungan phyton\cite{berger2017usage}.
 
 \subsection {cara instalasi uWSGI}
 Setelah sertifikat SSL diperoleh, maka sertifikat perlu direferensikan pada konfigurasi Nginx, yang merupakan server web yang Tethys, lalu file konfigurasi Nginx atau uWSGI akan ditampilkan. Lalu buat salinan blok server yang tidak aman dan tempelkan di bawah yang asli. Lalu masuk ke Proxy Base URL terakhir restart Nginx untuk melihat hasil install\cite{swain2018tethys}.
 
+\subsection{cara instalasi uWSGI}
+Berikut merupakan Instal paket atau men-download, mengkompilasi dan menginstal komponen-komponen yang diperlukan.
+Buat file berikut di akar instalasi web2py, dan menyebutnya uwsgi.xml:
+<uwsgi>
+ <pythonpath>/home/web2py</pythonpath>
+ <module>wsgihandler</module>
+ <socket>127.0.0.1:37719</socket>
+ <master/>
+ <processes>8</processes>
+ <memory-report/>
+</uwsgi>
+- Konfigurasi ini menghasilkan delapan proses untuk mengelola beberapa permintaan dari
+HTTP server. Mengubah yang diperlukan, dan mengkonfigurasi <pythonpath>ke instalasi
+akar web2py.</pythonpath> 
+- kemudian sebagai user yang memiliki instalasi web2py, mulai server uWSGI :
+$ uWSGI -d uwsgi.xml
+- Sekarang luncurkan antarmuka administratif Cherokee untuk membuat konfigurasi baru:
+$cherokee-admin
+- lalu konekkan kedalam browser admin dengan link : http://localhost:9090/.
+- kemudian kelik tombol + -
+- Pilih Remote Host on (C), lalu isi kolom teks di (D) dengan alamat IP, dan port
+untuk mencocokkan konfigurasi dalam file uswgi.xml sebelumnya.
+-Setelah mengkonfigurasi sumber uWGI, sekarang mungkin untuk mengkonfigurasi Virtual Host, dan
+mengalihkan permintaan melalui itu. Dalam resep ini, kita memilih Virtual Host default
+- kemudian klik button rule management
+- Hapus semua aturan yang tercantum di sebelah kiri. Hanya aturan default yang akan tetap ada
+- Konfigurasikan aturan default dengan uWSGI Handler. Biarkan nilai-nilai lain tidak berubah
+- Jika Anda ingin Cherokee untuk melayani file statis langsung dari folder web2py, Anda dapat menambahkan
+Aturan Ekspresi Reguler. Klik tombol (A), dan pilih Ekspresi Reguler dari
+menu drop-down di (B). Ketahuilah bahwa konfigurasi ini hanya berfungsi jika web2py
+direktori berada pada sistem file yang sama, dan dapat diakses oleh Cherokee.
+- konfigurasi ke dalam regular expressions
+- Sekarang Anda dapat mengkonfigurasi Penangan Statis yang menunjuk ke subdirektori aplikasi
+instalasi web2py Anda:
+- Ingat untuk menyimpan konfigurasi, dan kembali atau mulai ulang Cherokee dari
+antarmuka administratif; maka Anda siap untuk memulai server uWSGI
+- Ubah ke ID pengguna yang benar yang digunakan untuk menginstal web2py; Sadarilah bahwa menggunakan
+root tidak disarankan.
+-  Pergilah ke direktori root dari instalasi web2py, di mana Anda menyimpan konfigurasi
+file uwsgi.xml.
+- Jalankan uWSGI dengan opsi -d <logfile>, sehingga berjalan di latar belakang:
+$ su - <web2py user>
+$ cd <web2py root>
+$ uwsgi -x uwsgi.xml -d /tmp/uwsgi.log \cite{reingart2012web2py}.
+
 \subsection {cara instalasi uWSGI}
 Pada penginstallan uwsgi sertifikat ssl tersebut direferensikan pada konfigurasi Nginx yang merupakan server web yang Tethys, kemudian file konfigurasi pada Nginx atau uWSGI akan menampillkan halaman Nginx atau UWSGI lalu salin blok server Kemudian masuk ke Proxy Base URL setelah selasai, restart Nginx untuk melihat hasil install Nginx atau UWSGI tersebut\cite{pellicer2016desarrollo}.
+
+\subsection{Cara Instalasi UWSGI}
+Berikut merupakan Instal paket atau men-download, mengkompilasi dan menginstal komponen-komponen yang diperlukan.
+Buat file berikut di akar instalasi web2py, dan menyebutnya uwsgi.xml:
+<uwsgi>
+ <pythonpath>/home/web2py</pythonpath>
+ <module>wsgihandler</module>
+ <socket>127.0.0.1:37719</socket>
+ <master/>
+ <processes>8</processes>
+ <memory-report/>
+</uwsgi>
+Konfigurasi ini menghasilkan delapan proses untuk mengelola beberapa permintaan dari
+HTTP server. Mengubah yang diperlukan, dan mengkonfigurasi <pythonpath>ke instalasi
+akar web2py.</pythonpath>\cite{reingart2012web2py}.
+
 
 \section{Contoh uWSGI}
 Flask micro-framework merupakan pustaka Python yang dapat membantu untuk pembuatan Web. uWSGI merupakan implementasi protokol WSGI, uWSGI dapat menangani transmisi data
 antara kode Python . Perbedaan diantara uWSGI dan Flask adalah bahwa uWSGI berfungsi sebagai aplikasi namun tidak hanya aplikasi sekarang UWSGI dapat dijalankan dimana saja sedangkan Flask berfungsi untuk membantu pembuatan web \cite{mulerolinked}.
 
-\section{Contoh uWSGi}
+\subsection{Contoh uWSGi}
 uWSGI mendukung berbagai protokol dan cara untuk mengambil file  konfigurasi seperti stdin dan http. contohnya
 # uwsgi [option] [option 2] .. -w [wsgi.py with application callable]
 
@@ -172,18 +231,4 @@ uwsgi --module wsgi_module_name --callable application_callable_name
 uwsgi -w wsgi_module_name:application_callable_name
 Meskipun mudah membingungkan dan sulit untuk dikelola, cara paling dasar untuk menjalankan uWSGI sama seperti skrip shell lainnya - dengan menyediakan konfigurasi yang diperlukan sebagai argumen\cite{cencini2017data}.
 
-\section{Cara instalasi uWSGI}
-Berikut merupakan Instal paket atau men-download, mengkompilasi dan menginstal komponen-komponen yang diperlukan.
-Buat file berikut di akar instalasi web2py, dan menyebutnya uwsgi.xml:
-<uwsgi>
- <pythonpath>/home/web2py</pythonpath>
- <module>wsgihandler</module>
- <socket>127.0.0.1:37719</socket>
- <master/>
- <processes>8</processes>
- <memory-report/>
-</uwsgi>
-Konfigurasi ini menghasilkan delapan proses untuk mengelola beberapa permintaan dari
-HTTP server. Mengubah yang diperlukan, dan mengkonfigurasi <pythonpath>ke instalasi
-akar web2py.</pythonpath>\cite{reingart2012web2py}.
 
