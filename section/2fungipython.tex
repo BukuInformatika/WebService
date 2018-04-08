@@ -109,6 +109,18 @@ Sementara itu C menyediakan banyak fungsi yang mendasarinya, kegunaan sebenarnya
 \subsection{Penyematan Python dan Menyembunyikan Ketergantungan Sistem}
 Salah satu masalah implementasi terbesar yang telah ditemui adalah fakta bahwa kode SPaSM adalah aplikasi paralel yang sangat bergantung pada implementasi yang tepat dari layanan sistem tingkat rendah seperti I / O dan manajemen proses. Saat ini, memungkinkan untuk menjalankan kode dalam dua konfigurasi yang berbeda, salah satu yang menggunakan pesan yang lewat melalui perpustakaan MPI dan yang lain menggunakan benang Solaris. Menggunakan Python dengan kedua versi kode membutuhkan tingkat kepedulian. Khususnya perushaan merasa perlu menyediakan Python dengan dukungan I / O yang ditingkatkan untuk berjalan dengan baik secara paralel. Pekerjaan ini telah dijelaskan di tempat lain.
 
+\subparagraph{Elemen Dasar Pemrograman Python}
 
+\begin{itemize}
+
+\item Pengenal atau identifier adalah nama yang dipakai untuk fungsi, variable dan konstanta yang didefinisikan oleh pemrogram. Pengenal memiliki aturan dan penulisan seperti:
+
+\begin{itemize}
+
+\item Nama variable harus diawali dengan huruf atau karakter garis bawah , selanjutnya dapat diikuti dengan huruf maupun angka atau tanda garis bawah. Nama variable tidak boleh diawali dengan angka.
+\item Nama variable tidak boleh menggunakan operator-operator aritmatika seperti dan karakter-karakter khusus. 
+\end{itemize}
+
+\end{itemize}
 
 \end{document}
