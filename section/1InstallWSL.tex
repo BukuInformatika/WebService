@@ -75,6 +75,11 @@ Karena deskripsi file terbuka dapat diwariskan di seberang atau di alihkan melal
 Kontrol Soket
 SELinux menyediakan kendali atas soket IPC melalui a mengatur kontrol berlapis atas soket, pesan, simpul, dan antarmuka jaringan. Saat ini, prototipe SELinux hanya menyediakan label dan kontrol untuk INET dan Soket domain UNIX. Pada lapisan soket, SELinux mengontrol kemampuan proses untuk melakukan operasi di soket. Pada lapisan transport, SELinux mengontrol kemampuan soket untuk berkomunikasi dengan soket lain. Di lapisan jaringan, SELinux mengontrol kemampuan untuk mengirim dan menerima pesan di antarmuka jaringan, dan itu mengontrol kemampuan untuk mengirim pesan ke node dan menerima pesan dari node. SELinux juga mengendalikan kemampuannya proses untuk mengkonfigurasi antarmuka jaringan dan memanipulasi tabel routing kernel.
 
+Antarmuka Pemrograman Aplikasi
+Biasanya, kontrol akses wajib SELinux beroperasi secara transparan pada aplikasi dan pengguna. Kontrol akses wajib hanya terlihat untuk aplikasi dan pengguna setelah kegagalan akses, yang mana mereka mengembalikan kode kesalahan Linux yang normal (mis. EACCES, EPERM, ECONNREFUSED, ECONNRESET) untuk kegagalan seperti itu.
+Meskipun aplikasi yang ada dapat digunakan tanpa modifikasi, itu diinginkan untuk menyediakan panggilan API baru untuk memungkinkan dimodifikasi dan aplikasi baru untuk dikembangkan yang dimiliki beberapa tingkat kesadaran fitur keamanan baru.
+
+
 \section{Install Windows Subsystem for Linux}
 
 \subsection{Persiapan}
