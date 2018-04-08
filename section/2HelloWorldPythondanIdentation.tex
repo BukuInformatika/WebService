@@ -229,7 +229,44 @@ Indentasi seperti lekukan ekspresi yang bersarang, merupakan hal penting dalam m
 
 
 \section{Error yang Muncul serta Solusinya}
+\subsection{Perintah If}
+Perintah if digunakan untuk menangani permasalahan bersyarat. Berikut ini contohnya:
+\begin{verbatim}
+>>> x = 12014081
+>>> if x > 12014081:
+... print "NIM di atas Icha."
+... elif x <12014081:
+... print "NIM di bawah Icha."
+... else:
+... print "Halo, Icha!"
+...
+Halo, Icha!
+\end{verbatim}
 
+Perhatikanlah bahwa baris pertama dalam rangkaian ini diawali dengan perintah if yang berarti jika, baris kedua dengan perintah elif yang berarti selain “if” (else if), rangkaian diakhiri dengan perintah else yang berarti selain keduanya. Masing – masing perintah ini diakhiri dengan tanda titik dua yang kemudian diikuti subperintah yang hendak dieksekusi. Pada rangkaian perintah if, kedua perintah elif dan else bersifat opsional.
+
+Satu lagi konsep penting dalam pemrograman Python yang harus kalian ingat adalah bahwa spasi dan indentasi mempunyai makna sintaktis. Spasi dan indentasi mendikte bagaimana kita mengeksekusi perintah. Tanda titik dua diperlukan untuk menandai subperintah sesudah perintah if, pada pengulangan (looping), atau sesudah pendefinisan fungsi. Dalam Python, seluruh subperintah yang satu kelompok sesudah tanda titik dua harus memilki indentasi yang sama, jika tidak maka akan menghasilkan error. Untuk lebih jelasnya perhatikan contoh berikut ini:
+
+\begin{verbatim}
+>>> if 1 < 3:
+... print "baris satu"
+... print "baris dua"
+File "<stdin>", line 3
+print "baris dua"
+^
+IndentationError: unexpected indent
+\end{verbatim}
+
+Coba kalian perhatikan perbedaan contoh tadi dengan contoh berikut ini:
+
+\begin{verbatim}
+>>> if 1 < 3:
+... print "baris satu"
+... print "baris dua"
+...
+baris satu
+baris dua
+\end{verbatim}
 
 \section{Kesimpulan}
 
