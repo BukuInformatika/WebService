@@ -193,22 +193,6 @@ $ uwsgi -x uwsgi.xml -d /tmp/uwsgi.log \cite{reingart2012web2py}.
 \subsection {cara instalasi uWSGI}
 Pada penginstallan uwsgi sertifikat ssl tersebut direferensikan pada konfigurasi Nginx yang merupakan server web yang Tethys, kemudian file konfigurasi pada Nginx atau uWSGI akan menampillkan halaman Nginx atau UWSGI lalu salin blok server Kemudian masuk ke Proxy Base URL setelah selasai, restart Nginx untuk melihat hasil install Nginx atau UWSGI tersebut\cite{pellicer2016desarrollo}.
 
-\subsection{Cara Instalasi UWSGI}
-Berikut merupakan Instal paket atau men-download, mengkompilasi dan menginstal komponen-komponen yang diperlukan.
-Buat file berikut di akar instalasi web2py, dan menyebutnya uwsgi.xml:
-<uwsgi>
- <pythonpath>/home/web2py</pythonpath>
- <module>wsgihandler</module>
- <socket>127.0.0.1:37719</socket>
- <master/>
- <processes>8</processes>
- <memory-report/>
-</uwsgi>
-Konfigurasi ini menghasilkan delapan proses untuk mengelola beberapa permintaan dari
-HTTP server. Mengubah yang diperlukan, dan mengkonfigurasi <pythonpath>ke instalasi
-akar web2py.</pythonpath>\cite{reingart2012web2py}.
-
-
 \section{Contoh uWSGI}
 Flask micro-framework merupakan pustaka Python yang dapat membantu untuk pembuatan Web. uWSGI merupakan implementasi protokol WSGI, uWSGI dapat menangani transmisi data
 antara kode Python . Perbedaan diantara uWSGI dan Flask adalah bahwa uWSGI berfungsi sebagai aplikasi namun tidak hanya aplikasi sekarang UWSGI dapat dijalankan dimana saja sedangkan Flask berfungsi untuk membantu pembuatan web \cite{mulerolinked}.
