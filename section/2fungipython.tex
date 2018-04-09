@@ -144,6 +144,15 @@ Raise  return  try  while
 
 Dalam Bahasa pemograman python memiliki tipe data yang dasar, Nilai dalam python adalah salah satu yang pokok, seperti huruf dan angka. Nilai sewaktu waktu dapat berupa hasil penjumlahan atau berupa String.
 
+\subsection{Contoh Yang Lebih Rumit}
+	Implementasi yang sebenarnya dari Python  ke Java bytecode translator yaitu melakukan terjemahan langsung dari Python ke Java bytecode. Meskipun demikian, hampir semuanya  bisa dilihat secara konseptual sebagai terjemahan Python ke Java. Karena cenderung lebih mudah membaca kode sumber Java daripada kode assembly Java VM, berikut ini akan disajikan beberapa contohnya:
+
+\begin{itemize}
+
+\item Baris 1 mendeklarasikan kelas Java baru. Setiap modul Python diimplementasikan sebagai satu kelas Java. Setiap modul Python juga harus mengimplementasikan antarmuka PyRunnable yang memungkinkan modul untuk diinisialisasi (dan membutuhkan modul untuk mengimplementasikan metode "run"). 
+\item Baris 3-6 menentukan kolam konstan untuk modul Python ini sebagai medan statis di kelas Java. Masing-masing bidang statis ini menyimpan objek Java yang sesuai dengan beberapa konstanta Python primitif.
+
+\end{itemize}
 
 \end{itemize}
 
