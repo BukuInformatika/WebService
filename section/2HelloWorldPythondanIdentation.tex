@@ -272,6 +272,19 @@ baris satu
 baris dua
 \end{verbatim}
 
+\subsection{Eksepsi Menurut Herho, Sandy Hardian Susanto}
+Python menyediakan bagi kita cara yang sangat mudah untuk memeriksa kesalahan pada program yang kita buat dengan menggunakan perintah try dan except. Perhatikanlah contoh berikut ini:
+\begin{verbatim}
+def kali (x, y):
+	try:
+		ret = x * y
+	except StandardError;
+		ret = 0
+	return ret
+\end{verbatim}
+Di sini kita telah mendefinisikan fungsi perkalian yang berlaku untuk seluruh tipe data. Jika ternyata operasi perkalian tidak dapat dilakukan pada tipe – tipe data tertentu, maka error yang terjadi akan ditangani oleh perintah except. Alih – alih menghentikan program secara keseluruhan, dengan eksepsi kita dapat mengantisipasi dan mengetahui pada bagian mana kita membuat kesalahan yang akan ditangani oleh perintah try\cite{herho2018tutorial}.
+
+
 \section{Kesimpulan}
 	Dari berbagai pengertian mengenai bahasa pemograman python kita dapat simpulkan bahwa bahasa pemograman Python merupakan bahasa pemrograman open source yang banyak digunakan untuk menangani beberapa jenis masalah dalam pemrograman. Python banyak digunakan untuk meningkatkan kualitas perangkat lunak, produktivitas pengembang, portabilitas program, dan integrasi komponen\cite{computingaplikasi}.
 	
