@@ -238,11 +238,11 @@ Perintah if digunakan untuk menangani permasalahan bersyarat. Berikut ini contoh
 \begin{verbatim}
 >>> x = 12014081
 >>> if x > 12014081:
-... print "NIM di atas Icha."
+... 	print "NIM di atas Icha."
 ... elif x <12014081:
-... print "NIM di bawah Icha."
+... 	print "NIM di bawah Icha."
 ... else:
-... print "Halo, Icha!"
+... 	print "Halo, Icha!"
 ...
 Halo, Icha!
 \end{verbatim}
@@ -254,10 +254,11 @@ Satu lagi konsep penting dalam pemrograman Python yang harus kalian ingat adalah
 \begin{verbatim}
 >>> if 1 < 3:
 ... print "baris satu"
-... print "baris dua"
-File "<stdin>", line 3
-print "baris dua"
-^
+... 	print "baris dua"
+  File "<stdin>", line 3
+    print "baris dua"
+    ^
+    
 IndentationError: unexpected indent
 \end{verbatim}
 
@@ -265,8 +266,8 @@ Coba kalian perhatikan perbedaan contoh tadi dengan contoh berikut ini:
 
 \begin{verbatim}
 >>> if 1 < 3:
-... print "baris satu"
-... print "baris dua"
+... 	print "baris satu"
+... 	print "baris dua"
 ...
 baris satu
 baris dua
