@@ -135,4 +135,27 @@ Pada windows, kita dapat mengasosiasikan file extentions .py, .pyc, dan .pyo den
 Pada windows, Anda juga dapat menggunakan program ekstensi .pyw dan interpreter python.exe bukannya .py dan python.exe. varian w menjalankan Python tanpa konsol mode teks, dan dengan demikian tanpa input dan output standar. Varian ini sesuai untuk skrip yang mengandalkan GUI atau berjalan tanpa terlihat di latar belakang. Gunakan hanya ketika sebuah program sepenuhnya dibongkar, untuk menjaga output standar dan kesalahan tersedia untuk informasi, peringatan dan pesan kesalahan selama pengembangan. Di Mac, Anda perlu menggunakan program interpreter python, bukan hanya interaksi teks-mode. Aplikasi yang dikodekan dalam bahasa lain dapat menyematkan Python, yang menghibur eksekusi kode Python untuk tujuan mereka sendiri. Kami memeriksa subjek ini lebih lanjut di "Embedding Python".
 \end{document}
 
+\section{Contoh Kode}
+import os 				# operating system interface
+names = os.listdir(’.’) 	# get directory contents
+names.sort() 			# sort the list alphabetically
+for n in names: 			# loop over the list of names
+if n[0] != ’.’: 			# select non-hidden names
+print n 			# and print them
+
+
+And here is a simple program to print the first 100 prime numbers:
+primes = [2] 			# make a list of prime numbers
+print 2 				# print the first prime
+i = 3 				# initialize candidate
+while len(primes) < 100: 	# loop until 100 primes found
+for p in primes: 		# loop over known primes
+if i%p == 0 or p*p > i: 	# look for possible divisors
+break 				# cancel rest of for loop
+if i%p != 0: 			# is i indeed a prime?
+primes.append(i) 		# add it to the list
+print i 				# and print it
+i = i + 2 			# consider next candidate
+
+\end{document}
 
