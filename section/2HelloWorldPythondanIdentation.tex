@@ -233,6 +233,36 @@ Indentasi seperti lekukan ekspresi yang bersarang, merupakan hal penting dalam m
 \subsection{Finding errors in python programs using dynamic symbolic execution}
 Untuk fitur dinamis Python, tantangan paling utama adalah melacak jumlah yang tepat dari informasi simbolis selama eksekusi. Untuk menunjukkan cara ini adalah dengan membangun dan menyelesaikan kendala menggunakan aksioma lengkap atau parsial fungsi perpustakaan sesuai kebutuhan. Evaluasi lebih lanjut akan memberikan wawasan tentang jumlah dan jenis bug itu dapat secara otomatis ditemukan dan bagaimana mengatur kerangka kerja secara efektif secara efisien dapat memperkecil kesalahan paling representatif dan relevan\cite{sapra2013finding}.
 
+\subsection{Tipe Dictionary}
+Dictionary adalah salah satu tipe kumpulan objek yang mirip dengan list dan tuple. Namun, perbedaannya adalah dictionary memuat objek yang tidak tersusun. Sebagai gantinya, dictionary menghubungkan relasi satu ke satu (pemetaan) antara kunci (key) ke suatu nilai. Dalam bahasa pemrograman lainnya dikenal sebagai array asosiatif yang indeksnya berupa nama tertentu. Bentuk umum dictionary adalah sebagai berikut:
+
+\begin{verbatim}
+variabel = {key1 : nilai1, key2 : nilai2, ...}
+\end{verbatim}
+
+Berikut ini adalah contoh dictionary:
+
+\begin{verbatim}
+>>> d = {"Nama" : "Annisa Indahvinaldi", "Prodi" : "Teknik Geologi",
+... "NIM" : "12014081"}
+\end{verbatim}
+
+Untuk mengakses nilai dari key tertentu maka kita dapat melakukan:
+
+\begin{verbatim}
+>>> d["Nama"]
+'Annisa Indahvinaldi'
+>>> d["NIM"]
+'12014081'
+>>> d["Alamat"]
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+KeyError: 'Alamat'
+\end{verbatim}
+
+Perhatikanlah bahwa pemanggilan nilai key yang tidak terdapat dalam dictionary akan menghasilkan nilai error\cite{herho2018tutorial}.
+
+
 \subsection{Perintah If}
 Perintah if digunakan untuk menangani permasalahan bersyarat. Berikut ini contohnya:
 \begin{verbatim}
@@ -249,7 +279,7 @@ Halo, Icha!
 
 Perhatikanlah bahwa baris pertama dalam rangkaian ini diawali dengan perintah if yang berarti jika, baris kedua dengan perintah elif yang berarti selain “if” (else if), rangkaian diakhiri dengan perintah else yang berarti selain keduanya. Masing – masing perintah ini diakhiri dengan tanda titik dua yang kemudian diikuti subperintah yang hendak dieksekusi. Pada rangkaian perintah if, kedua perintah elif dan else bersifat opsional.
 
-Satu lagi konsep penting dalam pemrograman Python yang harus kalian ingat adalah bahwa spasi dan indentasi mempunyai makna sintaktis. Spasi dan indentasi mendikte bagaimana kita mengeksekusi perintah. Tanda titik dua diperlukan untuk menandai subperintah sesudah perintah if, pada pengulangan (looping), atau sesudah pendefinisan fungsi. Dalam Python, seluruh subperintah yang satu kelompok sesudah tanda titik dua harus memilki indentasi yang sama, jika tidak maka akan menghasilkan error. Untuk lebih jelasnya perhatikan contoh berikut ini:
+Satu lagi konsep penting dalam pemrograman Python yang harus kalian ingat adalah bahwa spasi dan indentasi mempunyai makna sintaktis. Spasi dan indentasi mendikte bagaimana kita mengeksekusi perintah. Tanda titik dua diperlukan untuk menandai subperintah sesudah perintah if, pada pengulangan (looping), atau sesudah pendefinisan fungsi. Dalam Python, seluruh subperintah yang satu kelompok sesudah tanda titik dua harus memilki indentasi yang sama, jika tidak maka akan menghasilkan error\cite{herho2018tutorial}. Untuk lebih jelasnya perhatikan contoh berikut ini:
 
 \begin{verbatim}
 >>> if 1 < 3:
