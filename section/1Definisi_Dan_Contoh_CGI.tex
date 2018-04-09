@@ -128,5 +128,7 @@ search-string = search-word *( "+" search-word )
 
 Setelah parsing, setiap kata pencarian adalah URL-decoded, opsional dikodekan dengan cara yang ditentukan sistem dan kemudian ditambahkan ke daftar argumen baris perintah.
 
-Jika server tidak dapat membuat bagian apa pun dari daftar argumen, maka server tidak harus menghasilkan informasi baris perintah apa pun.
+Jika server tidak dapat membuat bagian apa pun dari daftar argumen, maka server tidak harus menghasilkan informasi baris perintah apa pun. Sebagai contoh, jumlah argument yang mungkin lebih besar daripada system operasi atau server yang terbatas, atau salah satu dari kata-kata mungkin tidak dapat diwakilkan sebagai argumen.
+
+Skrip HARUS memeriksa untuk melihat apakah nilai QUERY-STRING yang dikodekan tidak berisi karakter “=”, dan TIDAK HARUS menggunakan baris perintah argumen jika itu terjadi.
 \end{document}  
