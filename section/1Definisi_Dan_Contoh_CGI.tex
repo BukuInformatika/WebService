@@ -116,4 +116,6 @@ Arti metode GET dapat dimodifikasi dan disempurnakan oleh variabel-variabel khus
 \section{POST}
 Metode POST digunakan untuk meminta skrip melakukan pemrosesan dan menghasilkan dokumen berdasarkan data di dalam isi permintaan pesan, selain nilai-nilai meta-variabel. Penggunaan umum adalah penyerahan formulir dalam HTML, yang dimaksudkan untuk memulai pemrosesan oleh skrip yang memiliki pengaruh permanen, seperti perubahan dalam basis data.
 Skrip HARUS memeriksa nilai variabel CONTENT LENGTH sebelum membaca badan pesan terlampir, dan HARUS memeriksa nilai CONTENT TYPE sebelum memprosesnya.
+\section{HEAD}
+Method Head meminta skrip untuk melakukan pemrosesan yang memadai atau cukup untuk mereturn atau mengembalikan respon pada bagian header,tanpa memberikan isi pesan respon.Script tidak harus menyediakan isi pesan respon untuk HEAD resquest.Jika sampai isi pesan respon diberikan,maka server harus membuang isi pesan tersebut saat membaca respon yang diberikan oleh script.
 \end{document}  
