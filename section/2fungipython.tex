@@ -98,6 +98,8 @@ Implementasi Python di Java terdiri dari tiga komponen-komponen kunci.Yang perta
 
 Komponen kedua dari sistem ini adalah kompilator ditulis seluruhnya dengan Python yang melintasi pohon parse ini untuk menghasilkan bytecode Java yang sebenarnya. Ini berbeda dengan implementasi Python saat ini, yang menghasilkan bytecode pribadinya sendiri format. Dengan memproduksi Java bytecodes, di C-world akan dicapai langsung menghasilkan kode mesin. Tapi ini portabel kode mesin yang akan berjalan di semua platform Java.
 
+Komponen ketiga dari implementasi Python di Java adalah koleksi kelas dukungan berbasis Java. Kelas-kelas ini menyediakan implementasi untuk dasar Objek Python (daftar, bilangan bulat, instance, kelas, dan lain sebagainya sebagai serta implementasi fungsi berguna seperti "cetak" dan "impor". Fungsionalitas Python saat ini mesin virtual dibagi antara kelas-kelas pendukung ini dan mesin virtual Java sendiri.
+
 \subsection{Organisasi Sistem}
 
 Tujuannya adalah membangun sistem yang sangat modular yang dapat melakukan simulasi, analisis data, dan visualisasi sering melakukan semua tugas ini secara bersamaan. 
