@@ -136,131 +136,107 @@ setgid www-data\\
 exec /path/to/uwsgi --ini /path/to/ini/file.ini\\
 Jika semuanya berjalan dengan baik, berarti instalasi berhasil \cite{maia2015building}.\\
 
-
-
-
-
-
-
-
-
-
-
-
-\subsection {cara instalasi uWSGI}
 Setelah sertifikat SSL diperoleh, maka sertifikat perlu direferensikan pada konfigurasi Nginx, yang merupakan server web yang Tethys, lalu file konfigurasi Nginx atau uWSGI akan ditampilkan. Lalu buat salinan blok server yang tidak aman dan tempelkan di bawah yang asli. Lalu masuk ke Proxy Base URL terakhir restart Nginx untuk melihat hasil install\cite{swain2018tethys}.
 
-\subsection{cara instalasi uWSGI}
-Berikut merupakan Instal paket atau men-download, mengkompilasi dan menginstal komponen-komponen yang diperlukan.
-Buat file berikut di akar instalasi web2py, dan menyebutnya uwsgi.xml:
-<uwsgi>
- <pythonpath>/home/web2py</pythonpath>
- <module>wsgihandler</module>
- <socket>127.0.0.1:37719</socket>
- <master/>
- <processes>8</processes>
- <memory-report/>
-</uwsgi>
-- Konfigurasi ini menghasilkan delapan proses untuk mengelola beberapa permintaan dari
-HTTP server. Mengubah yang diperlukan, dan mengkonfigurasi <pythonpath>ke instalasi
-akar web2py.</pythonpath> 
-- kemudian sebagai user yang memiliki instalasi web2py, mulai server uWSGI :
-$ uWSGI -d uwsgi.xml
-- Sekarang luncurkan antarmuka administratif Cherokee untuk membuat konfigurasi baru:
-$cherokee-admin
-- lalu konekkan kedalam browser admin dengan link : http://localhost:9090/.
-- kemudian kelik tombol + -
-- Pilih Remote Host on (C), lalu isi kolom teks di (D) dengan alamat IP, dan port
-untuk mencocokkan konfigurasi dalam file uswgi.xml sebelumnya.
--Setelah mengkonfigurasi sumber uWGI, sekarang mungkin untuk mengkonfigurasi Virtual Host, dan
-mengalihkan permintaan melalui itu. Dalam resep ini, kita memilih Virtual Host default
-- kemudian klik button rule management
-- Hapus semua aturan yang tercantum di sebelah kiri. Hanya aturan default yang akan tetap ada
-- Konfigurasikan aturan default dengan uWSGI Handler. Biarkan nilai-nilai lain tidak berubah
-- Jika Anda ingin Cherokee untuk melayani file statis langsung dari folder web2py, Anda dapat menambahkan
-Aturan Ekspresi Reguler. Klik tombol (A), dan pilih Ekspresi Reguler dari
-menu drop-down di (B). Ketahuilah bahwa konfigurasi ini hanya berfungsi jika web2py
-direktori berada pada sistem file yang sama, dan dapat diakses oleh Cherokee.
-- konfigurasi ke dalam regular expressions
-- Sekarang Anda dapat mengkonfigurasi Penangan Statis yang menunjuk ke subdirektori aplikasi
-instalasi web2py Anda:
-- Ingat untuk menyimpan konfigurasi, dan kembali atau mulai ulang Cherokee dari
-antarmuka administratif; maka Anda siap untuk memulai server uWSGI
-- Ubah ke ID pengguna yang benar yang digunakan untuk menginstal web2py; Sadarilah bahwa menggunakan
-root tidak disarankan.
--  Pergilah ke direktori root dari instalasi web2py, di mana Anda menyimpan konfigurasi
-file uwsgi.xml.
-- Jalankan uWSGI dengan opsi -d <logfile>, sehingga berjalan di latar belakang:
-$ su - <web2py user>
-$ cd <web2py root>
-$ uwsgi -x uwsgi.xml -d /tmp/uwsgi.log \cite{reingart2012web2py}.
+	 Berikut merupakan Instal paket atau men-download, mengkompilasi dan menginstal komponen-komponen yang diperlukan.
+Buat file berikut di akar instalasi web2py, dan menyebutnya uwsgi.xml:\\
+\verb|<uwsgi>| 
+\\ \verb|<pythonpath>/home/web2py</pythonpath>|
+\\ \verb|<module>wsgihandler</module>|
+\\ \verb|<socket>127.0.0.1:37719</socket>|
+\\ \verb|<master/>|
+\\ \verb|<processes>8</processes>|
+\\ \verb|<memory-report/>|
+\\ \verb|</uwsgi>|
 
-\subsection {cara instalasi uWSGI}
+\begin{enumerate}
+\item Konfigurasi ini menghasilkan delapan proses untuk mengelola beberapa permintaan dari
+HTTP server. Mengubah yang diperlukan, dan mengkonfigurasi \verb|<pythonpath>| ke instalasi
+akar web2py \verb|</pythonpath>|.
+\item kemudian sebagai user yang memiliki instalasi web2py, mulai server uWSGI :\\ \$ uWSGI -d uwsgi.xml
+\item Sekarang luncurkan antarmuka administratif Cherokee untuk membuat konfigurasi baru:\\ \$cherokee-admin
+\item lalu konekkan kedalam browser admin dengan link : http://localhost:9090/.
+\item kemudian kelik tombol + -
+\item Pilih Remote Host on (C), lalu isi kolom teks di (D) dengan alamat IP, dan port untuk mencocokkan konfigurasi dalam file uswgi.xml sebelumnya.
+\item Setelah mengkonfigurasi sumber uWGI, sekarang mungkin untuk mengkonfigurasi Virtual Host, dan
+mengalihkan permintaan melalui itu. Dalam resep ini, kita memilih Virtual Host default
+\item kemudian klik button rule management
+\item Hapus semua aturan yang tercantum di sebelah kiri. Hanya aturan default yang akan tetap ada
+\item Konfigurasikan aturan default dengan uWSGI Handler. Biarkan nilai-nilai lain tidak berubah
+\item Jika Anda ingin Cherokee untuk melayani file statis langsung dari folder web2py, Anda dapat menambahkan Aturan Ekspresi Reguler. Klik tombol (A), dan pilih Ekspresi Reguler dari menu drop-down di (B). Ketahuilah bahwa konfigurasi ini hanya berfungsi jika web2py direktori berada pada sistem file yang sama, dan dapat diakses oleh Cherokee.
+\item konfigurasi ke dalam regular expressions
+\item Sekarang Anda dapat mengkonfigurasi Penangan Statis yang menunjuk ke subdirektori aplikasi
+instalasi web2py Anda:\\
+\verb  - Ingat untuk menyimpan konfigurasi, dan kembali atau mulai ulang Cherokee dari antarmuka administratif; maka Anda siap untuk memulai server uWSGI\\
+\verb  - Ubah ke ID pengguna yang benar yang digunakan untuk menginstal web2py;\\
+\verb  - Sadarilah bahwa menggunakan
+root tidak disarankan.\\
+\verb  - Pergilah ke direktori root dari instalasi web2py, di mana Anda menyimpan konfigurasi file uwsgi.xml.
+\item Jalankan uWSGI dengan opsi -d <logfile>, sehingga berjalan di latar belakang:
+\\ \$ su - <web2py user>
+\\ \$ cd <web2py root>
+\\ \$ uwsgi -x uwsgi.xml -d /tmp/uwsgi.log \cite{reingart2012web2py}.\\
+
 Pada penginstallan uwsgi sertifikat ssl tersebut direferensikan pada konfigurasi Nginx yang merupakan server web yang Tethys, kemudian file konfigurasi pada Nginx atau uWSGI akan menampillkan halaman Nginx atau UWSGI lalu salin blok server Kemudian masuk ke Proxy Base URL setelah selasai, restart Nginx untuk melihat hasil install Nginx atau UWSGI tersebut\cite{pellicer2016desarrollo}.
 
-\section{Contoh uWSGI}
-Flask micro-framework merupakan pustaka Python yang dapat membantu untuk pembuatan Web. uWSGI merupakan implementasi protokol WSGI, uWSGI dapat menangani transmisi data
-antara kode Python . Perbedaan diantara uWSGI dan Flask adalah bahwa uWSGI berfungsi sebagai aplikasi namun tidak hanya aplikasi sekarang UWSGI dapat dijalankan dimana saja sedangkan Flask berfungsi untuk membantu pembuatan web \cite{mulerolinked}.
+\section{Contoh - Contoh uWSGI}
+	Flask micro-framework merupakan pustaka Python yang dapat membantu untuk pembuatan Web. uWSGI merupakan implementasi protokol WSGI, uWSGI dapat menangani transmisi data antara kode Python . Perbedaan diantara uWSGI dan Flask adalah bahwa uWSGI berfungsi sebagai aplikasi namun tidak hanya aplikasi sekarang UWSGI dapat dijalankan dimana saja sedangkan Flask berfungsi untuk membantu pembuatan web \cite{mulerolinked}.\\
+	uWSGI mendukung berbagai protokol dan cara untuk mengambil file  konfigurasi seperti stdin dan http. contohnya
+\verb |\# uwsgi [option] [option 2] .. -w [wsgi.py with application callable]|\\
 
-\subsection{Contoh uWSGi}
-uWSGI mendukung berbagai protokol dan cara untuk mengambil file  konfigurasi seperti stdin dan http. contohnya
-# uwsgi [option] [option 2] .. -w [wsgi.py with application callable]
+\# Simple server running *wsgi*\\
+uwsgi --socket 127.0.0.1:8080 -w wsgi\\
 
-# Simple server running *wsgi*
-uwsgi --socket 127.0.0.1:8080 -w wsgi
+\# Running Pyramid (Paster) applications\\
+uwsgi --ini-paste production.ini\\
 
-# Running Pyramid (Paster) applications
-uwsgi --ini-paste production.ini
+\# Running web2py applications\\
+uwsgi --pythonpath /path/to/app --module wsgihandler\\
 
-# Running web2py applications
-uwsgi --pythonpath /path/to/app --module wsgihandler
-
-# Running WSGI application with specific module / callable names
-uwsgi --module wsgi_module_name --callable application_callable_name
-uwsgi -w wsgi_module_name:application_callable_name
-Meskipun mudah membingungkan dan sulit untuk dikelola, cara paling dasar untuk menjalankan uWSGI sama seperti skrip shell lainnya - dengan menyediakan konfigurasi yang diperlukan sebagai argumen\cite{cencini2017data}.
-
-\subsection{contoh uWSGI}
-Sebagai contoh uWSGI sendiri merespon server 	menuju Nginx melalui protocol wsgi, maka Data dinamis dari interaksi program komputasi Python kemudian uWSGI akan berinteraksi dengan Nginx, dan yang terakhir akan menyajikan hasil kepada klien dalam bentuk konten statis. Selain itu, untuk memenuhi kebutuhan waktu untuk operasi data, penyedia  telah mengoptimalkan beberapa parameter terkait dari Nginx dan uWSGI seperti max-requests, harakiri and keepalive_timeout.
-Dengan menggunakan arsitektur tertentu, keseimbangan antara sumber daya sistem dan efisiensi komputasi dipertahankan. independensi yang baik dan operasi data yang aman kemudian  akses file dari permintaan yang berbeda juga dapat diajamin. Untuk memberikan layanan komputasi secara online berbasis web, antarmuka pengguna harus nyaman dan mudah digunakan untuk pengguna sehingga pengguna dapat lebih mudah mengoprasikannya\cite{dong2015chemdes}.
-
-\subsection {Contoh uWSGI}
-uWSGI merupakan antarmuka yang menjembatani web server yang ditulis dalam bahasa C, dan biasanya juga digunakan untuk mengakses REST API, uWSGI juga yang menjadikan layanan tersedia sebagai aplikasi, dan antarmuka web Nginx yang membuatnya dapat diakses ke Internet dan memungkinkan manajemen koneksi. Berikut contoh pengimplementasian uWSGI menggunakan REST API terlihat sebagai berikut :
-[ uwsgi ]
-plugins = python
-chdir = /home/cuckoo/cuckoo
-f i l e = u t i l s /api . py
-uid = cuckoo
-gid = cuckoo
-c a l l a b l e = app
-
-Dan untuk mengakses ke aplikasi, kita mengatur web server kita nginx sebagai berikut :
-upstream api {
-s e rve r unix :/ run/uwsgi/app/cuckoo−api/socket ;
-}
-s e rve r {
-l i s t e n 8 09 0;
-l i s t e n [ : : ] : 8 0 9 0 ipv6only=on ;
-# REST API app
-l o c a t i on / {
-uwsgi_pass api ;
-include /e t c/nginx/uwsgi_params ;
-allow 1 4 7 . 2 5 1 . 1 7 . 0/1 6 ;
-deny a l l ;
-
-Dalam pengaturan, seperti halnya untuk server, akses ke alamat IP terbatas berasal dari lingkup aplikasi kita. Server REST API berjalan di port 8090 sehingga tidak tumpang tindih dengan antarmuka web \cite{beran2017analyza}.
-
-\subsection{Contoh uWSGI}
-Layanan web yang dapat memproses data struktural dan memiliki keamanan yang tinggi maka diperlukan aplikasi yang dapat logging data. Aplikasi dengan layanan web ini dibuat dengan pemrograman bahasa Python dengan kerangka labu digunakan untuk mengatur URL dengan protokol uWSGI dengan sistem lengkap aplikasi dapat diakses oleh internet dengan membuka alamat web aplikasi\cite{rudiana2015perancangan}. 
-
-\subsection{Contoh UWSGI}
-UWGI pada awalnya hanya untuk menjalankan web berbasis phyton namun sekarang telah berkembang dan dapat digunakan pada web mana saja dan mudahnya menggunakan uwsgi setiap proses yang dijalankan sebagai pegguna biasa (non root), UWSGI pun dapat memproses data struktural dan memiliki sistem keamanan tinggi maka aplikasinya pun diperlukan untuk logging data\cite{rajagukguksearch}. 
-
-\subsection{Contoh uWSGI}
-contoh ini  sistem kontrol proses perangkat lunak tradisional untuk menganalisis dan membahas meringkas pengembangan dan pemeliharaan kompleks, biaya tinggi, membahas B / S desain perangkat lunak aplikasi Web dan keuntungan, dan penelitian dan studi arsitektur sistem aplikasi server Web. Melalui Webform komparatif analisis dan model pemrograman MVC, serta Apache dan Nginx Web tes server perbandingan, merancang sebuah sistem operasi Linux, Nginx + uWSGI sebagai server Web, Mysql database, Django MTV sebagai model proses latar belakang Web sistem server arsitektur, Meningkatkan efisiensi, stabilitas, dan konkurensi dari pengembangan perangkat lunak pengontrolan proses server. Untuk metode pengendalian proses, metode kontrol proses PID jaringan saraf yang ditingkatkan dipelajari. Dengan menganalisis proses produksi industri pertanian, untuk menemukan kuncinya adalah untuk mengontrol seluruh proses produksi lingkungan pertumbuhan tanaman - suhu, kelembaban, dll, ketika objek dari lingkungan pertumbuhan tanaman berubah, sehingga lingkungan yang cepat dan stabil dicapai oleh sistem dan metode untuk mengendalikan Dan tetap pada permintaan pengontrol\cite{Guo Mingyang 2016}.
+\# Running WSGI application with specific module / callable names\\
+\verb|uwsgi --module wsgi_module_name --callable application_callable_name|\\
+\verb|uwsgi -w wsgi_module_name:application_callable_name|\\
+Meskipun mudah membingungkan dan sulit untuk dikelola, cara paling dasar untuk menjalankan uWSGI sama seperti skrip shell lainnya - dengan menyediakan konfigurasi yang diperlukan sebagai argumen\cite{cencini2017data}.\\
 
 
 
+
+\end{enumerate}
+Sebagai contoh uWSGI sendiri merespon server menuju Nginx melalui protocol wsgi, maka Data dinamis dari interaksi program
+komputasi Python kemudian uWSGI akan berinteraksi dengan Nginx, dan yang terakhir akan menyajikan hasil kepada klien dalam\
+bentuk konten statis. Selain itu, untuk memenuhi kebutuhan waktu untuk operasi data, penyedia  telah mengoptimalkan beberapa
+parameter terkait dari Nginx dan uWSGI seperti max requestsi harakiri and keepalive timeout.\\
+
+	Dengan menggunakan arsitektur tertentu, keseimbangan antara sumber daya sistem dan efisiensi komputasi dipertahankan. independensi yang baik dan operasi data yang aman kemudian  akses file dari permintaan yang berbeda juga dapat diajamin. Untuk memberikan layanan komputasi secara online berbasis web, antarmuka pengguna harus nyaman dan mudah digunakan untuk pengguna sehingga pengguna dapat lebih mudah mengoprasikannya\cite{dong2015chemdes}.\\
+
+	Dengan menggunakan arsitektur tertentu, keseimbangan antara sumber daya sistem dan efisiensi komputasi dipertahankan. independensi yang baik dan operasi data yang aman kemudian  akses file dari permintaan yang berbeda juga dapat diajamin. Untuk memberikan layanan komputasi secara online berbasis web, antarmuka pengguna harus nyaman dan mudah digunakan untuk pengguna sehingga pengguna dapat lebih mudah mengoprasikannya\cite{dong2015chemdes}.\\
+	
+	uWSGI merupakan antarmuka yang menjembatani web server yang ditulis dalam bahasa C, dan biasanya juga digunakan untuk mengakses REST API, uWSGI juga yang menjadikan layanan tersedia sebagai aplikasi, dan antarmuka web Nginx yang membuatnya dapat diakses ke Internet dan memungkinkan manajemen koneksi. Berikut contoh pengimplementasian uWSGI menggunakan REST API terlihat sebagai berikut :\\
+\verb|[ uwsgi ]|
+plugins = python\\
+chdir = /home/cuckoo/cuckoo \\
+f i l e = u t i l s /api . py\\
+uid = cuckoo\\
+gid = cuckoo\\
+c a l l a b l e = app\\
+
+Dan untuk mengakses ke aplikasi, kita mengatur web server kita nginx sebagai berikut :\\
+\verb|upstream api {|\\
+s e rve r unix :/ run/uwsgi/app/cuckoo−api/socket ;\\
+\verb|}|\\
+\verb|s e rve r {|\\
+l i s t e n 8 09 0;\\
+l i s t e n [ : : ] : 8 0 9 0 ipv6only=on ;\\
+\# REST API app
+l o c a t i on / \verb|{| \\
+\verb|uwsgi_pass| api ;\\
+\verb|include /e t c/nginx/uwsgi_params ;|\\
+allow 1 4 7 . 2 5 1 . 1 7 . 0/1 6 ; \\
+deny a l l ;\\
+
+Dalam pengaturan, seperti halnya untuk server, akses ke alamat IP terbatas berasal dari lingkup aplikasi kita. Server REST API berjalan di port 8090 sehingga tidak tumpang tindih dengan antarmuka web \cite{beran2017analyza}.\\
+
+Layanan web yang dapat memproses data struktural dan memiliki keamanan yang tinggi maka diperlukan aplikasi yang dapat logging data. Aplikasi dengan layanan web ini dibuat dengan pemrograman bahasa Python dengan kerangka labu digunakan untuk mengatur URL dengan protokol uWSGI dengan sistem lengkap aplikasi dapat diakses oleh internet dengan membuka alamat web aplikasi\cite{rudiana2015perancangan}.
 
 
 
