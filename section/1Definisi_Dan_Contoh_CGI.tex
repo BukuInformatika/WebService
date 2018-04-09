@@ -120,4 +120,13 @@ Script mungkin saja mengimplementasikan metode protocol-specific apapun,seperti 
 Server mungkin untuk menentukan atau memutuskan beberapa metode tidak sesuai/tidak diizinkan untuk script,dan mungkin untuk meng handale metode itu sendiri atau mengembalikan pesan error untuk client
 \section{The Script Command Line}
 Beberapa system mendukung penggunaan metode untuk menyediakan array untuk string string yang nantinya akan dipakai oleh script CGI. Hal ini hanya digunakan dalam suatu kasus query HTTP ‘indexed’. Yang mana pada query HTTP ‘indexed’ dapat diidentifikasi oleh permintaan ‘GET’  atau ‘HEAD’ dengan query string URI yang tidak mengandung unencoded karakter “=”. Untuk permintaan seperti itu, pada bagian server harus memperlakukan query-string sebagai search-string dan mengurai kedalam kata–kata, dengan menggunakan aturan-aturannya.
+search-string = search-word *( "+" search-word )
+      search-word   = 1*schar
+      schar         = unreserved | escaped | xreserved
+      xreserved     = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "," |
+                      "$"
+
+Setelah parsing, setiap kata pencarian adalah URL-decoded, opsional dikodekan dengan cara yang ditentukan sistem dan kemudian ditambahkan ke daftar argumen baris perintah.
+
+Jika server tidak dapat membuat bagian apa pun dari daftar argumen, maka server tidak harus menghasilkan informasi baris perintah apa pun.
 \end{document}  
