@@ -7,160 +7,144 @@
 %\item Rojasqi Fadilla              			1164026
 %\end{enumerate}
 
-\section{definisi uwsgi}
-UWSGI merupakan antarmuka Gateway Server Web yang ditulis dalam C, Nginx merupakan sebuah web server untuk
-menjalankan skrip python dan Uwsgi merupakan antarmuka yang didukung oleh web server nginx yang biasanya di implementasikan dengan kerangka kerja flask. Nginx terhubung ke protokol uWSGI untuk mengaktifkan frontend web berbasis kinerja tinggi WSGI. uWSGI melengkapi NGiNX dengan menangani dinamika konten \cite{balaji2013sentinel}.
+\section{macam-macam definisi uwsgi}
+ 	uWSGI merupakan antarmuka Gateway Server Web yang ditulis dalam C, Nginx merupakan sebuah web server untuk menjalankan skrip python dan Uwsgi merupakan antarmuka yang didukung oleh web server nginx yang biasanya di implementasikan dengan kerangka kerja flask. Nginx terhubung ke protokol uWSGI untuk mengaktifkan frontend web berbasis kinerja tinggi WSGI. uWSGI melengkapi NGiNX dengan menangani dinamika konten \cite{balaji2013sentinel}.\\
+	
+	uWSGI juga merupakan protokol komunikasi untuk jaringan, maka uWSGI yang akan menanggapi Nginx melalui protokol WSGI. Lalu data dinamis dari interaksi antara program komputasi pada Python dan uWSGI yang akan behubungan dengan Nginx, maka Nginx dapat berkomunikasi dengan kode Python backend menggunakan uWSGI lalu uWSGI akan menjalankan kode Python pada program tersebut \cite{hirschbergreal}.\\
+	
+	Server aplikasi uWSGI dapat menangani permintaan dinamis. testbed dapat dikontrol dengan menentukan sinyal Simulink dan parameter (misalnya variabel referensi, gain factor, parameter fungsi transfer) atau fungsi (misalnya start / stop, reset, dan perpindahan aliran sinyal). Karena penggunaan UDP blok Simulink, para RCL dapat disalurkan ke testbeds Simulink dan dikontrol dengan mudah \cite{zumsandedesign}.\\
+	
+	uWSGI itu sendiri adalah sebuah proyek besar dengan banyak komponen, yang bertujuan untuk memberikan full [software] stackuntuk building hosting services. Salah satu komponen ini, server uWSGI, menjalankan aplikasi Python WSGI. Ini mampu menggunakan berbagai protokol, termasuk protokol kawat uwsgi sendiri , yang quasi-identik dengan SCGI. Dalam rangka memenuhi permintaan untuk menggunakan server HTTP yang berdiri sendiri di depan server aplikasi, nginx dan Cherokee server web Modular untuk mendukung uWSGI protokol untuk memiliki kontrol langsung atas proses nya \cite{dong2015chemdes}.\\
 
-\subsection{definisi uwsgi}
-uWSGI merupakan protokol komunikasi untuk jaringan, maka uWSGI yang akan menanggapi Nginx melalui protokol WSGI. Lalu data dinamis dari interaksi antara program komputasi pada Python dan uWSGI yang akan behubungan dengan Nginx, maka Nginx dapat berkomunikasi dengan kode Python backend menggunakan uWSGI lalu uWSGI akan menjalankan kode Python pada program tersebut\cite{hirschbergreal}.
+	uWSGI juga merupakan aplikasi yang memproses kode Python dan menyediakan WSGI (Layanan Web Gateway Interface) yang memungkinkan server web untuk berkomunikasi Dengan Django, yaitu, dalam prakteknya Nginx menawarkan traffic dan aplikasi Djangos ke uWSGI menangani lalu lintas yang diterima. WSGI adalah antarmuka standar untuk server dan komunikasi aplikasi. Untuk setiap aplikasi Django, konfigurasikan pengaturan uWSGI yang dapat digunakan Tentukan berbagai pengaturan terkait serve \cite{wood2018ccbuilder}.\\
+	
+	\section{Macam-macam Cara Instalasi UWSGI}
+	Cara install uWSGI Resep ini menjelaskan cara menjalankan web2py di belakang server web Cherokee menggunakan uWSGI. Cherokee adalah webserver yang ditulis dalam bahasa C, serupa dengan maksud untuk Lighttpd: cepat, kompak, dan modular. Cherokee hadir dengan antarmuka administratif yang memungkinkan seseorang untuk mengelola konfigurasinya,yang sulit dibaca dan dimodifikasi sebaliknya. uWSGI digambarkan di situs webnya sebagai cepat(murni C), penyembuhan diri sendiri, server aplikasi kontainer pengembang / sysadmin-friendly. Cherokee punya modul yang disertakan untuk berbicara dengan server uWSGI. Instal paket atau unduh, kompilasi, dan instal komponen yang diperlukan. Buat file berikut di root instalasi web2py, dan beri nama uwsgi.xml:\\
+	
+\verb|<uwsgi>| \\
+\verb|<pythonpath> / home / web2py </ python>| \\
+\verb|<modul> wsgihandler </ modul>| \\
+\verb|<socket> 127.0.0.1:37719 </ socket>| \\
+\verb|<master />| \\
+\verb|<processes> 8 </ processes>| \\
+\verb|<memory-report />| \\
+\verb|</ uwsgi>| \\
 
-\subsection{definisi uswgi}
-server aplikasi uWSGI dapat menangani permintaan dinamis. testbed dapat dikontrol dengan menentukan sinyal Simulink dan parameter (misalnya variabel referensi, gain factor, parameter fungsi transfer) atau fungsi (misalnya start / stop, reset, dan perpindahan aliran sinyal). Karena penggunaan UDP blok Simulink, para RCL dapat disalurkan ke testbeds Simulink dan dikontrol dengan mudah \cite{zumsandedesign}.
-
-\subsection{definisi uwsgi}
-Meskipun yang sangat konvensi penamaan membingungkan, uWSGI itu sendiri adalah sebuah proyek besar dengan banyak komponen, yang bertujuan untuk memberikan full [software] stackuntuk building hosting services. Salah satu komponen ini, server uWSGI, menjalankan aplikasi Python WSGI. Ini mampu menggunakan berbagai protokol, termasuk protokol kawat uwsgi sendiri , yang quasi-identik dengan SCGI. Dalam rangka memenuhi (dimengerti) permintaan untuk menggunakan server HTTP yang berdiri sendiri di depan server aplikasi, nginx dan Cherokee server web Modular untuk mendukung uWSGI (berperforma terbaik) 's uwsgi protokol untuk memiliki kontrol langsung atas proses nya\cite{dong2015chemdes}.
-
-\subsection{definisi uwsgi}
-UWSGI adalah aplikasi yang memproses kode Python dan menyediakan WSGI (Layanan Web
-Gateway Interface) yang memungkinkan server web untuk berkomunikasi
-Dengan Django, yaitu, dalam prakteknya Nginx menawarkan traffic dan aplikasi Djangos ke uWSGI
-menangani lalu lintas yang diterima. WSGI adalah antarmuka standar untuk server
-dan komunikasi aplikasi.
-Untuk setiap aplikasi Django, konfigurasikan pengaturan uWSGI yang dapat digunakan
-Tentukan berbagai pengaturan terkait server. Gambar 16 menunjukkan
-definisi yang dibuat dalam file konfigurasi uWSGI dalam aplikasi perizinan\cite{wood2018ccbuilder}.
-
-\section{Cara Instalasi UWSGI}
-Cara install uWSGI
-Resep ini menjelaskan cara menjalankan web2py di belakang server web Cherokee menggunakan uWSGI.
-Cherokee adalah webserver yang ditulis dalam bahasa C, serupa dengan maksud untuk Lighttpd: cepat, kompak, dan modular.
-Cherokee hadir dengan antarmuka administratif yang memungkinkan seseorang untuk mengelola konfigurasinya,
-yang sulit dibaca dan dimodifikasi sebaliknya. uWSGI digambarkan di situs webnya sebagai cepat
-(murni C), penyembuhan diri sendiri, server aplikasi kontainer pengembang / sysadmin-friendly. Cherokee punya
-modul yang disertakan untuk berbicara dengan server uWSGI.
-
-Instal paket atau unduh, kompilasi, dan instal komponen yang diperlukan.
-Buat file berikut di root instalasi web2py, dan beri nama uwsgi.xml:
-<uwsgi>
-<pythonpath> / home / web2py </ python>
-<modul> wsgihandler </ modul>
-<socket> 127.0.0.1:37719 </ socket>
-<master />
-<processes> 8 </ processes>
-<memory-report />
-</ uwsgi>
-
-Konfigurasi ini memunculkan delapan proses untuk mengelola beberapa permintaan dari
+	Konfigurasi ini memunculkan delapan proses untuk mengelola beberapa permintaan dari
 Server HTTP. Ubah sesuai kebutuhan, lalu konfigurasikan <pythonpath> ke instalasi
-akar web2py.
-1.	Sebagai pengguna yang memiliki instalasi web2py, mulai server uWSGI: $ uWSGI -d uwsgi.xml
-2.	Sekarang luncurkan antarmuka administratif Cherokee untuk membuat konfigurasi baru:
-$ cherokee-admin
-3.	Hubungkan ke antarmuka admin dengan browser di tautan berikut:
-http: // localhost: 9090 /
-4.	Pergi ke bagian Sumber - (A), lalu klik tombol + - (B).
-5.	Pilih Remote Host on (C), lalu isi kolom teks di (D) dengan alamat IP, dan port untuk mencocokkan konfigurasi dalam file uswgi.xml sebelumnya. Setelah mengkonfigurasi sumber uWGI, sekarang mungkin untuk mengkonfigurasi Virtual Host, dan mengalihkan permintaan melalui itu. Dalam resep ini, kita memilih Virtual Host default yang ada digunakan ketika tidak ada Virtual Host lain yang memiliki kecocokan yang lebih baik untuk permintaan yang masuk.
-6.	Klik pada tombol (C) untuk pergi ke Manajemen Aturan.
-7.	Hapus semua aturan yang tercantum di sebelah kiri. Hanya aturan default yang akan tetap ada.
-8.	Konfigurasikan aturan default dengan uWSGI Handler. Biarkan nilai-nilai lain tidak berubah.
-9.	Jika Anda ingin Cherokee menyajikan file statis langsung dari folder web2py, Anda dapat menambahkan Aturan Ekspresi Reguler. Klik tombol (A), dan pilih Ekspresi Reguler dari menu drop-down di (B). Ketahuilah bahwa konfigurasi ini hanya berfungsi jika web2py direktori berada pada sistem file yang sama, dan dapat diakses oleh Cherokee.
-10.	Konfigurasikan Ekspresi Reguler
-11.	Sekarang Anda dapat mengkonfigurasi Penangan Statis yang menunjuk ke subdirektori aplikasi instalasi web2py Anda:
--	Ingat untuk menyimpan konfigurasi, dan memuat kembali atau memulai kembali Cherokee dari antarmuka administratif; maka Anda siap untuk memulai server uWSGI.
-12.	Ubah ke ID pengguna yang benar yang digunakan untuk menginstal web2py; Sadarilah bahwa menggunakan root tidak disarankan.
-13.	Pergilah ke direktori root dari instalasi web2py, di mana Anda menyimpan konfigurasi file uwsgi.xml.
-14.	Jalankan uWSGI dengan opsi -d <logfile>, sehingga berjalan di latar belakang:
-$ su - <web2py user>
-$ cd <web2py root>
-$ uwsgi -x uwsgi.xml -d /tmp/uwsgi.log\cite{mulone2012web2py}
+akar web2py.\\
+1.	Sebagai pengguna yang memiliki instalasi web2py, mulai server uWSGI: \$ uWSGI -d uwsgi.xml\\
+2.	Sekarang luncurkan antarmuka administratif Cherokee untuk membuat konfigurasi baru:\\
+\$ cherokee-admin\\
+3.	Hubungkan ke antarmuka admin dengan browser di tautan berikut:\\
+\verb|http: // localhost: 9090 /|\\
+4.	Pergi ke bagian Sumber - (A), lalu klik tombol + - (B).\\
+5.	Pilih Remote Host on (C), lalu isi kolom teks di (D) dengan alamat IP, dan port untuk mencocokkan konfigurasi dalam file uswgi.xml sebelumnya. Setelah mengkonfigurasi sumber uWGI, sekarang mungkin untuk mengkonfigurasi Virtual Host, dan mengalihkan permintaan melalui itu. Dalam resep ini, kita memilih Virtual Host default yang ada digunakan ketika tidak ada Virtual Host lain yang memiliki kecocokan yang lebih baik untuk permintaan yang masuk.\\
+6.	Klik pada tombol (C) untuk pergi ke Manajemen Aturan.\\
+7.	Hapus semua aturan yang tercantum di sebelah kiri. Hanya aturan default yang akan tetap ada.\\
+8.	Konfigurasikan aturan default dengan uWSGI Handler. Biarkan nilai-nilai lain tidak berubah.\\
+9.	Jika Anda ingin Cherokee menyajikan file statis langsung dari folder web2py, Anda dapat menambahkan Aturan Ekspresi Reguler. Klik tombol (A), dan pilih Ekspresi Reguler dari menu drop-down di (B). Ketahuilah bahwa konfigurasi ini hanya berfungsi jika web2py direktori berada pada sistem file yang sama, dan dapat diakses oleh Cherokee.\\
+10.	Konfigurasikan Ekspresi Reguler\\
+11.	Sekarang Anda dapat mengkonfigurasi Penangan Statis yang menunjuk ke subdirektori aplikasi instalasi web2py Anda:\\
+-	Ingat untuk menyimpan konfigurasi, dan memuat kembali atau memulai kembali Cherokee dari antarmuka administratif; maka Anda siap untuk memulai server uWSGI.\\
+12.	Ubah ke ID pengguna yang benar yang digunakan untuk menginstal web2py; Sadarilah bahwa menggunakan root tidak disarankan.\\
+13.	Pergilah ke direktori root dari instalasi web2py, di mana Anda menyimpan konfigurasi file uwsgi.xml.\\
+14.	Jalankan uWSGI dengan opsi -d <logfile>, sehingga berjalan di latar belakang:\\
+\verb|$ su - <web2py user>|\\
+\verb|$ cd <web2py root>|\\
+\verb|$ uwsgi -x uwsgi.xml -d /tmp/uwsgi.log\cite{mulone2012web2py}|\\
 
 
-Salah satu contoh dari implementasi uwsgi yaitu pada BuildingSherlock: Kerangka Manajemen Kerusakan untuk HVAC. BDSherlock telah dirancang sebagai layanan web, karena menyediakan
+	Salah satu contoh dari implementasi uwsgi yaitu pada BuildingSherlock: Kerangka Manajemen Kerusakan untuk HVAC. BDSherlock telah dirancang sebagai layanan web, karena menyediakan
 fleksibilitas, skalabilitas, dan kemudahan pengembangan. Kami telah membangun BDSherlock
 di atas BuildingDepot (BDDepot), sebuah data pembangunan open source
 kerangka penyimpanan. BDDepot mengekspos API RESTful untuk penyimpanan dan
 mengambil data sensor, menghubungkan metadata, dan menyediakan akses
-kontrol. Data dari berbagai sumber dikumpulkan di BDDepot dan bertindak sebagai layanan manajemen informasi kami. Sistem di Bangunan Komersial. Diimplementasikan menggunakan server web nginx, uWSGI dan Python Kerangka flask. BDDepot menggunakan basis data Cassandra untuk menyimpan sensor data.\cite{teraoka2014buildingsherlock}
+kontrol. Data dari berbagai sumber dikumpulkan di BDDepot dan bertindak sebagai layanan manajemen informasi kami. Sistem di Bangunan Komersial. Diimplementasikan menggunakan server web nginx, uWSGI dan Python Kerangka flask. BDDepot menggunakan basis data Cassandra untuk menyimpan sensor data  \cite{teraoka2014buildingsherlock}.\\
 
-\cite{mulone2012web2py}.
-
-\subsection{cara instalasi USWGI}
-Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan $ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses
+	Pada prosedur pemasangan berikut ini menguraikan tindakan yang diperlukan untuk menginstal Teaplot pada  FreeBSD berbasis sistem. Perintah yang diinputkan pertama kali  dengan menggunakan karakter  (\#) hastag  untuk menunjukkan bahwa eksekusi harus dilakukan di dalam shell dengan root untuk hak aksesnya , sedangkan \$ menunjukkan hak-hak atas tingkatan penggunanya dalam mengakses\\
 
 1.	Jika TEACUP belum terintall maka bias didownload maelalui laman http://downloads.sourceforge.net/
-	project/teacup/teacup-1.0.tar.gz. Informasi tambahan dapat diperoleh dari laporan CAIA nya.
-2.	kemudian kita extract arsip instalasi Teaplotnya kedalam  TEACUP  dengan direktorinya ($TEACUP_DIR)dengan cara :
-	$ cd $TEACUP_DIR
-	$ tar xvf teaplot-0.1.txz
-3.	Setelah itu untuk menerapkan patch Teaplot kedalam file fabfile.py didalam direktori yang sama menggunakan peintah :
-	$ patch -p1 < teaplot.patch
-4.	Menginstal system dependesi di FreeBSD dengan cara sebagai berikut :
- 	# pkg install py27-django py27-scipy py27-numpy uwsgi spp
-5.	Setelah menginputkan data diatas, maka Instalasi telah selesai di FreeBSD. Teaplot sekarang bisa dijalankan melalui fabfile di
-	direktori ($FABFILE_DIR) atau memanggil tugas Fabric “animate” dengan cara :
-	$ cd $FABFILE_DIR
-	$ fab animate
+	project/teacup/teacup-1.0.tar.gz. Informasi tambahan dapat diperoleh dari laporan CAIA nya.\\
+2.	kemudian kita extract arsip instalasi Teaplotnya kedalam  TEACUP  dengan direktorinya \\
+\verb|(\$TEACUP_DIR)|dengan cara :\\
+\verb|\$ cd \$TEACUP_DIR|\\
+\verb|\$ tar xvf teaplot-0.1.txz|\\
+3.	Setelah itu untuk menerapkan patch Teaplot kedalam file fabfile.py didalam direktori yang sama menggunakan peintah :\\
+	\$ patch -p1 < teaplot.patch\\
+4.	Menginstal system dependesi di FreeBSD dengan cara sebagai berikut :\\
+ 	\# pkg install py27-django py27-scipy py27-numpy uwsgi spp\\
+5.	Setelah menginputkan data diatas, maka Instalasi telah selesai di FreeBSD. Teaplot sekarang bisa dijalankan melalui fabfile di\\
+	direktori \verb|(\$FABFILE_DIR)| atau memanggil tugas Fabric “animate” dengan cara :\\
+\verb|\$ cd \$FABFILE_DIR|\\
+\verb|\$ fab animate|\\ \cite{true150828teaplot}.\\
 
-\cite{true150828teaplot}.
-
-\subsection{instalasi uWSGI}
-Instalasi uWSI menggunakan web server Nginx, Untuk uWSGI kita perlu menginstallnya seperti berikut :
+	Instalasi uWSI menggunakan web server Nginx, Untuk uWSGI kita perlu menginstallnya seperti berikut :
 Ketik, “ pip install uwsgi “, (tanpa tanda “ ”) untuk awal menginstall uWSGI,
 Sekarang, di dalam folder bin virtualenv kamu, akan ada perintah uWSGI. cari
 di mana letak perintah uWSGI itu karena kita akan membutuhkannya. Setelah itu
-Buat file wsgi.py di dalam folder proyek Anda dengan konten berikut:
-# coding:utf-8
-from main import app_factory
-app = app_factory(name="myproject")
-Sebuah uWSGI menggunakan instance aplikasi dari file yang telah kita buat di atas untuk terhubung ke aplikasi kita. Sebuah app_factory adalah fungsi dari bawaan pabrik yang menciptakan aplikasi kita. Pastikan saja aplikasi yang dibuat sudah dikonfigurasi dengan benar. Selanjutnya, kita melanjutkan untuk menghubungkan uWSGI ke aplikasi kita.
+Buat file wsgi.py di dalam folder proyek Anda dengan konten berikut:\\
+\# coding:utf-8\\
+from main import \verb|app_factory|\\
+\verb|app = app_factory(name="myproject")|\\
+	
+	Sebuah uWSGI menggunakan instance aplikasi dari file yang telah kita buat di atas untuk terhubung ke aplikasi kita. Sebuah \verb|app_factory| adalah fungsi dari bawaan pabrik yang menciptakan aplikasi kita. Pastikan saja aplikasi yang dibuat sudah dikonfigurasi dengan benar. Selanjutnya, kita melanjutkan untuk menghubungkan uWSGI ke aplikasi kita. kita dapat memanggil binary uWSGI kita dengan semua parameter yang diperlukan untuk memuat wsgi kita. file \verb|‘py’| langsung dari baris perintah atau kita dapat membuat file \verb|‘ini’| , dengan semua konfigurasi yang diperlukan, dan hanya memberikannya ke binary. Seperti yang Anda lihat, pendekatan kedua biasanya lebih baik, jadi buatlah file ‘ini’ seperti berikut:\\
 
-kita dapat memanggil binary uWSGI kita dengan semua parameter yang diperlukan untuk memuat wsgi kita. file ‘py’ langsung dari baris perintah atau kita dapat membuat file ‘ini’ , dengan semua konfigurasi yang diperlukan, dan hanya memberikannya ke binary. Seperti yang Anda lihat, pendekatan kedua biasanya lebih baik, jadi buatlah file ‘ini’ seperti berikut:
-
-[uwsgi]
-user-home = /home/your-system-username
-project-name = myproject
-project-path = %(user-home)/%(myproject)
-# make sure paths exist
-socket = %(user-home)/%(project-name).sock
-pidfile = %(user-home)/%(project-name).pid
-logto = /var/tmp/uwsgi.%(prj).log
-touch-reload = /tmp/reload
-chdir = %(project-path)
-wsgi-file = %(project-path)/wsgi.py
-callable = app
-chmod-socket = 664
-master = true
-processes = 5
-vacuum = true
-die-on-term = true
-optimize = 2
+[uwsgi]\\
+user-home = /home/your-system-username\\
+project-name = myproject\\
+project-path = %(user-home)/%(myproject)\\
+\# make sure paths exist\\
+socket = %(user-home)/%(project-name).sock\\
+pidfile = %(user-home)/%(project-name).pid\\
+logto = /var/tmp/uwsgi.%(prj).log\\
+touch-reload = /tmp/reload\\
+chdir = %(project-path)\\
+wsgi-file = %(project-path)/wsgi.py\\
+callable = app\\
+chmod-socket = 664\\
+master = true\\
+processes = 5\\
+vacuum = true\\
+die-on-term = true\\
+optimize = 2\\
 
 The user-home, project-name, dan project-path adalah alias yang kita gunakan untuk membuat pekerjaan kita lebih mudah. Opsi socket menunjuk ke file socket yang akan digunakan server HTTP kita untuk berkomunikasi dengan aplikasi kita.
-Kita sekarang dapat mengatur server HTTP kita, ini merupakan langkah yang mudah. Cukup instal Nginx sebagai berikut:
+Kita sekarang dapat mengatur server HTTP kita, ini merupakan langkah yang mudah. Cukup instal Nginx sebagai berikut:\\
 “ sudo apt-get install nginx-full “ tanpa tanda (“”)
-Sekarang, server http kita sudah aktif dan berjalan di port 80. Mari kita pastikan Nginx tahu tentang aplikasi kita. Tuliskan kode berikut ke sebuah file di proyek kita di dalam / etc / nginx / sites-available:
-server {
-listen 80;
-server_name PROJECT_DOMAIN;
-location /media {
-alias /path/to/media;
-}
-location /static {
-alias /path/to/static;
-}
-location / {
-include /etc/nginx/uwsgi_params;
-uwsgi_pass unix:/path/to/socket/file.sock;
-}
-}
-File konfigurasi sebelumnya menciptakan server virtual yang berjalan pada port 80. Kita perlu membuat satu file terakhir di dalam / etc / init yang akan mendaftarkan proses uWSGI kita sebagai layanan. Bagian ini sangat mudah, buat saja file di project kamu dengan nama file conf dengan kode sebagai berikut:
-description "uWSGI application my project"
-start on runlevel [2345]
-stop on runlevel [!2345]
-setuid your-user
-setgid www-data
-exec /path/to/uwsgi --ini /path/to/ini/file.ini
-Jika semuanya berjalan dengan baik, berarti instalasi berhasil \cite{maia2015building}.
+Sekarang, server http kita sudah aktif dan berjalan di port 80. Mari kita pastikan Nginx tahu tentang aplikasi kita. Tuliskan kode berikut ke sebuah file di proyek kita di dalam / etc / nginx / sites-available:\\
+server {\\
+listen 80;\\
+\verb|server_name PROJECT_DOMAIN;|\\
+location /media {\\
+alias /path/to/media;\\
+}\\
+location /static {\\
+alias /path/to/static;\\
+}\\
+location / {\\
+\verb|include /etc/nginx/uwsgi_params;|\\
+\verb|uwsgi_pass unix:/path/to/socket/file.sock;|\\
+}\\
+}\\
+File konfigurasi sebelumnya menciptakan server virtual yang berjalan pada port 80. Kita perlu membuat satu file terakhir di dalam / etc / init yang akan mendaftarkan proses uWSGI kita sebagai layanan. Bagian ini sangat mudah, buat saja file di project kamu dengan nama file conf dengan kode sebagai berikut:\\
+description "uWSGI application my project"\\
+start on runlevel [2345]\\
+stop on runlevel [!2345]\\
+setuid your-user\\
+setgid www-data\\
+exec /path/to/uwsgi --ini /path/to/ini/file.ini\\
+Jika semuanya berjalan dengan baik, berarti instalasi berhasil \cite{maia2015building}.\\
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection {cara instalasi uWSGI}
