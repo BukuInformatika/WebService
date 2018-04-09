@@ -219,8 +219,7 @@ Meskipun mudah membingungkan dan sulit untuk dikelola, cara paling dasar untuk m
 Sebagai contoh uWSGI sendiri merespon server 	menuju Nginx melalui protocol wsgi, maka Data dinamis dari interaksi program komputasi Python kemudian uWSGI akan berinteraksi dengan Nginx, dan yang terakhir akan menyajikan hasil kepada klien dalam bentuk konten statis. Selain itu, untuk memenuhi kebutuhan waktu untuk operasi data, penyedia  telah mengoptimalkan beberapa parameter terkait dari Nginx dan uWSGI seperti max-requests, harakiri and keepalive_timeout\cite{dong2015chemdes}.
 
 \subsection {Contoh uWSGI}
-uWSGI merupakan antarmuka yang menjembatani web server yang ditulis dalam bahasa C, dan biasanya juga digunakan untuk mengakses REST API, uWSGI juga yang menjadikan layanan tersedia sebagai aplikasi, dan antarmuka web Nginx yang membuatnya dapat diakses ke Internet dan memungkinkan manajemen koneksi. Berikut contoh pengimplementasian uWSGI terlihat
-sebagai berikut :
+uWSGI merupakan antarmuka yang menjembatani web server yang ditulis dalam bahasa C, dan biasanya juga digunakan untuk mengakses REST API, uWSGI juga yang menjadikan layanan tersedia sebagai aplikasi, dan antarmuka web Nginx yang membuatnya dapat diakses ke Internet dan memungkinkan manajemen koneksi. Berikut contoh pengimplementasian uWSGI menggunakan REST API terlihat sebagai berikut :
 [ uwsgi ]
 plugins = python
 chdir = /home/cuckoo/cuckoo
@@ -228,7 +227,22 @@ f i l e = u t i l s /api . py
 uid = cuckoo
 gid = cuckoo
 c a l l a b l e = app
-\cite{beran2017analyza}.
+
+Dan untuk mengakses ke aplikasi, kita mengatur web server kita nginx sebagai berikut :
+upstream api {
+s e rve r unix :/ run/uwsgi/app/cuckoo−api/socket ;
+}
+s e rve r {
+l i s t e n 8 09 0;
+l i s t e n [ : : ] : 8 0 9 0 ipv6only=on ;
+# REST API app
+l o c a t i on / {
+uwsgi_pass api ;
+include /e t c/nginx/uwsgi_params ;
+allow 1 4 7 . 2 5 1 . 1 7 . 0/1 6 ;
+deny a l l ;
+
+Dalam pengaturan, seperti halnya untuk server, akses ke alamat IP terbatas berasal dari lingkup aplikasi kita. Server REST API berjalan di port 8090 sehingga tidak tumpang tindih dengan antarmuka web \cite{beran2017analyza}.
 
 \subsection{Contoh uWSGI}
 Layanan web yang dapat memproses data struktural dan memiliki keamanan yang tinggi maka diperlukan aplikasi yang dapat logging data. Aplikasi dengan layanan web ini dibuat dengan pemrograman bahasa Python dengan kerangka labu digunakan untuk mengatur URL dengan protokol uWSGI dengan sistem lengkap aplikasi dapat diakses oleh internet dengan membuka alamat web aplikasi\cite{rudiana2015perancangan}. 
