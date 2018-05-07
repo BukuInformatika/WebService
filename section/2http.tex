@@ -36,7 +36,7 @@ Dalam skema penomoran, HTTP menggunakan skema `<Major>.<Minor>' untuk menunjukka
 Angka <minor> meningkat ketika terjadi perubahan saat protokol menambahkan fitur yang tidak mengubah algortima pesan, akan tetapi menambah makna pesan dan menyiratkan kemampuan pengirim tambahan. Angka <major> meningkat saat protokol dalam pesan telah diubah. Versi HTTP ditunjukan oleh bidang versi HTTP pada baris pertama pesan. Apabila versi protokol tidak ditentukan, penerima harus menggangap bahwa pesan tersebut dalam format HTTP/0,9 yang sederhana. HTTP-version = `HTTP' `/' 1*DIGIT `.' 1*DIGIT. Perlu diperhatikan bahwa nomor besar dan kecil harus diperlakukan sebagai bilangan bulat terpisah dan masing-masing dapat meningkat lebih tinggi dari satu digit. Dengan begitu, HTTP/2.4 merupakan versi HTTP terendah dari HTTP/2.13. Memimpin 0 harus diabaikan oleh penerima dan tidak akan pernah dihasilkan oleh pengirim\cite{berner1996hypertext}.
 
 \subsection{Versi HTTP #3}
-Dokumen ini yang membedakan kedua versi 0.9 dan 1.0 dari HTTP. Aplikasi mengirim pesan Full-Request atau Full-Response, sebagaimana didefinisikan oleh spesifikasi ini, harus menyertakan versi HTTP `HTTP/1.0`.
+Dokumen ini yang membedakan kedua versi 0.9 dan 1.0 dari HTTP. Aplikasi mengirim pesan Full-Request atau Full-Response, sebagaimana didefinisikan oleh spesifikasi ini, harus menyertakan versi HTTP `HTTP/1.0'.
 Server HTTP/1.0 harus:
 \begin{itemsize}
 	\item Mengetahui format Permintaan-Baris untuk meminta HTTP/0.9 dan HTTP/1.0;
@@ -102,7 +102,7 @@ HTTP Sniffer memiliki beberapa fitur yang mengakui aliran direkonstruksi setiap 
 \end{itemize}
 
 \section{Proxy HTTP}
-Proxy http mampu menangani lalu lintas pada URL yang diawali dengan shttp: // atau http:// serta cenderung murah dan efektif dalam menyembunyikan alamat IP. HTTP merupakan protokol request/response antara client dan server. Client membuat sebuah HTTP request, seperti web browser. Server – merupakan komputer yang menyimpan atau membuat file HTML. Sebuah client HTTP akan menginisialisasi sebuah request dengan membangun sebuah koneksi TCP ke port 80 (default) , Sebuah Server HTTP akan mendengarkan port. Saat menerima request, server akan mengirimkan kembali status seperti : “(HTTP/1.1 200) OK”, dan sebuah message untuk dirinya sendiri\cite{farhanah2011pengembangan}.
+Proxy http mampu menangani lalu lintas pada URL yang diawali dengan shttp: // atau http:// serta cenderung murah dan efektif dalam menyembunyikan alamat IP. HTTP merupakan protokol request/response antara client dan server. Client membuat sebuah HTTP request, seperti web browser. Server – merupakan komputer yang menyimpan atau membuat file HTML. Sebuah client HTTP akan menginisialisasi sebuah request dengan membangun sebuah koneksi TCP ke port 80 (default) , Sebuah Server HTTP akan mendengarkan port. Saat menerima request, server akan mengirimkan kembali status seperti : `(HTTP/1.1 200) OK', dan sebuah message untuk dirinya sendiri\cite{farhanah2011pengembangan}.
 
 \section{Protokol Jaringan OSI Layer}
 Model OSI menerapkan konsep yang dikenal dengan enkapsulasi. Enkapsulasi itu sendiri merupakan proses atau metode membungkus data dari satu lapisan model OSI dalam struktur data baru ke lapisan model OSI yang lainnya. Berikut merupakan lapisan-lapisan yang terdapat pada model OSI:
