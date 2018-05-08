@@ -62,53 +62,40 @@ Server menyiapkan permintaan CGI seperti yang akan dijelaskan di bagian 4. Skrip
 Tanggapan dari skrip dikembalikan ke server seperti yang dijelaskan di bagian 5 dan 6. Jika terjadi kondisi kesalahan, server dapat mengganggu atau menghentikan eksekusi skrip kapan saja dan tanpa peringatan. Itu bisa saja terjadi, misalnya, jika terjadi kegagalan transportasi antara server dan klien: jadi skrip HARUS siap untuk menangani penghentian yang tidak normal.
 \section{CGI Request}
 Informasi tentang permintaan berasal dari dua sumber yang berbeda: yaitu permintaan meta-variabel dan setiap pesan-body yang terkait.
+
 \section{Request Meta-Variables}
 Meta-variabel berisi data tentang permintaan yang dikirimkan dari server ke skrip, dan diakses oleh skrip dengan cara yang ditentukan sistem. Meta-variabel diidentifikasi oleh nama-nama yang tidak sensitif huruf: tidak boleh ada dua variabel yang berbeda yang namanya berbeda hanya dalam kasus saja.
-Di sini meta variable ditampilkan menggunakan representasi kanonik  huruf besar dan garis bawah ("_"). Suatu sistem tertentu dapat mendefinisikan suatu  representasi berbeda.
+Di sini meta variable ditampilkan menggunakan representasi kanonik  huruf besar dan garis bawah. Suatu sistem tertentu dapat mendefinisikan suatu  representasi berbeda.
 
-meta-variable-name = "AUTH_TYPE" | "CONTENT_LENGTH" |
-                           "CONTENT_TYPE" | "GATEWAY_INTERFACE" |
-                           "PATH_INFO" | "PATH_TRANSLATED" |
-                           "QUERY_STRING" | "REMOTE_ADDR" |
-                           "REMOTE_HOST" | "REMOTE_IDENT" |
-                           "REMOTE_USER" | "REQUEST_METHOD" |
-                           "SCRIPT_NAME" | "SERVER_NAME" |
-                           "SERVER_PORT" | "SERVER_PROTOCOL" |
-                           "SERVER_SOFTWARE" | scheme |
+meta-variable-name = "AUTH TYPE" | "CONTENT LENGTH" |
+                           "CONTENT TYPE" | "GATEWAY INTERFACE" |
+                           "PATH INFO" | "PATH TRANSLATED" |
+                           "QUERY STRING" | "REMOTE ADDR" |
+                           "REMOTE HOST" | "REMOTE IDENT" |
+                           "REMOTE USER" | "REQUEST METHOD" |
+                           "SCRIPT NAME" | "SERVER NAME" |
+                           "SERVER PORT" | "SERVER PROTOCOL" |
+                           "SERVER SOFTWARE" | scheme |
                            protocol-var-name | extension-var-name
-protocol-var-name = ( protocol | scheme ) "_" var-name
+protocol-var-name = ( protocol | scheme ) var-name
 scheme = alpha *( alpha | digit | "+" | "-" | "." )
 var-name = token
-extension-var-name = token
-
-meta-variabel dengan nama yang sama dengan skema, dan nama yang diawali
-dengan nama protokol atau skema (misalnya, HTTP ACCEPT) juga
-didefinisikan. Jumlah dan makna dari variabel-variabel ini dapat berubah
-secara independen dari spesifikasi ini.
-
-Server dapat menetapkan tambahan ekstensi meta-variabel implementasi, yang namanya harus diawali dengan "X_".
-
-Spesifikasi ini tidak membedakan antara nilai-nilai nol-panjang (NULL) dan nilai-nilai yang hilang. Sebagai contoh, sebuah skrip tidak dapat membedakan antara dua permintaan http://host/skrip dan http://host/skrip?  seperti pada kedua kasus, meta-variabel QUERY_STRING akan menjadi NULL.
-
-meta-variable-value = "" | 1*<TEXT, CHAR or tokens of value>
-
-Sebuah meta-variabel opsional dapat dihilangkan (tidak disetel) jika nilainya adalah NULL. Nilai meta-variabel HARUS dianggap case-sensitive kecuali seperti yang dinyatakan sebaliknya. Representasi dari karakter dalam meta-variabel ditentukan system; server HARUS mengkonversi nilai ke representasi tersebut.
-
+extension-var-name = token 
+meta variabel dengan nama yang sama dengan skema,dan nama yang diawali dengan nama protokol atau skema (misalnya, HTTP ACCEPT) juga didefinisikan. Jumlah dan makna dari variabel-variabel ini dapat berubah secara independen dari spesifikasi ini. Server dapat menetapkan tambahan ekstensi meta variabel implementasi,yang namanya harus diawali dengan "X". Spesifikasi ini tidak membedakan antara nilai nilai nol panjang (NULL) dan nilai nilai yang hilang. Sebagai contoh, sebuah skrip tidak dapat membedakan antara dua permintaan http://host/skrip dan http://host/skrip?  seperti pada kedua kasus, meta variabel QUERY STRING akan menjadi NULL.
+meta variable-value = ""  *<TEXT, CHAR or tokens of value>
+Sebuah meta variabel opsional dapat dihilangkan (tidak disetel) jika nilainya adalah NULL. Nilai meta-variabel HARUS dianggap case-sensitive kecuali seperti yang dinyatakan sebaliknya. Representasi dari karakter dalam meta variabel ditentukan system; server HARUS mengkonversi nilai ke representasi tersebut.
 \section{Request Message-Body}
 Permintaan data diakses oleh skrip dalam metode yang didefinisikan oleh system; kecuali sudah ditentukan, hal ini akan membuat system membaca request/permintaan dengan ‘standar masukan’ pendeskripsi file.
 	  Request-Data   = [ request-body ] [ extension-data ]
-      request-body   = <CONTENT_LENGTH>OCTET
-      extension-data = *OCTET
-request-body disertaikan dengan permintaan jika CONTENT_LENGTH tersebut not NULL. Server harus membuat setidaknya banyak byte yang tersedia untuk membaca script. Server mungkin menandakan kondisi end-of-file. CONTENT_LENGTH byte telah dibaca atau mungkin menyediakan extention date. Oleh karena itu, script tidak harus mencoba untuk membaca lebih lanjut dari CONTENT_LENGTH byte, bahkan jika lebih banyak data tersedia. Namun, tidak wajib membaca data apa pun.
-
+      request-body   = <CONTENT LENGTH>OCTET
+      extension-data = *OCTET.
+request body disertaikan dengan permintaan jika CONTENT LENGTH tersebut not NULL. Server harus membuat setidaknya banyak byte yang tersedia untuk membaca script. Server mungkin menandakan kondisi end of file. CONTENT LENGTH byte telah dibaca atau mungkin menyediakan extention date. Oleh karena itu, script tidak harus mencoba untuk membaca lebih lanjut dari CONTENT LENGTH byte, bahkan jika lebih banyak data tersedia. Namun, tidak wajib membaca data apa pun.
 Untuk skrip non-parsed header (NPH)(Bagian 5), server HARUS berusaha untuk memastikan bahwa data yang diberikan ke skrip adalah tepat seperti yang disediakan oleh klien dan tidak diubah oleh server.
-
 Seperti transfer-codings tidak didukung pada request-body, server HARUS menghapus setiap pengkodean tersebut dari message-body, dan mengatur ulang CONTENT-LENGTH. Jika hal ini tidak mungkin (misalnya, karena persyaratan buffering besar), server HARUS menolak permintaan klien. Hal ini MUNGKIN dapat menghapus content-codings dari message-body.
-
 \section{Request Methods}
-Sebagaimana disediakan dalam meta-variabel REQUEST_METHOD, mengidentifikasi metode pemrosesan yang akan diterapkan pada skrip dalam menghasilkan respons. Penulis skrip dapat memilih untuk menerapkan metode yang paling sesuai untuk aplikasi tertentu. Jika skrip menerima permintaan dengan metode yang tidak mendukungnya harus menolaknya dengan kesalahan.
+Sebagaimana disediakan dalam meta variabel REQUEST METHOD, mengidentifikasi metode pemrosesan yang akan diterapkan pada skrip dalam menghasilkan respons. Penulis skrip dapat memilih untuk menerapkan metode yang paling sesuai untuk aplikasi tertentu. Jika skrip menerima permintaan dengan metode yang tidak mendukungnya harus menolaknya dengan kesalahan.
 \section{GET}
-Metode GET menunjukkan bahwa skrip harus menghasilkan dokumen berdasarkan nilai-nilai meta-variabel. Dengan konvensi, metode GET adalah 'aman' dan 'idempoten' dan seharusnya tidak memiliki arti penting mengambil tindakan selain menghasilkan dokumen.
+Metode GET menunjukkan bahwa skrip harus menghasilkan dokumen berdasarkan nilai nilai meta variabel. Dengan konvensi, metode GET adalah 'aman' dan 'idempoten' dan seharusnya tidak memiliki arti penting mengambil tindakan selain menghasilkan dokumen.
 Arti metode GET dapat dimodifikasi dan disempurnakan oleh variabel-variabel khusus protokol.
 \section{POST}
 Metode POST digunakan untuk meminta skrip melakukan pemrosesan dan menghasilkan dokumen berdasarkan data di dalam isi permintaan pesan, selain nilai-nilai meta-variabel. Penggunaan umum adalah penyerahan formulir dalam HTML, yang dimaksudkan untuk memulai pemrosesan oleh skrip yang memiliki pengaruh permanen, seperti perubahan dalam basis data.
@@ -116,19 +103,17 @@ Skrip HARUS memeriksa nilai variabel CONTENT LENGTH sebelum membaca badan pesan 
 \section{HEAD}
 Method Head meminta skrip untuk melakukan pemrosesan yang memadai atau cukup untuk mereturn atau mengembalikan respon pada bagian header,tanpa memberikan isi pesan respon.Script tidak harus menyediakan isi pesan respon untuk HEAD resquest.Jika sampai isi pesan respon diberikan,maka server harus membuang isi pesan tersebut saat membaca respon yang diberikan oleh script.
 \section{Protocol-Specific-Methods}
-Script mungkin saja mengimplementasikan metode protocol-specific apapun,seperti HTTP/1.1 PUT dan DELETE; metode protocol tersebut nanti nya harus mengecek nilai dari server_protocol saat diimplementasikan
-Server mungkin untuk menentukan atau memutuskan beberapa metode tidak sesuai/tidak diizinkan untuk script,dan mungkin untuk meng handale metode itu sendiri atau mengembalikan pesan error untuk client
+Script mungkin saja mengimplementasikan metode protocol specific apapun,seperti HTTP/1.1 PUT dan DELETE; metode protocol tersebut nanti nya harus mengecek nilai dari server protocol saat diimplementasikan
+Server mungkin untuk menentukan atau memutuskan beberapa metode tidak sesuai/tidak diizinkan untuk script,dan mungkin untuk meng handale metode itu sendiri atau mengembalikan pesan error untuk client.
 \section{The Script Command Line}
 Beberapa system mendukung penggunaan metode untuk menyediakan array untuk string string yang nantinya akan dipakai oleh script CGI. Hal ini hanya digunakan dalam suatu kasus query HTTP ‘indexed’. Yang mana pada query HTTP ‘indexed’ dapat diidentifikasi oleh permintaan ‘GET’  atau ‘HEAD’ dengan query string URI yang tidak mengandung unencoded karakter “=”. Untuk permintaan seperti itu, pada bagian server harus memperlakukan query-string sebagai search-string dan mengurai kedalam kata–kata, dengan menggunakan aturan-aturannya.
 search-string = search-word *( "+" search-word )
-      search-word   = 1*schar
-      schar         = unreserved | escaped | xreserved
-      xreserved     = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "," |"$"
-
+\begin{enumerate}      
+\item search-word   = 1*schar
+\item schar         = unreserved | escaped | xreserved
+\end{enumerate}
 Setelah parsing, setiap kata pencarian adalah URL-decoded, opsional dikodekan dengan cara yang ditentukan sistem dan kemudian ditambahkan ke daftar argumen baris perintah.
-
 Jika server tidak dapat membuat bagian apa pun dari daftar argumen, maka server tidak harus menghasilkan informasi baris perintah apa pun. Sebagai contoh, jumlah argument yang mungkin lebih besar daripada system operasi atau server yang terbatas, atau salah satu dari kata-kata mungkin tidak dapat diwakilkan sebagai argumen.
-
 Skrip HARUS memeriksa untuk melihat apakah nilai QUERY-STRING yang dikodekan tidak berisi karakter “=”, dan TIDAK HARUS menggunakan baris perintah argumen jika itu terjadi.
 \section{NPH Scripts}
 \section{Identification}
