@@ -1,18 +1,3 @@
-\documentclass[12pt,a4paper]{article} 
-\usepackage{graphicx}
-%\linespread{1.5}
-\begin{document}
-%\title{Instalasi PIP dan Contoh Penggunaan}
-%\maketitle
-
-%\begin{itemize}
-%\item
-%Nama Kelompok 1\\
-%Farid Ariyanto Saputra 1164036\\
-%Nurgivani Syarifatul Husna 1164050\\
-%Velariza Alvioletta 1164056\\
-%Yogi Aditya Saputra 1164060 \\
-%\end{itemize}
 
 \section{Python}
 \subsection{Pengertian Python}
@@ -74,42 +59,13 @@ Disini saya akan memberitahu cara install PIP untuk mac x, caranya adalah : \\
 Pada Sistem Operasi Linux, proses instalasi Pyhton tidak bermain dengan skrip getpip.py seperti di windows dan mac. Berikut adalah tahapan instalasinya.
 \begin{itemize}
 \item Melakukan memperbaharui daftar paket dan perangkat lunak sistem.
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1aptupdate.jpg} 
-\caption{sudo apt-get update}
-\label{update}
-\end{center}
-\end{figure}
-Pada Gambar \ref{update} menjelaskan tentang untuk memperbaharui daftar paket.
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1aptupgrade.jpg} 
-\caption{sudo apt-get upgrade}
-\label{upgrade}
-\end{center}
-\end{figure}
 
 Pada Gambar \ref{upgrade} menjelaskan tentang untuk memperbaharui perangkat lunak sistem.
 \item Proses Instalasi PIP di linux \\
 Proses instalasi PIP di linux sangat sederhana karena hanya melakukan command satu perintah di Terminal.\\
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1aptinstal.jpg} 
-\caption{sudo apt-get update}
-\label{instal}
-\end{center}
-\end{figure}
-Pada Gambar \ref{instal} menjelaskan tentang proses melakukan instalasi pyhton.
+Pada Gambar menjelaskan tentang proses melakukan instalasi pyhton.
 \item Verifikasi PIP \\
 Proses ini untuk menverifikasi apakah pip dan semua dependensi sudah terinstal atau belum agar dapat berjalan dengan optimal.\\
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1aptver.jpg} 
-\caption{Pip -V}
-\label{versi}
-\end{center}
-\end{figure}
 
 Pada Gambar \ref{versi} menjelaskan tentang untuk menunjukkan versi pip yang telah diinstal.
 \subsection{Instalasi PIP di Linux}
@@ -131,41 +87,14 @@ Python adalah menyediakan modus interaktif yang sangat berguna dalam melakukan l
 \subsection{Perintah Bantuan dalam PIP}
 Berikut beberapa fungsi yang dapat membantu pengguna ketika dalam menggunakan PIP, antara lain :
 \subsubsection{Help}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1help.jpg}
-\caption{Fungsi Help}
-\label{FungsiHelp}
-\end{center}
-\end{figure}
-Pada Gambar \ref{FungsiHelp} menjelaskan bahwa salah satu fungsi dalam PIP yang dapat menunjukkan bantuan.
+
+Pada Gambar menjelaskan bahwa salah satu fungsi dalam PIP yang dapat menunjukkan bantuan.
 \subsubsection{Version}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1versi.jpg} 
-\caption{Fungsi Version}
-\label{fungsiversi}
-\end{center}
-\end{figure}
-Pada Gambar \ref{fungsiversi} menjelaskan tentang salah satu fungsi pada PIP yang dapat menunjukkan versi PIP yang kita gunakan.
+Pada Gambar menjelaskan tentang salah satu fungsi pada PIP yang dapat menunjukkan versi PIP yang kita gunakan.
 \subsubsection{Cache}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1cache.jpg} 
-\caption{Fungsi cache}
-\label{fungsicache}
-\end{center}
-\end{figure}
-Pada Gambar \ref{fungsicache} menjelaskan tentang salah satu fungsi pada PIP yang dapat mmenyimpan data cache ke direktori %<dir>
+Pada Gambar menjelaskan tentang salah satu fungsi pada PIP yang dapat mmenyimpan data cache ke direktori %<dir>
 \subsubsection{No Cache}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1nocache.jpg} 
-\caption{Fungsi NoCache}
-\label{fungsinocache}
-\end{center}
-\end{figure}
-Pada Gambar \ref{fungsinocache} menjelaskan tentang salah satu fungsi pada PIP untuk menonaktifkan cache
+Pada Gambar menjelaskan tentang salah satu fungsi pada PIP untuk menonaktifkan cache
 \subsection{Dasar PIP}
 Ada beberapa aturan dalam menangani penggunaan string python yang dapat diandalkan :
 \item Tanda kutip tunggal (') atau tanda kuutip ganda (")
@@ -199,14 +128,8 @@ Hasil file adalah NamaFile + ’decompressed.txt’.
 Kita dapat melakukan install package-package yang dibundel dengan file berekstensi whl melalui PIP,wheel adalah format arsip yang digunakan untuk mempercepat melakukan penginstalan package. Setelah melakukan penginstalan wheel, lakukan penginstalan paket dengan menggunakan perintah pip install nipype-0.10.0-py2-none-any.whl . Untuk menampilkan package-package yang telah di install gunakan perintah pip list dan untuk menguninstall package lakukan dengan perintah pip uninstall <nama-package>.
 \subsection{Instalasi Package Sekaligus}
 Pada PIP, kita dapat melakukan penginstalan package sekaligus lebih dari satu package dan  kita tdiak perlu repot untuk menginstal satu per satu package. Pada PIP, untuk menginstal package sekaligus menggunakan requirement.txt, dimana kita melakukan list package yang akan di list dan dimasukkan dalam requirement.txt tersebut. Lalu kita ketikkan perintah
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=1\textwidth]{../figures/1requre.png}
-\caption{Perintah Instal Package Sekaligus}
-\label{1require} 
-\end{center}
-\end{figure}
-Pada gambar \ref{1require} menjelaskan tentang bagaimana cara instal package sekaligus dalam satu waktu.
+
+Pada gambar menjelaskan tentang bagaimana cara instal package sekaligus dalam satu waktu.
 \end{itemize}
 \subsection{Contoh Penggunaan PIP}
 Contoh penggunaan PIP;
@@ -226,4 +149,3 @@ Pemanfaatan Raspberry Pi untuk Hacking dan Forensic dengan metode NIST (National
 Cybercrime dilakukan oleh orang yang tidak bertanggung jawab dengan tujuan merusak, memodifikasi dan menghilangkan data seseorang, salah satunya dengan menggunakan teknik hacking untuk masuk kedalam sebuah penyimpanan data untuk melakukan kejahatan.  Maka penelitian yang dilakukan adalah melakukan analisis terhadap bukti digital pada jaringan berbentuk pcap dan bukti elektronik berupa flashdisck sebagai media penyimpanan, dengan memanfaatkan Raspberry pi dan NIST.
 \subsection{Contoh Pemanfaatan PIP}
 Salah satu manfaat Rasberry Pi adalah bisa digunakan sebagai Mini PC untuk controlling dan monitoring suatu perangkat. Salah satu fungsi Raspberry Pi, yakni web server memanfaatkan fitur GPIO (General Purpose Input Output) pada Raspberry Pi. Berkat pemanfaatan ini, setiap perangkat elektronik di rumah dapat di control. Untuk mengontrolnya, menggunakan komunikasi pengontrolan web server melalui protocol TCP/IP serta HTTP.
-\end{document}
