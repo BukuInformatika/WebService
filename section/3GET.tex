@@ -8,12 +8,21 @@
 %\end{enumerate}
 
 \section{Pengenalan Method GET Pada HTTP}
-HTTP mendefinisikan seperangkat metode permintaan untuk menunjukkan tindakan yang diinginkan yang akan dilakukan untuk sumber daya tertentu.
-Meskipun mereka juga bisa menjadi kata benda, metode permintaan ini kadang-kadang disebut sebagai verba HTTP. Masing-masing menerapkan semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka: mis. Metode permintaan dapat berupa safe, idempotent, atau cacheable. 
-Salahsatu metode permintaan yang digunakan dalam Http adalah GET, dimana GET ini digunakan untuk meminta representasi sumber atau menampilkan data/nilai pada url yang nantinya akan ditampung oleh action.
+HTTP mendefinisikan seperangkat metode permintaan untuk menunjukkan tindakan yang diinginkan yang akan dilakukan untuk sumber daya 
+tertentu.
+Meskipun mereka juga bisa menjadi kata benda, metode permintaan ini kadang-kadang disebut sebagai verba HTTP. Masing-masing menerapkan 
+semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka: mis. Metode permintaan dapat berupa safe, idempotent, atau 
+cacheable. 
+Salahsatu metode permintaan yang digunakan dalam Http adalah GET, dimana GET ini digunakan untuk meminta representasi sumber atau 
+menampilkan data/nilai pada url yang nantinya akan ditampung oleh action.
 
 \section{Pengertian Method Get}
 GET adalah operasi read-only yang sering digunakan untuk meminta informasi yang spesifik pada sebuah server dalam bentuk query. 
 Karakteristik dari operasi GET adalah idempotent dan safe. Idempontent dapat diartikan sebanyak-banyaknya apapun operasi ini dilakukan dan 
 hasilnya akan tgetap sama sedangkan, safe berarti ketika operasi ini diinvokasi tetap tidak mengubah state di server.
 Biasanya GET sering ditemukan di HTML,PHP dah diterapkan juga pada Web Service.
+
+Metode umum yang dapat digunakan oleh HTTP untuk dapat membaca data kedalam sebuha browser adalah dengan menggunakan metode get. Metodeget 
+ini dirancang hanya dapat kita gunakan untuk membaca sebuah data namun dapat disayangkan secara praktek dapat digunakan juga untuk 
+melewatkan data dengan menambahkan informasi pada sebuah URL. Maka dengan cara tersebut makametode get akan melewatkan data yang dapat 
+dilihat oleh pengguna melalui alamat URL yang juga dapat kita simpan pada bookmark.
