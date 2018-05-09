@@ -1,0 +1,43 @@
+\documentclass[12pt,a4paper]{article} 
+\usepackage{graphicx}
+\begin{document}
+
+\section{Flask}
+\subsection{Instlasi Flask}
+\subsubsection{On Linux}
+Untuk melakukan instalasi flask, ada beberapa tahap yang harus dilakukan yaitu :
+\begin{enumerate}
+\item Pastikan anda sudah menginstal pyhton baik pyhton versi 2.x maupun 3.x. Jika belum instal, instal terlebih dahulu.
+
+\item Untuk melakukan instalasi flask, kita harus membuat sebuah virtual environment lalu instal flask di dalamnya. Berikut adalah cara instal virtual enviroment / virtualenv.
+
+\$ sudo apt-get install python-virtualenv
+
+\item Lalu, buat satu direktori di hard disk kita untuk tempat pengerjaan project. 
+
+\$ mkdir myproject
+
+\$ cd myproject
+
+\item Setelah itu, kita masuk ke direktori yang sudah di buat sebelumnya dan jalankan terminal untuk menjalankan virtualenv untuk membuat virtualenv di dalam direktori tersebut. Berikut adalah cara menjalankan virtualenv.
+
+\$ virtualenv venv
+
+New python executable in venv/bin/python
+
+Installing setuptools, pip............done.
+
+\item Lalu, berikut adalah cara untuk mengaktifkan virtualenv.
+
+\$ . venv/bin/activate 
+
+dan jika ingin menonaktifkannya, berikut caranya 
+
+\$ deactivate
+
+\item Selanjutnya, kita melakukan penginstalan flask
+
+\$ pip install Flask
+\end{enumerate}
+
+\end{document}
