@@ -34,6 +34,17 @@ Flask merupakan sebuah micro framework yang berbasis kan baha pemrograman python
 
  
 \section{Membuat "Hello World" di Flask}
+\subsection{Membuat "Hello World" dengan Flask menurut Lokhande, PS and Aslam, Fankar and Hawa, Nabeel and Munir, Jumal and Gulamgaus, Murade}
+Program Hello World di Flask adalah contoh dasar Flask di mana kita mengimpor kelas Flask menggunakan fungsi impor, kemudian kita mendefinisikan fungsi hello world dan kemudian mengembalikan 'Hello World!' \cite{lokhande2015efficient}.
+\begin{verbatim}
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+return 'Hello World!'
+if __name__ == '__main__':
+app.run()
+\end{verbatim}
 
 
 \section{Error yang Muncul serta Solusinya}
