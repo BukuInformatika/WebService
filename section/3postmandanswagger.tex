@@ -24,5 +24,8 @@ dan menyesuaikan dengan database, dan mendesain struktur rewrite pada web server
 \section{Pengujian}
 Untuk memastikan bahwa sistem berjalan sesuai dengan rencana pengembangan sistem dan proses bisnis yang difasilitasi, diperlukan sebuah skenario pengujian sistem. Pada penelitian ini, pengujian akan dilakukan dengan menggunakan software Postman dan dibagi menjadi tiga skenario pengujian, yaitu: Pengujian otentikasi token untuk memastikan prinsip REST terpenuhi, pengujian dengan metode equivalent partitioning untuk memastikan nilai-nilai masukan sesuai dengan rencana pengembangan sistem, pengujian fungsional untuk memastikan setiap titik akses API.
 
+\subsection{Pengujian}
+Pengujian  otentikasi token dilakukan pada load-balanced server dengan jumlah back-end server sebanyak tiga virtual server yang diklasifikasi berdasarkan port jaringan. Pengujian  metode equivalent partitioning akan mengelompokkan nilai masukan ke dalam kelas- kelas kemudian diuji dalam kasus-kasus tertentu. Pengujian fungsional dilakukan secara langsung setiap titik akses sistem API yang telah dibuat. 
+
 
 \end{document}
