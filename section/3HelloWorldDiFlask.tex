@@ -9,7 +9,10 @@
 %Wildan Khaustara Wijaksana		1164058
 
 \documentclass[12pt]{article}
-\usepackage{graphicx}    
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphics}
+
 
 \begin{document}
 \section{Apa itu Flask?}
@@ -118,8 +121,62 @@ Hasil dari kode ini dan tampilan halaman web yang berisi string "Hello, World!".
 
 
 
-\section{Implementasi Flask}
-Implementasi web service menggunakan flask web framework, library pandas untuk membaca file csv dan membentuk fitur matrix X dan vektor target y. Penggunan library scikit learn agar dapat menggunakan modul naive bayes, serta untuk melakukan pembagian data training dan testing dengan fungsi train test split. Modul terakhir yang digunakan adalah pickle untuk menyimpan classifier yang telah dibuat ke dalam disk, agar tidak melakukan training berulang-ulang untuk setiap request yang dikirim \cite{setyawan2017implementasi}.
+\section{Implementasi dengan menggunakan Flask}
+Implementasi web service menggunakan flask web framework, library pandas untuk membaca file csv dan membentuk fitur matrix X dan vektor target y. Penggunan library scikit learn agar dapat menggunakan modul naive bayes, serta untuk melakukan pembagian data training dan testing dengan fungsi train test split. Modul terakhir yang digunakan adalah pickle untuk menyimpan classifier yang telah dibuat ke dalam disk, agar tidak melakukan training berulang-ulang untuk setiap request yang dikirim.
+
+Listing program 1 berfungsi untuk membuat naive bayes classifier, kemudian menyimpannya dengan nama nbp imadiebetspkl agar dapat dipanggil oleh web service. Listing program 2 menampilkan kode pembuatan web service yang diimplementasikan pada fungsi predict, sedangkan Listing program 3 menampilkan contoh kode aplikasi dalam bahasa python yang melakukan request ke web service dengan mengirimkan parameter 'pregn':6,'gluc':148,
+'bp':72,'sk':35,'ins':0,
+'bmi':33.6,'ped':0.627,'age':50, dimana akan menghasilkan variabel output dengan nilai {'results': [1]} yang berarti positif diabetes \cite{setyawan2017implementasi}.
+
+\begin{verbatim}
+Listing program 1. Pembuatan naive bayes classifier
+url = 'pima-indians-diabetes.csv'
+col_names = ['pregnant', 'glucose', 'bp', 'skin',
+'insulin', 'bmi', 'pedigree', 'age', 'label']
+pima = pd.read_csv(url, header=None, names=col_names)
+feature_cols = ['pregnant', 'glucose', 'bp', 'skin',
+'insulin', 'bmi', 'pedigree', 'age']
+X = pima[feature_cols]
+y = pima.label
+X_train, X_test, y_train, y_test =
+train_test_split(X, y, stratify=y, test_size=0.25, random_state = 0)
+nb = GaussianNB()
+nb.fit(X_train, y_train)
+pickle.dump(nb, open("nb_pimadiabtes.pkl","wb"))
+
+Listing program 2. Implementasi web service dengan flask
+import numpy as np
+from flask import Flask, request, abort, jsonify
+import pickle
+nbclassifier = pickle.load(open("nb_pimadiabtes.pkl","rb"))
+app = Flask(__name__)
+@app.route('/api', methods=['POST'])
+def predict():
+data = request.get_json(force = True)
+predict_request = [data['pregn'],data['gluc'],data['bp']
+data['sk'],data['ins'],data['bmi'],data['ped'],data['age']]
+predict_request = np.array(predict_request)
+y_result = nbclassifier.predict(predict_request)
+output = [int(y_result[0])]
+return jsonify(results=output)
+if __name__ == '__main__':
+app.run(debug = True)
+
+Listing program 3. Contoh kode yang mengakses web service
+import json
+import requests
+url = "http://127.0.0.1:5000/api"
+
+Listing program 3. Lanjutan
+data= json.dumps({'pregn':6,'gluc':148,'bp':72,'sk':35,
+'ins':0,'bmi':33.6,
+'ped':0.627,'age':50})
+r = requests.post(url, data)
+output = r.json()
+\end{verbatim}
+
+
+
 
 
 
