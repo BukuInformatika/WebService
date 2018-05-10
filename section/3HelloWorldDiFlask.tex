@@ -80,6 +80,21 @@ if __name__ == '__main__':
 app.run()
 \end{verbatim}
 
+\subsection{Membuat Hello World dengan Flask menurut Grinberg, Miguel}
+Versi kedua dari aplikasi ini yaitu menambahkan sebuah rute yang dinamis. Ketika Anda mengunjungi URL dinamis di browser Anda, Anda akan disajikan dengan ucapan pribadi yang menyertakan nama yang diberikan di URL. Contoh aplikasi Flask dengan rute dinamis.
+\begin{verbatim}
+From Flask import Flask
+app = Flask(__name__)
+@app.route(‘/’)
+def index():
+	return ‘<h1>Hello World !</h1>’
+@app.route(‘/user/<name>’)
+def user(name):
+	return  ‘<h1> Hello, {}!</h1>’.format(name)
+
+\end{verbatim}
+Jika Anda telah mengkloning repositori git aplikasi di GitHub, Anda sekarang dapat menjalankan git untuk memeriksa versi aplikasi ini\cite{grinberg2018flask}.
+
 \section{Error yang Muncul serta Solusinya}
 
 
