@@ -22,10 +22,9 @@ semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka: 
 Salah satu metode permintaan yang digunakan dalam Http adalah GET, dimana GET ini digunakan untuk meminta representasi sumber atau 
 menampilkan data/nilai pada url yang nantinya akan ditampung oleh action.
 
-REST menggunakan protokol HTTP yang bersifat stateless. Perintah HTTP yang bisa
-digunakan adalah fungsi GET, POST, PUT atau DELETE. Hasil yang dikirimkan dari server
-biasanya dalam bentuk format XML atau JSON sederhana tanpa ada protokol pemaketan data,
-sehingga informasi yang diterima dapat jauh lebih mudah dibaca dan diparsing disisi client.
+REST menggunakan protokol HTTP yang bersifat stateless. Perintah HTTP yang bisa digunakan adalah fungsi GET, POST, PUT atau 
+DELETE. Hasil yang dikirimkan dari server biasanya dalam bentuk format XML atau JSON sederhana tanpa ada protokol pemaketan  
+data,sehingga informasi yang diterima dapat jauh lebih mudah dibaca dan diparsing disisi client.
 
 \section{Pengertian Method Get}
 GET adalah operasi read-only yang sering digunakan untuk meminta informasi yang spesifik pada sebuah server dalam bentuk query. 
@@ -49,6 +48,12 @@ lain yang dapat kita gunakan agar kita dapat  mengirimkan data yaitu kita dapat 
 memiliki banyak kelebihan dibandingkan dengan  metode GET ,kelebihan yang dimaksud tersebut yaitu metode POST  memliki panjang parameter 
 dan tidak  terbatas,  metode POST tidak dapat terlihat oleh pengguna  seperti manusia dan  kita juga tidak bias menyimpannya ke dalam 
 bookmark.
+
+\subsection{fungsi Method GET}
+Fungsi GET secara teknis diproses lebih sederhana karena permintaan dikirimkan melalui alamat halaman (URL) dengan sistem 
+penulisan secara berpasangan yaitu nama varibel dan nilainya, dan pemisahan variabel menggunakan karakter dan &, misalnya :
+http://localhost/obattradisional/bagian_tanaman.php. Metode GET digunakan sehingga HTTP Client bisa mengambil informasi dari 
+server dengan mengirimkan data melalui URI.
 
 \subsection{Karateristik dari Method GET}
 Metode get juga dapat diartikan sebagai metode pengiriman data dengan menggunakan query berupa string, sehingga seluruh nilai dari form 
