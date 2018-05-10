@@ -1,3 +1,4 @@
+
 \documentclass[12pt,a4paper]{article}
 \usepackage[left=3.00cm, right=2.00cm, bottom=2.00cm, top=3.00cm]{geometry}
 \begin{document}
@@ -41,6 +42,28 @@ EOL
 Sekarang untuk membuka aplikasi yang ada pada Postman , cukup hanya dengan melakukan klik pada shortcut pada start - menu. 
 
 \section{Cara Penggunaan Postman}
+Berikut cara penggunaan Postman : Buat sebuah file baru pada direktori root webserver dengan nama: contoh-api-sederhana.php .Kemudian ketikan kode PHP berikut ke dalam file contoh-api-sederhana.php. Berikut kode untuk membuat file:
+<?php
+/**  
+ * Contoh API Sederhana
+ * irul @ 20171102
+ */
+$method = $_SERVER['REQUEST_METHOD'];
+switch ($method) {
+    case 'GET':
+        echo "$method: Contoh API Sederhana";
+        break;
+    case 'POST':
+    case 'PUT':
+    case 'DELETE':
+        $json = file_get_contents('php://input');
+        $data = json_decode($json);
+        echo "$method: " . $data->nama;
+        break;
+    default:
+        echo "Method not defined!";
+}
+?>
 
 \section{Implementasi Postman}
 Implementasi tidak hanya aktivitas, melainkan suatu kegiatan yang terencana untuk mencapai
