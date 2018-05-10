@@ -24,19 +24,26 @@ sehingga informasi yang diterima dapat jauh lebih mudah dibaca dan diparsing dis
 
 \section{Pengertian Method Get}
 GET adalah operasi read-only yang sering digunakan untuk meminta informasi yang spesifik pada sebuah server dalam bentuk query. 
-Karakteristik dari operasi GET adalah idempotent dan safe. Idempontent dapat diartikan sebanyak-banyaknya apapun operasi ini dilakukan dan 
+Karakteristik dari operasi GET adalah idempotent dan safe. Idempontent dapat diartikan sebanyak-banyaknya apapun operasi ini dilakukan 
+dan 
 hasilnya akan tgetap sama sedangkan, safe berarti ketika operasi ini diinvokasi tetap tidak mengubah state di server.
 Biasanya GET sering ditemukan di HTML,PHP dah diterapkan juga pada Web Service.
 
 Dalam Bahasa PHP melakukan HTTP request ke halaman kemudian secara default adalah get request, data yang didapatkan dari web service 
 dikirimkan dalam bentuk format standar misalnya XML atau JSON atau Java Object Notation. Get memiliki fungsi yang sama seperti POST 
-digunakan untuk mengirimkan nilai atau value variabel ke file yang telah diatur. Perbedaan method GET dan method POST sangat kecil tetapi 
+digunakan untuk mengirimkan nilai atau value variabel ke file yang telah diatur. Perbedaan method GET dan method POST sangat kecil 
+tetapi 
 sangat terlihat dengan jelas.
 
-Metode umum yang dapat digunakan oleh HTTP untuk dapat membaca data kedalam sebuha browser adalah dengan menggunakan metode get. Metodeget 
-ini dirancang hanya dapat kita gunakan untuk membaca sebuah data namun dapat disayangkan secara praktek dapat digunakan juga untuk 
-melewatkan data dengan menambahkan informasi pada sebuah URL. Maka dengan cara tersebut makametode get akan melewatkan data yang dapat 
-dilihat oleh pengguna melalui alamat URL yang juga dapat kita simpan pada bookmark.
+Metode umum yang dapat digunakan oleh HTTP untuk dapat membaca data kedalam sebuha browser adalah dengan menggunakan metode get. 
+Metodeget ini dirancang hanya dapat kita gunakan untuk membaca sebuah data namun dapat disayangkan secara praktek dapat digunakan juga untuk melewatkan data dengan menambahkan informasi pada sebuah URL. Maka dengan cara tersebut makametode get akan melewatkan data yang dapat dilihat oleh pengguna melalui alamat URL yang juga dapat kita simpan pada bookmark.
+
+Metode GET pada HTTP/1.0 mempunyai batas maksimum parameter data sepanjang batas URL dengan batas ukuran maksimum 2 kb untuk browser 
+saat in. HTTP/1.1 tidak memberikan batas maksimum untuk Uniform Resource Identifier (URI). Penyebutan yang lebih umum untuk URL. Metode 
+lain yang dapat kita gunakan agar kita dapat  mengirimkan data yaitu kita dapat menggunakan  metode POST. Dimana metode  POST ini 
+memiliki banyak kelebihan dibandingkan dengan  metode GET ,kelebihan yang dimaksud tersebut yaitu metode POST  memliki panjang parameter 
+dan tidak  terbatas,  metode POST tidak dapat terlihat oleh pengguna  seperti manusia dan  kita juga tidak bias menyimpannya ke dalam 
+bookmark.
 
 \subsection{Karateristik dari Method GET}
 Metode get juga dapat diartikan sebagai metode pengiriman data dengan menggunakan query berupa string, sehingga seluruh nilai dari form 
