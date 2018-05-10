@@ -48,10 +48,15 @@ Catatan:
 
 Dekorator adalah fitur standar dari bahasa python. Penggunaan umum dekorator adalah untuk mendaftarkan fungsi sebagai fungsi handler yang akan dipanggil ketika peristiwa tertentu terjadi
 
+Panduan untuk dekorator fungsi Python
+Python kaya dengan fitur canggih dan sintaksis ekspresif. Salah satu favorit saya adalah dekorator. Dalam konteks pola desain, dekorator mengubah fungsi suatu ke fungsi, metode atau kelas secara dinamis tanpa harus menggunakan subclass secara langsung. Ini sangat ideal ketika Anda perlu memperluas fungsi fungsi yang tidak ingin Anda ubah. Kita dapat mengimplementasikan pola dekorator di mana saja, tetapi Python memfasilitasi penerapannya dengan menyediakan lebih banyak fitur dan sintaksis yang ekspresif untuk itu.
+
 \subsection{Jenis-Jenis Fungsi Dekorator}
 
 
 Dekorator fungsi adalah sejenis deklarasi runtime tentang fungsi yang definisinya mengikuti. dekorator dikodekan pada baris tepat sebelum pernyataan def yang mendefinisikan fungsi atau metode, dan ini terdiri dari symbol @ yang di ikuti oleh referensi ke fungsi metafungsi (atau objek callable lain) yang mengelola fungsi lain.
+
+
 
 @Decorator
 
