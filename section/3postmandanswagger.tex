@@ -25,9 +25,20 @@ kemudia Ekstrak file instalasi Postman tersebut ke direktori /optsudo tar -xzf p
 setelah itu dapat menghapus file instalasinya (opsional)dengan cara rm postman.tar.gz
 
 
-
-
 \section{membuat shortcut Postman}
+Berikut tata cara untuk membuat shortcut pada start menu postman.  Ketik perintah - perintah berikut dibawah ini:
+cat > ~/.local/share/applications/postman.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=postman
+Icon=/opt/Postman/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+EOL
+
+Sekarang untuk membuka aplikasi yang ada pada Postman , cukup hanya dengan melakukan klik pada shortcut pada start - menu. 
 
 \section{Cara Penggunaan Postman}
 
