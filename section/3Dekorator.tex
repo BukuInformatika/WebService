@@ -27,6 +27,16 @@ Decorators sesuai dengan namanya secara bahasa memiliki arti yaitu pendekorasi a
 
 Dekorator adalah fungsi yang mengambil fungsi lain dan memperluas perilaku fungsi yang terakhir tanpa secara eksplisit memodifikasinya, "Dekorator" yang kita dimaksud adalah kepedulian terhadap Python tidak persis sama dengan DecoratorPattern yang dijelaskan. Dekorator Python adalah perubahan spesifik pada sintaks Python yang memungkinkan kita mengubah fungsi dan metode dengan lebih mudah (dan mungkin kelas dalam versi yang akan datang). Ini mendukung aplikasi yang lebih mudah dibaca dari DecoratorPattern tetapi juga kegunaan lain juga.
 
+Cara paling mudah untuk menentukan rute dalam aplikasi flask adalah melalui decorator app.route oleh aplikasi instance. Dibawah ini adalah contoh kodenya:\\
+
+@app.route(‘/’)\\
+Def index():\\
+      Return ‘ <h1> Hello World!</h1> ’\\
+
+Catatan:
+
+Dekorator adalah fitur standar dari bahasa python. Penggunaan umum dekorator adalah untuk mendaftarkan fungsi sebagai fungsi handler yang akan dipanggil ketika peristiwa tertentu terjadi
+
 \subsection{Jenis-Jenis Fungsi Dekorator}
 
 
