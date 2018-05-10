@@ -11,9 +11,9 @@
 HTTP mendefinisikan seperangkat metode permintaan untuk menunjukkan tindakan yang diinginkan yang akan dilakukan untuk sumber daya 
 tertentu.
 Meskipun mereka juga bisa menjadi kata benda, metode permintaan ini kadang-kadang disebut sebagai verba HTTP. Masing-masing menerapkan 
-semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka: mis. Metode permintaan dapat berupa safe, idempotent, atau 
-cacheable. 
-Salahsatu metode permintaan yang digunakan dalam Http adalah GET, dimana GET ini digunakan untuk meminta representasi sumber atau 
+semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka: mis. Metode permintaan dapat berupa safe, idempotent, atau cacheable. 
+
+Salah satu metode permintaan yang digunakan dalam Http adalah GET, dimana GET ini digunakan untuk meminta representasi sumber atau 
 menampilkan data/nilai pada url yang nantinya akan ditampung oleh action.
 REST menggunakan protokol HTTP yang bersifat stateless. Perintah HTTP yang bisa
 digunakan adalah fungsi GET, POST, PUT atau DELETE. Hasil yang dikirimkan dari server
@@ -35,3 +35,15 @@ Metode umum yang dapat digunakan oleh HTTP untuk dapat membaca data kedalam sebu
 ini dirancang hanya dapat kita gunakan untuk membaca sebuah data namun dapat disayangkan secara praktek dapat digunakan juga untuk 
 melewatkan data dengan menambahkan informasi pada sebuah URL. Maka dengan cara tersebut makametode get akan melewatkan data yang dapat 
 dilihat oleh pengguna melalui alamat URL yang juga dapat kita simpan pada bookmark.
+
+\subsection{Karakteristik Get}
+Metode get juga dapat diartikan sebagai metode pengiriman data dengan menggunakan query berupa string, sehingga seluruh nilai dari form 
+diitampilkan pada baris url/Address bar. Get juga dapat difungsikan sebagai penamaan (link) dalam sebuah website. Adapun beberapa 
+karakteristiknya yang dimiliki oleh Get :
+\begin{enumerate}
+\item Variabel dapat terlihat pada url.
+\item Dibatasi pada panjang string yaitu 2047 karakter.
+\item Dapat memungkinkan pengunjung dapat langsung memasukkan nilai pada form variabel proses.
+\end{enumerate}
+
+
