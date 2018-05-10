@@ -25,6 +25,17 @@ Python merupakan Bahasa pemrograman dengan fitur canggih dan ekspresif., salah s
 Python menawarkan fitur dekorator sejak versi 2.4. Secara sederhana, dekorator adalah pabrik fungsi. Mereka memungkinkan kita untuk mengubah fungsi Python biasa menjadi fungsi yang berfungsi seperti MATLAB®. Dekorator Python menerima fungsi tepat sebelum dimuat ke dalam ruang kerja saat ini. Dekorator dapat memanipulasi fungsi dengan cara yang sewenang-wenang. Dekorator fungsi memodifikasi setiap fungsi yang diterjemahkan oleh OMPC. Kami menggunakan dekorator untuk meniru keberadaan variabel nargin / nargout, untuk memungkinkan penugasan ke variabel baru, dan untuk menerapkan pengembalian tersirat.
 Decorators sesuai dengan namanya secara bahasa memiliki arti yaitu pendekorasi atau penghias. Jika di kaitkan dengan python maka decorators memiliki arti yaitu adalah sebuah method yang ‘mengambil’ method lain dan menambahkan beberapa fungsi kepada method tersebut tanpa harus melakukan modifikasi. Bahasa simplenya adalah method yang melakukan ‘pendekorasian/penghiasan’ kepada method lainnya.
 
+Sebelumnya kita harus memahami bahwa semua yang ada di Python adalah objek (termasuk kelas). Nama pengenal, seperti variabel yang kita deklarasikan merujuk kepada objek tersebut. Begitu juga dengan fungsi. Fungsi adalah termasuk objek juga. Satu objek bisa memiliki banyak pengenal (identifier) yang merujuk kepadanya dengan contoh kodenya:
+
+\begin{verbatim}
+def first(msg):
+    print(msg)
+
+first("Hello")
+second = first
+second("Hello")
+\end{verbatim}
+
 Dekorator adalah fungsi yang mengambil fungsi lain dan memperluas perilaku fungsi yang terakhir tanpa secara eksplisit memodifikasinya, "Dekorator" yang kita dimaksud adalah kepedulian terhadap Python tidak persis sama dengan DecoratorPattern yang dijelaskan. Dekorator Python adalah perubahan spesifik pada sintaks Python yang memungkinkan kita mengubah fungsi dan metode dengan lebih mudah (dan mungkin kelas dalam versi yang akan datang). Ini mendukung aplikasi yang lebih mudah dibaca dari DecoratorPattern tetapi juga kegunaan lain juga.
 
 Cara paling mudah untuk menentukan rute dalam aplikasi flask adalah melalui decorator app.route oleh aplikasi instance. Dibawah ini adalah contoh kodenya:\\
