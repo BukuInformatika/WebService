@@ -49,6 +49,7 @@ return 'Hello World!'
 if __name__ == '__main__':
 app.run()
 \end{verbatim}
+
 \subsection{Membuat "Hello World" dengan Flask menurut Maia, Italo}
 dibawah ini merupakan cara membuat hello wold pada bahasa pemrograman pyton yaitu menggunakan flask ,dimana kita akan mengimport dan membuatnya menjadi "hello world" perhatikan code dibawah ini :
 \cite{maia2015building}.
@@ -61,6 +62,20 @@ app = Flask(__name__)
 def hello():
 	return "Hello World!"
 	
+if __name__ == '__main__':
+app.run()
+\end{verbatim}
+
+\subsection{Membuat "Hello World" dengan Flask menurut Aggarwal, Shalabh }
+Flask bertujuan menjaga inti dari kerangka kecil tetapi sangat extensible. Ini membuat aplikasi atau ekstensi menulis sangat mudah dan fleksibel dan memberi pengembang kekuatan untuk memilih konfigurasi yang mereka inginkan untuk aplikasi mereka, tanpa memaksakan pembatasan pada pilihan basis data, mesin templating, dan seterusnya\cite{aggarwal2014flask}.
+
+Menyiapkan aplikasi Hello World sederhana :
+\begin{verbatim}
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+return 'Hello to the World of Flask!'
 if __name__ == '__main__':
 app.run()
 \end{verbatim}
