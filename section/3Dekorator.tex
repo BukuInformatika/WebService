@@ -36,6 +36,23 @@ second = first
 second("Hello")
 \end{verbatim}
 
+Pada saat kode di atas dijalankan, kedua fungsi first dan second menampilkan output yang sama. Di sini, variabel first dan second merujuk pada objek fungsi yang sama.
+Sekarang mari kita tinjau hal yang lain. Sebuah fungsi bisa dijadikan sebagai argumen dari fungsi yang lain.
+Bila Anda sudah pernah menggunakan fungsi seperti map, filter, dan reduce di Python, maka Anda sudah tahu tentang hal ini.
+Fungsi yang menjadikan fungsi lain sebagai argumen disebut juga fungsi dengan orde yang lebih tinggi. Contohnya seperti berikut ini:
+
+\begin{verbatim}
+def inc(x):
+    return x + 1
+    
+def dec(x):
+    return x - 1
+    
+def operate(func, x):
+    result = func(x)
+    return result
+\end{verbatim}
+
 Dapat kita panggil fungsinya didalam fungsi lain.
 Contohnya seperti berikut:
 \begin{verbatim}
