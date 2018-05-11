@@ -29,37 +29,57 @@ setelah itu dapat menghapus file instalasinya (opsional)dengan cara rm postman.t
 
 \section{membuat shortcut Postman}
 Berikut tata cara untuk membuat shortcut pada start menu postman.  Ketik perintah - perintah berikut dibawah ini:
-cat > ~/.local/share/applications/postman.desktop <<EOL
-[Desktop Entry]
-Encoding=UTF-8
-Name=Postman
-Exec=postman
-Icon=/opt/Postman/resources/app/assets/icon.png
-Terminal=false
-Type=Application
-Categories=Development;
-EOL
+\begin{itemize}
+\item cat: -/.local/share/applications/postman.desktopEOL
+\item [Desktop Entry]
+\item Encoding=UTF-8
+\item Name=Postman
+\item Exec=postman
+\item Icon=/opt/Postman/resources/app/assets/icon.png
+\item Terminal=false
+\item Type=Application
+\item Categories=Development;
+ \item EOL
+\end{itemize}
+
 
 Sekarang untuk membuka aplikasi yang ada pada Postman , cukup hanya dengan melakukan klik pada shortcut pada start - menu. 
 
-\section{Cara Penggunaan Postman}
-Berikut cara penggunaan Postman : Buat sebuah file baru pada direktori root webserver dengan nama: contoh-api-sederhana.php .Kemudian ketikan kode PHP berikut ke dalam file contoh-api-sederhana.php. Berikut kode untuk membuat file:
+\section{Cara menggunakan Postman (Menguji API sederhana dengan Postman)}
+bagaimana cara menggunakan Postman untuk melakukan pengujian terhadap sebuah API (Application Programing Interface) sederhana.
+Untuk melakukan sebuah pengujian terhadap API, tentunya mesti ada APInya terlebih dahulu. Jadi pertama-tama membuat API sederhana menggunakan bahasa pemrograman PHP (PHP: Hypertext Prepocessor).
+Berikut cara penggunaan Postman; 
+\begin{enumerate}
+\item Buat sebuah file baru pada direktori root webserver dengan nama: contoh-api-sederhana.php 
+\item Kemudian ketikan kode PHP berikut ke dalam file contoh-api-sederhana.php
+\end{enumerate}
+ Berikut kode untuk membuat file:
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=1\textwidth]{figures/3contohapi.PNG}}
-
 \caption{Contoh Api Sederhana} 
 \label{api}
 \end{figure}
-
-pada gambar \ref{api} menjelaskan tentang contoh api.
+\ref{api}pada gambar menjelaskan tentang contoh api.
 
 Pada file contoh-api-sederhana.php, dapat didefinisikan satu buah API dengan empat Http Request Method yang berbeda. Berikut daftar method dan alamat url yang nanti akan kita uji menggunakan Postman:
-•	GET => /contoh-api-sederhana.php
-•	POST => /contoh-api-sederhana.php
-•	PUT => /contoh-api-sederhana.php
-•	DELETE => /contoh-api-sederhana.php
+\begin{enumerate}
+\item GET = /contoh-api-sederhana.php
+\item POST = /contoh-api-sederhana.php
+\item PUT = /contoh-api-sederhana.php
+\item DELETE = /contoh-api-sederhana.php
+\end{enumerate}
 Kita dapat menguji salah satu API di atas menggunakan browser, salah satunya, menggunakan method GET, browser akan mengirimkan data ke server menggunakan method GET.
+\section{Cara menggunakan Postman}
+Pengujian API menggunakan Postman dapat mengikuti langkah-langkah berikutnberdasarkan masing method. Pertama-tama silahkan buka aplikasi Postman.
+\subsection{Pengujian API dengan method: GET}
+\begin{enumerate}
+\item Pilih method GET di sebelah kolom alamat url
+\item Kemudian pada kolom alamat url isi dengan: http://localhost/contoh-api-sederhana.php
+\item Klik tombol Send
+\end{enumerate}
+Dari pengujian dengan method GET, hasil yang di dapatkan seharusnya sama dengan pengujian yang kita lakukan sebelumnya, dimana kita menggunakan browser yaitu: "GET: Contoh API Sederhana".
+
 
 \section{Implementasi Postman}
 Implementasi tidak hanya aktivitas, melainkan suatu kegiatan yang terencana untuk mencapai
