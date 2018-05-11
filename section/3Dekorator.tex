@@ -53,8 +53,30 @@ def operate(func, x):
     return result
 \end{verbatim}
 
+Kita bisa memanggil fungsi tersebut seperti berikut:
+
+\begin{verbatim}
+>>> operate(inc, 3)
+4
+>>> operate(dec, 3)
+2
+Lebih lanjut lagi, sebuah fungsi bisa mengembalikan fungsi lain.
+def is_called():
+    def is_returned():
+        print("Hello")
+    return is_returned
+new = is_called()
+#Outputs "Hello"
+new()
+\end{verbatim}
+
+\begin{verbatim}
+Pada contoh tersebut, is_returned() adalah fungsi bersarang yang didefinisikan dan dikembalikan tiap kali fungsi is_called() dipanggil.
+
 Dapat kita panggil fungsinya didalam fungsi lain.
 Contohnya seperti berikut:
+\end{verbatim}
+
 \begin{verbatim}
 def greet(name):
     def get_message():
