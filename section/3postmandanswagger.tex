@@ -45,6 +45,9 @@ Berikut tata cara untuk membuat shortcut pada start menu postman.  Ketik perinta
 
 Sekarang untuk membuka aplikasi yang ada pada Postman , cukup hanya dengan melakukan klik pada shortcut pada start - menu. 
 
+\section{Cara Menjalankan Aplikasi Postman}
+Setelah instalasi aplikasi, buka aplikasi postman lalu sign up dengan akun google kita atau jika sudah mempunyai akun maka kita tinggal login saja. Setelah terbuka tampilan pertama yang muncul akan kosong pada bagian history dan tidak terdapat menu body dan lain-lain. Pada bagian menu body disana terdapat syntak atau source code untuk menampilkan halaman awal pada google.com
+
 \section{Cara menggunakan Postman (Menguji API sederhana dengan Postman)}
 bagaimana cara menggunakan Postman untuk melakukan pengujian terhadap sebuah API (Application Programing Interface) sederhana.
 Untuk melakukan sebuah pengujian terhadap API, tentunya mesti ada APInya terlebih dahulu. Jadi pertama-tama membuat API sederhana menggunakan bahasa pemrograman PHP (PHP: Hypertext Prepocessor).
@@ -60,6 +63,7 @@ Berikut cara penggunaan Postman;
 \caption{Contoh Api Sederhana} 
 \label{api}
 \end{figure}
+
 \ref{api}pada gambar menjelaskan tentang contoh api.
 
 Pada file contoh-api-sederhana.php, dapat didefinisikan satu buah API dengan empat Http Request Method yang berbeda. Berikut daftar method dan alamat url yang nanti akan kita uji menggunakan Postman:
@@ -82,25 +86,31 @@ Dari pengujian dengan method GET, hasil yang di dapatkan seharusnya sama dengan 
 
 \subsection{Pengujian API dengan method: POST}
 Pada halaman postman yang masih aktif,
-1. Ganti method GET dengan method POST
-2. Biarkan alamat url (tidak perlu diganti)
-3. Klik pada tab Body, lalu pilih tab raw
-4. Isi kontennya dengan json object: {"nama":"irul"}
-5. Klik tombol Send
+\begin{enumerate}
+\item Ganti method GET dengan method POST
+\item Biarkan alamat url (tidak perlu diganti)
+\item Klik pada tab Body, lalu pilih tab raw
+\item Isi kontennya dengan json object: {"nama":"irul"}
+\item Klik tombol Send
+\end{enumerate}
 Pada method POST ini, dikirimkan  parameter berupa data raw (data mentah) yaitu string dengan format json object. Method ini biasanya digunakan untuk request menambah data baru. 
 
 \subsection{Pengujian API dengan method: PUT}
 pada halaman ini Postman yang aktif,
-1.Ganti method POST dengan method PUT
-2.Lainnya biarkan saja tidak perlu dirubah (masih sama seperti POST)
-3.Klik tombol Send
+\begin{enumerate}
+\item Ganti method POST dengan method PUT
+\item Lainnya biarkan saja tidak perlu dirubah (masih sama seperti POST)
+\item Klik tombol Send
+\end{enumerate}
 Pada pengujian dengan method PUT ini, mengirimkan parameter yang sama seperti halnya ketika menggunakan method POST yaitu berupa data raw dengan format json object. Method PUT biasanya digunakan ketika ada data yang perlu diubah. 
 
 \subsection{Pengujian Api dengan Method: DELETE}
 Masih tetap pada halaman Posmant yang aktif,
-1. Ganti method PUT dengan method DELETE
-2. Lainnya tetap seperti biasa 
-3. Klik tombol Send
+\begin{enumerate}
+\item Ganti method PUT dengan method DELETE
+\item Lainnya tetap seperti biasa 
+\item Klik tombol Send
+\end{enumerate}
 Method terakhir dikita uji adalah DELETE, kita mengirimkan parameter yang sama seperti pada method PUT dan method POST. Method DELETE ini, biasanya digunakan ketika ada data yang perlu dihapus.
 
 \section{Implementasi Postman}
