@@ -114,6 +114,22 @@ return "Hello, World!"
 
 Hasil dari kode ini dan tampilan halaman web yang berisi string "Hello, World!". Yang pertama diimpor sebagai operasi pertama Kelas flask, instantiate suatu objek. Parameter yang ditentukan dan variabel khusus: "nama".  Variabel ini digunakan di lingkungan Python, dan masih banyak lagi yang lebih spesifik dari Flask, untuk mengidentifikasi apakah modul saat ini telah tersedia di aplikasi utama saya, atau bisa diimpor dari modul eksternal; di kasus pertama, kita akan memiliki nilai utama, keduanya akan berisi nama modul eksternal dari mana modul yang saat ini diimpor. Mekanisme ini diakali dan digunakan oleh Flask untuk mengatur parameter pencarian dengan benar\cite{ziniqr}.
 
+\subsection{Hello World Flask by Django, Flask}
+Routes merupakan sebuah kumpulan dari URL kemudian di implementasi oleh aplikasi. Dalam FLask, handler merupakan route aplikasi yang ditulis sebagai fungsi dari Python yang disebut dengan view function. View function akan memetakan satu atau lebih URL sehingga Flask akan tahu apa yang harus ia lakukan setiap kali klien memanggil sebuah URL. Berikut ini merupakan contoh Flask Route\cite{djangoweb}.
+\begin{verbatim}
+import flask
+
+app = flask.Flask(__name__)
+
+@app.route('/')
+
+def hello():
+
+return 'Hello’
+
+app.run()
+
+\end{verbatim}
 
 
 
