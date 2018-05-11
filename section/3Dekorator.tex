@@ -51,7 +51,37 @@ print greet("John")
 # Outputs: Hello John
 \end{verbatim}
 
+Dekorasi Fungsi Dengan Parameter
+
+Decorator di atas sangat simple dan hanya berlaku untuk fungsi yang tidak punya memiliki parameter. Bagaimana jika fungsi yang akan didekorasi memiliki argumen seperti berikut?
+\begin{verbatim}
+def divide(a, b):
+    return a/b
+>>> divide(2, 5)
+0.4
+>>> divide(2, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+Sekarang kita akan membuat decorator untuk mengecek penyebab error ini.
+def smart_divide(func):
+    def inner(a,b):
+        print("Saya akan membagi",a,"dan",b)
+        if b == 0:
+            print("Whoops! tidak bisa membagi dengan 0")
+            return
+
+        return func(a,b)
+    return inner
+
+@smart_divide
+def divide(a,b):
+    return a/b
+\end{verbatim}
+
+
 Fungsi sebagai parameter
+
 Karena setiap parameter fungsi adalah referensi ke objek dan fungsi sendiri adalah objek juga, kita dapat meneruskan fungsi referensi ke dalam fungsinya - untuk parameter ke dalam fungsi.
 Berikut contohnya: 
 \begin{verbatim}
