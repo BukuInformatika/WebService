@@ -36,8 +36,8 @@ second = first
 second("Hello")
 \end{verbatim}
 
-Selain itu dapat kita panggil fungsinya di fungsi lain
-
+Dapat kita panggil fungsinya didalam fungsi lain.
+Contohnya seperti berikut:
 \begin{verbatim}
 def greet(name):
     def get_message():
@@ -49,6 +49,21 @@ def greet(name):
 print greet("John")
 
 # Outputs: Hello John
+\end{verbatim}
+
+Fungsi sebagai parameter
+Karena setiap parameter fungsi adalah referensi ke objek dan fungsi sendiri adalah objek juga, kita dapat meneruskan fungsi referensi ke dalam fungsinya - untuk parameter ke dalam fungsi.
+Berikut contohnya: 
+\begin{verbatim}
+def g():
+    print("dan ini aku g")
+def f(func):
+    print("yo ini aku f")
+    func() 
+f(g)
+
+# Outputs: 	yo ini aku f
+			dan ini aku g
 \end{verbatim}
 
 
