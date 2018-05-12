@@ -91,6 +91,12 @@ Jumlah dari total karakter yang dapat diubah ke dalam permintaan get adalah sang
 banyak data-data yang perlu dikirim  ke server, tidak semua bisa pesan-pesan itu dapat disampaikan. Oleh sebab itu Get benar-benar 
 sangat dibatasi dan tidak bebas.
 
+\subsection{Kelemahan Penggunaan Method GET}
+Kelemahan method GET adalah nilai dari form dapat dilihat langsung didalam URL yang dikirimkan. Jika membuat form untuk data-
+data yang  sensitif seperti password. Maka form  dengan method GET bukan suatu pilihan yang bagus. Form dengan method GET 
+disarankan untuk form yang berfungsi untuk menampilkan data  yaitu dimana hasil isian dari form hanya digunakan untuk  
+menampilkan data. method GET sebaiknya digunakan untuk form yang mengambil data dari database.
+
 \section{Parameter Get}
 Dalam hal penggunaannya method GET ini memiliki suatu parameter. Jika klien menggunakan protokol HTTP pada server web untuk meminta 
 sumber daya tertentu, maka klien akan mengirimkan parameter GET tertentu ke server melalui URL yang diminta. Parameter ini merupakan 
