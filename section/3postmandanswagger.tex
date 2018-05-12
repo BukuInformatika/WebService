@@ -56,16 +56,6 @@ Berikut cara penggunaan Postman;
 \item Buat sebuah file baru pada direktori root webserver dengan nama: contoh-api-sederhana.php 
 \item Kemudian ketikan kode PHP berikut ke dalam file contoh-api-sederhana.php
 \end{enumerate}
- Berikut kode untuk membuat file:
-
-\begin{figure}[ht]
-\centerline{\includegraphics[width=1\textwidth]{figures/3contohapi.PNG}}
-\caption{Contoh Api Sederhana} 
-\label{api}
-\end{figure}
-
-\ref{api}pada gambar menjelaskan tentang contoh api.
-
 Pada file contoh-api-sederhana.php, dapat didefinisikan satu buah API dengan empat Http Request Method yang berbeda. Berikut daftar method dan alamat url yang nanti akan kita uji menggunakan Postman:
 \begin{enumerate}
 \item GET = /contoh-api-sederhana.php
@@ -134,6 +124,15 @@ Pengujian dengan menggunakan metode equivalent partitioning ini untuk memastikan
 Swagger merupakan sebuah open source project dan juga salah satu framework API populer. Swagger dapat digunakan untuk merancang sebuah sistem, membangun sebuah sistem, serta mendokumentasikan dan mengakses API. Dengan adanya swagger, kita bisa melakukan desain ulang atau membuat baru code API dengan editor yang memberikan log jika terjadi error secara real-time.
 
 \section{Cara Membuat Swagger}
+\subsection{Format file yang digunakan}
 Cara membuat swagger developer bisanya menggunakan dua format file yaitu: JSON atau YAML . YAML cukup bersih dan mudah dibaca bagi pengguna swagger untuk ukuran file yang besar dibandingkan dengan JSON. Sedangkan menggunakan json developer biasanya dilakukan untuk generate swagger dengan format json. Dengan adanya swagger, kita dapat melakukan request ataupun melihat response dari API.
+\subsection{Current version dan tools yang digunakan dalam swagger}
+Untuk saat ini, swagger yang akan di create masih menggunakan version 2.0.
+Tool yang digunakan Text Editor apapun untuk membuat file spesifikasi. Untuk ini, kita akan menggunakan alat built-in yang disebut Swagger Editor.
+\subsection{Langkah-langkah menggunakan swagger } 
+Berikut file swagger yang valid. Ada beberapa object di dalam swagger:
+\begin{enumerate}
+\item Swagger yaitu dimana valuenya adalah 2.0(version).
+\end{enumerate}
 
 \end{document}
