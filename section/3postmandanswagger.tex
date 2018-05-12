@@ -142,4 +142,16 @@ Berikut file swagger yang valid. Ada beberapa object di dalam swagger:
 \item definitions di gunakan sebagai create model (contoh isi) untuk request dan response API
 \end{enumerate}
 
+\subsection{Add API method get}
+Bagian ini, akan ditambahkan 1 API method GET. Di dalam object paths terdapat :
+\begin{enumerate}
+\item Path API seperti /inquiry/{accountNo} dimana accountNo adalah parameter.
+\item Method API seperti GET, POST.
+\item Description (deskripsi dari API).
+\item OperationId (mirip seperti id).
+\item Produces (valuenya adalah format seperti json, xml).
+\itwm Consumes (valuenya sama seperti produces).
+\item parameters terdiri atas name, in, body, query, form, path, required, type dan description
+\item responses yang terdiri dari http code dimana terdapat description dan schema.
+\end{enumerate}
 \end{document}
