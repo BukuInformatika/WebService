@@ -75,6 +75,22 @@ new()
 \begin{verbatim}
 Pada contoh tersebut, is_returned() adalah fungsi bersarang yang didefinisikan dan dikembalikan tiap kali fungsi is_called() dipanggil.
 
+Selain harus memahami tentang hal di atas, dalam mempelajari bahasa python juga sudah harus paham tentang python closure.
+Kembali ke Decorator
+Sebuah decorator pada python mengambil fungsi sebagai argumennya, menambahkan beberapa hal, dan kemudian mengembalikannya.
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner
+
+def ordinary():
+    print("I am ordinary")
+
+
+
+
+
 \begin{verbatim}
 Bila kode di atas kita jalankan pada mode interaktif, maka hasilnya adalah seperti berikut:
 
