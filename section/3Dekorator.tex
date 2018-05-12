@@ -53,8 +53,7 @@ def operate(func, x):
     return result
 \end{verbatim}
 
-<<<<<<< HEAD
-=======
+
 Kita bisa memanggil fungsi tersebut seperti berikut:
 
 \begin{verbatim}
@@ -175,8 +174,8 @@ Whoops! tidak bisa membagi dengan 0
 Dengan cara tersebut kita bisa mendekorasi fungsi yang memiliki parameter.
 Bila kita perhatikan dengan baik, kita akan melihat kalau semua parameter dari fungsi yang di dalam decorator akan menjadi parameter dari fungsi yang didekorasi. Dengan itu, kita bisa membuat decorator yang lebih umum yang dapat bekerja dengan berapapun jumlah parameternya.
 
-Fungsi sebagai parameter
 
+Fungsi sebagai parameter
 Karena setiap parameter fungsi adalah referensi ke objek dan fungsi sendiri adalah objek juga, kita dapat meneruskan fungsi referensi ke dalam fungsinya - untuk parameter ke dalam fungsi.
 Berikut contohnya: 
 \begin{verbatim}
@@ -201,6 +200,18 @@ Cara paling mudah untuk menentukan rute dalam aplikasi flask adalah melalui deco
 @app.route(‘/’)\\
 Def index():\\
       Return ‘ <h1> Hello World!</h1> ’\\
+\end{verbatim}
+
+Dalam posting berikutnya dalam seri ini, dan penggunaan terakhir di app.route Flask () kita akan melihat bagaimana pola URL dinamis bekerja, dengan mendekonstruksi contoh sebagai berikut:
+
+\begin{verbatim}
+app = Flask(__name__)
+@app.route("/hello/<username>")
+def hello_user(username):
+    return "Hello {} !".format(username)
+    
+# Untuk Outputnya adalah hello dan username yang di isikan 
+di belakang parameter /hello/ usernamenya.
 \end{verbatim}
 
 Dalam pemrograman berorientasi objek, pola dekorator adalah pola desain yang memungkinkan perilaku untuk ditambahkan ke objek individu, baik secara statis atau dinamis, tanpa mempengaruhi perilaku objek lain dari kelas yang sama. Pola dekorator sering berguna untuk mematuhi Prinsip Tanggung Jawab Tunggal, karena memungkinkan fungsionalitas dibagi antara kelas dengan bidang perhatian yang unik.
