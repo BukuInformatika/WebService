@@ -146,6 +146,18 @@ def divide(a,b):
     return a/b
 \end{verbatim}
 
+Kode yang menggunakan decorator ini akan mengembalikan None jika terjadi error.
+\begin{verbatim}
+>>> divide(2, 5)
+Saya akan membagi 2 dan 5
+0.4
+>>> divide(2, 0)
+Saya akan membagi 2 dan 0
+Whoops! tidak bisa membagi dengan 0
+\end{verbatim}
+
+Dengan cara tersebut kita bisa mendekorasi fungsi yang memiliki parameter.
+Bila kita perhatikan dengan baik, kita akan melihat kalau semua parameter dari fungsi yang di dalam decorator akan menjadi parameter dari fungsi yang didekorasi. Dengan itu, kita bisa membuat decorator yang lebih umum yang dapat bekerja dengan berapapun jumlah parameternya.
 
 Fungsi sebagai parameter
 
