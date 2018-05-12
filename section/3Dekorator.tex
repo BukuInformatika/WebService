@@ -214,6 +214,30 @@ def hello_user(username):
 di belakang parameter /hello/ usernamenya.
 \end{verbatim}
 
+Saat kita mendesain API untuk situs web, seringkali kita menggunakan metode DELETE untuk menghapus. Sayangnya, dan HTML hanya memungkinkan GET dan POST untuk metodenya, berikut contoh contoh pengunaannya:
+
+\begin{enumerate}
+\item contoh untuk methods get:
+\begin{verbatim} 
+@app.route('/resc/<int:id>', methods=['GET'])
+def get_resc(id):
+ ...
+\end{verbatim}
+
+\item contoh untuk methods post:
+\begin{verbatim} 
+@app.route('/resc/<int:id>', methods=['POST'])
+def post_resc(id):
+ ...
+\end{verbatim}
+
+\item contoh untuk methods delete:
+\begin{verbatim} 
+@app.route('/resc/<int:id>', methods=['DELETE'])
+def del_resc():
+ ...
+\end{verbatim}
+\end{enumerate}
 Dalam pemrograman berorientasi objek, pola dekorator adalah pola desain yang memungkinkan perilaku untuk ditambahkan ke objek individu, baik secara statis atau dinamis, tanpa mempengaruhi perilaku objek lain dari kelas yang sama. Pola dekorator sering berguna untuk mematuhi Prinsip Tanggung Jawab Tunggal, karena memungkinkan fungsionalitas dibagi antara kelas dengan bidang perhatian yang unik.
 
 Catatan:
