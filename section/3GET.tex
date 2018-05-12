@@ -88,7 +88,12 @@ sangat dibatasi dan tidak bebas.
 \section{Parameter Get}
 Dalam hal penggunaannya method GET ini memiliki suatu parameter. Jika klien menggunakan protokol HTTP pada server web untuk meminta 
 sumber daya tertentu, maka klien akan mengirimkan parameter GET tertentu ke server melalui URL yang diminta. Parameter ini merupakan 
-pasangan nama dan nilai yang harus memiliki kesesuaian, yang disebut pasangan nama-nilai. 
+pasangan nama dan nilai yang harus memiliki kesesuaian, yang disebut pasangan nama-nilai.
+Nama dan nilai ini ditambahkan ke URL dengan tanda \"?\" dan memberi tahu server sumber daya mana yang dimaksud. Nama dan nilai selalu dipisahkan menggunakan tanda \"=\". Tidak hanya satu tetapi juga beberapa parameter serta seluruh daftar dapat dikirim ke server. Di sini, berbagai parameter dipisahkan menggunakan tanda \"&\".
+\begin{verbatim}
+http://www.domain.com/index.html*?name1=value1
+http://www.domain.com/index.html*?name1=value1&name2=value2
+\end{verbatim}
 
 Mengambil dan mengubah Teks pada Label
 Walaupun jarang terjadi atau dapat kita sebut sangat jarang terjadi tapi terkaang kita juga harus mengambil isi teks suatu label atau 
