@@ -107,3 +107,29 @@ kita dapat mengganti teks pada sebuah label saat program tersebut sedang berjala
 Untuk mengambil tekas pada label kita dapat menggunakan method Get. Sedangkan untuk menentukan teks pada label kita dapat menggunakan 
 method set_text. 
 Method get akan dihilangkan pada GTK+2.0 dan kita dapat menggantinya dengan menggunakan get_teks.
+
+\section{Parameter Get}
+Method “get”
+Pada saat penggunaan method “get” dimana membolehkan input yang kita masukkan dipaparkan sama ada pada halaman yang sama atau halaman 
+ yang berbeda/lainnya. Brikut merupakan contoh dari penggunaan sintaks mehod “get” yaitu”
+Simpanah sintaks berikut dalam bentuk shah.asp
+\<html>
+\<body>
+\<form action=”shah.asp” method=”get”>
+Nama
+\<input type=”submit” value=”Submit”>
+\</form>
+\<%
+Dim fname
+Fname=Request.QueryString(“fname”)
+If fname<>”” Then
+Response.Write(“Hai” & fname &  “!<br> />”)
+Response.Write(“Apa khabar hari ini ?”)
+End if
+%>
+\</body>
+\</html>
+
+Dari contoh diatas menunjukkan contoh kemasukan data. Dimana kita hanya perlu memasukkan nama anda pada ruangan input. Setelah itu kita 
+akan mengklik button submit.
+
