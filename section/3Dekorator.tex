@@ -53,8 +53,58 @@ def operate(func, x):
     return result
 \end{verbatim}
 
+<<<<<<< HEAD
+=======
+Kita bisa memanggil fungsi tersebut seperti berikut:
+
+\begin{verbatim}
+>>> operate(inc, 3)
+4
+>>> operate(dec, 3)
+2
+Lebih lanjut lagi, sebuah fungsi bisa mengembalikan fungsi lain.
+def is_called():
+    def is_returned():
+        print("Hello")
+    return is_returned
+new = is_called()
+#Outputs "Hello"
+new()
+\end{verbatim}
+
+\begin{verbatim}
+Pada contoh tersebut, is_returned() adalah fungsi bersarang yang didefinisikan dan dikembalikan tiap kali fungsi is_called() dipanggil.
+
+\begin{verbatim}
+Bila kode di atas kita jalankan pada mode interaktif, maka hasilnya adalah seperti berikut:
+
+>>> ordinary()
+I am ordinary
+
+>>> # Mari kita buat decorator dari fungsi ordinary
+>>> pretty = make_pretty(ordinary)
+>>> pretty()
+I got decorated
+I am ordinary
+
+\end{verbatim}
+
+Pada contoh di atas, 
+\begin{verbatim}
+make_pretty()
+\end{verbatim}  
+adalah sebuah decorator. Pada baris perintah 
+
+\begin{verbatim}
+pretty = make_pretty(ordinary)
+\end{verbatim}
+
+Fungsi ordinary didekorasi dan fungsi kembaliannya diberi nama pretty.
+Kita bisa lihat bahwa fungsi decorator menambahkan beberapa fungsionalitas ke fungsi asli. Hal ini mirip dengan pengemasan kado. Decorator bertindak sebagai bungkusnya. Objek yang didekorasi (isi kado) tidak berubah. Akan tetapi, ketika dibungkus, akan terlihat lebih bagus (karena didekorasi).
+
 Dapat kita panggil fungsinya didalam fungsi lain.
 Contohnya seperti berikut:
+
 \begin{verbatim}
 def greet(name):
     def get_message():
@@ -68,7 +118,37 @@ print greet("John")
 # Outputs: Hello John
 \end{verbatim}
 
+Dekorasi Fungsi Dengan Parameter
+
+Decorator di atas sangat simple dan hanya berlaku untuk fungsi yang tidak punya memiliki parameter. Bagaimana jika fungsi yang akan didekorasi memiliki argumen seperti berikut?
+\begin{verbatim}
+def divide(a, b):
+    return a/b
+>>> divide(2, 5)
+0.4
+>>> divide(2, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+Sekarang kita akan membuat decorator untuk mengecek penyebab error ini.
+def smart_divide(func):
+    def inner(a,b):
+        print("Saya akan membagi",a,"dan",b)
+        if b == 0:
+            print("Whoops! tidak bisa membagi dengan 0")
+            return
+
+        return func(a,b)
+    return inner
+
+@smart_divide
+def divide(a,b):
+    return a/b
+\end{verbatim}
+
+
 Fungsi sebagai parameter
+
 Karena setiap parameter fungsi adalah referensi ke objek dan fungsi sendiri adalah objek juga, kita dapat meneruskan fungsi referensi ke dalam fungsinya - untuk parameter ke dalam fungsi.
 Berikut contohnya: 
 \begin{verbatim}
