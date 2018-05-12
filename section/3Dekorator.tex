@@ -180,6 +180,15 @@ Dalam pemrograman berorientasi objek, pola dekorator adalah pola desain yang mem
 Catatan:
 Dekorator adalah fitur standar dari bahasa python. Penggunaan umum dekorator adalah untuk mendaftarkan fungsi sebagai fungsi handler yang akan dipanggil ketika peristiwa tertentu terjadi.
 
+Dekorator milik paling mungkin untuk kemungkinan desain yang paling indah dan paling kuat di Python, tetapi pada saat yang sama konsep ini dianggap oleh banyak orang sebagai rumit untuk masuk. Tepatnya, penggunaan menghias sangat mudah, tetapi menulis dekorator dapat menjadi rumit, terutama jika Anda tidak berpengalaman dengan dekorator dan beberapa konsep pemrograman fungsional. 
+
+Meskipun itu adalah konsep dasar yang sama, kami memiliki dua jenis dekorator dengan Python:
+•	Dekorator fungsi
+•	Dekorator kelas
+Dekorator dalam Python adalah objek Python yang dapat dipanggil yang digunakan untuk memodifikasi fungsi atau kelas. Referensi ke fungsi "func" atau kelas "C" diteruskan ke dekorator dan dekorator mengembalikan fungsi atau kelas yang dimodifikasi. Fungsi atau kelas yang dimodifikasi biasanya berisi panggilan ke fungsi asli "func" atau kelas 
+"C"
+
+
 Panduan untuk dekorator fungsi Python
 Python kaya dengan fitur canggih dan sintaksis ekspresif. Salah satu favorit saya adalah dekorator. Dalam konteks pola desain, dekorator mengubah fungsi suatu ke fungsi, metode atau kelas secara dinamis tanpa harus menggunakan subclass secara langsung. Ini sangat ideal ketika Anda perlu memperluas fungsi fungsi yang tidak ingin Anda ubah. Kita dapat mengimplementasikan pola dekorator di mana saja, tetapi Python memfasilitasi penerapannya dengan menyediakan lebih banyak fitur dan sintaksis yang ekspresif untuk itu.
 
