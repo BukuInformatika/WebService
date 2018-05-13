@@ -60,6 +60,31 @@ memiliki banyak kelebihan dibandingkan dengan  metode GET ,kelebihan yang dimaks
 parameter dan tidak  terbatas,  metode POST tidak dapat terlihat oleh pengguna  seperti manusia dan  kita juga tidak bias menyimpannya 
 ke dalam bookmark.
 
+\subsection{GET pada PHP}
+GET dalam Bahasa inggris pasti kita mengenal istilah getting yang berarti mengambil, jadi bisa diartikan GET adalah metode pada HTTP 
+yang digunakan untuk mengambil data dari server. pada metode ini umumnya data dbentyk dari query string yang dikirim via URL. Data yang 
+dikirim tersebut berupa pasangan key sama dengan value yang dipisahkan dengan tanda \& , kemudian data tersebut digabung dengan URL 
+utama yang dipisahkan dengan tada \? . 
+
+Sebelum dikirim, terlebih data diproses sehingga memenuhi standar format URL. URL hanya boleh memuat huruf besar dan kecil, angka dan 
+beberapa karakter lain. Karakter di luar itu akan diubah ke format tertentu yang diawali tanda % kemdian diikuti dengan 2 digit 
+hexadecimal, contoh :
+
+\begin{table} [ht]
+\caption{Karakter dan URL Encode}
+\centering
+\begin {tabular} {|cc|}
+\hline
+? adalah %3F & \\
+\hline
+@ adalah %40 & \\
+\hline
+= adalah %3D & \\
+\hline
+\end{tabular}
+\label{ltabel}
+\end{table}
+ 
 \subsection{fungsi Method GET}
 Fungsi GET secara teknis diproses lebih sederhana karena permintaan dikirimkan melalui alamat halaman (URL) dengan sistem 
 penulisan secara berpasangan yaitu nama varibel dan nilainya, dan pemisahan variabel menggunakan karakter dan &, misalnya :
