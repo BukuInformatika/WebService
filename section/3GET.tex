@@ -97,6 +97,12 @@ data yang  sensitif seperti password. Maka form  dengan method GET bukan suatu p
 disarankan untuk form yang berfungsi untuk menampilkan data  yaitu dimana hasil isian dari form hanya digunakan untuk  
 menampilkan data. method GET sebaiknya digunakan untuk form yang mengambil data dari database.
 
+\section{Batasan Dalam Get}
+Batasan lain dari permintaan Get yaitu ketika mengirim data adalah data yang dikirim menggunakan method ini dan ditambahkan pada url yag 
+akan dikirim ke server. Untuk itu kita dapat mengasumsikan URL sebagai alamat yang unik yang akan dikirim ke server sebagai penandan 
+lokasi yang diminta. Salah satu permasalahannya lai adalah URl dari beberapa permintaan yang diinginkan ditampilkan pada bar browser ke 
+beberapa browser. Hal iitu dapat diartikan, bahwa beberapa data sensitive seperti password atau informasi dapat ddilihat oleh siapapun.
+
 \section{Parameter Get}
 Dalam hal penggunaannya method GET ini memiliki suatu parameter. Jika klien menggunakan protokol HTTP pada server web untuk meminta 
 sumber daya tertentu, maka klien akan mengirimkan parameter GET tertentu ke server melalui URL yang diminta. Parameter ini merupakan 
