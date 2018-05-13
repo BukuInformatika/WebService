@@ -179,6 +179,19 @@ Dari gambar \ref{gambarHWF1} kita dapat melihat di sini bahwa Flask-Script menga
 
 
 \section{Error yang Muncul serta Solusinya}
+\subsection{Halaman Kesalahan Khusus}
+Flask memungkinkan aplikasi untuk menentukan halaman kesalahan kustom yang dapat didasarkan pada template, seperti rute reguler. Dua kode kesalahan paling umum adalah 404, yang dipicu ketika klien meminta halaman atau rute yang tidak diketahui, dan 500, dipicu ketika ada pengecualian yang tidak tertangani dalam aplikasi. Cara memberikan penangan khusus untuk dua kesalahan ini menggunakan dekorator app.errorhandler \cite{grinberg2018flask}.
+
+hello.py: halaman kesalahan khusus
+\begin{verbatim}
+@app.errohandler(404)
+def page_not_found(e):
+return render_template('404.html'), 404
+
+@app.errohandler(500)
+def page_server_error(e):
+return render_template('500.html'), 500
+\end{verbatim}
 
 
 
