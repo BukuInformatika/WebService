@@ -174,6 +174,16 @@ Whoops! tidak bisa membagi dengan 0
 Dengan cara tersebut kita bisa mendekorasi fungsi yang memiliki parameter.
 Bila kita perhatikan dengan baik, kita akan melihat kalau semua parameter dari fungsi yang di dalam decorator akan menjadi parameter dari fungsi yang didekorasi. Dengan itu, kita bisa membuat decorator yang lebih umum yang dapat bekerja dengan berapapun jumlah parameternya.
 
+Di Python, hal ini dapat dilakukan dengan sintaks function(*args, **kwargs) di mana args adalah tuple dari argumen – argumen berdasarkan posisi, dan kwargs adalah dictionary dari argumen – argumen ber-keyword.
+Berikut ini adalah contoh fungsi inner() yang memiliki sembarang parameter didekorasi oleh fungsi
+\begin{verbatim}
+ works_for_all().
+def works_for_all(func):
+    def inner(*args, **kwargs):
+        print("Saya bisa mendekorasi fungsi apa saja")
+        return func(*args, **kwargs)
+    return inner()
+\end{verbatim}
 
 Fungsi sebagai parameter
 Karena setiap parameter fungsi adalah referensi ke objek dan fungsi sendiri adalah objek juga, kita dapat meneruskan fungsi referensi ke dalam fungsinya - untuk parameter ke dalam fungsi.
