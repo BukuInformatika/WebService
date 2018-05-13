@@ -165,5 +165,16 @@ ketika Anda menjalankan perintah ini, pip tidak hanya akan menginstal flask, tet
 dan selanjutnya import flask ke dalam python dengan perintah berikut :\\
 \$ pyhton\\
 import flask
+\subsection{Contoh Kode Flask}
+Pada kesempatan kali ini saya akan memberikan salah satu contoh kode flask, tentu banyak sekali contoh kode flask. Tetapi disini kami akan memberikan contoh kode untuk mencetak “Hello World!”. Berikut adalah contoh kodenya, semoga bermanfaat :
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
 
 \end{document}
