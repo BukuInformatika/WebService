@@ -150,8 +150,11 @@ Bagian ini, akan ditambahkan 1 API method GET. Di dalam object paths terdapat :
 \item Description (deskripsi dari API).
 \item OperationId (mirip seperti id).
 \item Produces (valuenya adalah format seperti json, xml).
-\itwm Consumes (valuenya sama seperti produces).
+\item Consumes (valuenya sama seperti produces).
 \item parameters terdiri atas name, in, body, query, form, path, required, type dan description
 \item responses yang terdiri dari http code dimana terdapat description dan schema.
+
+\subsection{ADD API METHOD POST}
+Maksud dari add API method post sama hal atau hampir mirip dengan  API method GET. Perbedaan dari add API Method Post dengan API method GET yakni pada API method Post terdapat request body sehingga ada penambahan di dalam parameter dan untuk contoh request dan response akan menggunakan model dengan format “$ref”:”#/definitions/[nama model]”.
 \end{enumerate}
 \end{document}
