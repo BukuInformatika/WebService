@@ -159,11 +159,22 @@ app.run()
 \subsection{Hello World di Flask menurut Buku Learning Flask Framework}
 Satu hal yang sangat berguna untuk dilakukan dengan Flask adalah membuat UI dengan baris perintah sehingga, ketika orang lain menggunakan perangkat lunak Anda, mereka dapat dengan mudah menggunakan metode yang Anda berikan, seperti mengatur database, membuat pengguna administratif, atau memperbarui Kunci rahasia CSRF.
 
-Satu area di mana kita sudah memiliki skrip yang menyerupai ini dan salah satu yang dapat digunakan dengan cara ini adalah Script ... di Bab 2, Relational Databases dengan SQLAlchemy. Untuk melakukan ini, ada lagi, ekstensi Flask. Cukup jalankan perintah berikut:
+Satu area di mana kita sudah memiliki skrip yang menyerupai ini dan salah satu yang dapat digunakan dengan cara ini adalah Script \verb|create_db.py| di Bab 2, Relational Databases dengan SQLAlchemy. Untuk melakukan ini, ada lagi, ekstensi Flask. Cukup jalankan perintah berikut:
 
 \begin{verbatim}
 pip instal Flask-Script
 \end{verbatim}
+
+Adapun hal yang menarik dari Flask-Script bahwa perintah tersebut bekerja sangat mirip dengan rute dan tampilan dalam Flask.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{3HWFlask.PNG}}
+\caption{Contoh Program Flask Hello World}
+\label{gambarHWF1}
+\end{figure}
+
+Dari gambar \ref{gambarHWF1} kita dapat melihat di sini bahwa Flask-Script mengacu pada dirinya sebagai Manajer, tetapi manajer juga menghubungkan dirinya sendiri dengan aplikasi Flask. Ini berarti kita dapat melakukan apa saja dengan aplikasi Flask hanya dengan menggunakan referensi aplikasi\cite{copperwaite2015learning}.
+
 
 
 
