@@ -281,5 +281,22 @@ Dekorator fungsi adalah sejenis deklarasi runtime tentang fungsi yang definisiny
             Y = C() \#Overwrites x!\\
 \end{verbatim}
             
+Umumnya, kita mendekorasi fungsi dan menyimpannya ke variabel seperti berikut:
+\begin{verbatim}
+ordinary = make_pretty(ordinary)
+\end{verbatim}
+
+Python memiliki sintaks yang lebih sederhana untuk penulisan fungsi di atas yaitu dengan menggunakan tanda  @ diikuti oleh nama fungsi decorator. Kita menempatkannya di atas fungsi yang akan didekorasi. Maka contoh berikut ini:
+
+\begin{verbatim}
+@make_pretty
+def ordinary():
+    print("I am ordinary")
+adalah sama dengan yang berikut:
+def ordinary():
+    print("I am ordinary")
+ordinary = make_pretty(ordinary)
+\end{verbatim}
+Cara yang menggunakan tanda @ di atas adalah sintaks yang lebih elegan untuk mengimplementasikan decorator.
 
 \end{document}
