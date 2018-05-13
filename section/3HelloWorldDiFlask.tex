@@ -179,6 +179,10 @@ Dari gambar \ref{gambarHWF1} kita dapat melihat di sini bahwa Flask-Script menga
 
 
 \section{Error yang Muncul serta Solusinya}
+\subsection{Error Flask}
+Saat terjadi error muncul di aplikasi Flask? Cara terbaik untuk mengetahuinya ialah dengan mengalaminya secara langsung. Sekarang jalankan aplikasinya, lalu pastikan sudah memiliki dua user yang terdaftar. Kemudian masuk sebagai salah satu user, buka halaman profil dan klik tautan "Edit". Didalam editor untuk profil, coba ubah username dengan username yang sudah dimiliki user lain, dan akan muncul halaman "Internal Server Error"\cite{bae2016efficient}.
+
+
 \subsection{Halaman Kesalahan Khusus}
 Flask memungkinkan aplikasi untuk menentukan halaman kesalahan kustom yang dapat didasarkan pada template, seperti rute reguler. Dua kode kesalahan paling umum adalah 404, yang dipicu ketika klien meminta halaman atau rute yang tidak diketahui, dan 500, dipicu ketika ada pengecualian yang tidak tertangani dalam aplikasi. Cara memberikan penangan khusus untuk dua kesalahan ini menggunakan dekorator app.errorhandler \cite{grinberg2018flask}.
 
