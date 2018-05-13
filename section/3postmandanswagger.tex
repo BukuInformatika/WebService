@@ -154,8 +154,24 @@ Bagian ini, akan ditambahkan 1 API method GET. Di dalam object paths terdapat :
 \item Consumes (valuenya sama seperti produces).
 \item parameters terdiri atas name, in, body, query, form, path, required, type dan description
 \item responses yang terdiri dari http code dimana terdapat description dan schema.
-
+\end{enumerate}
 \subsection{ADD API METHOD POST}
-Maksud dari add API method post sama hal atau hampir mirip dengan  API method GET. Perbedaan dari add API Method Post dengan API method GET yakni pada API method Post terdapat request body sehingga ada penambahan di dalam parameter dan untuk contoh request dan response akan menggunakan model dengan format “$ref”:”#/definitions/[nama model]”.
+Maksud dari add API method post sama hal atau hampir mirip dengan  API method GET. Perbedaan dari add API Method Post dengan API method GET yakni pada API method Post terdapat request body sehingga ada penambahan di dalam parameter dan untuk contoh request dan response akan menggunakan model dengan format 
+\begin{itemize}
+\item ref:”/definitions/[nama model].
+\end{itemize}
+
+\section{Menguji API menggunakan Swagger}
+Pelajari cara menyiapkan pengujian dan pemantauan saluran API otomatis berdasarkan spesifikasi Swagger atau OpenAPI.
+Pengujian API Anda menggunakan informasi dari spesifikasi Swagger / OpenAPI sederhana menggunakan Assertible. Hanya ada 3 langkah:
+\begin{enumerate}
+\item Impor definisi Swagger
+\item Konfigurasikan parameter dan autentikasi
+\item Siapkan pemantauan otomatis dan pengujian pasca-penerapan
+\end{enumerate}
+
+\subsection{Impor definisi Swagger}
+\begin{enumerate}
+\item Untuk memulai, buat akun Asertible dan masuk. Hal pertama yang harus Anda lihat adalah formulir impor:
 \end{enumerate}
 \end{document}
