@@ -180,4 +180,8 @@ Pengujian API Anda menggunakan informasi dari spesifikasi Swagger / OpenAPI sede
 \item Setiap kombinasi titik akhir metode dalam spesifikasi asisten akan membuat satu pengujian.
 \item Jika  memiliki banyak tes, hapus centang secara otomatis menjalankan kotak centang tes ini.
 \end{enumerate}
+
+\subsection{Konfigurasikan parameter dan autentikasi}
+Untuk setiap parameter dalam definisi Swagger Anda yang terkait dengan titik akhir tertentu, Jika parameter tidak memiliki nilai default yang ditentukan dalam spesifikasi OpenAPI, Assertible akan menetapkan nilai sebagai tidak terdefinisi.
+Untuk autentikasi, API GitHub publik tidak mengharuskan autentikasi secara eksplisit. Namun memang membutuhkan header User-Agent. Header dapat dibuat pada halaman konfigurasi pengujian tepat di bawah Variabel (tampilan Header permintaan).
 \end{document}
