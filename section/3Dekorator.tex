@@ -299,4 +299,19 @@ ordinary = make_pretty(ordinary)
 \end{verbatim}
 Cara yang menggunakan tanda @ di atas adalah sintaks yang lebih elegan untuk mengimplementasikan decorator.
 
+\begin{verbatim}
+Dekorasi Fungsi Dengan Parameter
+Decorator di atas sangat sederhana dan hanya berlaku untuk fungsi yang tidak memiliki parameter. Bagaimana jika fungsi yang akan didekorasi memiliki argumen seperti berikut?
+def divide(a, b):
+    return a/b
+Fungsi tersebut memiliki 2 parameter, a dan b. Bila kita melewatkan nilai 0 ke b, maka akan terjadi error ZeroDivisionError.
+>>> divide(2, 5)
+0.4
+>>> divide(2, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+\end{verbatim}
+
+
 \end{document}
