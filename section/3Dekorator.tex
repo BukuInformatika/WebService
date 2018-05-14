@@ -1,340 +1,700 @@
 \documentclass[12pt,a4paper]{article}
+
 \usepackage[left=3.00cm, right=2.00cm, bottom=2.00cm, top=3.00cm]{geometry}
+
 \linespread{1.5}
+
 \begin{document}
+
 \title{definisi Dekorator, Contoh Kode dan Fungsi}
+
 \maketitle
+
+
 
 \begin{itemize}
 
+
+
 \item
+
 NAMA KELOMPOK 4\\
+
 Ajis Trigunawan			1164031\\
+
 Alimu Dzul Ikroom		1164032\\
+
 Muhammad Hanafi			1164092\\
+
 Riki Karnovi			1164052\\
+
 Yoga Sakti Hadi P		1164059\\
+
+
 
 \end{itemize}
 
+
+
 \section{Definisi Dekorator, Kode dan Fungsi}
 
+
+
 \subsection{Definisi Dekorator}
+
 Python merupakan Bahasa pemrograman dengan fitur canggih dan ekspresif., salah satunya adalah dekorator. Dalam konteks desain, dekorator secara dinamis mengubah fungsi, metode atau pun kelas tanpa harus menggunakan subclass secara langsung. Ini merupakan hal yang ideal ketika kita perlu memngembangkan fungsi yang tidak ingin kita ubah. Kita dapat mengimplementasikan pola dekorator di mana saja dan di Python tentunya  dan Python memfasilitasi penerapannya dengan menyediakan lebih banyak fitur dan sintaksis yang ekspresif untuk itu. 
 
+
+
 Python menawarkan fitur dekorator sejak versi 2.4. Secara sederhana, dekorator adalah pabrik fungsi. Mereka memungkinkan kita untuk mengubah fungsi Python biasa menjadi fungsi yang berfungsi seperti MATLAB®. Dekorator Python menerima fungsi tepat sebelum dimuat ke dalam ruang kerja saat ini. Dekorator dapat memanipulasi fungsi dengan cara yang sewenang-wenang. Dekorator fungsi memodifikasi setiap fungsi yang diterjemahkan oleh OMPC. Kami menggunakan dekorator untuk meniru keberadaan variabel nargin / nargout, untuk memungkinkan penugasan ke variabel baru, dan untuk menerapkan pengembalian tersirat.
+
 Decorators sesuai dengan namanya secara bahasa memiliki arti yaitu pendekorasi atau penghias. Jika di kaitkan dengan python maka decorators memiliki arti yaitu adalah sebuah method yang ‘mengambil’ method lain dan menambahkan beberapa fungsi kepada method tersebut tanpa harus melakukan modifikasi. Bahasa simplenya adalah method yang melakukan ‘pendekorasian/penghiasan’ kepada method lainnya, bisa disebut dekorator hanyalah fungsi python dan pada dasarnya dekorator adalah pembentukan fungsi. Dekorator bekerja sebagai tempat. memodifikasi kode seebelum dan sesudah di eksekusinya fungsi itu, menambah fungsionalitas aslinya sehingga mendekorasinya lagi.
+
+
 
 Sebelumnya kita harus memahami bahwa semua yang ada di Python adalah objek (termasuk kelas). Nama pengenal, seperti variabel yang kita deklarasikan merujuk kepada objek tersebut. Begitu juga dengan fungsi. Fungsi adalah termasuk objek juga. Satu objek bisa memiliki banyak pengenal (identifier) yang merujuk kepadanya dengan contoh kodenya:
 
+
+
 \begin{verbatim}
+
 def first(msg):
+
     print(msg)
 
+
+
 first("Hello")
+
 second = first
+
 second("Hello")
+
 \end{verbatim}
+
+
 
 Pada saat kode di atas dijalankan, kedua fungsi first dan second menampilkan output yang sama. Di sini, variabel first dan second merujuk pada objek fungsi yang sama.
+
 Sekarang mari kita tinjau hal yang lain. Sebuah fungsi bisa dijadikan sebagai argumen dari fungsi yang lain.
+
 Bila Anda sudah pernah menggunakan fungsi seperti map, filter, dan reduce di Python, maka Anda sudah tahu tentang hal ini.
+
 Fungsi yang menjadikan fungsi lain sebagai argumen disebut juga fungsi dengan orde yang lebih tinggi. Contohnya seperti berikut ini:
 
+
+
 \begin{verbatim}
+
 def inc(x):
+
     return x + 1
+
     
+
 def dec(x):
+
     return x - 1
+
     
+
 def operate(func, x):
+
     result = func(x)
+
     return result
+
 \end{verbatim}
+
+
+
 
 
 Kita bisa memanggil fungsi tersebut seperti berikut:
 
+
+
 \begin{verbatim}
+
 >>> operate(inc, 3)
+
 4
+
 >>> operate(dec, 3)
+
 2
+
 Lebih lanjut lagi, sebuah fungsi bisa mengembalikan fungsi lain.
+
 def is_called():
+
     def is_returned():
+
         print("Hello")
+
     return is_returned
+
 new = is_called()
+
 #Outputs "Hello"
+
 new()
+
 \end{verbatim}
 
+
+
 \begin{verbatim}
+
 Pada contoh tersebut, is_returned() adalah fungsi bersarang yang didefinisikan dan dikembalikan tiap kali fungsi is_called() dipanggil.
 
+
+
 Selain harus memahami tentang hal di atas, dalam mempelajari bahasa python juga sudah harus paham tentang python closure.
+
 Kembali ke Decorator
+
 Sebuah decorator pada python mengambil fungsi sebagai argumennya, menambahkan beberapa hal, dan kemudian mengembalikannya.
+
 def make_pretty(func):
+
     def inner():
+
         print("I got decorated")
+
         func()
+
     return inner
 
+
+
 def ordinary():
+
     print("I am ordinary")
 
 
 
 
 
+
+
+
+
+
+
 \begin{verbatim}
+
 Bila kode di atas kita jalankan pada mode interaktif, maka hasilnya adalah seperti berikut:
 
+
+
 >>> ordinary()
+
 I am ordinary
+
+
 
 >>> # Mari kita buat decorator dari fungsi ordinary
+
 >>> pretty = make_pretty(ordinary)
+
 >>> pretty()
+
 I got decorated
+
 I am ordinary
 
+
+
 \end{verbatim}
+
+
 
 Pada contoh di atas, 
+
 \begin{verbatim}
+
 make_pretty()
+
 \end{verbatim}  
+
 adalah sebuah decorator. Pada baris perintah 
 
+
+
 \begin{verbatim}
+
 pretty = make_pretty(ordinary)
+
 \end{verbatim}
 
+
+
 Fungsi ordinary didekorasi dan fungsi kembaliannya diberi nama pretty.
+
 Kita bisa lihat bahwa fungsi decorator menambahkan beberapa fungsionalitas ke fungsi asli. Hal ini mirip dengan pengemasan kado. Decorator bertindak sebagai bungkusnya. Objek yang didekorasi (isi kado) tidak berubah. Akan tetapi, ketika dibungkus, akan terlihat lebih bagus (karena didekorasi).
 
+
+
 Dapat kita panggil fungsinya didalam fungsi lain.
+
 Contohnya seperti berikut:
 
+
+
 \begin{verbatim}
+
 def greet(name):
+
     def get_message():
+
         return "Hello "
 
+
+
     result = get_message()+name
+
     return result
+
+
 
 print greet("John")
 
+
+
 # Outputs: Hello John
+
 \end{verbatim}
+
+
 
 Dekorasi Fungsi Dengan Parameter
 
+
+
 Decorator di atas sangat simple dan hanya berlaku untuk fungsi yang tidak punya memiliki parameter. Bagaimana jika fungsi yang akan didekorasi memiliki argumen seperti berikut?
+
 \begin{verbatim}
+
 def divide(a, b):
+
     return a/b
+
 >>> divide(2, 5)
+
 0.4
+
 >>> divide(2, 0)
+
 Traceback (most recent call last):
+
 ...
+
 ZeroDivisionError: division by zero
+
 Sekarang kita akan membuat decorator untuk mengecek penyebab error ini.
+
 def smart_divide(func):
+
     def inner(a,b):
+
         print("Saya akan membagi",a,"dan",b)
+
         if b == 0:
+
             print("Whoops! tidak bisa membagi dengan 0")
+
             return
 
+
+
         return func(a,b)
+
     return inner
 
+
+
 @smart_divide
+
 def divide(a,b):
+
     return a/b
+
 \end{verbatim}
+
+
 
 Kode yang menggunakan decorator ini akan mengembalikan None jika terjadi error.
+
 \begin{verbatim}
+
 >>> divide(2, 5)
+
 Saya akan membagi 2 dan 5
+
 0.4
+
 >>> divide(2, 0)
+
 Saya akan membagi 2 dan 0
+
 Whoops! tidak bisa membagi dengan 0
+
 \end{verbatim}
+
+
 
 Dengan cara tersebut kita bisa mendekorasi fungsi yang memiliki parameter.
+
 Bila kita perhatikan dengan baik, kita akan melihat kalau semua parameter dari fungsi yang di dalam decorator akan menjadi parameter dari fungsi yang didekorasi. Dengan itu, kita bisa membuat decorator yang lebih umum yang dapat bekerja dengan berapapun jumlah parameternya.
 
+
+
 Di Python, hal ini dapat dilakukan dengan sintaks function(*args, **kwargs) di mana args adalah tuple dari argumen – argumen berdasarkan posisi, dan kwargs adalah dictionary dari argumen – argumen ber-keyword.
+
 Berikut ini adalah contoh fungsi inner() yang memiliki sembarang parameter didekorasi oleh fungsi
+
 \begin{verbatim}
+
  works_for_all().
+
 def works_for_all(func):
+
     def inner(*args, **kwargs):
+
         print("Saya bisa mendekorasi fungsi apa saja")
+
         return func(*args, **kwargs)
+
     return inner()
+
 \end{verbatim}
+
+
 
 Fungsi sebagai parameter
+
 Karena setiap parameter fungsi adalah referensi ke objek dan fungsi sendiri adalah objek juga, kita dapat meneruskan fungsi referensi ke dalam fungsinya - untuk parameter ke dalam fungsi.
+
 Berikut contohnya: 
+
 \begin{verbatim}
+
 def g():
+
     print("dan ini aku g")
+
 def f(func):
+
     print("yo ini aku f")
+
     func() 
+
 f(g)
 
+
+
 # Outputs: 	yo ini aku f
+
 			dan ini aku g
+
 \end{verbatim}
 
+Menggabungkan Decorator di Python
+
+Beberapa decorator bisa dihubungkan atau digabungkan. Sebuah fungsi bisa didekorasi beberapa kali dengan satu atau beberapa fungsi decorator. Kita meletakkan decorator di atas fungsi yang akan didekorasi. Untuk jelasnya perhatikan contoh berikut:
+\begin{verbatim}
+def star(func):
+    def inner(*args, **kwargs):
+        print("*" * 30)
+        func(*args, **kwargs)
+        print("*" * 30)
+    return inner
+
+def percent(func):
+    def inner(*args, **kwargs):
+        print("%" * 30)
+        func(*args, **kwargs)
+        print("%" * 30)
+    return inner
+
+@star
+@percent
+def printer(msg):
+    print(msg)
+printer("Hello")
+\end{verbatim}
 
 Dekorator adalah fungsi yang mengambil fungsi lain dan memperluas perilaku fungsi yang terakhir tanpa secara eksplisit memodifikasinya, "Dekorator" yang kita dimaksud adalah kepedulian terhadap Python tidak persis sama dengan DecoratorPattern yang dijelaskan. Dekorator Python adalah perubahan spesifik pada sintaks Python yang memungkinkan kita mengubah fungsi dan metode dengan lebih mudah (dan mungkin kelas dalam versi yang akan datang). Ini mendukung aplikasi yang lebih mudah dibaca dari Decorator Pattern tetapi juga kegunaan lain juga.
 
+
+
 fungsi dari decorators juga adalah menambahkan atau merubah beberapa fungsionalitas ke fungsi asli. Hal ini mirip dengan pengemasan bungkus kado. Decorators bertindak sebagai bungkusnya. Objek yang didekorasi atau isi kado tidak berubah. Akan tetapi, ketika dibungkus, akan terlihat lebih menarik (karena didekorasi). Umumnya, kita mendekorasi fungsi dan menyimpannya ke variable.
 
+
+
 Cara paling mudah untuk menentukan rute dalam aplikasi flask adalah melalui decorator app.route oleh aplikasi instance. Dibawah ini adalah contoh kodenya:\\
+
 \begin{verbatim}
+
 @app.route(‘/’)\\
+
 Def index():\\
+
       Return ‘ <h1> Hello World!</h1> ’\\
+
 \end{verbatim}
+
+
 
 Dalam posting berikutnya dalam seri ini, dan penggunaan terakhir di app.route Flask () kita akan melihat bagaimana pola URL dinamis bekerja, dengan mendekonstruksi contoh sebagai berikut:
 
+
+
 \begin{verbatim}
+
 app = Flask(__name__)
+
 @app.route("/hello/<username>")
+
 def hello_user(username):
+
     return "Hello {} !".format(username)
+
     
+
 # Untuk Outputnya adalah hello dan username yang di isikan 
+
 di belakang parameter /hello/ usernamenya.
+
 \end{verbatim}
+
+
 
 Saat kita mendesain API untuk situs web, seringkali kita menggunakan metode DELETE untuk menghapus. Sayangnya, dan HTML hanya memungkinkan GET dan POST untuk metodenya, berikut contoh contoh pengunaannya:
 
+
+
 \begin{enumerate}
+
 \item contoh untuk methods get:
+
 \begin{verbatim} 
+
 @app.route('/resc/<int:id>', methods=['GET'])
+
 def get_resc(id):
+
  ...
+
 \end{verbatim}
+
+
 
 \item contoh untuk methods post:
+
 \begin{verbatim} 
+
 @app.route('/resc/<int:id>', methods=['POST'])
+
 def post_resc(id):
+
  ...
+
 \end{verbatim}
+
+
 
 \item contoh untuk methods delete:
+
 \begin{verbatim} 
+
 @app.route('/resc/<int:id>', methods=['DELETE'])
+
 def del_resc():
+
  ...
+
 \end{verbatim}
+
 \end{enumerate}
+
 Dalam pemrograman berorientasi objek, pola dekorator adalah pola desain yang memungkinkan perilaku untuk ditambahkan ke objek individu, baik secara statis atau dinamis, tanpa mempengaruhi perilaku objek lain dari kelas yang sama. Pola dekorator sering berguna untuk mematuhi Prinsip Tanggung Jawab Tunggal, karena memungkinkan fungsionalitas dibagi antara kelas dengan bidang perhatian yang unik.
 
+
+
 Catatan:
+
 Dekorator adalah fitur standar dari bahasa python. Penggunaan umum dekorator adalah untuk mendaftarkan fungsi sebagai fungsi handler yang akan dipanggil ketika peristiwa tertentu terjadi.
+
+
 
 python memiliki fitur menarik yang disebut dekorator untuk menambahkan fungsionalitas ke kode yang ada. Atau bisa juga disebut metaprogramming sebagai bagian dari program yang mencoba memodifikasi bagian lain dari program pada waktu kompilasi. Ada pun perasyarat untuk belajar dekorator pertama-tama kita harus mengetahui beberapa hal mendasar dalam Python. Kita harus merasa nyaman dengan fakta itu, segala sesuatu dalam Python (Ya! Bahkan kelas), adalah objek. Nama yang kami definisikan hanyalah pengidentifikasi yang terikat pada objek-objek ini. Fungsi tidak ada pengecualian, mereka juga objek (dengan atribut). Berbagai nama yang berbeda dapat diikat ke objek fungsi yang sama.
 
+
+
 Dekorator milik paling mungkin untuk kemungkinan desain yang paling indah dan paling kuat di Python, tetapi pada saat yang sama konsep ini dianggap oleh banyak orang sebagai rumit untuk masuk. Tepatnya, penggunaan menghias sangat mudah, tetapi menulis dekorator dapat menjadi rumit, terutama jika Anda tidak berpengalaman dengan dekorator dan beberapa konsep pemrograman fungsional. 
 
+
+
 Meskipun itu adalah konsep dasar yang sama, kami memiliki dua jenis dekorator dengan Python:
+
 •	Dekorator fungsi
+
 •	Dekorator kelas
+
 Dekorator dalam Python adalah objek Python yang dapat dipanggil yang digunakan untuk memodifikasi fungsi atau kelas. Referensi ke fungsi "func" atau kelas "C" diteruskan ke dekorator dan dekorator mengembalikan fungsi atau kelas yang dimodifikasi. Fungsi atau kelas yang dimodifikasi biasanya berisi panggilan ke fungsi asli "func" atau kelas 
+
 "C"
 
 
+
+
+
 Panduan untuk dekorator fungsi Python
+
 Python kaya dengan fitur canggih dan sintaksis ekspresif. Salah satu favorit saya adalah dekorator. Dalam konteks pola desain, dekorator mengubah fungsi suatu ke fungsi, metode atau kelas secara dinamis tanpa harus menggunakan subclass secara langsung. Ini sangat ideal ketika Anda perlu memperluas fungsi fungsi yang tidak ingin Anda ubah. Kita dapat mengimplementasikan pola dekorator di mana saja, tetapi Python memfasilitasi penerapannya dengan menyediakan lebih banyak fitur dan sintaksis yang ekspresif untuk itu.
 
+
+
 \subsection{Jenis-Jenis Fungsi Dekorator}
+
+
+
 
 
 Dekorator fungsi adalah sejenis deklarasi runtime tentang fungsi yang definisinya mengikuti. dekorator dikodekan pada baris tepat sebelum pernyataan def yang mendefinisikan fungsi atau metode, dan ini terdiri dari symbol @ yang di ikuti oleh referensi ke fungsi metafungsi (atau objek callable lain) yang mengelola fungsi lain.
 
 
+
+
+
 \begin{verbatim}
+
 @Decorator
 
+
+
        Class C: … C = \#Decorator(C\\
+
             X = C()\\
+
             Y = C() \#Overwrites x!\\
+
 \end{verbatim}
+
             
+
 Umumnya, kita mendekorasi fungsi dan menyimpannya ke variabel seperti berikut:
+
 \begin{verbatim}
+
 ordinary = make_pretty(ordinary)
+
 \end{verbatim}
+
+
 
 Python memiliki sintaks yang lebih sederhana untuk penulisan fungsi di atas yaitu dengan menggunakan tanda  @ diikuti oleh nama fungsi decorator. Kita menempatkannya di atas fungsi yang akan didekorasi. Maka contoh berikut ini:
 
+
+
 \begin{verbatim}
+
 @make_pretty
+
 def ordinary():
+
     print("I am ordinary")
+
 adalah sama dengan yang berikut:
+
 def ordinary():
+
     print("I am ordinary")
+
 ordinary = make_pretty(ordinary)
+
 \end{verbatim}
+
 Cara yang menggunakan tanda @ di atas adalah sintaks yang lebih elegan untuk mengimplementasikan decorator.
 
+
+
 \begin{verbatim}
+
 Dekorasi Fungsi Dengan Parameter
+
 Decorator di atas sangat sederhana dan hanya berlaku untuk fungsi yang tidak memiliki parameter. Bagaimana jika fungsi yang akan didekorasi memiliki argumen seperti berikut?
+
 def divide(a, b):
+
     return a/b
+
 Fungsi tersebut memiliki 2 parameter, a dan b. Bila kita melewatkan nilai 0 ke b, maka akan terjadi error ZeroDivisionError.
+
 >>> divide(2, 5)
+
 0.4
+
 >>> divide(2, 0)
+
 Traceback (most recent call last):
+
 ...
+
 ZeroDivisionError: division by zero
+
 \end{verbatim}
 
+
+
 Tiga operator mutasi yang berurusan dengan gagasan dekorator diusulkan: DDL
+
 Penghapusan Dekorator, Penyisipan Dekorator CDI Classmethod, dan Staticmethod SDI
+
 Penyisipan Dekorator.
+
 Operator DDL menghapus dekorator apa pun dari definisi fungsi atau metode.
+
 Contoh sebelum mutasi: setelah mutasi:
+
 \begin{verbatim}
+
 1 kelas X: kelas X:
+
 2 @classmethod
+
 3 def foo (cls): def foo (cls):
+
 \end{verbatim}
+
 Saat menggunakan dekorator @classmethod, metode objek kelas khusus adalah
+
 ditugaskan sebagai argumen pertama. Jika dekorator ini dihapus, argumen pertama adalah default
+
 satu. Metode ini dapat dipanggil dari objek contoh x.method (), di mana x adalah suatu
+
 sikap, atau menggunakan kelas X.method (), di mana X adalah nama kelas. Kasus terakhir menghasilkan
+
 mutan yang tidak kompeten, tetapi kedua kasus hanya dapat dibedakan selama program
+
 run-time.
+
 Operator DDL juga dapat menghapus dekorator @staticmethod. Jumlah ar
+
 gumen diterima oleh metode tanpa dekorator ini bertambah. Mutan itu
+
 akan berlaku jika metode yang dimodifikasi memiliki argumen default yang tidak diberikan dalam
+
 panggilan metode. Jika tidak, mutan akan menjadi tidak kompeten.
+
 Operator DDL juga menghapus dekorator lain. Jika lebih dari satu dekorator adalah sebagai-
+
 ditandatangani ke artefak, semuanya akan dihapus.
+
+
+
 
 
 \end{document}
