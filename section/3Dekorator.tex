@@ -177,6 +177,23 @@ Pada contoh tersebut, is_returned() adalah fungsi bersarang yang didefinisikan d
 
 Selain harus memahami tentang hal di atas, dalam mempelajari bahasa python juga sudah harus paham tentang python closure.
 
+Untuk Sekarang ini kita akan membuat sebuah decorator. Decorator yang akan dibuat berfungsi untuk mengecek apa penyebab error ini. Berikut dibawah ini kodenya:
+def smart_divide(func):
+    def inner(a,b):
+        print("Saya akan membagi",a,"dan",b)
+        if b == 0:
+            print("Whoops! tidak bisa membagi dengan 0")
+            return
+
+        return func(a,b)
+    return inner
+
+@smart_divide
+def divide(a,b):
+    return a/b
+\end{verbatim}
+
+\begin{verbatim}
 Kembali ke Decorator
 
 Sebuah decorator pada python mengambil fungsi sebagai argumennya, menambahkan beberapa hal, dan kemudian mengembalikannya.
@@ -197,7 +214,7 @@ def ordinary():
 
     print("I am ordinary")
 
-
+\end{verbatim}
 
 
 
