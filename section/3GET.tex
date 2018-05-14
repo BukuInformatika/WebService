@@ -208,7 +208,9 @@ delete operasi data.
 3.	Delete Parameters = get collection parameter yang digunakan oleh metod yang terdapat di property delete method.
 
 \section{Penggunaan Get}
-Antarmuka antara pengguna dan browser adalah bahasa HTML yang terstandarisasi. Sedangkan komunikasi antara browser dan server menggunakan protokol HTTP. HTTP juga disebut protokol client/server, dengan arti bahwa browser adalah client dan server Web adalah server. Pada protokol HTTP, sebuah server biasanya menunggu permintaan client. 
+Antarmuka antara pengguna dan browser adalah bahasa HTML yang terstandarisasi. Sedangkan komunikasi antara browser dan server 
+menggunakan protokol HTTP. HTTP juga disebut protokol client/server, dengan arti bahwa browser adalah client dan server Web adalah 
+server. Pada protokol HTTP, sebuah server biasanya menunggu permintaan client. 
 Contoh sederhana dari permintaan client adalah sebagai berikut.
 \begin{verbatim}
 GET /index.php HTTP/1.1
@@ -221,5 +223,14 @@ Keterangan:
 \item HTTP 1.1 adalah versi dari protokol, yaitu browser yang digunakan.
 \item www.google.com adalah nama host server.
 \end{enumerate}
-Selain itu di dalam PHP saat akan mengirimkan sebuah data dari form isian kepada server, digunakan juga method yang berfungsi untuk menjelaskan bagaimanadata isian form akan dikirim oleh web browser. Nilai dari method ini dapat berupa GET. 
-Jika menggunakan method GET maka isian form akan ditampilkan pada url browser. Method GeT biasanya digunakan untuk data yang bersifat tidak rahasia seperti query pencarian. 
+Selain itu di dalam PHP saat akan mengirimkan sebuah data dari form isian kepada server, digunakan juga method yang berfungsi untuk 
+menjelaskan bagaimanadata isian form akan dikirim oleh web browser. Nilai dari method ini dapat berupa GET. 
+Jika menggunakan method GET maka isian form akan ditampilkan pada url browser. Method GeT biasanya digunakan untuk data yang bersifat 
+tidak rahasia seperti query pencarian. 
+
+\subsection{Pengiriman Antar halaman Web}
+Taf <FORM> memilki antribut bernama method yang digunakan untuk menentukan metode pengirimana apa yang akan kita gunakan. Salah satu 
+metode yang dapat kita gunakan adalah metode get dimana metode get ini , maka setiap nilai nilai yang kita masukkan kedalam form yang 
+kita kirimkan akan tampak pada address bar.Dalam php jika kita melakukan pengiriman dengan menggunakan metode get maka pada halaman web 
+si penerima akan dugunakan variabel array bernama GET untuk menangkapnya.
+
