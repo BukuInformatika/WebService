@@ -122,6 +122,7 @@ Python adalah Bahasa pemrograman yang banyak memiliki kelebihan salah satunya da
 1.	Flask pertama kali dirilih pada April 2010 yang dibuat dan dimaintain oleh Armin Ronacher. Flask merupakan web framework yang sederhana namun dapat memperluas dengan berbagai pustaka tambahan yang sesuai dengan kebutuhan.
 2.	Web.py dipublikasikan oleh Aaron Swartz dan dibuat untuk menjadi sebuah web framework yang sederhana tetapi powerful. Dokumentasinya juga cukup lengkap dengan paduan dasar, paduan tingkat lanjut, session, template, testing, basis data, refensi api, dan contoh-contoh kode yang bisa digunakan bebas.
 
+
 \section{Virtual Environtment}
 \subsection{Definisi}
 \hspace{1cm} Virtual Environment adalah sebuah salinan interpreter python yang dapat kita gunakan untuk proses instalasi paket secara pribadi tanpa mempengaruhi python global yang ada di sistem kita.
@@ -168,14 +169,21 @@ import flask
 \subsection{Contoh Kode Flask}
 Pada kesempatan kali ini saya akan memberikan salah satu contoh kode flask, tentu banyak sekali contoh kode flask. Tetapi disini kami akan memberikan contoh kode untuk mencetak “Hello World!”. Berikut adalah contoh kodenya, semoga bermanfaat :
 from flask import Flask
-app = Flask(__name__)
+app = Flask(name)
 
 @app.route("/")
 def hello():
     return "Hello World!"
 
-if __name__ == "__main__":
+if name == "main":
     app.run()
 \subsection{Tentang Virtualenv}
 Untuk menginstall flask, alangkah baiknya menginstall Virtualenv terlebih dahulu. Virtualenv adalah alat yang berguna yang nantinya akan membuat lingkunan pengembangan Python yang terisolasi dimana user bisa mengerjakan semua pengembangan yang diperlukan. Virtualenv juga berguna untuk membuat sandbox dimana jika user menginstall seluruh library tidak akan mengganggu library lain yang pernah diinstall.
+\subsection{Development web server flask}
+Aplikasi flask termasuk server web pengembangan yang dapat dimulai dengan perintah jalankan flask. perintah ini dijalankan  untuk mencari nama skrip python yang berisi contoh aplikasi dalam flaskapp environment variable.
+Untuk menjalankan hello.py harus menginstal virtual environment terlebih dahulu dan pastikan flask sudah terinstal. Selanjutnya jalankan perintah berikut :\\
+\$ export FLASKAPP=hello.py\\
+\$ flask run\\
+Selanjutnya uka web browser dan masukkan perintah https://localhost:5000/ di dalam address bar.
+
 \end{document}
