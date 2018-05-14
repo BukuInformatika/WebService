@@ -200,6 +200,10 @@ def page_server_error(e):
 return render_template('500.html'), 500
 \end{verbatim}
 
+Penangan kesalahan mengembalikan respons, seperti fungsi tampilan, tetapi mereka juga perlu mengembalikan kode status numerik yang sesuai dengan kesalahan, yang mudah diterima Flask sebagai nilai pengembalian kedua.
+Template yang dirujuk dalam penanganan kesalahan harus ditulis. Template ini harus mengikuti tata letak yang sama dengan halaman biasa, jadi dalam hal ini mereka akan memiliki bilah navigasi dan tajuk halaman yang menunjukkan pesan kesalahan. Cara mudah untuk menulis template ini adalah menyalin templates/user.html ke templates/404.html dan templates/500.html dan kemudian mengubah elemen header halaman dalam dua file baru ini ke pesan kesalahan yang sesuai, tetapi ini akan menghasilkan banyak duplikasi \cite{grinberg2018flask}.
+
+
 
 
 \section{Implementasi dengan menggunakan Flask}
