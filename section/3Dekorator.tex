@@ -42,6 +42,31 @@ Yoga Sakti Hadi P		1164059\\
 
 \subsection{Definisi Dekorator}
 
+Sebuah decorator merupakan suatu objek yang dapat dipanggil (callable) dalam Python yang digunakan untuk memodifikasi suatu definisi fungsi, metode atau class. Suatu decorator melewatkan (mengoperkan) objek asli yang didefinisikan dan mengembalikan (menghasilkan) suatu objek yang termodifikasi, yang kemudian terikat pada nama yang didefinisikan. Decorator pada Python sebagian terinspirasi oleh anotasi pada Java, dan memiliki sintaks yang mirip.
+ 
+Berikut ini contoh kode untuk decorator:
+ 
+ \begin{verbatim}
+@massive_call
+def hello():
+         print("hello")
+ 
+def massive_call(myfunc):
+        def inner_func(*args, **kwargs):
+            for i in range(100):
+                 myfunc(*args, **kwargs)
+        return inner_func
+ 
+hello()
+
+
+
+ 
+Pada kode di atas, decorator massive_call seharusnya akan membuat pemanggilan fungsi hello() di atas menampilkan teks "hello" sebanyak 100 kali. Saya belum ngetes kode di atas, yang punya instalasi Python silahkan aja mengetesnya.
+
+\end{verbatim}
+
+
 Python merupakan Bahasa pemrograman dengan fitur canggih dan ekspresif., salah satunya adalah dekorator. Dalam konteks desain, dekorator secara dinamis mengubah fungsi, metode atau pun kelas tanpa harus menggunakan subclass secara langsung. Ini merupakan hal yang ideal ketika kita perlu memngembangkan fungsi yang tidak ingin kita ubah. Kita dapat mengimplementasikan pola dekorator di mana saja dan di Python tentunya  dan Python memfasilitasi penerapannya dengan menyediakan lebih banyak fitur dan sintaksis yang ekspresif untuk itu. 
 
 
@@ -265,6 +290,8 @@ print greet("John")
 # Outputs: Hello John
 
 \end{verbatim}
+
+
 
 
 
