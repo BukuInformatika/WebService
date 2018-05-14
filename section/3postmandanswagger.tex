@@ -184,4 +184,9 @@ Pengujian API Anda menggunakan informasi dari spesifikasi Swagger / OpenAPI sede
 \subsection{Konfigurasikan parameter dan autentikasi}
 Untuk setiap parameter dalam definisi Swagger Anda yang terkait dengan titik akhir tertentu, Jika parameter tidak memiliki nilai default yang ditentukan dalam spesifikasi OpenAPI, Assertible akan menetapkan nilai sebagai tidak terdefinisi.
 Untuk autentikasi, API GitHub publik tidak mengharuskan autentikasi secara eksplisit. Namun memang membutuhkan header User-Agent. Header dapat dibuat pada halaman konfigurasi pengujian tepat di bawah Variabel (tampilan Header permintaan).
+
+\subsection{Setup Monitoring secara Otomatis dan Pengujian Pasca Penerapan}
+Langkah selanjutnya adalah mengkonfigurasi secara otomatisasi untuk memastikan layanan web selalu terus diuji. 
+Beberapa jenis assertible pendukung otomatisasi yaitu Scheduled monitoring,Hooks & alerts,Post-deploy triggers. Monitoring merupakan
+Setiap tumpukan Monitoring API dasar, yang harus memiliki uji coba yang dijadwalkan. Untuk mengkonfigurasikan monitoring terjadwal dalam AsSible, arahkan ke tab Monitoring dan klik setup scheduled.
 \end{document}
