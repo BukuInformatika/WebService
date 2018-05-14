@@ -32,9 +32,13 @@ data,sehingga informasi yang diterima dapat jauh lebih mudah dibaca dan diparsin
 \section{Pengertian Method Get}
 GET adalah operasi read-only yang sering digunakan untuk meminta informasi yang spesifik pada sebuah server dalam bentuk query. 
 Karakteristik dari operasi GET adalah idempotent dan safe. Idempontent dapat diartikan sebanyak-banyaknya apapun operasi ini dilakukan 
-dan 
-hasilnya akan tgetap sama sedangkan, safe berarti ketika operasi ini diinvokasi tetap tidak mengubah state di server.
+dan hasilnya akan tgetap sama sedangkan, safe berarti ketika operasi ini diinvokasi tetap tidak mengubah state di server.
 Biasanya GET sering ditemukan di HTML,PHP dah diterapkan juga pada Web Service.
+
+Disamping itu Method ini juga sering diartikan juga sebagai method HTTP yang paling sederhana dan juga dapat digunakan sebagian besar 
+untuk meminta mencari atau resource tertentu dari server, bisa berupa halaman web, file gambar grafis, atau sebuah dokumen , dan lain-
+lain.  Di PHP method Get merupakan method dimana metode ini dapat mengirimkan informasi pengguna yang telah dikodekan dan ditambahkan 
+permintaan halaman. Halaman informasi dikodekan dan dipisahkan oleh karakter tanda seru.
 
 Web sevice merupakan layanan yang diidentifikasi dengan URI (Uniform Resource Identifier) yang mengekspos fiturnya dengan melalui 
 internet dan memanfaatkan protocol, Bahasa standar internet  serta diimplementasikan menggunakan internet stantar contohnya XML. Bahasa 
@@ -108,6 +112,23 @@ url yaitu sebagai berikut :
 \item Dibatasi pada panjang string yaitu 2047 karakter.
 \item Dapat memungkinkan pengunjung dapat langsung memasukkan nilai pada form variabel proses.
 \end{enumerate}
+
+\begin{table} [ht]
+\caption{Karakteristik dalam bentuk tabel}
+\centering
+\begin {tabular} {|cc|}
+\hline
+a.	Method ini dapat menghasilkan string panjang yang muncul browser & \\
+\hline
+b.	Get tidak bisa mengirim data biner &\\
+\hline
+c.	Dibatasi pada panjang string yaitu 2047 karakter & \\
+\hline
+d.	Dapat memungkinkan pengunjung dapat langsung memasukkan Nilai & \\
+\hline
+\end{tabular}
+\label{ltabel}
+\end{table}
 
 \subsection{Keuntungan Penggunaan Method GET}
 Keuntungan dari penggunaan get tersebut adalah permintaan URl dari permintaan Get dapat juga disimpan oleh beberapa browser.
