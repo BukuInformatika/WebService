@@ -313,5 +313,28 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 \end{verbatim}
 
+Tiga operator mutasi yang berurusan dengan gagasan dekorator diusulkan: DDL
+Penghapusan Dekorator, Penyisipan Dekorator CDI Classmethod, dan Staticmethod SDI
+Penyisipan Dekorator.
+Operator DDL menghapus dekorator apa pun dari definisi fungsi atau metode.
+Contoh sebelum mutasi: setelah mutasi:
+\begin{verbatim}
+1 kelas X: kelas X:
+2 @classmethod
+3 def foo (cls): def foo (cls):
+\end{verbatim}
+Saat menggunakan dekorator @classmethod, metode objek kelas khusus adalah
+ditugaskan sebagai argumen pertama. Jika dekorator ini dihapus, argumen pertama adalah default
+satu. Metode ini dapat dipanggil dari objek contoh x.method (), di mana x adalah suatu
+sikap, atau menggunakan kelas X.method (), di mana X adalah nama kelas. Kasus terakhir menghasilkan
+mutan yang tidak kompeten, tetapi kedua kasus hanya dapat dibedakan selama program
+run-time.
+Operator DDL juga dapat menghapus dekorator @staticmethod. Jumlah ar
+gumen diterima oleh metode tanpa dekorator ini bertambah. Mutan itu
+akan berlaku jika metode yang dimodifikasi memiliki argumen default yang tidak diberikan dalam
+panggilan metode. Jika tidak, mutan akan menjadi tidak kompeten.
+Operator DDL juga menghapus dekorator lain. Jika lebih dari satu dekorator adalah sebagai-
+ditandatangani ke artefak, semuanya akan dihapus.
+
 
 \end{document}
