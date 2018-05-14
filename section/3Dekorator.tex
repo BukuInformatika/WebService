@@ -469,6 +469,28 @@ def printer(msg):
 printer("Hello")
 \end{verbatim}
 
+Dalam Python, metode adalah fungsi yang mengharapkan parameter pertama mereka menjadi referensi ke objek saat ini. Kita dapat membuat dekorator untuk metode dengan cara yang sama, sambil mempertimbangkan diri sendiri didalam fungsi.
+
+\begin{verbatim}
+def p_decorate(func):
+   def func_wrapper(self):
+       return "<p>{0}</p>".format(func(self))
+   return func_wrapper
+
+class Person(object):
+    def __init__(self):
+        self.name = "John"
+        self.family = "Doe"
+
+    @p_decorate
+    def get_fullname(self):
+        return self.name+" "+self.family
+
+my_person = Person()
+print my_person.get_fullname()
+
+\end{verbatim}
+
 Dekorator adalah fungsi yang mengambil fungsi lain dan memperluas perilaku fungsi yang terakhir tanpa secara eksplisit memodifikasinya, "Dekorator" yang kita dimaksud adalah kepedulian terhadap Python tidak persis sama dengan DecoratorPattern yang dijelaskan. Dekorator Python adalah perubahan spesifik pada sintaks Python yang memungkinkan kita mengubah fungsi dan metode dengan lebih mudah (dan mungkin kelas dalam versi yang akan datang). Ini mendukung aplikasi yang lebih mudah dibaca dari Decorator Pattern tetapi juga kegunaan lain juga.
 
 
