@@ -133,7 +133,7 @@ Untuk saat ini, swagger yang akan di create masih menggunakan version 2.0.
 Tool yang digunakan Text Editor apapun untuk membuat file spesifikasi. Untuk ini, kita akan menggunakan alat built-in yang disebut Swagger Editor.
 \subsection{Langkah-langkah menggunakan swagger } 
 Berikut file swagger yang valid. Ada beberapa object di dalam swagger:
-\\begin{enumerate}
+\begin{enumerate}
 \item Swagger yaitu dimana valuenya adalah 2.0(version).
 \item info berupa description, version dan tittle API.
 \item host
@@ -187,17 +187,19 @@ Untuk autentikasi, API GitHub publik tidak mengharuskan autentikasi secara ekspl
 
 \subsection{Setup Monitoring secara Otomatis dan Pengujian Pasca Penerapan}
 Langkah selanjutnya adalah mengkonfigurasi secara otomatisasi untuk memastikan layanan web selalu terus diuji. 
-Beberapa jenis assertible pendukung otomatisasi yaitu Scheduled monitoring,Hooks & alerts,Post-deploy triggers. Monitoring merupakan
+Beberapa jenis assertible pendukung otomatisasi yaitu Scheduled monitoring,Hooks dan alerts,Post-deploy triggers. Monitoring merupakan
 Setiap tumpukan Monitoring API dasar, yang harus memiliki uji coba yang dijadwalkan. Untuk mengkonfigurasikan monitoring terjadwal dalam AsSible, arahkan ke tab Monitoring dan klik setup scheduled.
 
 \subsection{Setup Pengaturan secara Otomatis dan Pengujian Pasca Penerapan}
-Berikutnya untuk mengatur jadwal, perlu diperhatikan ada kegagalan tes. Untuk mengkonfigurasi peringatan, navigasikan ke tab Pengaturan layanan web , dan klik Hooks & Alerts . Setelah itu dapat dilihat opsi untuk mengkonfigurasi Slack , Email , atau Zapier . At Assertible, diginakan untuk pemberitahuan Slack dan peringatan kegagalan tes pemicu Zapier untuk membuka masalah baru di GitHub ketika tes kritis gagal. 
+Berikutnya untuk mengatur jadwal, perlu diperhatikan ada kegagalan tes. Untuk mengkonfigurasi peringatan, navigasikan ke tab Pengaturan layanan web , dan klik Hooks dan Alerts . Setelah itu dapat dilihat opsi untuk mengkonfigurasi Slack , Email , atau Zapier . At Assertible, diginakan untuk pemberitahuan Slack dan peringatan kegagalan tes pemicu Zapier untuk membuka masalah baru di GitHub ketika tes kritis gagal. 
 
 \section{Monitoring}
 Setiap tumpukan pemantauan API dasar harus memiliki uji coba yang dijadwalkan. Untuk mengonfigurasi pemantauan terjadwal dalam Assertible, arahkan ke tab Monitoring dan klik Siapkan jadwal (Setup up a schedule).  Anda akan melihat formulir untuk pembuatan jadwal. Pilih Jadwal per jam atau Jadwal harian dari tarik-turun Frekuensi. Terakhir, tekan Buat jadwal untuk menyelesaikan konfigurasi Anda.
 
 \section{Alerts}
-Setelah Anda mengatur jadwal, Anda harus waspada saat ada kegagalan tes. Untuk mengkonfigurasi peringatan, navigasikan ke tab Pengaturan layanan web, dan klik Hooks & Alerts. Anda akan melihat opsi untuk mengkonfigurasi Slack, Email, atau Zapier.
+Setelah Anda mengatur jadwal, Anda harus waspada saat ada kegagalan tes. Untuk mengkonfigurasi peringatan, navigasikan ke tab Pengaturan layanan web, dan klik Hooks dan Alerts. Anda akan melihat opsi untuk mengkonfigurasi Slack, Email, atau Zapier.
 Di Assertible, kami menggunakan pemberitahuan Slack untuk peringatan kegagalan tes dan pemicu Zapier untuk membuka masalah baru di GitHub ketika tes kritis gagal. 
 
+\section{Pengujian pasca-penerapan}
+Jadwal hanyalah satu bagian dari teka-teki pemantauan. Idealnya, tes API Anda dijalankan setiap kali Anda menggunakan versi baru API Anda; terutama jika Anda memiliki integrasi berkelanjutan dan pipa pengiriman. Integrasikan skrip ini ke dalam pipeline penyebaran Anda atau jalankan secara manual setelah Anda menerapkan. Assertible mencatat versi penerapan dalam hasil tes Anda sehingga Anda dapat melacak regresi ketika tes gagal setelah versi spesifik API Anda digunakan
 \end{document}
