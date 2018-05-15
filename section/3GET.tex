@@ -43,7 +43,7 @@ Web sevice merupakan layanan yang diidentifikasi dengan URI (Uniform Resource Id
 internet dan memanfaatkan protocol, Bahasa standar internet  serta diimplementasikan menggunakan internet stantar contohnya XML. Bahasa 
 pemograman php bisa digunakan dalam web service dengan memanfaatkan method seperti GET dan POST, kemudian PHP juga memiliki fungsi 
 untuk mendukung pengiriman maupun pengolahan data dalam format JSON. Selain itu  agar PHP dapat mengirimkan data dalam format JSON, PHP 
-menggunakan fungsi json_encode.  
+menggunakan fungsi json encode.  
 
 Dalam Bahasa PHP melakukan HTTP request ke halaman kemudian secara default adalah get request, data yang didapatkan dari web service 
 dikirimkan dalam bentuk format standar misalnya XML atau JSON atau Java Object Notation. Get memiliki fungsi yang sama seperti POST 
@@ -66,30 +66,15 @@ ke dalam bookmark.
 \subsection{GET pada PHP}
 GET dalam Bahasa inggris pasti kita mengenal istilah getting yang berarti mengambil, jadi bisa diartikan GET adalah metode pada HTTP 
 yang digunakan untuk mengambil data dari server. pada metode ini umumnya data dbentyk dari query string yang dikirim via URL. Data yang 
-dikirim tersebut berupa pasangan key sama dengan value yang dipisahkan dengan tanda \& , kemudian data tersebut digabung dengan URL 
-utama yang dipisahkan dengan tada \? . 
+dikirim tersebut berupa pasangan key sama dengan value yang dipisahkan dengan tanda dan , kemudian data tersebut digabung dengan URL 
+utama yang dipisahkan dengan tanda tanya . 
 
 Sebelum dikirim, terlebih data diproses sehingga memenuhi standar format URL. URL hanya boleh memuat huruf besar dan kecil, angka dan 
-beberapa karakter lain. Karakter di luar itu akan diubah ke format tertentu yang diawali tanda % kemdian diikuti dengan 2 digit 
-hexadecimal, contoh :
-
-\begin{table} [ht]
-\caption{Karakter dan URL Encode}
-\centering
-\begin {tabular} {|cc|}
-\hline
-? adalah %3F & \\
-\hline
-@ adalah %40 & \\
-\hline
-= adalah %3D & \\
-\hline
-\end{tabular}
-\label{ltabel}
-\end{table}
+beberapa karakter lain. Karakter di luar itu akan diubah ke format tertentu yang diawali tanda persen kemudian diikuti dengan 2 digit 
+hexadecimal. 
  
 Angka yang terdapat pada kolom (URL Encoded) merupakan nilai yang diubah dalam bentuk hexadecimal yang didapat dari hasil character 
-ASCII. Selain itu URL juga tidak boleh memuat sebuah spasi sehingga spasi akan diubah menjadi tanda \+ atau \% 20. Segala proses 
+ASCII. Selain itu URL juga tidak boleh memuat sebuah spasi sehingga spasi akan diubah menjadi tanda tambah atau tanda persen 20. Segala proses 
 tersebut disebut URL encoding, yang dilakukan untuk memenuhi standar format URL.  
  
 \subsection{fungsi Method GET}
@@ -98,16 +83,19 @@ digunakan untuk membaca data namun secara praktek digunakan juga untuk melewatka
 GET penggunaan untuk kelompok HTTP ini untuk mengambil atau membaca data. Method pada kelompok ini biasanya mengembalikan suatu 
 keluaran atau output yang  disebut dengan function.
 Fungsi GET secara teknis diproses lebih sederhana karena permintaan dikirimkan melalui alamat halaman (URL) dengan sistem 
-penulisan secara berpasangan yaitu nama varibel dan nilainya, dan pemisahan variabel menggunakan karakter dan &, misalnya :
-http://localhost/obattradisional/bagian_tanaman.php. Metode GET digunakan sehingga HTTP Client bisa mengambil informasi dari 
-server dengan mengirimkan data melalui URI.
+penulisan secara berpasangan yaitu nama varibel dan nilainya, dan pemisahan variabel menggunakan karakter dan, misalnya :
+\begin{verbatim}
+http://localhost/obattradisional/bagian_tanaman.php
+\end{verbatim}
+
+Metode GET digunakan sehingga HTTP Client bisa mengambil informasi dari server dengan mengirimkan data melalui URI.
 dan juga GET dapat digunakan untuk mengambil data dari server dan meminta sebuah respon dari resource yang spesifik.  alur dari 
 metode GET akan menampilkan data/nilai pada URL, kemudian akan ditampung oleh action.Sehingga Untuk melakukan proses read pada 
 pin tertentu, HTTP request yang dikirimkan harus menggunakan method GET dengan pola Request- URI.
+
 Metode penanganan web service memakai REST dengan memakai metode GET dan pengiriman data yang dilakukan melalui URL. URL 
 tersebut kemudian di-parsing dengan memakai suatu arsiterkur REST sehingga terciptalah suatu alamat URL yang universal. URL 
 tersebut diuji cobakan melalui web browser, respon yang dihasilkan adalah data format XML yang berasal dari database server. 
-
 
 \subsection{Karateristik dari Method GET}
 Metode get juga dapat diartikan sebagai metode pengiriman data dengan menggunakan query berupa string, sehingga seluruh nilai dari form 
@@ -164,7 +152,7 @@ beberapa browser. Hal iitu dapat diartikan, bahwa beberapa data sensitive sepert
 Dalam hal penggunaannya method GET ini memiliki suatu parameter. Jika klien menggunakan protokol HTTP pada server web untuk meminta 
 sumber daya tertentu, maka klien akan mengirimkan parameter GET tertentu ke server melalui URL yang diminta. Parameter ini merupakan 
 pasangan nama dan nilai yang harus memiliki kesesuaian, yang disebut pasangan nama-nilai.
-Nama dan nilai ini ditambahkan ke URL dengan tanda \"?\" dan memberi tahu server sumber daya mana yang dimaksud. Nama dan nilai selalu dipisahkan menggunakan tanda \"=\". Tidak hanya satu tetapi juga beberapa parameter serta seluruh daftar dapat dikirim ke server. Di sini, berbagai parameter dipisahkan menggunakan tanda \"&\".
+Nama dan nilai ini ditambahkan ke URL dengan tanda tanya dan memberi tahu server sumber daya mana yang dimaksud. Nama dan nilai selalu dipisahkan menggunakan tanda sama dengan. Tidak hanya satu tetapi juga beberapa parameter serta seluruh daftar dapat dikirim ke server. Di sini, berbagai parameter dipisahkan menggunakan tanda dan .
 \begin{verbatim}
 http://www.domain.com/index.html*?name1=value1
 http://www.domain.com/index.html*?name1=value1&name2=value2
@@ -174,8 +162,8 @@ Mengambil dan mengubah Teks pada Label
 Walaupun jarang terjadi atau dapat kita sebut sangat jarang terjadi tapi terkaang kita juga harus mengambil isi teks suatu label atau 
 kita dapat mengganti teks pada sebuah label saat program tersebut sedang berjalan.
 Untuk mengambil tekas pada label kita dapat menggunakan method Get. Sedangkan untuk menentukan teks pada label kita dapat menggunakan 
-method set_text. 
-Method get akan dihilangkan pada GTK+2.0 dan kita dapat menggantinya dengan menggunakan get_teks.
+method set text. 
+Method get akan dihilangkan pada GTK 2.0 dan kita dapat menggantinya dengan menggunakan get teks.
 
 \section{Parameter Get}
 Method “get”
