@@ -1,0 +1,19 @@
+\section{Pengenalan Flask Delete}
+Flask adalah sebuah framework web yang ada pada Python, dimana walaupun flask relatif kecil namun tangguh, flask sendiri dibuat dengan ide menyederhanakan inti framework seminimal mungkin.  Flask sendiri lebih mudah dipelajari dan digunakan, membuat para penggunanya bisa membangun dan mengembangkan aplikasi web dalam rentan waktu yang relatif singkat dan cepat. Flask bisa digunakan  untuk membuat website rumit yang berbasis database, memulai dengan membuat halaman statik berguna untuk memperkenalkan alur kerja, yang nantinya digunakan untuk membuat halaman lain yang lebih rumit.
+
+Flask delete merupakan method dari Database pada Flask dimana berfungsi untuk menghapus elemen database itu sendiri apabila diperlukan. Flask Delete juga merupakan
+sebuah method dari service pada rest.
+
+contoh flask delete :
+
+@app.route('/delete_post/<int:post_id>')
+def delete_post(post_id):
+    posts = models.Post.delete_instance().where(models.Post.id == post_id)
+    if posts.count() == 0:
+        abort(404)
+    return redirect(url_for('index'))
+
+
+<h2>
+    <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
+</h2>
