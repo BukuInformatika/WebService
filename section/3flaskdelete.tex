@@ -25,3 +25,22 @@ Di python, Anda meneruskan kunci ke fungsi delete () atau metode. Ini mengembali
 		succes = memcache.delete(key)
 		if not succes;
 			#ada masalah saat mengakses memcache
+
+DELETE adalah metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE\cite{alemu2014rest}.
+SQLAlchemy dalam Flask dan Section di Flask. Anda dapat menggunakan keduanya. Database, atau SQLAlchemy, akan menyimpan kartu tanpa batas hingga Anda menghapusnya. Sesi akan menyimpan kartu di sisi klien sampai mereka menghapusnya, baik browser ditutup atau klien secara manual menghapus sesi.berikut merupakan contoh codenya.
+
+from flask import session
+import random
+
+session['user cards'] = []
+# Default cards = empty list. Do the above to reset.
+
+def deal_card():
+  card_drawn = random.choice(CARDS)
+  session['user cards'].append(card_drawn)
+  # The "CARDS" variable is not here but it's just a list of cards.
+  CARDS.pop(CARDS.index(card_drawn))
+
+def print_cards():
+  for card in session['user cards']:
+    print(card)
