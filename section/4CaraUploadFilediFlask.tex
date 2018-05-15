@@ -29,6 +29,13 @@ Perpustakaan Standar Python. Labu tidak termasuk komponen yang membutuhkan pihak
 \begin{verbatim}
 Penanganan upload file dalam Flask ada beberapa hal yang harus disiakpak. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL mengambil file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan.
 Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure_filename ().
+
+Anda dapat menentukan jalur folder upload default dan ukuran maksimum file yang diunggah dalam pengaturan konfigurasi objek Flask.
+app.config [‘UPLOAD_FOLDER’] Menentukan jalur untuk folder unggah
+app.config [‘MAX_CONTENT_PATH’] Menentukan ukuran maksimum file yo diunggah - dalam byte
+Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
+
+
 \end{verbatim}
 
 \end{document}
