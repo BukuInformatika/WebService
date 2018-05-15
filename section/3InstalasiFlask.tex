@@ -1,7 +1,3 @@
-\documentclass[12pt,a4paper]{article} 
-\usepackage{graphicx}
-\begin{document}
-
 \section{Flask}
 \subsection{Definisi Flask}
 Flask merupakan micro web framework yang ditulis dalam bahasa pemrograman Python. Flask disebut micro framework karena tidak membutuhkan tools tertentu. Framework ini juga tidak mempunyai database abstraction layer, validasi form, atau komponen lainnya yang dimana sudah menyediakan library pihak ketiga yang menyediakan fungsi lain. Akan tetapi, framework flask mendukung extension yang dapat menambah fitur aplikasi seakan-akan mereka diimplementasikan dalam flask itu sendiri.
@@ -74,7 +70,7 @@ Myproject bisa diganti dengan nama lain sesuai keinginan.
 
 5.	Kemudian, ketikan perintah untuk menginstal flask sebagai berikut:
 \begin{figure}[ht]
-\centerline{\includegraphics[scale=1]{../figures/3instal.png} }
+\centerline{\includegraphics[scale=1]{figures/3instal.png} }
 
 \caption{Instalasi Flask} 
 \label{Flask}
@@ -205,4 +201,3 @@ Selanjutnya uka web browser dan masukkan perintah https://localhost:5000/ di dal
 
 \subsection{Mengatur Struktur Proyek}
 Sebelum membuat website dengan framework flask, alangkah baiknya kita mengatur struktur proyek. Untuk mengaturnya, kita buat beberapa folder dan file di dalam flaskapp/ untuk membuat aplikasi web kita tetap rapi. Di dalam flaskapp/, buat sebuat folder app/ untuk menyimpan semua file. Di dalam app/, buat folder static/, disinilah user akan menyimpan gambar, CSS, dan file JavaScript aplikasi web. Jadi, buatlah folder untuk masing-masing jenis tersebut. Selain itu, buat juga folder bernama tempaltes/ untuk menyimpan template yang nantinya akan digunakan untuk aplikasi web. Buat juga file Python kosong bernama routes.py untuk logika aplikasi seperti routing URL.
-\end{document}
