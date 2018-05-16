@@ -26,20 +26,27 @@ Perpustakaan Standar Python. Labu tidak termasuk komponen yang membutuhkan pihak
 
 \subsection{Cara Mengunggah File}
 
-\begin{verbatim}
+
 Di sini Kita bisa mengupload file atau gambar dalam framework flask seperti halnya framework lainya. Akan tetapi Flask membuat kita bisa dengan mudah mengupload gambar atau file hingga menampilkannya sesuai keinginan kita. Kita disini akan menggunakan werkzeug untuk mengupload file di flask. Werkzeug yang merupakan modul bawaan flask dapat menangani itu semua.
 
 Penanganan upload file dalam Flask ada beberapa hal yang harus disiakpak. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL mengambil file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan.
-Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure_filename ().
+Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure filename ().
 
 Anda dapat menentukan jalur folder upload default dan ukuran maksimum file yang diunggah dalam pengaturan konfigurasi objek Flask.
-app.config [‘UPLOAD_FOLDER’] Menentukan jalur untuk folder unggah
-app.config [‘MAX_CONTENT_PATH’] Menentukan ukuran maksimum file yo diunggah - dalam byte
+Menentukan jalur untuk folder unggah
+\begin{verbatim}
+app.config [‘UPLOAD_FOLDER’] 
+\end{verbatim}
+Menentukan ukuran maksimum file yo diunggah - dalam byte
+\begin{verbatim}
+app.config [‘MAX_CONTENT_PATH’] 
+\end{verbatim}
 Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
 
 Kita dapat memproses file yang akan diupload dengan Flask dengan mudah. Sebelumnya pastikan jangan lupa untuk mengatur atribut enctype = "multipart/form-data" pada form HTML kita, jika tidak browser tidak akan mengirimkan file Anda sama sekali. File yang diunggah disimpan di memori atau di lokasi sementara di sistem file kita. Berikut ini contoh sederhana yang menunjukkan cara kerjanya:
 
 ‘Upload.html’ memiliki tombol pemilih file dan tombol kirim..
+\begin{verbatim}
 <html>
    <body>
    
@@ -51,14 +58,33 @@ Kita dapat memproses file yang akan diupload dengan Flask dengan mudah. Sebelumn
       
    </body>
 </html
+\end{verbatim}
+untuk routenya kita membuat parameter /upload dan menggunakan method get dan post seperti berikut ini:
 
-Klik Kirim setelah memilih file. Metode entri Formulir memanggil URL '/ upload_file'. Pengunggah fungsi yang mendasarinya () melakukan operasi penyimpanan.
+\begin{verbatim}
+from flask import request
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/var/www/uploads/uploaded_file.txt')
+    ...
+\end{verbatim}
+Dan jika Anda ingin tahu bagaimana file itu diberi nama pada klien sebelum diunggah ke aplikasi Anda, Anda dapat mengakses atribut filename.
+Klik Kirim setelah memilih file. Metode entri Formulir memanggil URL '/ uploadfile'. Pengunggah fungsi yang mendasarinya () melakukan operasi penyimpanan.
 
 Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan.
-	Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure_filename ().
+	Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure filename ().
 kamu dapat menentukan jalur folder upload default dan ukuran maksimum file yang diunggah dalam pengaturan konfigurasi objek Flask.
-app.config [‘UPLOAD_FOLDER’] Menentukan jalur untuk folder unggah
-app.config [‘MAX_CONTENT_PATH’] Menentukan ukuran maksimum file yo diunggah - dalam byte
+Menentukan jalur untuk folder unggah
+\begin{verbatim}
+app.config [‘UPLOAD_FOLDER’] 
+\end{verbatim}
+Menentukan ukuran maksimum file yo diunggah - dalam byte
+\begin{verbatim}
+app.config [‘MAX_CONTENT_PATH’] 
+\end{verbatim}
 Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
 
 Flask-Upload memungkinkan aplikasi Kamu secara fleksibel dan efisien menangani pengunggahan file dan melayani file yang diunggah. Kamu dapat membuat kumpulan unggahan yang berbeda - satu untuk lampiran dokumen, satu untuk foto, dll. - dan aplikasi dapat dikonfigurasi untuk menyimpan semuanya di tempat yang berbeda dan untuk menghasilkan URL yang berbeda untuknya.
@@ -67,6 +93,7 @@ Jika Kamu hanya menerapkan aplikasi yang menggunakan Flask-Upload, Kamu dapat me
 
 
 Dalam mengimplementasi fungsi mengunggah pada Flask akan menggunakan blueimp jQuery-File-Upload untuk mengimplementasi fitur unggah file. Unduh file yang dibutuhkan dari GitHub. Ekstrak kode sumber dan tambahkan referensi skrip dibawah ini ke addWish.html.
+\begin{verbatim}
 <script src="../static/js/jquery-1.11.2.js"></script>
  
 <script src="../static/js/jquery.ui.widget.js"></script>
@@ -76,9 +103,11 @@ Dalam mengimplementasi fungsi mengunggah pada Flask akan menggunakan blueimp jQu
 <script type="text/javascript" src="../static/js/jquery.fileupload-process.js"></script>
  
 <script type="text/javascript" src="../static/js/jquery.fileupload-ui.js"></script>
+\end{verbatim}
+
 
 Saat addWish.html dibuka, tambahkan kode inisialisasi plugin ke klik tombol unggah.
-\end{verbatim}
+
 
 
 
