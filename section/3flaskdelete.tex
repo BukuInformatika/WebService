@@ -17,3 +17,11 @@ def delete_post(post_id):
 <h2>
     <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
 </h2>
+
+\section{Deleting Values}
+Aplikasi dapat memaksa penggusuran nilai dengan menghapus kuncinya. penghapusan langsung dan atom.
+Di python, Anda meneruskan kunci ke fungsi delete () atau metode. Ini mengembalikan satu dari tiga nilai: memchace.DELETE_SUCCESSFUL jika kunci ada dan berhasil dihapus, memcache.DELETE_ITEM_MISSING jika tidak ada nilai dengan kunci yang diberikan, atau memcache.DELETE_NETWORK_FAILURE jika penghapusan tidak dapat diselesaikan karena kegagalan layanan. Konstanta ini didefinisikan sedemikian rupa sehingga jika Anda tidak peduli tentang perbedaan antara penghapusan yang berhasil dan kunci yang hilang, Anda dapat menggunakan hasilnya sebagai ekspresi bersyarat. (DELETE_NETWORK_FAILURE adalah 0)\cite{sanderson2015programming}.
+
+		succes = memcache.delete(key)
+		if not succes;
+			#ada masalah saat mengakses memcache
