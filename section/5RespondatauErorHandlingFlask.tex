@@ -26,4 +26,16 @@ Tapi saat aplikasinya sedang dibuat, kita tentu menginginkan debug mode untuk di
 (venv) $ export FLASK_DEBUG=1
 \end{verbatim}
 
+Saat aplikasi sedang dibuat, di butuhkan debug mode untuk mengaktifkan. Apabila Flask aktif dalam mode ini,  pesan error akan muncu dan sangat membantu dan akan ditampilkan di browser. Untuk mengaktifkan debug mode, stop dulu aplikasi, lalu atur environment variable. 
+Setelah mengatur FLASK_DEBUG, restart ulang server. Pesan yang ditampilkan saat memulai server menjadi agak berbeda dibanding sebelumnya:
+\begin{verbatim}
+(venv) microblog2 $ flask run
+ * Serving Flask app "microblog"
+ * Forcing debug mode on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 177-562-960
+ \end{verbatim}
+
 \end{document}
