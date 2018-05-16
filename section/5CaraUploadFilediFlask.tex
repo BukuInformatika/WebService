@@ -66,8 +66,21 @@ Konfigurasi
 Jika Kamu hanya menerapkan aplikasi yang menggunakan Flask-Upload, Kamu dapat menyesuaikan perilakunya secara ekstensif dari konfigurasi aplikasi. Periksa dokumentasi atau kode sumber aplikasi untuk melihat cara memuat konfigurasinya.
 
 
+Dalam mengimplementasi fungsi mengunggah pada Flask akan menggunakan blueimp jQuery-File-Upload untuk mengimplementasi fitur unggah file. Unduh file yang dibutuhkan dari GitHub. Ekstrak kode sumber dan tambahkan referensi skrip dibawah ini ke addWish.html.
+<script src="../static/js/jquery-1.11.2.js"></script>
+ 
+<script src="../static/js/jquery.ui.widget.js"></script>
+ 
+<script type="text/javascript" src="../static/js/jquery.fileupload.js"></script>
+ 
+<script type="text/javascript" src="../static/js/jquery.fileupload-process.js"></script>
+ 
+<script type="text/javascript" src="../static/js/jquery.fileupload-ui.js"></script>
 
+Saat addWish.html dibuka, tambahkan kode inisialisasi plugin ke klik tombol unggah.
 \end{verbatim}
+
+
 
 Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan. Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek 
 
