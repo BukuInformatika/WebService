@@ -19,17 +19,17 @@ Metode GET dan POST merupakan objek XHR yang sama bekerja sebagai standar HTTP r
 \subsection{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
 Objek XHR (XMLHttpRequest) adalah inti dari Ajax angine. XHR merupakan objek yang memberikan kemampuan sebuah halaman untuk mendapatkan data (menggunakan metode GET) atau mengirim data (menggunakan metode POST) dari server yang prosesnya terjadi di belakang layar, itu berarti refresh browser tidak diperlukan sepanjang proses ini. Hal inilah yang menjadi factor kunci dalam memberikan kelebihan aplikasi kepada user. User tidak perlu mengetahui proses sehingga dapat focus dengan pekerjaan yang dilakukan \cite{prasetyo2007sistem}.
 \subsection{Implementasi pengkodean sistem Python dengan versi 2.7.13.}
-Implementasi pengkodean sistem, menggunakan Bahasa pemrograman Python dengan versi 2.7.13. Framework yang digunakan untuk sistem ini adalah Flask Micro-Framework. Adapun beberapa library yang mendukung sistem ini adalah: 
+Implementasi pengkodean sistem, menggunakan Bahasa pemrograman Python dengan versi 2.7.13. Framework yang digunakan untuk sistem ini adalah Flask Micro-Framework. Adapun beberapa library yang mendukung sistem ini adalah:
 \begin{enumerate}
-\item Pandas 
-\item Matplotlib 
-\item Scikit-learn 
-\item Flask-CORS 
+\item Pandas
+\item Matplotlib
+\item Scikit-learn
+\item Flask-CORS
 \item Jupyter Notebook
-\item Pymysql 
-\item Scipy 
+\item Pymysql
+\item Scipy
 \end{enumerate}
-Selain itu aplikasi juga dijalankan dalam server dan diatur oleh Apache Server dengan memanfaatkan mod wsgi. Database yang digunakan pada aplikasi ini adalah MySQL\cite{gunawan2018aplikasi}.  
+Selain itu aplikasi juga dijalankan dalam server dan diatur oleh Apache Server dengan memanfaatkan mod wsgi. Database yang digunakan pada aplikasi ini adalah MySQL\cite{gunawan2018aplikasi}.
 
 \section{Contoh Flask GET}
 \subsection{Request sederhana pada Flask Framework}
@@ -44,6 +44,17 @@ Pada gambar\ref{labelgambar}Ini merupakan contoh sederhana dari apa GET request 
 \section{Keamanan Flask GET}
 \subsection{deteksi serangan dos dengan http get}
 Serangan DoS ke layanan Web disebut serangan banjir http-get dan ancamannya meningkat dari hari ke hari. Dalam jenis serangan ini, klien jahat mengirim sejumlah besar permintaan http-get ke server Web target secara otomatis. Karena permintaan http-get ini memiliki format yang sah dan dikirim melalui koneksi TCP normal, intrusion detection system (IDS) tidak dapat mendeteksi mereka. Dalam tulisan ini, kami mengusulkan teknik pendeteksian pendeteksian http-get berdasarkan analisis perilaku akses halaman. Kami mengusulkan dua algoritme deteksi, yang satu berfokus pada urutan penelusuran laman dan yang lainnya berfokus pada korelasi dengan waktu penelusuran ke ukuran informasi laman. Kami menerapkan teknik deteksi dan mengevaluasi tingkat deteksi serangan, yaitu, false positive dan false negative. Hasilnya menunjukkan bahwa teknik kami dapat mendeteksi serangan banjir http-get secara efektif \cite{yatagai2007detection}.
+
+\section{Pengertian Get Flask Pada Request}
+\subsection{Mendapatkan masukan pengguna menggunakan HTTP GET}
+Oleh karena itu, permintaan GET sangat ideal untuk memungkinkan pengguna kami menentukan publikasi mana untuk melihat. Mari kita memperluas proyek Headlines kami untuk menggabungkan memilih judul berdasarkan atas permintaan GET. Pertama, mari kita memodifikasi kode Python untuk melakukan hal berikut:
+\begin{enumerate}
+  \item Impor konteks permintaan dari Flask
+  \item Hapus variabel URL dinamis
+  \item Periksa untuk melihat apakah pengguna telah memasukkan publikasi yang valid sebagai argumen GET
+  \item Lewati kueri pengguna dan publikasi ke templat
+\end{enumerate}\cite{dwyer2016flask}.
+ 
 
 
 
