@@ -44,3 +44,9 @@ def deal_card():
 def print_cards():
   for card in session['user cards']:
     print(card)
+
+Didalam flask juga terdapat method yang berfungsi untuk mghapus yaitu method delete(). Kebanyakan method delete() ini sering digunakan untuk menghapus session (sesi) yang terdapat di database atau sebagai perbandingan nilai yang ada di database.contoh berikut menghapus peran "moderator" dari database
+>>> db.section.delete(mode_role)
+>>> db.section.commit()
+perhatikan bahwa penghapusan. seperti sisipan dan pembaruan, dijalankan hanya ketika sesi basis data dilakukan\cite{grinberg2018flask}.
+
