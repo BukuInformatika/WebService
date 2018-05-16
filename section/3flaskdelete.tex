@@ -50,3 +50,35 @@ Didalam flask juga terdapat method yang berfungsi untuk mghapus yaitu method del
 >>> db.section.commit()
 perhatikan bahwa penghapusan. seperti sisipan dan pembaruan, dijalankan hanya ketika sesi basis data dilakukan\cite{grinberg2018flask}.
 
+
+
+\section{More about Flask Delete}
+Flask membuat susunan kerja yang ringan, dan mudah tetapi juga dapat dikembangkan dengan mudah. Flask juga menggantikan fungsi Apache sebagai webserver dimana flask berjalan di http://localhost:5000/.  Berbicara tentang flask dengan method delete maka akan berhubungan dengan Services Oriented. Seperti yang diketahui bahwa delete merupakan metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE. Berbicara tentang bagaimana ringkasnya pernyataan penghapusan dalam SQL. Akan di pertimbangkan juga nantinya bagaimana membuat kata kunci ini berperilaku kurang seperti nuke dengan menetapkan ketentuan untuk menghapus hanya beberapa data\cite{dwyer2016flask}.
+
+Metode DELETE dipraktikkan dengan mudah dengan cara yang sama. Apakah mungkin untuk hapus posting pengguna dengan perintah single line curl. 
+fungsi python ditambahkan ke rute aplikasi untuk menghapus rekaman dari data server Dengan demikian, fungsi,  perintah curl, dan respon yang sesuai ditunjukkan di bawah ini.
+
+@app.route('/api/v1.0/<u_id>/post/<p_i>',methods=['DELETE'])
+def delete_post(u_id, p_id):
+	links=[]
+	links.append({"rel":"profile", "href":"http://localhost:5000/api/v1.0/user/"tu_id})
+	links.append({"rel":"profile", "href":"http://localhost:5000/api/v1.0/user/"tu_id+"/posts"})
+	post = Post.query.filter(Post.id == p_id).first()
+	if post is None:
+		return jsonify({"status": "There is no post with this id"})
+	db.session.delete(post)
+	db.session.commit()
+	return jsonify){status": "post delete succesfully", "links": links})
+
+
+$ curl -X DELETE 'http://localhost:5000/api/v1.0/2/post/4'
+
+{
+"links": [
+{
+  "href": "http://localhost:5000/api/v1.0/user/2/posts",
+  "rel": "all posts"
+}
+],
+"status": "post delete succesfully"
+}\cite{alemu2014rest}.
