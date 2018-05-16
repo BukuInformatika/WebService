@@ -53,6 +53,5 @@ Pada gambar\ref{labelgambar}Ini merupakan contoh sederhana dari apa GET request 
 \subsection{deteksi serangan dos dengan http get}
 Serangan DoS ke layanan Web disebut serangan banjir http-get dan ancamannya meningkat dari hari ke hari. Dalam jenis serangan ini, klien jahat mengirim sejumlah besar permintaan http-get ke server Web target secara otomatis. Karena permintaan http-get ini memiliki format yang sah dan dikirim melalui koneksi TCP normal, intrusion detection system (IDS) tidak dapat mendeteksi mereka. Dalam tulisan ini, kami mengusulkan teknik pendeteksian pendeteksian http-get berdasarkan analisis perilaku akses halaman. Kami mengusulkan dua algoritme deteksi, yang satu berfokus pada urutan penelusuran laman dan yang lainnya berfokus pada korelasi dengan waktu penelusuran ke ukuran informasi laman. Kami menerapkan teknik deteksi dan mengevaluasi tingkat deteksi serangan, yaitu, false positive dan false negative. Hasilnya menunjukkan bahwa teknik kami dapat mendeteksi serangan banjir http-get secara efektif \cite{yatagai2007detection}.
 
-
-
-
+\section{Framework Cookbook}
+Secara default, fungsi tampilan flask hanya mendukung permintaan GET. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberitahu rute () decorator tentang mode yang ingin dukung. Inilah yang dilakukan di dua terakhir metode untuk POST dan GET/POST. Untuk permintaan GET, objek permintaan akan mencari argument, yaitu request.args.get(), dan untuk POST, itu akan mencari bentuk, yaitu request.from.get(). Selain itu, jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal \cite{aggarwal2014flask}.
