@@ -61,6 +61,11 @@ app.config [‘UPLOAD_FOLDER’] Menentukan jalur untuk folder unggah
 app.config [‘MAX_CONTENT_PATH’] Menentukan ukuran maksimum file yo diunggah - dalam byte
 Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
 
+Flask-Upload memungkinkan aplikasi Kamu secara fleksibel dan efisien menangani pengunggahan file dan melayani file yang diunggah. Kamu dapat membuat kumpulan unggahan yang berbeda - satu untuk lampiran dokumen, satu untuk foto, dll. - dan aplikasi dapat dikonfigurasi untuk menyimpan semuanya di tempat yang berbeda dan untuk menghasilkan URL yang berbeda untuknya.
+Konfigurasi
+Jika Kamu hanya menerapkan aplikasi yang menggunakan Flask-Upload, Kamu dapat menyesuaikan perilakunya secara ekstensif dari konfigurasi aplikasi. Periksa dokumentasi atau kode sumber aplikasi untuk melihat cara memuat konfigurasinya.
+
+
 
 \end{verbatim}
 
