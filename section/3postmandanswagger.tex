@@ -1,0 +1,190 @@
+
+\section{Pengertian Postman}
+Postman merupakan sebuah software yang memuat fungsi lengkap pengembangan sistem dalam mengirimkan dan menerima respon server. Software ini mendukung pengembangan sistem REST API dengan mengklasifikasi request berdasarkan request method, URL dan parameter-parameter request. Postman juga adalah sebuah aplikasi (berupa plugin) untuk browser chrome, fungsinya adalah sebagai REST Client atau istilahnya adalah aplikasi yang digunakan untuk melakukan uji coba REST API yang telah kita buat.
+
+\section{Fungsi dari postman}
+Menurut Arianto M A, DKK(2016), Sebuah aplikasi yang digunakan untuk melakukan uji coba REST API yang telah kita buat. Fungsi Postman adalah untuk pengecekan web service. Postman dapat menampilkan hasil dari HTTP request yang kompleks sekalipun dengan cepat. Postman muncul sebagai add-on dari chrome namun sekarang sudah menjadi aplikasi native. Postman memudahkan untuk menguji, mengembangkan dan API (Application Programmin Interface) dokumen dengan memungkinkan pengguna untuk dengan cepat mengumpulkan baik permintaan HTTP sederhana dan kompleks
+
+\section{cara instal postman}
+Postman for Chrome (aplikasi Postman sebelumnya merupakan ekstensi Chrome App atau aplikasi yang menginduk pada Chrome).
+Cara menginstal Postman untuk menginstal Postman versi native pada sistem operasi Ubuntu/Debian yaitu 
+Buka terminal lalu unduh atau donwload paket instalasi Postman dengan mengunakan perintah wge,
+kemudia Ekstrak file instalasi Postman tersebut ke direktori /optsudo tar -xzf postman.tar.gz -C /opt.
+setelah itu dapat menghapus file instalasinya (opsional)dengan cara rm postman.tar.gz
+
+
+\section{membuat shortcut Postman}
+Berikut tata cara untuk membuat shortcut pada start menu postman.  Ketik perintah - perintah berikut dibawah ini:
+\begin{itemize}
+\item cat: -/.local/share/applications/postman.desktopEOL
+\item [Desktop Entry]
+\item Encoding=UTF-8
+\item Name=Postman
+\item Exec=postman
+\item Icon=/opt/Postman/resources/app/assets/icon.png
+\item Terminal=false
+\item Type=Application
+\item Categories=Development;
+ \item EOL
+\end{itemize}
+
+
+Sekarang untuk membuka aplikasi yang ada pada Postman , cukup hanya dengan melakukan klik pada shortcut pada start - menu. 
+
+\section{Cara Menjalankan Aplikasi Postman}
+Setelah instalasi aplikasi, buka aplikasi postman lalu sign up dengan akun google kita atau jika sudah mempunyai akun maka kita tinggal login saja. Setelah terbuka tampilan pertama yang muncul akan kosong pada bagian history dan tidak terdapat menu body dan lain-lain. Pada bagian menu body disana terdapat syntak atau source code untuk menampilkan halaman awal pada google.com
+
+\section{Cara menggunakan Postman (Menguji API sederhana dengan Postman)}
+bagaimana cara menggunakan Postman untuk melakukan pengujian terhadap sebuah API (Application Programing Interface) sederhana.
+Untuk melakukan sebuah pengujian terhadap API, tentunya mesti ada APInya terlebih dahulu. Jadi pertama-tama membuat API sederhana menggunakan bahasa pemrograman PHP (PHP: Hypertext Prepocessor).
+Berikut cara penggunaan Postman; 
+\begin{enumerate}
+\item Buat sebuah file baru pada direktori root webserver dengan nama: contoh-api-sederhana.php 
+\item Kemudian ketikan kode PHP berikut ke dalam file contoh-api-sederhana.php
+\end{enumerate}
+Pada file contoh-api-sederhana.php, dapat didefinisikan satu buah API dengan empat Http Request Method yang berbeda. Berikut daftar method dan alamat url yang nanti akan kita uji menggunakan Postman:
+\begin{enumerate}
+\item GET = /contoh-api-sederhana.php
+\item POST = /contoh-api-sederhana.php
+\item PUT = /contoh-api-sederhana.php
+\item DELETE = /contoh-api-sederhana.php
+\end{enumerate}
+Kita dapat menguji salah satu API di atas menggunakan browser, salah satunya, menggunakan method GET, browser akan mengirimkan data ke server menggunakan method GET.
+\section{Cara menggunakan Postman}
+Pengujian API menggunakan Postman dapat mengikuti langkah-langkah berikutnberdasarkan masing method. Pertama-tama silahkan buka aplikasi Postman.
+\subsection{Pengujian API dengan method: GET}
+\begin{enumerate}
+\item Pilih method GET di sebelah kolom alamat url
+\item Kemudian pada kolom alamat url isi dengan: http://localhost/contoh-api-sederhana.php
+\item Klik tombol Send
+\end{enumerate}
+Dari pengujian dengan method GET, hasil yang di dapatkan seharusnya sama dengan pengujian yang kita lakukan sebelumnya, dimana kita menggunakan browser yaitu: "GET: Contoh API Sederhana".
+
+\subsection{Pengujian API dengan method: POST}
+Pada halaman postman yang masih aktif,
+\begin{enumerate}
+\item Ganti method GET dengan method POST
+\item Biarkan alamat url (tidak perlu diganti)
+\item Klik pada tab Body, lalu pilih tab raw
+\item Isi kontennya dengan json object: {"nama":"irul"}
+\item Klik tombol Send
+\end{enumerate}
+Pada method POST ini, dikirimkan  parameter berupa data raw (data mentah) yaitu string dengan format json object. Method ini biasanya digunakan untuk request menambah data baru. 
+
+
+\subsection{Pengujian API dengan method: PUT}
+pada halaman ini Postman yang aktif,
+\begin{enumerate}
+\item Ganti method POST dengan method PUT
+\item Lainnya biarkan saja tidak perlu dirubah (masih sama seperti POST)
+\item Klik tombol Send
+\end{enumerate}
+Pada pengujian dengan method PUT ini, mengirimkan parameter yang sama seperti halnya ketika menggunakan method POST yaitu berupa data raw dengan format json object. Method PUT biasanya digunakan ketika ada data yang perlu diubah. 
+
+\subsection{Pengujian Api dengan Method: DELETE}
+Masih tetap pada halaman Posmant yang aktif,
+\begin{enumerate}
+\item Ganti method PUT dengan method DELETE
+\item Lainnya tetap seperti biasa 
+\item Klik tombol Send
+\end{enumerate}
+Method terakhir dikita uji adalah DELETE, kita mengirimkan parameter yang sama seperti pada method PUT dan method POST. Method DELETE ini, biasanya digunakan ketika ada data yang perlu dihapus.
+
+\section{Implementasi Postman}
+Implementasi tidak hanya aktivitas, melainkan suatu kegiatan yang terencana untuk mencapai
+tujuan kegiatan. Tahap implementasi pada penelitian ini tidak dilakukan hanya dalam satu proses,
+Tetapi dilakukan dalam beberapa sub proses yaitu membangun lingkungan pengembangan sistem, 
+mendesain struktur table, function dan stored procedure pada database, mengembangkan sistem back-end (coding) 
+dan menyesuaikan dengan database, dan mendesain struktur rewrite pada web server. 
+
+\section{Pengujian}
+Untuk memastikan bahwa sistem berjalan sesuai dengan rencana pengembangan sistem dan proses bisnis yang difasilitasi, diperlukan sebuah skenario pengujian sistem. Pada penelitian ini, pengujian akan dilakukan dengan menggunakan software Postman dan dibagi menjadi tiga skenario pengujian, yaitu: Pengujian otentikasi token untuk memastikan prinsip REST terpenuhi, pengujian dengan metode equivalent partitioning untuk memastikan nilai-nilai masukan sesuai dengan rencana pengembangan sistem, pengujian fungsional untuk memastikan setiap titik akses API.
+
+\subsection{Pengujian otentikasi token}
+Pengujian  otentikasi token dilakukan pada load-balanced server dengan jumlah back-end server sebanyak tiga virtual server yang diklasifikasi berdasarkan port jaringan. Pengujian  metode equivalent partitioning akan mengelompokkan nilai masukan ke dalam kelas- kelas kemudian diuji dalam kasus-kasus tertentu. Pengujian fungsional dilakukan secara langsung setiap titik akses sistem API yang telah dibuat. 
+
+
+\subsection {Pengujian dengan metode equivalent partitioning}
+Pengujian dengan menggunakan metode equivalent partitioning ini untuk memastikan nilai-nilai masukan sesuai dengan rencana pengembangan sistem. Pengujian ini akan mengelompokkan nilai masukan ke dalam kelaskelas batasan nilai untuk kemudian diuji dalam kasus-kasus tertentu. Rencana pengujian metode ini meliputi validasi path, validasi request method, validasi token, kesesuaian tipe data dan validasi nilai.
+
+\section{Pengertian Swagger}
+Swagger merupakan sebuah open source project dan juga salah satu framework API populer. Swagger dapat digunakan untuk merancang sebuah sistem, membangun sebuah sistem, serta mendokumentasikan dan mengakses API. Dengan adanya swagger, kita bisa melakukan desain ulang atau membuat baru code API dengan editor yang memberikan log jika terjadi error secara real-time.
+
+Dokumentasi adalah salah satu hal terpenting. Karena dokumentasi akan menjadi nilai jual kepada client atau manager. Client akan jadi sangat terbantu dengan adanya dokumentasi, dibandingkan dengan memperlihatkan dengan setumpuk baris code. Dengan adanya swagger, dapat melakukan request ataupun melihat response dari API. Sehingga menjadikan Swagger sebagai framework komplit untuk project API.
+\section{Cara Membuat Swagger}
+\subsection{Format file yang digunakan}
+Cara membuat swagger developer bisanya menggunakan dua format file yaitu: JSON atau YAML . YAML cukup bersih dan mudah dibaca bagi pengguna swagger untuk ukuran file yang besar dibandingkan dengan JSON. Sedangkan menggunakan json developer biasanya dilakukan untuk generate swagger dengan format json. Dengan adanya swagger, kita dapat melakukan request ataupun melihat response dari API.
+\subsection{Current version dan tools yang digunakan dalam swagger}
+Untuk saat ini, swagger yang akan di create masih menggunakan version 2.0.
+Tool yang digunakan Text Editor apapun untuk membuat file spesifikasi. Untuk ini, kita akan menggunakan alat built-in yang disebut Swagger Editor.
+\subsection{Langkah-langkah menggunakan swagger } 
+Berikut file swagger yang valid. Ada beberapa object di dalam swagger:
+\begin{enumerate}
+\item Swagger yaitu dimana valuenya adalah 2.0(version).
+\item info berupa description, version dan tittle API.
+\item host
+\item basepath yakni relative path berupa semua API yang akan dipanggil menggunakan path ini.
+\item schemes dimana valuenya http atau https.
+\item tags di gunakan sebagai tanda pengenal untuk setiap -path.
+\item paths.
+\item definitions di gunakan sebagai create model (contoh isi) untuk request dan response API
+\end{enumerate}
+
+\subsection{Add API method get}
+Bagian ini, akan ditambahkan 1 API method GET. Di dalam object paths terdapat :
+\begin{enumerate}
+\item Path API seperti /inquiry/{accountNo} dimana accountNo adalah parameter.
+\item Method API seperti GET, POST.
+\item Description (deskripsi dari API).
+\item OperationId (mirip seperti id).
+\item Produces (valuenya adalah format seperti json, xml).
+\item Consumes (valuenya sama seperti produces).
+\item parameters terdiri atas name, in, body, query, form, path, required, type dan description
+\item responses yang terdiri dari http code dimana terdapat description dan schema.
+\end{enumerate}
+\subsection{ADD API METHOD POST}
+Maksud dari add API method post sama hal atau hampir mirip dengan  API method GET. Perbedaan dari add API Method Post dengan API method GET yakni pada API method Post terdapat request body sehingga ada penambahan di dalam parameter dan untuk contoh request dan response akan menggunakan model dengan format 
+\begin{itemize}
+\item ref:”/definitions/[nama model].
+\end{itemize}
+
+\section{Menguji API menggunakan Swagger}
+Pelajari cara menyiapkan pengujian dan pemantauan saluran API otomatis berdasarkan spesifikasi Swagger atau OpenAPI.
+Pengujian API Anda menggunakan informasi dari spesifikasi Swagger / OpenAPI sederhana menggunakan Assertible. Hanya ada 3 langkah:
+\begin{enumerate}
+\item Impor definisi Swagger
+\item Konfigurasikan parameter dan autentikasi
+\item Siapkan pemantauan otomatis dan pengujian pasca-penerapan
+\end{enumerate}
+
+\subsection{Impor definisi Swagger}
+\begin{enumerate}
+\item Untuk memulai, buat akun Asertible dan masuk. Hal pertama yang harus Anda lihat adalah formulir impor:
+\item Masukkan URL ke spanduk Swagger yang Anda hosting di input teks atau pilih File di tarik turun untuk mengimpor file.
+\item Selanjutnya, klik tautan atau impor Spekulan.
+\item Masukkan URL ke spanduk Swagger yang dihosting pada input teks atau pilih File untuk mengimpor file.
+\item Setiap kombinasi titik akhir metode dalam spesifikasi asisten akan membuat satu pengujian.
+\item Jika  memiliki banyak tes, hapus centang secara otomatis menjalankan kotak centang tes ini.
+\end{enumerate}
+
+\subsection{Konfigurasikan parameter dan autentikasi}
+Untuk setiap parameter dalam definisi Swagger Anda yang terkait dengan titik akhir tertentu, Jika parameter tidak memiliki nilai default yang ditentukan dalam spesifikasi OpenAPI, Assertible akan menetapkan nilai sebagai tidak terdefinisi.
+Untuk autentikasi, API GitHub publik tidak mengharuskan autentikasi secara eksplisit. Namun memang membutuhkan header User-Agent. Header dapat dibuat pada halaman konfigurasi pengujian tepat di bawah Variabel (tampilan Header permintaan).
+
+\subsection{Setup Monitoring secara Otomatis dan Pengujian Pasca Penerapan}
+Langkah selanjutnya adalah mengkonfigurasi secara otomatisasi untuk memastikan layanan web selalu terus diuji. 
+Beberapa jenis assertible pendukung otomatisasi yaitu Scheduled monitoring,Hooks dan alerts,Post-deploy triggers. Monitoring merupakan
+Setiap tumpukan Monitoring API dasar, yang harus memiliki uji coba yang dijadwalkan. Untuk mengkonfigurasikan monitoring terjadwal dalam AsSible, arahkan ke tab Monitoring dan klik setup scheduled.
+
+\subsection{Setup Pengaturan secara Otomatis dan Pengujian Pasca Penerapan}
+Berikutnya untuk mengatur jadwal, perlu diperhatikan ada kegagalan tes. Untuk mengkonfigurasi peringatan, navigasikan ke tab Pengaturan layanan web , dan klik Hooks dan Alerts . Setelah itu dapat dilihat opsi untuk mengkonfigurasi Slack , Email , atau Zapier . At Assertible, diginakan untuk pemberitahuan Slack dan peringatan kegagalan tes pemicu Zapier untuk membuka masalah baru di GitHub ketika tes kritis gagal. 
+
+\section{Monitoring}
+Setiap tumpukan pemantauan API dasar harus memiliki uji coba yang dijadwalkan. Untuk mengonfigurasi pemantauan terjadwal dalam Assertible, arahkan ke tab Monitoring dan klik Siapkan jadwal (Setup up a schedule).  Anda akan melihat formulir untuk pembuatan jadwal. Pilih Jadwal per jam atau Jadwal harian dari tarik-turun Frekuensi. Terakhir, tekan Buat jadwal untuk menyelesaikan konfigurasi Anda.
+
+\section{Alerts}
+Setelah Anda mengatur jadwal, Anda harus waspada saat ada kegagalan tes. Untuk mengkonfigurasi peringatan, navigasikan ke tab Pengaturan layanan web, dan klik Hooks dan Alerts. Anda akan melihat opsi untuk mengkonfigurasi Slack, Email, atau Zapier.
+Di Assertible, kami menggunakan pemberitahuan Slack untuk peringatan kegagalan tes dan pemicu Zapier untuk membuka masalah baru di GitHub ketika tes kritis gagal. 
+
+\section{Pengujian pasca-penerapan}
+Jadwal hanyalah satu bagian dari teka-teki pemantauan. Idealnya, tes API Anda dijalankan setiap kali Anda menggunakan versi baru API Anda; terutama jika Anda memiliki integrasi berkelanjutan dan pipa pengiriman. Integrasikan skrip ini ke dalam pipeline penyebaran Anda atau jalankan secara manual setelah Anda menerapkan. Assertible mencatat versi penerapan dalam hasil tes Anda sehingga Anda dapat melacak regresi ketika tes gagal setelah versi spesifik API Anda digunakan.
