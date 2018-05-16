@@ -13,7 +13,7 @@
 \end{enumerate}
 
 \section{Pengertian Flask}
-Flask merupakan sebuah microweb framework yang dicantumkan ke dalam bahasa pemrograman Python berdasar dari Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain karena ada pustaka pihak ketiga yang menyediakan fungsi umum.
+Flask merupakan sebuah Microweb framework yang dicantumkan ke dalam bahasa pemrograman Python berdasar dari Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain karena ada pustaka pihak ketiga yang menyediakan fungsi umum.
 
 \section{Error Handling di Flask}
 Error handling dalam flask akan munculnya "Internal Server Erro" pesan yang muncul di sesi terminal saat aplikasi dijalankan. Kemudian akan menampilkan  stack trace dari kesalahan yang terjadi. Stack trace sangat berguna untuk mencari error karena memberikan urutan pemanggilan mana yang menyebabkan sebuah error tersebut terjadi. Stack trace akan memperlihatkan bagian mana yang menjadi penyebabnya. Error ini muncul dari SQLAlchemy yang mencoba menulis username baru ke database, tapi database menolak karena kolom username sebelumnya sudah diatur dengan unique=True.
