@@ -1,16 +1,3 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[left=3.00cm, right=2.00cm, bottom=2.00cm, top=3.00cm]{geometry}
-\usepackage{graphics}
-\begin{document}
-\title{Postman dan Swagger}
-\maketitle
-\begin{enumerate}
-\item Fransiscus Ivan Martongam      1164039 \\
-\item Lalita Chandiany Adiputri      1164043\\
-\item Eko Cahyono Putro              1164035\\
-\item Lidwina Triniska Gulo          1164044\\
-\item Sulpadianti Bunyamin           1164096\\
-\end{enumerate}
 
 \section{Pengertian Flask}
 Flask merupakan sebuah Microweb framework yang dicantumkan ke dalam bahasa pemrograman Python berdasar dari Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain karena ada pustaka pihak ketiga yang menyediakan fungsi umum.
@@ -27,7 +14,7 @@ Tapi saat aplikasinya sedang dibuat, kita tentu menginginkan debug mode untuk di
 \end{verbatim}
 
 Saat aplikasi sedang dibuat, di butuhkan debug mode untuk mengaktifkan. Apabila Flask aktif dalam mode ini,  pesan error akan muncu dan sangat membantu dan akan ditampilkan di browser. Untuk mengaktifkan debug mode, stop dulu aplikasi, lalu atur environment variable. 
-Setelah mengatur FLASK_DEBUG, restart ulang server. Pesan yang ditampilkan saat memulai server menjadi agak berbeda dibanding sebelumnya:
+Setelah mengatur FLASK DEBUG, restart ulang server. Pesan yang ditampilkan saat memulai server menjadi agak berbeda dibanding sebelumnya:
 \begin{verbatim}
 (venv) microblog2 $ flask run
  * Serving Flask app "microblog"
@@ -37,5 +24,13 @@ Setelah mengatur FLASK_DEBUG, restart ulang server. Pesan yang ditampilkan saat 
  * Debugger is active!
  * Debugger PIN: 177-562-960
  \end{verbatim}
+ 
+ Membuat aplikasi crash seperti sebelumnya untuk melihat pesan interactive debugger di browser:
+ 
+ \begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/5eror.PNG}}
+\caption{membuat aplikasi crash.}
+\label{eror}
+\end{figure}
+\ref{eror} dijelaskan bahwa Debugger akan memungkinkan kita meng-expand setiap stack frame dan melihat source code yang terkait. Bisa juga membuka prompt Python di frame manapun dan mengeksekusi perintah Python yang valid, misalnya untuk memeriksa isi dari suatu variabel. Sangat penting untuk tidak mengaktifkan debug mode di production server. Sebagai keamanan tambahan, debugger yang berjalan di browser akan dikunci terlebih dahulu dan meminta nomor PIN yang bisa dilihat saat menjalankan perintah flask run. 
 
-\end{document}
