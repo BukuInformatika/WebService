@@ -64,4 +64,16 @@ Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ d
 
 \end{verbatim}
 
+Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan. Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek 
+
+\begin{verbatim}
+\end{verse}.files [file]. 
+\end{verbatim}
+Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi 
+
+
+\begin{verbatim}
+secure_filename ().
+\end{verbatim}
+
 \end{document}
