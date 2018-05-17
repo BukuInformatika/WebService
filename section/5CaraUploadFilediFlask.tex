@@ -105,8 +105,28 @@ Dalam mengimplementasi fungsi mengunggah pada Flask akan menggunakan blueimp jQu
 <script type="text/javascript" src="../static/js/jquery.fileupload-ui.js"></script>
 \end{verbatim}
 
-
 Saat addWish.html dibuka, tambahkan kode inisialisasi plugin ke klik tombol unggah.
+
+\begin{verbatim}
+$(function() {
+    $('#fileupload').fileupload({
+        url: 'upload',
+        dataType: 'json',
+        add: function(e, data) {
+            data.submit();
+        },
+        success: function(response, status) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+})
+\end{verbatim}
+
+
+Seperti terlihat pada kode di atas, ditambahkan plugin unggah file ke tombol. Plugin unggah file mengirim file ke request handler /upload, yang akan didefinisikan dalam kode Python. Disini juga mendefinisikan sebuah fungsi add untuk mengirim data, dan kondisi success dan failure untuk menangani proses unggah yang berhasil dan gagal.
 
 
 
