@@ -56,3 +56,5 @@ def internal_error(error):
  
 Fungsi untuk error handling sangat mirip dengan fungsi view. Untuk kedua jenis error tadi, kita akan menampilkan template khusus. Perhatikan bahwa kedua fungsi tersebut mengirimkan nilai kedua selain template yaitu kode nomor error-nya. Untuk semua fungsi view yang sudah dibuat, tidak perlu mengirimkan kode nomor 200 (untuk menandakan successful response) karena sudah diberikan secara otomatis.
 Karena kedua fungsi di atas merupakan fungsi untuk menangani halaman error khusus, maka  perlu memberikan kode status untuk merefleksikan jenis error apa yang akan mereka tangani.
+
+Error handler untuk kode 500 dapat dipanggil setelah sebuah database error, yang salah satu kasusnya terjdi bila ada username yang sama. Untuk memastikan semua percobaan database yang gagal tidak mempengaruhi database yang sudah ada, kita memanggil sesi rollback. Sesi ini akan membersihkan database dari percobaan mengisi data yang sebelumnya gagal (sehingga data yang terubah tidak setengah-setengah).
