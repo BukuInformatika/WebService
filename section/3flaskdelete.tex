@@ -82,3 +82,18 @@ $ curl -X DELETE 'http://localhost:5000/api/v1.0/2/post/4'
 ],
 "status": "post delete succesfully"
 }\cite{alemu2014rest}.
+
+\section{Reseting the Database}
+Sumber daya RESTful digunakan untuk mengatur API ke titik akhir yang sesuai dengan berbagai jenis data yang digunakan oleh aplikasi Anda. Setiap titik akhir disebut menggunakan metode HTTP yang berbeda. Setiap metode mengeluarkan perintah yang berbeda ke API. Misalnya, GET digunakan untuk mengambil sumber daya dari API, PUT digunakan untuk memperbarui informasinya, HAPUS untuk menghapusnya.
+
+Jika Anda menghapus file db.sqlite atau hanya ingin me-reset database Anda ke keadaan kosong, Anda dapat memasukkan perintah berikut di konsol Python Anda.
+
+	>>>from rest_api_demo.app import initialize_app, app
+	>>>from rest_api_demo.database import reset_database
+	>>>
+	>>>initialize_app(app)
+	>>>with app.app_context();
+	. . .	reset_database()
+
+
+
