@@ -9,9 +9,6 @@
 \section{Pengertian Flask}
 \emph{Flask} adalah \emph{framework} aplikasi web mikro yang ditulis dalam bahasa Python dan berbasiskan \emph{toolkit Wekzeug} dan \emph{template engine Jinja2} dan berlisensi BSD. Flask dikatakan framework mikro dikarenakan Flask tidak menganggap atau mengharuskan pengembang komponen menggunakan alat atau pustaka tertentu. Flask tidak memiliki lapisan abstrak basis data, validasi form, dan komponen-komponen lainnya yang sudah dimiliki oleh pustaka-pustaka sebelumnya. Flask mendukung ekstensi yang dapat menambah fitur-fitur seperti layaknya mereka diimplmenetasikan di dalam Flask itu sendiri. Terdapat ekstensi untuk objek-relational mappers, validasi form, upload handlint, dan berbagai teknologi otentikasi terbuka serta peralatan yang berhubungan dengan framework secara umum\cite{solihin2016implementasi}.
 
-\section{Flask API}
-Flask API merupakan implementasi dari web API yang dapat dijelajahi menggunakan kerangka yang sudah disediakan Django REST. Django REST merupakan web framework sumber terbuka berbasis Python. Aplikasi web yang dibuat dengan Flask disimpan dalam satu berkas .py. Flask merupakan web framework yang sederhana namun dapat diperluas dengan beragam pustaka tambahan yang sesuai dengan kebutuhan penggunanya. Flask API menyimpan perintah-perintah dari gphoto library dan piggyphoto library\cite{computingaplikasi}.
-
 \section{Fungsi Flask}
 Flask berfungsi sebagai pengganti PHP POST dan GET yang dimana pengendali pertukaran data dari HTML ke database. Flask juga menggantikan fungsi Apache sebagai webserver dimana flask berjalan di http://localhost:5000/.
 Flask dipilih karena berjalan diatas bahasa pemrograman Python sehingga lebih mudah diintegrasikan untuk mengontrol Virtual Data Center. Flask juga mengatur keluar masuknya data ke MySql untuk menyimpan inrformasi dan data dari user\cite{alauddin2017implementasi}.
@@ -41,7 +38,13 @@ Ketika flask menerima permintaan dari klien, maka perlu membuat beberapa objek t
 Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis API. Aplikasi ini menggunakan kerangka web Flask-Python. Selain itu, bagian ini memperkenalkan teknologi yang digunakan dan menyebutkan alasan mengapa mereka dipilih untuk proyek tersebut. Selain itu, ia menyediakan langkah demi langkah pendekatan untuk menunjukkan bagaimana sumber daya dibagi dari sumber data persisten. Oleh karena itu, API aplikasi mendasarkan prinsip REST\cite{alemu2014rest}.
 
 \subsection{Tiga Alasan memilih Flask untuk Aplikasi Demo}
-Ada tiga alasan untuk memilih Flask untuk aplikasi demo ini. Pertama salah satunya adalah kesederhanaannya. Dalam Flask, seseorang seharusnya tidak perlu tahu segalanya dari awal. Kerangka kerja bisa dipelajari sambil berkembang. Ini memiliki awal yang cepat dokumentasi yang memandu pengembang untuk membuka dan menjalankan aplikasi dengan dasar fungsionalitas. Alasan kedua adalah keterbukaannya. Seperti halnya Python, Flask perangkat lunak didistribusikan di bawah lisensi sumber terbuka permisif. Ini membuat lebih mudah diakses dan canggih. Akhirnya, itu adalah open source yang terdokumentasi dengan baik kerangka. Ini memiliki tutorial rinci selain dokumentasi mulai cepat. Selain itu, ia menyediakan dokumentasi terbaru untuk setiap versi baru kerangka. Oleh karena itu, alasan-alasan ini membuat kerangka web Flask lebih disukai aplikasi demo layanan web blogging\cite{alemu2014rest}.
+Ada tiga alasan untuk memilih Flask untuk aplikasi demo ini. 
+\begin{enumerate}
+\item Pertama salah satunya adalah kesederhanaannya. 
+\item Kedua adalah keterbukaannya.
+\item Ketiga adalah open source yang terdokumentasi dengan baik kerangka.
+\end{enumerate}
+Dalam Flask, seseorang seharusnya tidak perlu tahu segalanya dari awal. Kerangka kerja bisa dipelajari sambil berkembang. Ini memiliki awal yang cepat dokumentasi yang memandu pengembang untuk membuka dan menjalankan aplikasi dengan dasar fungsionalitas. Seperti halnya Python, Flask perangkat lunak didistribusikan di bawah lisensi sumber terbuka permisif. Ini membuat lebih mudah diakses dan canggih.  Ini memiliki tutorial rinci selain dokumentasi mulai cepat. Selain itu, ia menyediakan dokumentasi terbaru untuk setiap versi baru kerangka. Oleh karena itu, alasan-alasan ini membuat kerangka web Flask lebih disukai aplikasi demo layanan web blogging\cite{alemu2014rest}.
 
 \section{Kekurangan Flask}
 Salah satu kekurangan dari Flask secara garis besar, Microframework berarti framework dengan skala kecil atau mikro, tidak semua fungsi dapat diimplementasikan di dalam Flask Microframework.  Di dalam Flask Microframework programmer di paksa untuk menulis syntaxnya sendiri mulai dari 0 atau kita dapat mengatakan kita membuat blog atau web kita mulai dari scratch. Dan juga tidak semua fungsi pada web pada umumnya dapat langsung diimplementasikan, seperti contohnya koneksi ke database, login function, dan lainnya\cite{ronacher2010flask}.
@@ -84,6 +87,12 @@ app.add_url_rule(
     view_func=GenericRequest.as_view('generic_request')
 )
 \end{verbatim}
+
+\section{Flask API}
+Flask API merupakan implementasi dari web API yang dapat dijelajahi menggunakan kerangka yang sudah disediakan Django REST. Django REST merupakan web framework sumber terbuka berbasis Python. Aplikasi web yang dibuat dengan Flask disimpan dalam satu berkas .py. Flask merupakan web framework yang sederhana namun dapat diperluas dengan beragam pustaka tambahan yang sesuai dengan kebutuhan penggunanya. Flask API menyimpan perintah-perintah dari gphoto library dan piggyphoto library\cite{computingaplikasi}.
+
+\subsection{Fungsi Flask API}
+Selain Flask merupakan web framework yang sederhana, Flask API berfungsi sebagai jembatan penghubung antara Raspberry Pi dan smartphone Android. Untuk mendapatkan micro framework Flask, kita harus install Flask API, Setelah instalasi Flask Micro Framework selesai dilanjutkan dengan mengatur perintah-perintah dari gphoto2 library dan piggyphoto pada Flask API agar dapat diakses melalui HTTP-Request\cite{computingaplikasi}.
 
 
 
