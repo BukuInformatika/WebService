@@ -86,6 +86,26 @@ Menentukan ukuran maksimum file yo diunggah - dalam byte
 \begin{verbatim}
 app.config [‘MAX_CONTENT_PATH’] 
 \end{verbatim}
+
+
+
+konfiguring Flask-Uploads
+Sebelum kita dapat mulai menggunakan modul Flask-Uploads, kita perlu melakukan beberapa konfigurasi untuk menggunakan modul ini dengan benar. Ini mungkin tampak seperti sedikit kerja, tetapi jauh lebih mudah daripada mencoba untuk muncul dengan implementasi baru mengunggah file dalam Flask.
+
+// Pertama, kita perlu menambahkan beberapa parameter konfigurasi ke file ... / instance / flask.cfg untuk mengatur lokasi tempat file yang diunggah akan disimpan. Tambahkan baris berikut ke ... / contoh / 
+
+\begin{verbatim}
+flask.cfg:# Uploads
+UPLOADS_DEFAULT_DEST = TOP_LEVEL_DIR + '/project/static/img/'
+UPLOADS_DEFAULT_URL = 'http://localhost:5000/static/img/'
+ 
+UPLOADED_IMAGES_DEST = TOP_LEVEL_DIR + '/project/static/img/'
+UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'
+Ingat bahwa disini tidak menyimpan folder ‘instance’ di repositori git ini karena folder ini berisi parameter konfigurasi sensitif dari aplikasi yang tersedia.
+
+\end{verbatim}
+
+
 Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
 
 Flask-Upload memungkinkan aplikasi Kamu secara fleksibel dan efisien menangani pengunggahan file dan melayani file yang diunggah. Kamu dapat membuat kumpulan unggahan yang berbeda - satu untuk lampiran dokumen, satu untuk foto, dll. - dan aplikasi dapat dikonfigurasi untuk menyimpan semuanya di tempat yang berbeda dan untuk menghasilkan URL yang berbeda untuknya.
