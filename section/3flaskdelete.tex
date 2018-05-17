@@ -50,7 +50,22 @@ Didalam flask juga terdapat method yang berfungsi untuk mghapus yaitu method del
 >>> db.section.commit()
 perhatikan bahwa penghapusan. seperti sisipan dan pembaruan, dijalankan hanya ketika sesi basis data dilakukan\cite{grinberg2018flask}.
 
+Tidak hanya digunakan untuk menghapus section method delete juga digunakan untuk menghapus atau mendelete isian pada 
+database (field) dengan parameter terter tentu berikut contoh kodingannya:
 
+@app.route("/product/delete")
+def product_delete():
+    """Delete product"""
+    product_id = request.args['id']
+    cur.execute("SELECT * from product WHERE id = (%s)", product_id)
+
+    if cur.fetchone():
+        # delete product by id
+        cur.execute("DELETE FROM product WHERE id =(%s)", product_id)
+    return redirect("/dashboard")
+
+method tersebeut bekerja dengan mengambil id pada url, kemudian dijalankan oleh query. jika queri tersebut berhasil maka
+data akan terhapus berdasarkan product_id yang dijadikan parameter sebelumnya.
 
 \section{More about Flask Delete}
 Flask membuat susunan kerja yang ringan, dan mudah tetapi juga dapat dikembangkan dengan mudah. Flask juga menggantikan fungsi Apache sebagai webserver dimana flask berjalan di http://localhost:5000/.  Berbicara tentang flask dengan method delete maka akan berhubungan dengan Services Oriented. Seperti yang diketahui bahwa delete merupakan metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE. Berbicara tentang bagaimana ringkasnya pernyataan penghapusan dalam SQL. Akan di pertimbangkan juga nantinya bagaimana membuat kata kunci ini berperilaku kurang seperti nuke dengan menetapkan ketentuan untuk menghapus hanya beberapa data\cite{dwyer2016flask}.
