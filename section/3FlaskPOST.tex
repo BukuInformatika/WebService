@@ -44,4 +44,46 @@ Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis AP
 Ada tiga alasan untuk memilih Flask untuk aplikasi demo ini. Pertama salah satunya adalah kesederhanaannya. Dalam Flask, seseorang seharusnya tidak perlu tahu segalanya dari awal. Kerangka kerja bisa dipelajari sambil berkembang. Ini memiliki awal yang cepat dokumentasi yang memandu pengembang untuk membuka dan menjalankan aplikasi dengan dasar fungsionalitas. Alasan kedua adalah keterbukaannya. Seperti halnya Python, Flask perangkat lunak didistribusikan di bawah lisensi sumber terbuka permisif. Ini membuat lebih mudah diakses dan canggih. Akhirnya, itu adalah open source yang terdokumentasi dengan baik kerangka. Ini memiliki tutorial rinci selain dokumentasi mulai cepat. Selain itu, ia menyediakan dokumentasi terbaru untuk setiap versi baru kerangka. Oleh karena itu, alasan-alasan ini membuat kerangka web Flask lebih disukai aplikasi demo layanan web blogging\cite{alemu2014rest}.
 
 \section{Kekurangan Flask}
-salah satu kekurangan dari Flask secara garis besar, Microframework berarti framework dengan skala kecil atau mikro, tidak semua fungsi dapat diimplementasikan di dalam Flask Microframework.  Di dalam Flask Microframework programmer di paksa untuk menulis syntaxnya sendiri mulai dari 0 atau kita dapat mengatakan kita membuat blog atau web kita mulai dari scratch. Dan juga tidak semua fungsi pada web pada umumnya dapat langsung diimplementasikan, seperti contohnya koneksi ke database, login function, dan lainnya\cite{ronacher2010flask}.
+Salah satu kekurangan dari Flask secara garis besar, Microframework berarti framework dengan skala kecil atau mikro, tidak semua fungsi dapat diimplementasikan di dalam Flask Microframework.  Di dalam Flask Microframework programmer di paksa untuk menulis syntaxnya sendiri mulai dari 0 atau kita dapat mengatakan kita membuat blog atau web kita mulai dari scratch. Dan juga tidak semua fungsi pada web pada umumnya dapat langsung diimplementasikan, seperti contohnya koneksi ke database, login function, dan lainnya\cite{ronacher2010flask}.
+
+\section{Flask - HTTP Method POST}
+Web Server dirancang untuk menanggapi permintaan GET HTTP dengan mengambil sumber daya yang cocok dengan kriteria query. Di URI (Uniform Resource Identifier) permintaan dan mengembalikan dalam response, bukan untuk menambahkan catatan pada database\cite{rodriguez2008restful}. Secara default flask hanya menangani permintaan GET. Jika perlu memproses jenis permintaan lainnya, harus memberikan metode atribut class berikut ini:
+
+\begin{verbatim}
+from flask.views import View
+
+class MyRequest(View):
+    methods = ['POST']
+
+    def dispatch_request(self):
+        # request.method == 'POST'
+        name = request.form.get('name', 'Damyan')
+        return 'Hello, %s!' % name
+
+app.add_url_rule(
+    '/say-hi', view_func=MyRequest.as_view('my_request')
+)
+\end{verbatim}
+
+Dalam hal permintaan POST, bisa mengambil nilai yang diposting menggunakan metode request.form.get(). Metode dalam dispatch_request memberikan pemrosesan khusus untuk GET, dan permintaan POST. Disinilah MethodView digunakan:
+
+\begin{verbatim}
+from flask.views import MethodView
+
+class GenericRequest(MethodView):
+    def get(self):
+        name = request.args.get('name', 'Damyan')
+        return 'Hello GET from %s!' % name
+
+    def post(self):
+        name = request.form.get('name', 'Damyan')
+        return 'Hello POST from %s' % name
+
+app.add_url_rule(
+    '/generic_request',
+    view_func=GenericRequest.as_view('generic_request')
+)
+\end{verbatim}
+
+
+
