@@ -163,4 +163,45 @@ Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ d
 
 \end{verbatim}
 
+\subsection{Upload Gambar}
+Kita dapat menggunakan module flask-upload untuk melakukan upload file seperti gambar contonnya berikut contoh pengimplementasiannya
+\begin{verbatim}
+from flask import Flask, render_template, request
+from flask.ext.uploads import UploadSet, configure_uploads, IMAGES
+
+app = Flask(__name__)
+
+photos = UploadSet('photos', IMAGES)
+
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+configure_uploads(app, photos)
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST' and 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        return filename
+    return render_template('upload.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+\end{verbatim}
+dan untuk file html sebahai tampilan halaman nya sebagai berikut:
+\begin{verbatim}
+<html>
+<head>
+    <title>Upload</title>
+</head>
+<body>
+<form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+    <input type=file name=photo>
+    <input type="submit">
+</form>
+</body>
+</html>
+\end{verbatim}
+Run server flasknya dan coba untuk melakukan upload file berupa gambar.
+
+
 \end{document}
