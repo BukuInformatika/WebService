@@ -29,7 +29,13 @@ dengan file yang baru dengan menggunakan perintah PUT.
 pada web server menyediakan sebuah flask yang dimaksud oleh flask yaitu digunakan hanya untuk suatu pengembangan dan pengujian. dan web server kini juga pengembangan flask sudah  dapat dijalankan secara terprogram dengan menerapkan metode app.run (). versi command yang  berfungsi lebih lama dan tidak pula memiliki perintah flask requidred serveryang untuk memulai dengan menjalankan skrip pada utama aplikasi.
 
 \section{methods dalam Flask}
-Ada beberapa method dalam flask yang terdiri dari GET, PUT,POST dan DELETE. Dari methods-methods tersebut masing-masing fungsinya berbeda, terutama untuk PUT akan dijelaskan lebih detail. PUT adalah metode yang digunakan untuk memperbarui sumber daya dengan konten yang diunggah. Method ini sangat fleksibel karena bisa berinteraksi dengan beberapa bahasa pemrograman lainnya seperti bahasa pemrograman pyhton.
+Ada beberapa method dalam flask yang terdiri dari GET, PUT,POST dan DELETE. Dari methods-methods tersebut masing-masing fungsinya berbeda, terutama untuk PUT akan dijelaskan lebih detail. PUT adalah metode yang digunakan untuk memperbarui sumber daya dengan konten yang diunggah. Method ini sangat fleksibel karena bisa berinteraksi dengan beberapa bahasa pemrograman lainnya seperti bahasa pemrograman pyhton. Berikut pengertian dari beberapa method Flask :
+\begin{enumerate}
+\item GET adalah metode yang digunakan untuk mengambil sumber yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi Baca.
+\item POST adalah metode yang digunakan untuk membuat instance baru dari sumber daya. Ini melakukan operasi Buat. Di sini, metode posting diterapkan untuk sumber daya baru, daripada memperbarui yang sudah ada.
+\item PUT adalah metode yang digunakan untuk memperbarui sumber daya. Ini melakukan operasi Pembaruan. Tidak seperti POST, hanya mengeksekusi untuk memperbarui sumber daya.
+\item DELETE adalah metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE.
+\end{enumerate}
 
 \section{Perbandingan Framework Flask dan lain}
 Ada beberapa framework yang menggunakan bahasa pemrograman pyton sebagai basisnya. Diantara lain, Django, Pyramid, Tornado, Bottle, Diesel , Pecan, Falcon dan sebagainya.
