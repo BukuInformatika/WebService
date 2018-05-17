@@ -34,6 +34,9 @@ fitur yang dimiliki oleh flask, diantaranya :
 \section{Aplikasi dan Merekuest Konteks}
 Ketika flask menerima permintaan dari klien, maka perlu membuat beberapa objek tersedia untuk fungsi tampilan yang akan menangani flasknya. Contoh yang baik adalah pada objek permintaan, yang merangkum permintaan HTTP yang dikirim oleh klien. Cara yang jelas di mana Flask bisa memberikan fungsi tampilan akses ke objek permintaan adalah dengan mengirimkannya sebagai argumen, tapi itu akan membutuhkan setiap fungsi tampilan tunggal dalam aplikasi untuk memiliki argumen tambahan\cite{grinberg2018flask}.
 
+\subsection{Aplikasi dan Merekuest Konteks}
+Hal-hal menjadi lebih rumit jika Anda menganggap bahwa objek permintaan bukan satu-satunya objek yang mungkin diperlukan fungsi tampilan untuk mengakses untuk memenuhi permintaan. Untuk menghindari fungsi tampilan yang kacau dengan banyak argumen yang mungkin tidak selalu diperlukan, Flask menggunakan konteks untuk sementara membuat objek tertentu dapat diakses secara global. Berkat konteksnya, lihat fungsi seperti follwing dapat ditulis:\cite{grinberg2018flask}.
+
 \section{Implementasi Flask Post - Python}
 Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis API. Aplikasi ini menggunakan kerangka web Flask-Python. Selain itu, bagian ini memperkenalkan teknologi yang digunakan dan menyebutkan alasan mengapa mereka dipilih untuk proyek tersebut. Selain itu, ia menyediakan langkah demi langkah pendekatan untuk menunjukkan bagaimana sumber daya dibagi dari sumber data persisten. Oleh karena itu, API aplikasi mendasarkan prinsip REST\cite{alemu2014rest}.
 
