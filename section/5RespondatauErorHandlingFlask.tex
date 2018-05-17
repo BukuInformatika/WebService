@@ -25,9 +25,6 @@ Setelah mengatur FLASK DEBUG, restart ulang server. Pesan yang ditampilkan saat 
  * Debugger PIN: 177-562-960
  \end{verbatim}
  
- \subsection{Custom Error Pages}
-Flask memberikan sebuah mekanisme bagi semua aplikasi untuk memasang halaman error khusus sehingga para user tidak perlu melihat halaman awal yang biasa-biasa saja. Untuk contoh, buat suatu halaman error untuk kode HTTP 404 dan 500, dua kesalahan yang paling sering terjadi pada aplikasi. Membuat halaman untuk halaman error lain tidak berbeda.
- 
  Membuat aplikasi crash seperti sebelumnya untuk melihat pesan interactive debugger di browser:
  
  \begin{figure}[ht]
@@ -36,4 +33,8 @@ Flask memberikan sebuah mekanisme bagi semua aplikasi untuk memasang halaman err
 \label{eror}
 \end{figure}
 \ref{eror} dijelaskan bahwa Debugger akan memungkinkan kita meng-expand setiap stack frame dan melihat source code yang terkait. Bisa juga membuka prompt Python di frame manapun dan mengeksekusi perintah Python yang valid, misalnya untuk memeriksa isi dari suatu variabel. Sangat penting untuk tidak mengaktifkan debug mode di production server. Sebagai keamanan tambahan, debugger yang berjalan di browser akan dikunci terlebih dahulu dan meminta nomor PIN yang bisa dilihat saat menjalankan perintah flask run. 
+
+
+\subsection{Custom Error Pages}
+Flask memberikan sebuah mekanisme bagi semua aplikasi untuk memasang halaman error khusus sehingga para user tidak perlu melihat halaman awal yang biasa-biasa saja. Untuk contoh, buat suatu halaman error untuk kode HTTP 404 dan 500, dua kesalahan yang paling sering terjadi pada aplikasi. Membuat halaman untuk halaman error lain tidak berbeda.
 
