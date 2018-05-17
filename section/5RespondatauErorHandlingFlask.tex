@@ -38,3 +38,18 @@ Setelah mengatur FLASK DEBUG, restart ulang server. Pesan yang ditampilkan saat 
 \subsection{Custom Error Pages}
 Flask memberikan sebuah mekanisme bagi semua aplikasi untuk memasang halaman error khusus sehingga para user tidak perlu melihat halaman awal yang biasa-biasa saja. Untuk contoh, buat suatu halaman error untuk kode HTTP 404 dan 500, dua kesalahan yang paling sering terjadi pada aplikasi. Membuat halaman untuk halaman error lain tidak berbeda.
 
+Untuk membuat custom error handler, dekorator @errorhandler akan dipakai. Disini akan menulis error handler di file app/errors.py.
+app/errors.py: Custom error handlers berikut contohnya :
+\begin{verbatim}
+from flask import render_template
+from app import app, db
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500
+ \end{verbatim}
