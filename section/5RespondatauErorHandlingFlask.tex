@@ -53,3 +53,6 @@ def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500
  \end{verbatim}
+ 
+Fungsi untuk error handling sangat mirip dengan fungsi view. Untuk kedua jenis error tadi, kita akan menampilkan template khusus. Perhatikan bahwa kedua fungsi tersebut mengirimkan nilai kedua selain template yaitu kode nomor error-nya. Untuk semua fungsi view yang sudah dibuat, tidak perlu mengirimkan kode nomor 200 (untuk menandakan successful response) karena sudah diberikan secara otomatis.
+Karena kedua fungsi di atas merupakan fungsi untuk menangani halaman error khusus, maka  perlu memberikan kode status untuk merefleksikan jenis error apa yang akan mereka tangani.
