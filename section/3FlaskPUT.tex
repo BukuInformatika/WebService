@@ -1,16 +1,3 @@
-
-\begin{table}[ht]
-    \caption{Method FLASK}
-    \centering
-    \begin{tabular}{cccc}
-    \hline
-    POST&GET&PUT&DELETE\\
-    \hline
-    \end{tabular}
-    \label{tabel}
-\end{table}
-
-
 \section{Flask Overview}
 Flask adalah sebuah Micro Web Framework untuk Bahasa pemrograman Python, yang mana  mempermudah
 seorang developer dalam membuat sebuah Aplikasi Website. Flask adalah Framework umum
@@ -18,7 +5,6 @@ yang bisa di aplikasikan untuk Project yang skalanya berbeda-beda. untuk sebuah
 instansi, hal itu dapat digunakan untuk aplikasi web yang kecil dalam cakupan jaringannya.
 prinsip fundamentalnya sama, yang mana bisa dengan mudah dibuatkan projectnya dalam skala aplikasi
 website seperti apa saja \cite{alemu2014rest}.
-
 \section{Flask PUT}
 Put adalah metode yang digunakan untuk memperbaharui sumber daya. Ini melakukan operasi pembaruan. 
 Tidak seperti POST, hanya mengeksekusi untuk memperbaharui sumber daya. Dalam PUT kita sama saja dengan kita 
@@ -29,13 +15,7 @@ dengan file yang baru dengan menggunakan perintah PUT.
 pada web server menyediakan sebuah flask yang dimaksud oleh flask yaitu digunakan hanya untuk suatu pengembangan dan pengujian. dan web server kini juga pengembangan flask sudah  dapat dijalankan secara terprogram dengan menerapkan metode app.run (). versi command yang  berfungsi lebih lama dan tidak pula memiliki perintah flask requidred serveryang untuk memulai dengan menjalankan skrip pada utama aplikasi.
 
 \section{methods dalam Flask}
-Ada beberapa method dalam flask yang terdiri dari GET, PUT,POST dan DELETE. Dari methods-methods tersebut masing-masing fungsinya berbeda, terutama untuk PUT akan dijelaskan lebih detail. PUT adalah metode yang digunakan untuk memperbarui sumber daya dengan konten yang diunggah. Method ini sangat fleksibel karena bisa berinteraksi dengan beberapa bahasa pemrograman lainnya seperti bahasa pemrograman pyhton. Berikut pengertian dari beberapa method Flask :
-\begin{enumerate}
-\item GET adalah metode yang digunakan untuk mengambil sumber yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi Baca.
-\item POST adalah metode yang digunakan untuk membuat instance baru dari sumber daya. Ini melakukan operasi Buat. Di sini, metode posting diterapkan untuk sumber daya baru, daripada memperbarui yang sudah ada.
-\item PUT adalah metode yang digunakan untuk memperbarui sumber daya. Ini melakukan operasi Pembaruan. Tidak seperti POST, hanya mengeksekusi untuk memperbarui sumber daya.
-\item DELETE adalah metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE.
-\end{enumerate}
+Ada beberapa method dalam flask yang terdiri dari GET, PUT,POST dan DELETE. Dari methods-methods tersebut masing-masing fungsinya berbeda, terutama untuk PUT akan dijelaskan lebih detail. PUT adalah metode yang digunakan untuk memperbarui sumber daya dengan konten yang diunggah. Method ini sangat fleksibel karena bisa berinteraksi dengan beberapa bahasa pemrograman lainnya seperti bahasa pemrograman pyhton.
 
 \section{Perbandingan Framework Flask dan lain}
 Ada beberapa framework yang menggunakan bahasa pemrograman pyton sebagai basisnya. Diantara lain, Django, Pyramid, Tornado, Bottle, Diesel , Pecan, Falcon dan sebagainya.
@@ -43,13 +23,6 @@ Pada pembahasan ini tentang penggunaan Flask sebagai Framework untuk menunjang c
 Flask adalah microframework berbasis python. Framework Flask dan Django bila dilihat dari segi proses, Flask lebih unggul dari Django. 
 Flask jauh lebih ringan dan cepat dari pada Django dikarenakan Flask dibuat dengan ide menyederhanakan inti frameworknya seminimal mungkin. 
 Flask dapat membantu kita membuat situs dengan sangat cepat dan efisien meskipun dengan library yang sederhana.
-
-\section{Flask dalam Konsep MVC}
-Model View Controller atau dengan singkatan MVC merupakan suatu konsep yang cukup populer dalam tahap pembangunan sebuah aplikasi web. 
-Untuk metode MVC proses memisahkan pengembangan aplikasi berdasarkan pada suatu komponen utama yang membangun sebuah aplikasi, 
-contoh dalam memanipulasi data, antarmuka pengguna dan bagian menjadi kontrol pada suatu aplikasi. 
-Ada 3 jenis komponen yang membangun MVC dalam suatu aplikasi yaitu Model untuk mengatur alur database, View untuk menampilkan web sedangkan Controller untuk mengatur alur kerja antara Model dan View. 
-Framework yang menggunakan konsep MVC khususnya Python adalah Flask, Django, Turbogears dll.
 
 \section{Pengertian Flask}
 HTTP mendefinisikan seperangkat metode permintaan untuk menunjukkan tindakan yang diinginkan yang akan dilakukan untuk sumber daya tertentu. Meskipun mereka juga bisa menjadi kata benda, metode permintaan ini kadang-kadang disebut sebagai verba HTTP. Masing-masing menerapkan semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka: mis. Metode permintaan dapat berupa safe, idempotent, atau cacheable.
@@ -80,9 +53,17 @@ sedangkan PUT untuk memperbaharui.
 \section{cara bekerja Flask}
 bagaimana itu bekerja
  di sini adalah fitur umum dari data permintaan. Untuk memberikan contoh, setiap deskripsi menyertakan nilai contoh untuk permintaan yang menekan / string /? Foo = bar & foo = baz dari browser kami.    
-\begin{enumerate}
-\item endpoint: Ini reatures dari objek permintaan menentukan nama endpoint permintaan diarahkan, misalnya, return_string.    
-\item metode: Fitur ini dari objek permintaan menentukan metode HTTP dari permintaan saat ini, misalnya, GET.   
-\item view_args: fitur objek permintaan ini menentukan dict of view argumen fungsi yang diurai dari aturan rote URL misalnya 
-\end{enumerate}
+* endpoint: Ini reatures dari objek permintaan menentukan nama endpoint permintaan diarahkan, misalnya, return_string.    
+* metode: Fitur ini dari objek permintaan menentukan metode HTTP dari permintaan saat ini, misalnya, GET.   
+* view_args: fitur objek permintaan ini menentukan dict of view argumen fungsi yang diurai dari aturan rote URL misalnya 
+
+\section{Struktur aplikasi dasar}
+Struktur Aplikasi Dasar 
+Dalam bab ini, Anda akan belajar tentang berbagai bagian aplikasi labu. Anda juga akan menulis dan menjalankan aplikasi web flask pertama Anda. 
+Inisialisasi 
+Semua aplikasi Flask harus membuat instance aplikasi. Server web melewati semua permintaan yang diterimanya dari klien ke objek ini untuk ditangani, menggunakan protokol yang disebut antarmuka gerbang server web (WSGI, prononced "wiz-ghee"). Contoh aplikasi adalah objek dari kelas Flask, biasanya dibuat sebagai berikut: 
+From Flask impor Flask 
+app = Flask (__ name__)
+
+
 
