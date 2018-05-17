@@ -143,4 +143,24 @@ Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi
 secure_filename ().
 \end{verbatim}
 
+
+\begin{verbatim}
+Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
+
+‘Upload.html’ memiliki tombol pemilih file dan tombol kirim.
+
+<html>
+   <body>
+   
+      <form action = "http: // localhost: 5000 / uploader" method = "POST"
+         enctype = "multipart / form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit" />
+      </ form>
+      
+   </ body>
+</ html>
+
+\end{verbatim}
+
 \end{document}
