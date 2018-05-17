@@ -58,3 +58,16 @@ Fungsi untuk error handling sangat mirip dengan fungsi view. Untuk kedua jenis e
 Karena kedua fungsi di atas merupakan fungsi untuk menangani halaman error khusus, maka  perlu memberikan kode status untuk merefleksikan jenis error apa yang akan mereka tangani.
 
 Error handler untuk kode 500 dapat dipanggil setelah sebuah database error, yang salah satu kasusnya terjdi bila ada username yang sama. Untuk memastikan semua percobaan database yang gagal tidak mempengaruhi database yang sudah ada, kita memanggil sesi rollback. Sesi ini akan membersihkan database dari percobaan mengisi data yang sebelumnya gagal (sehingga data yang terubah tidak setengah-setengah).
+
+Berikut ini template untuk halaman error 404:
+\begin{verbatim}
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>File Not Found</h1>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+{% endblock %}
+ \end{verbatim}
+Template meng-extends base.html, sehingga mereka akan memiliki tampilan seperti halaman aplikasi yang normal. 
+Agar error handler yang sudah kita tulis terdaftar di Flask, kita perlu mengimpor file app/errors.py sesudah menginisiasi aplikasi
+Jika sudah mematikan debug mode dengan FLASK_DEBUG=0 di sesi terminal lalu mencoba menganti username sekali lagi, maka kita akan mendapatkan halaman error yang sedikit lebih bersahabat.
