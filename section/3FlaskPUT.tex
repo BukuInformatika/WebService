@@ -5,17 +5,29 @@ yang bisa di aplikasikan untuk Project yang skalanya berbeda-beda. untuk sebuah
 instansi, hal itu dapat digunakan untuk aplikasi web yang kecil dalam cakupan jaringannya.
 prinsip fundamentalnya sama, yang mana bisa dengan mudah dibuatkan projectnya dalam skala aplikasi
 website seperti apa saja \cite{alemu2014rest}.
+
 \section{Flask PUT}
 Put adalah metode yang digunakan untuk memperbaharui sumber daya. Ini melakukan operasi pembaruan. 
 Tidak seperti POST, hanya mengeksekusi untuk memperbaharui sumber daya. Dalam PUT kita sama saja dengan kita 
 melakukan aktivitas update, yang berarti dimana ada file yang sudah dibuat atau sudah jadi akan kita perbahurui 
 dengan file yang baru dengan menggunakan perintah PUT.
 
-\section{flask}
+\section{Flask}
 pada web server menyediakan sebuah flask yang dimaksud oleh flask yaitu digunakan hanya untuk suatu pengembangan dan pengujian. dan web server kini juga pengembangan flask sudah  dapat dijalankan secara terprogram dengan menerapkan metode app.run (). versi command yang  berfungsi lebih lama dan tidak pula memiliki perintah flask requidred serveryang untuk memulai dengan menjalankan skrip pada utama aplikasi.
 
-\section{methods dalam Flask}
-Ada beberapa method dalam flask yang terdiri dari GET, PUT,POST dan DELETE. Dari methods-methods tersebut masing-masing fungsinya berbeda, terutama untuk PUT akan dijelaskan lebih detail. PUT adalah metode yang digunakan untuk memperbarui sumber daya dengan konten yang diunggah. Method ini sangat fleksibel karena bisa berinteraksi dengan beberapa bahasa pemrograman lainnya seperti bahasa pemrograman pyhton.
+\section{Methods dalam Flask}
+Ada beberapa method dalam flask yang terdiri dari GET, PUT,POST dan DELETE seperti pada table dibawah \ref{methods}. Dari methods-methods tersebut masing-masing fungsinya berbeda, terutama untuk PUT akan dijelaskan lebih detail. PUT adalah metode yang digunakan untuk memperbarui sumber daya dengan konten yang diunggah. Method ini sangat fleksibel karena bisa berinteraksi dengan beberapa bahasa pemrograman lainnya seperti bahasa pemrograman pyhton.
+
+\begin{table}[h]
+    \caption{Methods Flask}
+    \centering
+    \begin{tabular}{cccc}
+    \hline
+    POST&GET&PUT&DELETE\\
+    \hline
+    \label{methods}
+    \end{tabular}
+\end{table}
 
 \section{Perbandingan Framework Flask dan lain}
 Ada beberapa framework yang menggunakan bahasa pemrograman pyton sebagai basisnya. Diantara lain, Django, Pyramid, Tornado, Bottle, Diesel , Pecan, Falcon dan sebagainya.
@@ -39,7 +51,7 @@ Source CODE untuk perintah flask PUT ini sendiri terdapat pada gambar \ref{4PUT}
 itu adalah contoh method flask PUT pada Python.
 
 \begin{figure}[ht]
-    \centerline{\includegraphics[width=1\textwidth]{figures/put.png}}
+    \centerline{\includegraphics[width=1\textwidth]{figures/3put.PNG}}
     \caption{Contoh Flask PUT method}
     \label{4PUT}
 \end{figure}
@@ -53,9 +65,11 @@ sedangkan PUT untuk memperbaharui.
 \section{cara bekerja Flask}
 bagaimana itu bekerja
  di sini adalah fitur umum dari data permintaan. Untuk memberikan contoh, setiap deskripsi menyertakan nilai contoh untuk permintaan yang menekan / string /? Foo = bar & foo = baz dari browser kami.    
-* endpoint: Ini reatures dari objek permintaan menentukan nama endpoint permintaan diarahkan, misalnya, return_string.    
-* metode: Fitur ini dari objek permintaan menentukan metode HTTP dari permintaan saat ini, misalnya, GET.   
-* view_args: fitur objek permintaan ini menentukan dict of view argumen fungsi yang diurai dari aturan rote URL misalnya 
+\begin{itemize}
+\item endpoint: Ini reatures dari objek permintaan menentukan nama endpoint permintaan diarahkan, misalnya, return_string.    
+\item metode: Fitur ini dari objek permintaan menentukan metode HTTP dari permintaan saat ini, misalnya, GET.   
+\item view_args: fitur objek permintaan ini menentukan dict of view argumen fungsi yang diurai dari aturan rote URL misalnya 
+\end{itemize}
 
 \section{Struktur aplikasi dasar}
 Struktur Aplikasi Dasar 
@@ -68,12 +82,14 @@ app = Flask (__ name__)
 \section{Instalisasi Framework Flask}
 syarat untuk melakukan instalisasi ini pastikan PC kalian sudah terinstal bahasa pemrograman Python dan virtualenv, setelah
 itu lakukan cara seperti dibawah ini :
+\begin{itemize}
 \item sudo pip install virtualenv 
 \item mkdir myproject (untuk membuat folder projectnya)
 \item cd myproject (untuk menuju ke direktori)
 \item virtualenv venv (instalisasi virtualenv)
 \item . venv/bin/activate (mengaktifkan virtualenv)
 \item pip install Flask (menambahkan library Flask menggunakan pip)
+\end{itemize}
 jika tidak terjadi error maka dalam instalisasi kali telah berhasil
 
 
