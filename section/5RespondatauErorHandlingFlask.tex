@@ -71,3 +71,7 @@ Berikut ini template untuk halaman error 404:
 Template meng-extends base.html, sehingga mereka akan memiliki tampilan seperti halaman aplikasi yang normal. 
 Agar error handler yang sudah kita tulis terdaftar di Flask, kita perlu mengimpor file app/errors.py sesudah menginisiasi aplikasi
 Jika sudah mematikan debug mode dengan FLASK_DEBUG=0 di sesi terminal lalu mencoba menganti username sekali lagi, maka kita akan mendapatkan halaman error yang sedikit lebih bersahabat.
+
+
+\subsection{Mengirim Error Melalui Email}
+Masalah lain dengan error handler bawaan Flask adalah tidak ada notifikasi, stack trace untuk setiap error dicetak di terminal, yang artinya output dari proses server harus dimonitor untuk melihat jika terjadi error. Saat aplikasi dijalankan saat melakukan pengembangan hal ini bisa dimaklumi, tapi jika aplikasi sudah di kirim ke server, siapa yang akan memeriksa output yang dikeluarkan? Jadi solusi yang lebih baik diperlukan disini.
