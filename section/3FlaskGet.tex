@@ -1,16 +1,15 @@
-\begin{itemize}
-\item Ahmad Syafrizal Huda (1164062)
-\item Annisa Fathoroni (1164067)
-\item Puad Hamdani (1164084)
-\item Rahmi Roza (1164085)
-\item Tasya Wiendhyra (1164086)
-\end{itemize}
+%\begin{itemize}
+%\item Ahmad Syafrizal Huda (1164062)
+%\item Annisa Fathoroni (1164067)
+%\item Puad Hamdani (1164084)
+%\item Rahmi Roza (1164085)
+%\item Tasya Wiendhyra (1164086)
+%\end{itemize}
 
 \section{Definisi Flask GET}
 Flask merupakan microframework yang dibangun dengan menggunakan bahasa pemrograman Python. Flask digunakan untuk me-develop sebuah aplikasi web. Flask merupakan microframework yang artinya flask membuat sebuah pengerjaan aplikasi web menjadi mudah dan simple karena dapat menjalankan sebuah web hanya dengan menggunakan 1 file Python. Flask membuat susunan kerja yang ringan, dan mudah tetapi juga dapat dikembangkan dengan mudah. Setiap data memiliki akses dengan berbagai HTTP Method seperti GET (Menerima data dalam bentuk array atau object) \cite{gunawan2018aplikasi}.
 \subsection{pengertian GET request pada Flask}
 GET request merupakan cara termundah untuk mengambil data dari pengguna. GET request tidak boleh mengubah status server yang dapat mengakibatkan efek samping.  Maka dari itu pengguna harus dapat membuat request yang sama dan harus mendapatkan hasil yang sama juga secara berkala. Oleh karena itu, GET request sangat ideal untuk memungkinkan pengguna untuk membedakan atau menentukan publikasi mana untuk dilihat\cite{dwyer2016flask}
-
 GET merupakan sebuah method yang digunakan untuk mengambil sebuah sumber yang di identifikasikan dengan mengambil sebuah URL yang akan menampilkan operasi READ. Dengan method GET dapat mendapatkan informasi tanpa harus mengupdate database yang ada.GET digunakan untuk melempar value agar diproses ke web server dan kemudian selanjutnya value itu diberikan ke sebuah variabel untuk diproses oleh server dari web yang ada \cite{alemu2014rest}.
 \subsection{Mendapatkan masukan pengguna menggunakan HTTP GET}
 Oleh karena itu, permintaan GET sangat ideal untuk memungkinkan pengguna kami menentukan publikasi mana untuk melihat. Mari kita memperluas proyek Headlines kami untuk menggabungkan memilih judul berdasarkan atas permintaan GET. Pertama, mari kita memodifikasi kode Python untuk melakukan hal berikut \cite{dwyer2016flask}:
@@ -23,7 +22,8 @@ Oleh karena itu, permintaan GET sangat ideal untuk memungkinkan pengguna kami me
 \subsection{Metode Flask GET}
 Metode penyediaan perintah operasional untuk program  yang dikirimkan menggunakan protokol HTTP termasuk menyimpan program  di server; menghasilkan data meta di server, di mana data meta mencakup tabel pemetaan yang menghubungkan rentang waktu untuk program  ke rentang byte untuk program  mentransmisikan data meta dan tabel pemetaan ke klien yang terkait dengan server, menghasilkan dan mentransmisikan perintah GET HTTP dari klien  ke server sebagai fungsi dari perintah operasional yang diinginkan; dan memilih I-frame yang tepat di server dan mengirimkan I-frame ke klien sebagai tanggapan atas perintah HTTP GET \cite{xu2006method}.
 \subsubsection{Elemen GET}
-Elemen (HEAD, OPTIONS, GET) yang ditampilkan di peta URL adalah metode permintaan yang ditangani oleh rute. Spesifikasi HTTP mendefinisikan bahwa semua permintaan dikeluarkan dengan metode, yang biasanya menunjukkan tindakan apa yang diminta klien untuk dilakukan oleh server. Flask menempelkan metode ke setiap rute sehingga metode permintaan yang berbeda dikirim ke URL yang sama dapat ditangani oleh fungsi tampilan yang berbeda \cite{grinberg2018flask}.
+Elemen (HEAD, OPTIONS, GET) yang ditampilkan di peta URL adalah metode permintaan yang ditangani oleh rute. Spesifikasi HTTP mendefinisikan bahwa semua permintaan dikeluarkan dengan metode, yang biasanya menunjukkan tindakan apa yang diminta klien untuk dilakukan oleh server. Flask menempelkan metode ke setiap rute sehingga metode permintaan yang berbeda dikirim ke URL yang sama dapat ditangani oleh fungsi tampilan yang berbeda.
+Metode HEAD dan OPTIONS dikelola secara otomatis oleh labu, sehingga dalam praktiknya dapat dikatakan bahwa dalam aplikasi ini tiga rute dalam peta URL dilampirkan ke metode GET, yang digunakan ketika klien ingin meminta informasi seperti web halaman. Secara default, rute Flask merespon permintaan GET. Namun, preferensi ini dapat diubah dengan menyediakan metode argumen untuk rute () dekorator\cite{grinberg2018flask}.
 \subsubsection{Framework Cookbook}
 Secara default, fungsi tampilan flask hanya mendukung permintaan GET. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberitahu rute () decorator tentang mode yang ingin dukung. Inilah yang dilakukan di dua terakhir metode untuk POST dan GET/POST. Untuk permintaan GET, objek permintaan akan mencari argument, yaitu request.args.get(), dan untuk POST, itu akan mencari bentuk, yaitu request.from.get(). Selain itu, jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal \cite{aggarwal2014flask}.
 
@@ -44,6 +44,12 @@ Implementasi pengkodean sistem, menggunakan Bahasa pemrograman Python dengan ver
 \item Scipy
 \end{enumerate}
 Selain itu aplikasi juga dijalankan dalam server dan diatur oleh Apache Server dengan memanfaatkan mod wsgi. Database yang digunakan pada aplikasi ini adalah MySQL\cite{gunawan2018aplikasi}.
+\subsection{REST API, Implementation with Flask-Python}
+\subsubsection{Flask-SQLAlchemy}
+Berikut ini adalah demonstrasi bagaimana sumber daya diwakili dalam aplikasi web.
+Sumber daya ini diserialkan ke format JSON dari database SQLAlchemy obyek. Oleh karena itu, ini meningkatkan kinerja API dengan memungkinkan pengguna untuk mengonsumsi dengan mudah. Contoh pertama menunjukkan bagaimana merepresentasikan daftar sumber daya posting yang dibuat oleh pengguna tertentu yang diidentifikasi oleh idnya. Selain itu, representasi ini juga menunjukkan kemungkinan tautan (negara) yang dapat ditransfer dari node ini. Jadi, adokumentasi terpisah tidak boleh disiapkan sebagai panduan pengguna. Ini bisa dilakukan dengan mengirim permintaan GET ke server menggunakan URI http://localhost:5000/api/v1.0/ pengguna/2/posting \cite{alemu2014rest}.
+\subsubsection{Perintah GET}
+Perintah ini digunakan untuk melakukan semua HTTP permintaan. Sangat mudah untuk melakukan GET dari browser. Namun, untuk POST, PUT dan perintah DELETE request curl digunakan dari terminal. Karena itu, ikal perpustakaan harus diinstal pada komputer local untuk menjalankan semua perintah dokumen laporan ini. Selain itu, demontrasi ini menggunakan format JSON untuk dikirim dan menerima sumber daya melalui HTTP \cite{alemu2014rest}. 
 
 \section{Contoh Flask GET}
 \subsection{Request sederhana pada Flask Framework}
@@ -59,10 +65,3 @@ Pada gambar\ref{labelgambar}Ini merupakan contoh sederhana dari apa GET request 
 \subsection{deteksi serangan dos dengan http get}
 Serangan DoS ke layanan Web disebut serangan banjir http-get dan ancamannya meningkat dari hari ke hari. Dalam jenis serangan ini, klien jahat mengirim sejumlah besar permintaan http-get ke server Web target secara otomatis. Karena permintaan http-get ini memiliki format yang sah dan dikirim melalui koneksi TCP normal, intrusion detection system (IDS) tidak dapat mendeteksi mereka. Dalam tulisan ini, kami mengusulkan teknik pendeteksian pendeteksian http-get berdasarkan analisis perilaku akses halaman. Kami mengusulkan dua algoritme deteksi, yang satu berfokus pada urutan penelusuran laman dan yang lainnya berfokus pada korelasi dengan waktu penelusuran ke ukuran informasi laman. Kami menerapkan teknik deteksi dan mengevaluasi tingkat deteksi serangan, yaitu, false positive dan false negative. Hasilnya menunjukkan bahwa teknik kami dapat mendeteksi serangan banjir http-get secara efektif \cite{yatagai2007detection}.
 
-\section{REST API, Implementation with Flask-Python}
-Perintah ini digunakan untuk melakukan semua HTTP permintaan. Sangat mudah untuk melakukan GET dari browser. Namun, untuk POST, PUT dan perintah DELETE request curl digunakan dari terminal. Karena itu, ikal perpustakaan harus diinstal pada komputer local untuk menjalankan semua perintah dokumen laporan ini. Selain itu, demontrasi ini menggunakan format JSON untuk dikirim dan menerima sumber daya melalui HTTP \cite{alemu2014rest}. 
-
-\section{REST API, Implementation with Flask-Python}
-\subsection{Flask-SQLAlchemy}
-Berikut ini adalah demonstrasi bagaimana sumber daya diwakili dalam aplikasi web.
-Sumber daya ini diserialkan ke format JSON dari database SQLAlchemy obyek. Oleh karena itu, ini meningkatkan kinerja API dengan memungkinkan pengguna untuk mengonsumsi dengan mudah. Contoh pertama menunjukkan bagaimana merepresentasikan daftar sumber daya posting yang dibuat oleh pengguna tertentu yang diidentifikasi oleh idnya. Selain itu, representasi ini juga menunjukkan kemungkinan tautan (negara) yang dapat ditransfer dari node ini. Jadi, adokumentasi terpisah tidak boleh disiapkan sebagai panduan pengguna. Ini bisa dilakukan dengan mengirim permintaan GET ke server menggunakan URI http: // localhost: 5000 / api / v1.0 / pengguna / 2 / posting \cite{alemu2014rest}.
