@@ -126,3 +126,31 @@ def product_delete():
 
 
 
+\section{PENERAPAN FLASK DELETE PADA AJAX ( JQUERY )
+Contoh penerapan Flask Delete :
+a little jQuery will wire up all delete links to use this handler, in templates/base.html :
+
+	<script>
+	 $(function() {
+	  $(".appointment-delete-link").on("click", function() {
+	  var delete_url = $(this).attr('data-delete-url');
+	  $.ajax({
+	    url: delete_url,
+	    type: 'DELETE',
+	    success:
+          function(response) {
+		if (response.status == 'OK') { window.location = {{ url_for('appointment_list') }};
+          } else {
+	  alert('Delete failed.')
+	}
+       }
+       });
+       return false;
+     });
+     </script>
+
+Penjelasan :Kami menyediakan fungsi tampilan pertama kami yang tidak merender HTML tetapi menggunakan AJAX minimal yang berinteraksi dengan JSON.
+ini menerima permintaan DELETE HTTP dan melakukan pekerjaan. Kami tidak perlu mengekspos fungsi penghapusan melalui permintaan GET, yang akan membiarkan pengguna secara tidak sengaja menghapus basis data
+rekaman dengan browsing. Ini sangat penting ketika kami mempublikasikan kode yang dapat dipukul oleh mesin pencari dan robot lainnya. Merayapi semua halaman kami akan menghapus seluruh basis data kami!
+Flask menyediakan fungsi jsonify untuk mengubah kamus Python menjadi respons JSON\cite{duplain2013instant}.
+
