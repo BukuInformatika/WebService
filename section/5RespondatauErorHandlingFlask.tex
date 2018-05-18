@@ -75,3 +75,18 @@ Jika sudah mematikan debug mode dengan FLASK_DEBUG=0 di sesi terminal lalu menco
 
 \subsection{Mengirim Error Melalui Email}
 Masalah lain dengan error handler bawaan Flask adalah tidak ada notifikasi, stack trace untuk setiap error dicetak di terminal, yang artinya output dari proses server harus dimonitor untuk melihat jika terjadi error. Saat aplikasi dijalankan saat melakukan pengembangan hal ini bisa dimaklumi, tapi jika aplikasi sudah di kirim ke server, siapa yang akan memeriksa output yang dikeluarkan? Jadi solusi yang lebih baik diperlukan disini.
+
+Langkah pertama yang mesti dilakukan adalah memberikan detail server email ke file configuration:
+Solusi yang akan dilakukan untuk mengatur Flask agar mengirim email setiap terjadi error.
+\begin{verbatim}
+config.py: Email configuration
+
+class Config(object):
+    # ...
+    MAIL_SERVER = os.environ.get('MAIL_SERVER')
+    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    ADMINS = ['your-email@example.com']
+    \end{verbatim} 
