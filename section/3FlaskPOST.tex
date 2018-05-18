@@ -37,6 +37,17 @@ Ketika flask menerima permintaan dari klien, maka perlu membuat beberapa objek t
 \subsection{Aplikasi dan Merekuest Konteks}
 Hal-hal menjadi lebih rumit jika Anda menganggap bahwa objek permintaan bukan satu-satunya objek yang mungkin diperlukan fungsi tampilan untuk mengakses untuk memenuhi permintaan. Untuk menghindari fungsi tampilan yang kacau dengan banyak argumen yang mungkin tidak selalu diperlukan, Flask menggunakan konteks untuk sementara membuat objek tertentu dapat diakses secara global. Berkat konteksnya, lihat fungsi seperti follwing dapat ditulis:\cite{grinberg2018flask}.
 
+\subsection{Aplikasi dan Merekuest Konteks}
+
+from flask import request
+
+@app.route('/')
+def index():
+	user_agent = request.headers.get('User-Agent')
+	return '<p>Your browser is {}</p>'.format(user_agent)
+	
+Perhatikan bagaimana dalam fungsi tampilan ini, permintaan digunakan seolah-olah itu adalah variabel global. Pada kenyataannya, permintaan tidak bisa menjadi variabel emas; di server multithread, beberapa utas dapat mengerjakan permintaan yang berbeda dari klien yang berbeda pada saat yang sama, sehingga setiap utas perlu melihat objek yang berbeda sesuai permintaan. Konteks memungkinkan Flask untuk membuat variabel tertentu yang dapat diakses secara global ke utas tanpa mengganggu benang yang lain\cite{grinberg2018flask}.
+
 \section{Implementasi Flask Post - Python}
 Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis API. Aplikasi ini menggunakan kerangka web Flask-Python. Selain itu, bagian ini memperkenalkan teknologi yang digunakan dan menyebutkan alasan mengapa mereka dipilih untuk proyek tersebut. Selain itu, ia menyediakan langkah demi langkah pendekatan untuk menunjukkan bagaimana sumber daya dibagi dari sumber data persisten. Oleh karena itu, API aplikasi mendasarkan prinsip REST\cite{alemu2014rest}.
 
