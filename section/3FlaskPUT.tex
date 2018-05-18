@@ -95,6 +95,9 @@ itu lakukan cara seperti dibawah ini :
 \item . venv/bin/activate (mengaktifkan virtualenv)
 \item pip install Flask (menambahkan library Flask menggunakan pip)
 \end{itemize}
+
+\section{Konteks Aplikasi dan Permintaan}
+Ketika Flask menerima permintaan dari klien, Flask harus membuat beberapa objek tersedia untuk fungsi tampilan yang akan menanganinya. Contoh yang baik adalah objek permintaan, yang merangkum permintaan HTTP yang dikirim oleh klien. Cara yang jelas di mana Flask bisa memberikan pandangan akses fungsi ke objek permintaan adalah dengan mengirimkannya sebagai argumen, tapi itu akan memerlukan evert fungsi tampilan tunggal dalam aplikasi untuk memiliki argumen estra.
 jika tidak terjadi error maka dalam instalisasi kali telah berhasil
 
 
