@@ -56,6 +56,15 @@ Dokumentasi Swagger API dibuat secara otomatis dan tersedia di root API Anda tet
 
 \subsection{Membuat Aplikasi dengan Flask Swagger}
 Flasgger adalah ekstensi Flask untuk membantu pembuatan API Flask dengan dokumentasi dan live playground yang didukung oleh SwaggerUI. Anda dapat menentukan struktur API menggunakan file YAML dan Flasgger membuat semua spesifikasi untuk Anda dan Anda dapat menggunakan skema yang sama untuk memvalidasi data.
+
+
+\subsection{Membuat Aplikasi dengan Flask Swagger}
+Merancang API untuk Layanan ACT dilakukan menggunakan editor Swagger (swagger.io).
+Kami merancang lima API untuk memanfaatkan GFE DB: hla, gfe, ars, urutan, dan bertindak. Kita
+mendefinisikan parameter dan tanggapan untuk setiap panggilan API dalam kesombongan YAML
+spesifikasi. Kami menghasilkan server Python Flask menggunakan file spesifikasi Swagger
+dan alat pembuat kode Sombong. Kode server yang dihasilkan telah dimodifikasi untuk diimpor
+modul python yang berisi fungsi utama untuk setiap API. Fungsi masing-masing
+API dimungkinkan melalui query nol yang mencari GFE DB \cite{halagan2017bioinformatics}
+
 \end{document}
-
-
