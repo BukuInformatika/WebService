@@ -92,3 +92,5 @@ class Config(object):
     \end{verbatim} 
     
 Variabel configuration untuk email diantaranya adalah server, port, penanda untuk mengaktifkan koneksi terenkripsi atau tidak, disertai dengan username dan password. Kelima variabel diambil dari environment variable. Jika server email tidak diatur di environment variable, maka itu akan menjadi pertanda bahwa pengiriman error email perlu dimatikan. Port server email juga perlu dimasukkan di environment variable, tapi jika tidak diatur, port standar nomor 25 akan dipakai. Data username dan password tidak wajib diberikan. Variabel ADMIN adalah daftar email yang akan menerima email error.
+
+Flask menggunakan paket logging dari Python untuk menulis log dan  sudah memiliki kemampuan untuk mengirim log via email. Yang perlu dilakukan untuk mengirimkan pesan log tersebut ke email adalah menambahkan sebuah instance SMTPHandler ke objek Flask logger, yang bernama app.logger  kita hanya akan mengaktifkan email logger jika aplikasi dijalankan tanpa debug mode saat nilai app.debug berisi True juga saat server email ada di file configuration.
