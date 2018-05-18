@@ -90,3 +90,5 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['your-email@example.com']
     \end{verbatim} 
+    
+Variabel configuration untuk email diantaranya adalah server, port, penanda untuk mengaktifkan koneksi terenkripsi atau tidak, disertai dengan username dan password. Kelima variabel diambil dari environment variable. Jika server email tidak diatur di environment variable, maka itu akan menjadi pertanda bahwa pengiriman error email perlu dimatikan. Port server email juga perlu dimasukkan di environment variable, tapi jika tidak diatur, port standar nomor 25 akan dipakai. Data username dan password tidak wajib diberikan. Variabel ADMIN adalah daftar email yang akan menerima email error.
