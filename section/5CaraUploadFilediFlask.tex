@@ -180,6 +180,14 @@ Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ d
    </ body>
 </ html>
 \end{verbatim}
+
+\begin{verbatim}
+Melayani File Statis
+Ketika Anda sedang membangun API, mungkin ada situasi di mana Anda perlu mengirim file ke UI. Misalnya, katakan, Anda ingin mengirim Gambar atau file HTML atau file lainnya. Biasanya, pengguna akan mendapatkan tautan ke file seperti misalnya "https://sourcedexter.com/wp-content/uploads/2017/07/typing_python-course.png". Seperti yang Anda lihat, ini adalah konten statis, yang dapat Anda lihat jika Anda mengeklik tautan. Dengan kata lain, ini bisa disebut sebagai tautan unduhan.
+Untuk mencapai ini dalam labu itu sangat sederhana. Flask memiliki metode inbuilt "send_from_directory" yang dapat Anda gunakan untuk mengirim file. Pertama, buat folder bernama "statis" di folder akar aplikasi labu Anda.
+\end{verbatim}
+
+
 Anda akan melihat layar seperti yang ditunjukkan di bawah ini. Pengunggahan File Flask Klik Kirim setelah memilih file. Metode entri Formulir memanggil URL upload file. Pengunggah fungsi yang mendasarinya melakukan operasi penyimpanan.
 Berikut ini adalah kode Python aplikasi Flask.
 \begin{verbatim}
