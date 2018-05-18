@@ -111,6 +111,9 @@ Selain Flask merupakan web framework yang sederhana, Flask API berfungsi sebagai
 \section{Flask Post Parsing JSON}
 Tujuan dari posting ini adalah untuk menjelaskan cara mengurai dan menggunakan data JSON dari permintaan POST di Flask, kerangka web mikro untuk Python. Pertama-tama, kita perlu mengimpor kelas Flask dari modul flask, sehingga semua fungsi yang kita butuhkan tersedia. Kemudian,kita harus membuat instance kelas Flask. Asumsikan bahwa klien akan memposting data JSON, jadi tentukan rute yang hanya menjawab permintaan HTTP POST. Permintaan GET apa pun ke URL yang sama akan diabaikan\cite{dwyer2016flask}.
 
+\subsection{Menentukan Kata Kunci POST}
+Tentukan kata kunci POST ke argumen metode dekorator rute. Anda dapat membaca lebih lanjut tentang cara mengontrol metode yang diizinkan HTTP dalam posting. Perhatikan  bahwa server akan mendengarkan di URL / postjson.  Pertama, untuk mengonfirmasi apakah konten berjenis JSON. Atribut ini menunjukkan jika permintaan ini adalah JSON atau bukan . Untuk mendapatkan data JSON yang diposting, kita hanya perlu memanggil metode get_json pada objek permintaan, yang mem-parsing data permintaan JSON yang masuk dan mengembalikannya sebagai kamus Python\cite{dwyer2016flask}.
+
 \section{Membuat JSON Menggunakan Python}
 Logika dasar untuk membuat data JSON ialah membuat kamus dan menambahkannya ke daftar. Setelah menambahkan ke daftar selesai, selanjutnya akan mengonversi daftar menjadi data JSON. Berikut contoh script yang digunakan:
 \begin{verbatim}
