@@ -110,5 +110,19 @@ Jika Anda menghapus file db.sqlite atau hanya ingin me-reset database Anda ke ke
 	>>>with app.app_context();
 	. . .	reset_database()
 
+\section{Method Delete}
+pada method ini kita mengambil id pada url, kemudian kita melakukan query. Jika query berhasil dilakukan maka kita akan mendelete berdasarkan product id yang kita ambil sebelumnya.
+
+@app.route("/product/delete")
+def product_delete():
+    """Delete product"""
+    product_id = request.args['id']
+    cur.execute("SELECT * from product WHERE id = (%s)", product_id)
+
+    if cur.fetchone():
+        # delete product by id
+        cur.execute("DELETE FROM product WHERE id =(%s)", product_id)
+    return redirect("/dashboard")
+
 
 
