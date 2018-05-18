@@ -41,9 +41,9 @@ Hal-hal menjadi lebih rumit jika Anda menganggap bahwa objek permintaan bukan sa
 Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis API. Aplikasi ini menggunakan kerangka web Flask-Python. Selain itu, bagian ini memperkenalkan teknologi yang digunakan dan menyebutkan alasan mengapa mereka dipilih untuk proyek tersebut. Selain itu, ia menyediakan langkah demi langkah pendekatan untuk menunjukkan bagaimana sumber daya dibagi dari sumber data persisten. Oleh karena itu, API aplikasi mendasarkan prinsip REST\cite{alemu2014rest}.
 
 \subsection{Tiga Alasan memilih Flask untuk Aplikasi Demo}
-Ada tiga alasan untuk memilih Flask untuk aplikasi demo ini. 
+Ada tiga alasan untuk memilih Flask untuk aplikasi demo ini.
 \begin{enumerate}
-\item Pertama salah satunya adalah kesederhanaannya. 
+\item Pertama salah satunya adalah kesederhanaannya.
 \item Kedua adalah keterbukaannya.
 \item Ketiga adalah open source yang terdokumentasi dengan baik kerangka.
 \end{enumerate}
@@ -100,4 +100,42 @@ Selain Flask merupakan web framework yang sederhana, Flask API berfungsi sebagai
 \section{Flask Post Parsing JSON}
 Tujuan dari posting ini adalah untuk menjelaskan cara mengurai dan menggunakan data JSON dari permintaan POST di Flask, kerangka web mikro untuk Python. Pertama-tama, kita perlu mengimpor kelas Flask dari modul flask, sehingga semua fungsi yang kita butuhkan tersedia. Kemudian, buat instance kelas Flask. Asumsikan bahwa klien akan memposting data JSON, jadi tentukan rute yang hanya menjawab permintaan HTTP POST. Permintaan GET apa pun ke URL yang sama akan diabaikan\cite{dwyer2016flask}.
 
+\section{Membuat JSON Menggunakan Python}
+Logika dasar untuk membuat data JSON ialah membuat kamus dan menambahkannya ke daftar. Setelah menambahkan ke daftar selesai, selanjutnya akan mengonversi daftar menjadi data JSON. Berikut contoh script yang digunakan:
+\begin{verbatim}
+@app.route("/getLatihanList")
+def getLatihanList():
+
+    try:
+
+
+        latihanList = []
+
+
+        for i in range(0,2):
+        empDict = {
+        'firstName': 'Arya',
+        'lastName': 'Santoso'}
+            latihanList.append(empDict)
+
+
+        jsonStr = json.dumps(latihanList)
+
+    except Exception ,e:
+        print str(e)
+
+    return jsonify(Latihan=jsonStr)
+\end{verbatim}
+Dalam contoh kode diatas, cukup menggulirkan data dua kali dan membuat kamus kosong. Menggunakan json.dumps berfungsi untuk mengonversi dari kamus ke string JSON. Setelah itu lakukan running untuk menjalankan script diatas, jika berhasil maka akan seperti berikut ini:
+\begin{verbatim}
+{
+    "Latihan": [{
+        "firstName": "Arya",
+        "lastName": "Santoso"
+    }, {
+        "firstName": "Arya",
+        "lastName": "Santoso"
+    }]
+}
+\end{verbatim}
 
