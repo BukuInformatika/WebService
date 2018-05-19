@@ -84,5 +84,23 @@ Untuk memastikan Python telah terpasang dengan baik pada system (Saya menggunaka
 
 %Untuk Gambar area
 
-
+\section{konfigurasi Python Flask + Swagger}
+Untuk mengunduh dan memulai aplikasi demo, berikan perintah berikut. Pertama-tama, klon kode aplikasi ke direktori mana pun di disk Anda:
+\begin{verbatim}
+$ cd /path/to/my/workspace/
+$ git clone https://github.com/postrational/rest_api_demo
+$ cd rest_api_demo
+\end{verbatim}
+Buat lingkungan virtual Python dalam direktori bernama venv, aktifkan virtualenv dan pasang dependensi yang diperlukan menggunakan pip:
+\begin{verbatim}
+$ virtualenv -p `which python3` venv
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt
+\end{verbatim}
+Sekarang mari siapkan aplikasi untuk pengembangan dan mulai:
+\begin{verbatim}
+(venv) $ python setup.py develop
+(venv) $ python rest_api_demo/app.py
+\end{verbatim}
+\cite{de2017api}
 \end{document}
