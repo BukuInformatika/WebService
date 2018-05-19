@@ -109,3 +109,8 @@ Penggunaan&Digunakan lebih untuk keperluan \\
 
 \section{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
 Pengiriman data ke Database-Enable XHR. Proses ini dimulai dengan sebuah XHR GET atau POST ke semua Bahasa sisi server. Sesudah server menerima permintaan, server memparsing XML atau nilai yang dikirim oleh XHR dan mengupdate database. Model request ini berdasarkan pada interaksi user, tanpa me-refresh browser. Pengiriman data ke database-enable XHR memberikan kemampuan penuh dalam mengontrol database melalui XHR \cite{prasetyo2007sistem} 
+
+\section{Method and system for inserting POST data into the GET request to apply normal caching rules}
+\subsection{Summary}
+Menurut masih aspek lain dari penemuan ini, ketika permintaan GET dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}.
+
