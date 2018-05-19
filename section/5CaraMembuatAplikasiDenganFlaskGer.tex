@@ -82,7 +82,41 @@ Apabila komputer kita belum memiliki Python, kita hasrus pasang terlebih dahulu.
 
 Untuk memastikan Python telah terpasang dengan baik pada system (Saya menggunakan Windows), buka CMD dan ketikkan python,  Berikut pesan yang seharusnya muncul:
 
-%Untuk Gambar area
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{5Python.PNG}}
+\caption{Python Running}
+\label{gambar}
+\end{figure}
+
+\subsection{Memasang Flask}
+Berikutnya ialah memasang microframework Flask. Tapi, sebelum itu, kami ingin memberitahu kepada anda tentang best practice ketika memasang package Python pada komputer anda.
+
+Dalam Python, package seperti Flask tersedia di repositori publik dimana pengguna dapat mengunduh dan memasangnya. Repositori package resmi Python bernama Python Package Index (PyPI). Ketika menginstall sebuah package dari PyPI akan berjalan cukup mudah karena Python memiliki sebuah tool bernama pip yang dapat melakukan proses pemasangan dengan sendirinya. ntuk memasang package gunakan perintah pip :
+
+\begin{verbatim}
+ pip install <package-name>
+\end{verbatim}
+
+Python menggunakan konsep virtual environments yang merupakan hasil salinan secara keseluruhan dari interpreter Python. Ketika kita memasang sebuah package di sebuah virtual environment ini maka Python yang berada di sistem utama tidak akan terpengaruh. Virtual environment juga memiliki keuntungan dimana mereka dimiliki oleh user sehingga tidak memerlukan akun administrator.
+
+Mari kita mulai dengan membuat sebuah direktori dimana project kita akan disimpan. Kami akan menamainya microblog karena ini ialah nama aplikasinya:
+
+\begin{verbatim}
+C:\WINDOWS\system32>cd/
+
+C:\>mkdir microblog
+
+C:\>cd microblog
+\end{verbatim}
+
+Jika menggunakan Python 3, virtual environment sudah ada secara otomatis sehingga bisa langsung dibuat dengan perintah:
+
+\begin{verbatim}
+C:\microblog>python3 -m venv venv
+\end{verbatim}
+
+Perintah ini mengartikan bahwa kita memerintahkan agar Python menjalankan package venv untuk membuatkan sebuah virtual environment bernama venv. venv pertama di perintah tersebut merupakan nama package-nya sedangkan venv yang kedua merupakan nama direktori untuk menyimpan salinan interpreter Python.
+
 
 \section{konfigurasi Python Flask + Swagger}
 Untuk mengunduh dan memulai aplikasi demo, berikan perintah berikut. Pertama-tama, klon kode aplikasi ke direktori mana pun di disk Anda:
