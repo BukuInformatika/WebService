@@ -195,6 +195,17 @@ Periksa apakah request adalah POST, jika iya, baca file dari request tersebut.
         file = request.files['file']
         
 \end{verbatim}
+
+Di langkah selanjutnya kita juga perlu untuk mendapatkan ekstensi file gambar untuk menyimpan file tersebut. Import os dan bagi nama ekstensi dari nama file.
+\begin{verbatim}    
+1	extension = os.path.splitext(file.filename)[1]
+Setelah kita mendapat ekstensi file, kita buat nama file unik menggunakan uuid. Import uuid dan buat nama file.
+1	f_name = str(uuid.uuid4()) + extension
+\end{verbatim}
+
+
+
+
 Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan. Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek 
 \begin{verbatim}
 \end{verse}.files [file]. 
