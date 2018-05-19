@@ -103,3 +103,13 @@ Kode-kode di atas akan membuat sebuah instance dari SMTPHandler, mengatur level-
 Untuk menguji kode yang kita buat dengan server ini, atur MAIL_SERVER=localhost dan MAIL_PORT=8025. Jika menggunakan Linux atau Mac OS, perlu menggunakan perintah sudo sehingga perintah tersebut bisa dijalankan. Jika menggunakan Windows, pastikan membuka aplikasi cmd sebagai administrator. Hak akses admin diperlukan dikarenakan port di bawah dari 1024 adalah port yang hanya bisa dijalankan oleh administrator. 
 
 Biarkan server SMTP berjalan lalu kembali ke terminal awal, jalankan perintah export. MAIL_SERVER=localhost dan MAIL_PORT=8025. Pastikan variabel FLASK_DEBUG sudah diatur menjadi 0 atau tidak diatur sama sekali, sehingga aplikasi tidak mengirim email dalam debug mode. Jalankan aplikasi dan picu error. SQLAlchemy digunakan untuk melihat terminal yang menjalankan server email fake  yang akan menampilkan sebuah pesan email dengan kode-kode error.
+                                                                                                                                          Cara pengujian yang kedua untuk fitur ini adalah dengan menggunakan server email asli. Di bawah ini akan konfigurasi untuk akun server email Gmail sebagai berikut:
+\begin{verbatim}
+export MAIL_SERVER=smtp.googlemail.com
+export MAIL_PORT=587
+export MAIL_USE_TLS=1
+export MAIL_USERNAME=<your-gmail-username>
+export MAIL_PASSWORD=<your-gmail-password>
+\end{verbatim}
+
+jika menggunakna Microsoft Windows, selalu gunakan set sebagai ganti export disetiap perintah di atas.
