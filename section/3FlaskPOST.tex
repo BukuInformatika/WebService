@@ -51,6 +51,10 @@ def index():
 \end{verbatim}
 Perhatikan bagaimana dalam fungsi tampilan ini, permintaan digunakan seolah-olah itu adalah variabel global. Pada kenyataannya, permintaan tidak bisa menjadi variabel emas; di server multithread, beberapa utas dapat mengerjakan permintaan yang berbeda dari klien yang berbeda pada saat yang sama, sehingga setiap utas perlu melihat objek yang berbeda sesuai permintaan. Konteks memungkinkan Flask untuk membuat variabel tertentu yang dapat diakses secara global ke utas tanpa mengganggu benang yang lain\cite{grinberg2018flask}.
 
+\subsection{Aplikasi dan Merekuest Konteks}
+Catatan.
+Thread adalah urutan instruksi terkecil yang dapat dikelola secara independen. Adalah umum untuk suatu proses untuk memiliki beberapa untaian aktif, terkadang berbagi sumber daya seperti memori atau menangani file. Beberapa untaian aktif, terkadang berbagi sumber daya seperti memori atau menangani file. Server web multithreaded memulai kumpulan benang dan memilih utas dari kolam untuk menangani setiap permintaan masuk\cite{grinberg2018flask}.
+
 \section{Implementasi Flask Post - Python}
 Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis API. Aplikasi ini menggunakan kerangka web Flask-Python. Selain itu, bagian ini memperkenalkan teknologi yang digunakan dan menyebutkan alasan mengapa mereka dipilih untuk proyek tersebut. Selain itu, ia menyediakan langkah demi langkah pendekatan untuk menunjukkan bagaimana sumber daya dibagi dari sumber data persisten. Oleh karena itu, API aplikasi mendasarkan prinsip REST\cite{alemu2014rest}.
 
