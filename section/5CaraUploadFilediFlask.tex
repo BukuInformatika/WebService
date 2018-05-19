@@ -79,6 +79,8 @@ app.config [‘MAX_CONTENT_PATH’]
 \end{verbatim}
 Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
 
+Flask adalah kerangka mikro Python yang menyediakan fungsionalitas dasar dari kerangka web dan memungkinkan lebih banyak plug-in yang ditambahkan sehingga fungsionalitas dan set fitur dapat diperluas ke tingkat yang baru. Flask disebut sebagai kerangka mikro Python karena membuat fungsionalitas inti sederhana tetapi dapat diperluas dalam hal pengembangan. Ini juga dapat digunakan untuk menghemat waktu pembuatan aplikasi web.
+
 Kita dapat memproses file yang akan diupload dengan Flask dengan mudah. Sebelumnya pastikan jangan lupa untuk mengatur atribut enctype = "multipart/form-data" pada form HTML kita, jika tidak browser tidak akan mengirimkan file Anda sama sekali. File yang diunggah disimpan di memori atau di lokasi sementara di sistem file kita. Berikut ini contoh sederhana yang menunjukkan cara kerjanya:
 
 ‘Upload.html’ memiliki tombol pemilih file dan tombol kirim..
