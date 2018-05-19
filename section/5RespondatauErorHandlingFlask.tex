@@ -1,8 +1,7 @@
 
 \section{Pengertian Flask}
-<<<<<<< HEAD
 Flask merupakan sebuah microweb framework yang dicantumkan ke dalam bahasa pemrograman Python berdasar dari Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain karena ada pustaka pihak ketiga yang menyediakan fungsi umum.
-=======
+
 Flask merupakan sebuah Microweb framework yang dicantumkan ke dalam bahasa pemrograman Python berdasar dari Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain karena ada pustaka pihak ketiga yang menyediakan fungsi umum.
 
 \section{Error Handling di Flask}
@@ -100,9 +99,9 @@ Flask menggunakan paket logging dari Python untuk menulis log dan  sudah memilik
 
 Kode-kode di atas akan membuat sebuah instance dari SMTPHandler, mengatur level-nya sehingga hanya membuat laporan error bukan warning, informational atau debugging message, lalu mengirim laporan error tersebut ke objek app.logger dari Flask. Ada dua cara untuk menguji fitur ini. Cara pailng mudah ialah dengan menggunakan server debugging SMTP dari Python. Server ini adalah server email fake , bukannya mengirim, ia akan mencetak email ke console (terminal). 
 
-Untuk menguji kode yang kita buat dengan server ini, atur MAIL_SERVER=localhost dan MAIL_PORT=8025. Jika menggunakan Linux atau Mac OS, perlu menggunakan perintah sudo sehingga perintah tersebut bisa dijalankan. Jika menggunakan Windows, pastikan membuka aplikasi cmd sebagai administrator. Hak akses admin diperlukan dikarenakan port di bawah dari 1024 adalah port yang hanya bisa dijalankan oleh administrator. 
+Untuk menguji kode yang kita buat dengan server ini, atur MAIL SERVER localhost dan MAIL PORT 8025. Jika menggunakan Linux atau Mac OS, perlu menggunakan perintah sudo sehingga perintah tersebut bisa dijalankan. Jika menggunakan Windows, pastikan membuka aplikasi cmd sebagai administrator. Hak akses admin diperlukan dikarenakan port di bawah dari 1024 adalah port yang hanya bisa dijalankan oleh administrator. 
 
-Biarkan server SMTP berjalan lalu kembali ke terminal awal, jalankan perintah export. MAIL_SERVER=localhost dan MAIL_PORT=8025. Pastikan variabel FLASK_DEBUG sudah diatur menjadi 0 atau tidak diatur sama sekali, sehingga aplikasi tidak mengirim email dalam debug mode. Jalankan aplikasi dan picu error. SQLAlchemy digunakan untuk melihat terminal yang menjalankan server email fake  yang akan menampilkan sebuah pesan email dengan kode-kode error.
+Biarkan server SMTP berjalan lalu kembali ke terminal awal, jalankan perintah export. MAIL SERVER localhost dan MAIL PORT 8025. Pastikan variabel FLASK DEBUG sudah diatur menjadi 0 atau tidak diatur sama sekali, sehingga aplikasi tidak mengirim email dalam debug mode. Jalankan aplikasi dan picu error. SQLAlchemy digunakan untuk melihat terminal yang menjalankan server email fake  yang akan menampilkan sebuah pesan email dengan kode-kode error.
                                                                                                                                           Cara pengujian yang kedua untuk fitur ini adalah dengan menggunakan server email asli. Di bawah ini akan konfigurasi untuk akun server email Gmail sebagai berikut:
 \begin{verbatim}
 export MAIL_SERVER=smtp.googlemail.com
@@ -116,3 +115,30 @@ jika menggunakna Microsoft Windows, selalu gunakan set sebagai ganti export dise
 
 \section{Menyimpan Log Kedalam File}
 Menerima error lewat email sangat membantu, tapi terkadang tidak cukup, beberapa kesalahan yang tidak berakhir di exception Python sehingga tidak dianggap sebagai masalah penting, tapi masih berguna untuk tujuan debugging. Oleh karena itu, kita juga akan menyimpan sebuah file log untuk aplikasi ini. Mengaktifkan log file, kita membutuhkan handler lain, RotatingFileHandler perlu untuk ditambahkan ke application logger dengan cara yang tidak jauh berbeda dengan email handler.
+
+app/init.py: Email configuration
+
+\begin{verbatim}
+# ...
+from logging.handlers import RotatingFileHandler
+import os
+
+# ...
+
+if not app.debug:
+    # ...
+
+    if not os.path.exists('logs'):
+        os.mkdir('logs')
+    file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240,
+                                       backupCount=10)
+    file_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Microblog startup')
+\end{verbatim}
+
+Disini penulis membuat file log bernama microblog.lo di dalam direktori/folder logs, yang akan dibuatkan jika belum ada. Kelas RotatingFileHandler sangat berguna karena merotasi file log, memastikan bahwa file log tidak berukuran terlalu besar saat aplikasi sudah berjalan cukup lama. Dalam kasus ini, penulis membatasi ukurannya menjadi 10KB, dan penulis menyimpan 10 file log terakhir untuk serep. 
