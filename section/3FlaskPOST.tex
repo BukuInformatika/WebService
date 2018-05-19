@@ -153,3 +153,14 @@ Dalam contoh kode diatas, cukup menggulirkan data dua kali dan membuat kamus kos
 }
 \end{verbatim}
 
+\section{POST request using Python}
+Perbedaan antara POST dan PUT ialah PUT merupakan idempoten, yakni memanggilnya hanya sekali atau beberapa kali berturut-turut memiliki efek yang sama (tidak ada efek samping), sedangkan POST identik dengan yang berurutan dan dapat memiliki efek tambahan, seperti melewatkan pesanan beberapa kali. Gambar \ref{3post} adalah diagram sederhana yang menjelaskan konsep dasar metode GET dan POST.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/3post.png}}
+\caption{Client Server}
+\label{3post}
+\end{figure}
+
+Untuk POST, GET, PUT, dan DELETE biasanya sudah ditentukan oleh protokol secara langung. Dan idealnya, untuk menjaga interfaces umum dan memungkinkan klien untuk secara eksplisit tentang operasi yang mereka gunakan\cite{rodriguez2008restful}.
+
