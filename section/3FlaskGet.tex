@@ -61,6 +61,17 @@ Berikut ini merupakan contoh skrip dari GET request :
 \end{figure}
 Pada gambar\ref{labelgambar}Ini merupakan contoh sederhana dari apa GET request pada flask. Pada skrip ini hanya dilakukan pemeriksaan apakah query URL memiliki argumen yang disbut foo. apabila iya, maka akan menampilkan ini pada tanggapan, sedangkan jika tidak maka defaultnya adalah bar \cite{aggarwal2014flask}.
 
+\subsection{Penggunaan Flask Get Request}
+@hello.route('/')
+@hello.route('/hello')
+def hello_world():
+user = request.args.get('user', 'Shalabh')
+return render_template('index.html', user=user)
+
+Pada skrip diatas menggunakan metode get request, yang dimana jika ditemukan URL permintaan argumen, kita menggunakannya, dan jika tidak, kita menggunakan argumen default, Shalabh. Kemudian, nilai ini dilewatkan ke konteks template yang akan diberikan, yaitu index.html, dan template dihasilkan akan dituliskan.\cite{aggarwal2014flask}
+
+
+
 \section{Keamanan Flask GET}
 \subsection{deteksi serangan dos dengan http get}
 Serangan DoS ke layanan Web disebut serangan banjir http-get dan ancamannya meningkat dari hari ke hari. Dalam jenis serangan ini, klien jahat mengirim sejumlah besar permintaan http-get ke server Web target secara otomatis. Karena permintaan http-get ini memiliki format yang sah dan dikirim melalui koneksi TCP normal, intrusion detection system (IDS) tidak dapat mendeteksi mereka. Dalam tulisan ini, kami mengusulkan teknik pendeteksian pendeteksian http-get berdasarkan analisis perilaku akses halaman. Kami mengusulkan dua algoritme deteksi, yang satu berfokus pada urutan penelusuran laman dan yang lainnya berfokus pada korelasi dengan waktu penelusuran ke ukuran informasi laman. Kami menerapkan teknik deteksi dan mengevaluasi tingkat deteksi serangan, yaitu, false positive dan false negative. Hasilnya menunjukkan bahwa teknik kami dapat mendeteksi serangan banjir http-get secara efektif \cite{yatagai2007detection}.
@@ -74,7 +85,8 @@ Berikut ini merupakan keuntungan dari Flask GET :
 2. Halaman dapat dibookmark sehingga mudah untuk diakses kembali jika dibutuhkan.
 3. Mudah untuk kembali ke halaman sebelumnya, misalnya dengan klik tombol back pada browser.
 4. Dapat direfresh dengan mudah dan juga dapat di share apabila diperlukan.
-\cite{lokhande2015efficient} 
+\cite{lokhande2015efficient}
 
 \section{Method and system for inserting POST data into the GET request to apply normal caching rules}
 Metode dan sistem untuk cache konten yang diminta HTTP POST menggunakan aturan caching standar yang terkait dengan permintaan HTTP GET diungkapkan. Ketika permintaan POST diterima, itu diubah menjadi permintaan GET dengan tag identifikasi. Tag pengidentifikasi mencakup nilai indeks yang unik untuk permintaan POST dan didasarkan pada URL permintaan POST dan payload. Ketika permintaan POST belum ditemukan sebelum URL permintaan POST dan payload disimpan di penyimpanan data. Klien kemudian menerima tanggapan pengalihan termasuk permintaan GET dengan tag identifikasi yang digunakan untuk meminta data. Ketika permintaan GET berikutnya dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}. 
+
