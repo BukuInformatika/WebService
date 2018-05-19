@@ -26,6 +26,8 @@ Elemen (HEAD, OPTIONS, GET) yang ditampilkan di peta URL adalah metode permintaa
 Metode HEAD dan OPTIONS dikelola secara otomatis oleh labu, sehingga dalam praktiknya dapat dikatakan bahwa dalam aplikasi ini tiga rute dalam peta URL dilampirkan ke metode GET, yang digunakan ketika klien ingin meminta informasi seperti web halaman. Secara default, rute Flask merespon permintaan GET. Namun, preferensi ini dapat diubah dengan menyediakan metode argumen untuk rute () dekorator\cite{grinberg2018flask}.
 \subsubsection{Framework Cookbook}
 Secara default, fungsi tampilan flask hanya mendukung permintaan GET. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberitahu rute () decorator tentang mode yang ingin dukung. Inilah yang dilakukan di dua terakhir metode untuk POST dan GET/POST. Untuk permintaan GET, objek permintaan akan mencari argument, yaitu request.args.get(), dan untuk POST, itu akan mencari bentuk, yaitu request.from.get(). Selain itu, jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal \cite{aggarwal2014flask}.
+\subsection{Method and system for inserting POST data into the GET request to apply normal caching rules}
+Metode dan sistem untuk cache konten yang diminta HTTP POST menggunakan aturan caching standar yang terkait dengan permintaan HTTP GET diungkapkan. Ketika permintaan POST diterima, itu diubah menjadi permintaan GET dengan tag identifikasi. Tag pengidentifikasi mencakup nilai indeks yang unik untuk permintaan POST dan didasarkan pada URL permintaan POST dan payload. Ketika permintaan POST belum ditemukan sebelum URL permintaan POST dan payload disimpan di penyimpanan data. Klien kemudian menerima tanggapan pengalihan termasuk permintaan GET dengan tag identifikasi yang digunakan untuk meminta data. Ketika permintaan GET berikutnya dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}. 
 
 \section{Implementasi Pada Flask GET}
 \subsection{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
@@ -50,6 +52,8 @@ Berikut ini adalah demonstrasi bagaimana sumber daya diwakili dalam aplikasi web
 Sumber daya ini diserialkan ke format JSON dari database SQLAlchemy obyek. Oleh karena itu, ini meningkatkan kinerja API dengan memungkinkan pengguna untuk mengonsumsi dengan mudah. Contoh pertama menunjukkan bagaimana merepresentasikan daftar sumber daya posting yang dibuat oleh pengguna tertentu yang diidentifikasi oleh idnya. Selain itu, representasi ini juga menunjukkan kemungkinan tautan (negara) yang dapat ditransfer dari node ini. Jadi, adokumentasi terpisah tidak boleh disiapkan sebagai panduan pengguna. Ini bisa dilakukan dengan mengirim permintaan GET ke server menggunakan URI http://localhost:5000/api/v1.0/ pengguna/2/posting \cite{alemu2014rest}.
 \subsubsection{Perintah GET}
 Perintah ini digunakan untuk melakukan semua HTTP permintaan. Sangat mudah untuk melakukan GET dari browser. Namun, untuk POST, PUT dan perintah DELETE request curl digunakan dari terminal. Karena itu, ikal perpustakaan harus diinstal pada komputer local untuk menjalankan semua perintah dokumen laporan ini. Selain itu, demontrasi ini menggunakan format JSON untuk dikirim dan menerima sumber daya melalui HTTP \cite{alemu2014rest}.
+\subsection{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
+Pada model pertama sebuah static XML, JSON atau file teks yang berada pada domain yang sama di request oleh objek XHR melalui metode GET, lalu dikembalikan oleh server untuk ditangani oleh kode di sisi client yang melakukan permintaan. Semua ajax request dimulai dengan interaksi disisi client yang diatur oleh Javascript \cite{prasetyo2007sistem}.
 
 \section{Contoh Flask GET}
 \subsection{Request sederhana pada Flask Framework}
@@ -60,33 +64,50 @@ Berikut ini merupakan contoh skrip dari GET request :
 \label{labelgambar}
 \end{figure}
 Pada gambar\ref{labelgambar}Ini merupakan contoh sederhana dari apa GET request pada flask. Pada skrip ini hanya dilakukan pemeriksaan apakah query URL memiliki argumen yang disbut foo. apabila iya, maka akan menampilkan ini pada tanggapan, sedangkan jika tidak maka defaultnya adalah bar \cite{aggarwal2014flask}.
-
 \subsection{Penggunaan Flask Get Request}
 @hello.route('/')
 @hello.route('/hello')
-def hello_world():
+def helloworld():
 user = request.args.get('user', 'Shalabh')
-return render_template('index.html', user=user)
-
-Pada skrip diatas menggunakan metode get request, yang dimana jika ditemukan URL permintaan argumen, kita menggunakannya, dan jika tidak, kita menggunakan argumen default, Shalabh. Kemudian, nilai ini dilewatkan ke konteks template yang akan diberikan, yaitu index.html, dan template dihasilkan akan dituliskan.\cite{aggarwal2014flask}
-
-
+return rendertemplate('index.html', user=user)
+Pada skrip diatas menggunakan metode get request, yang dimana jika ditemukan URL permintaan argumen, kita menggunakannya, dan jika tidak, kita menggunakan argumen default, Shalabh. Kemudian, nilai ini dilewatkan ke konteks template yang akan diberikan, yaitu index.html, dan template dihasilkan akan dituliskan\cite{aggarwal2014flask}.
 
 \section{Keamanan Flask GET}
 \subsection{deteksi serangan dos dengan http get}
 Serangan DoS ke layanan Web disebut serangan banjir http-get dan ancamannya meningkat dari hari ke hari. Dalam jenis serangan ini, klien jahat mengirim sejumlah besar permintaan http-get ke server Web target secara otomatis. Karena permintaan http-get ini memiliki format yang sah dan dikirim melalui koneksi TCP normal, intrusion detection system (IDS) tidak dapat mendeteksi mereka. Dalam tulisan ini, kami mengusulkan teknik pendeteksian pendeteksian http-get berdasarkan analisis perilaku akses halaman. Kami mengusulkan dua algoritme deteksi, yang satu berfokus pada urutan penelusuran laman dan yang lainnya berfokus pada korelasi dengan waktu penelusuran ke ukuran informasi laman. Kami menerapkan teknik deteksi dan mengevaluasi tingkat deteksi serangan, yaitu, false positive dan false negative. Hasilnya menunjukkan bahwa teknik kami dapat mendeteksi serangan banjir http-get secara efektif \cite{yatagai2007detection}.
 
-\section{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
-Pada model pertama sebuah static XML, JSON atau file teks yang berada pada domain yang sama di request oleh objek XHR melalui metode GET, lalu dikembalikan oleh server untuk ditangani oleh kode di sisi client yang melakukan permintaan. Semua ajax request dimulai dengan interaksi disisi client yang diatur oleh Javascript \cite{prasetyo2007sistem}.
+\section{Kelebihan Metode GET pada Flask}
+Berikut ini merupakan keuntungan dari Flask GET \cite{lokhande2015efficient}:
+\begin{enumerate}
+\item Sederhana, data mudah diedit.
+\item Halaman dapat dibookmark sehingga mudah untuk diakses kembali jika dibutuhkan.
+\item Mudah untuk kembali ke halaman sebelumnya, misalnya dengan klik tombol back pada browser.
+\item Dapat direfresh dengan mudah dan juga dapat di share apabila diperlukan.
+\end{enumerate}
+\subsection{Kegunaan Flask Method GET}
+Pada tabel \ref{table:contoh} merupakan kegunaan daripada Flask pada Method GET.
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+Macam Bentuk GET&Kegunaan\\
+\hline
+History&Parameter/nilai tersimpan dibrowser\\
+&dan bisa diakses ulang karena nilai\\
+&menjadi kesatuan URL.\\
+Bookmark&Parameter bisa dibookmark\\
+Parameters&Hanya bisa mengirimkan parameter\\
+&melalui URL\\
+Kecurangan data&Lebih terbuka karena data terlihat\\
+Keamanan&Dengan jelas bisa ketahui data apa \\
+&saja yang dikirim\\
+Penggunaan&Digunakan lebih untuk keperluan \\
+&mengambil data\\
+\hline
+\end{tabular}
+\label{table:contoh}
+\end{table}
 
-\subsection{Kelebihan Metode GET pada Flask}
-Berikut ini merupakan keuntungan dari Flask GET :
-1. Sederhana, data mudah diedit.
-2. Halaman dapat dibookmark sehingga mudah untuk diakses kembali jika dibutuhkan.
-3. Mudah untuk kembali ke halaman sebelumnya, misalnya dengan klik tombol back pada browser.
-4. Dapat direfresh dengan mudah dan juga dapat di share apabila diperlukan.
-\cite{lokhande2015efficient}
 
-\section{Method and system for inserting POST data into the GET request to apply normal caching rules}
-Metode dan sistem untuk cache konten yang diminta HTTP POST menggunakan aturan caching standar yang terkait dengan permintaan HTTP GET diungkapkan. Ketika permintaan POST diterima, itu diubah menjadi permintaan GET dengan tag identifikasi. Tag pengidentifikasi mencakup nilai indeks yang unik untuk permintaan POST dan didasarkan pada URL permintaan POST dan payload. Ketika permintaan POST belum ditemukan sebelum URL permintaan POST dan payload disimpan di penyimpanan data. Klien kemudian menerima tanggapan pengalihan termasuk permintaan GET dengan tag identifikasi yang digunakan untuk meminta data. Ketika permintaan GET berikutnya dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}. 
+
+
 
