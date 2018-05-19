@@ -160,3 +160,10 @@ ini menerima permintaan DELETE HTTP dan melakukan pekerjaan. Kami tidak perlu me
 rekaman dengan browsing. Ini sangat penting ketika kami mempublikasikan kode yang dapat dipukul oleh mesin pencari dan robot lainnya. Merayapi semua halaman kami akan menghapus seluruh basis data kami!
 Flask menyediakan fungsi jsonify untuk mengubah kamus Python menjadi respons JSON\cite{duplain2013instant}.
 
+
+\section{PENERAPAN FLASK DELETE PADA AJAX PART.2 ( JQUERY )}
+Bagaimana Anda mendapatkan browser untuk mengirim permintaan HAPUS? tentunya dengan JavaScript. Perpustakaan jQuery membuat panggilan Ajax jauh lebih sederhana daripada JavaScript saja.  
+Kami menambahkan hook jQuery yang akan mengambil semua tautan hapus dan mengirimkan panggilan ajax saat diklik, sesuai dengan aktivitas pengguna. Callback on-klik mengambil URL penghapusan 
+dari tautan hapus dan mengirimkannya sebagai permintaan DELETE kepada sistem berjalan. Pada keberhasilan itu , tentunya mengarahkan jendela browser saat ini ke daftar janji. Dengan menempatkan
+ skrip ini ke dalam template dasar, itu akan membuat semua tautan "menghapus" berfungsi pada daftar janji dan halaman detail\cite{duplain2013instant}.
+
