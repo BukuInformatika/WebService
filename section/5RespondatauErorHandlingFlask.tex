@@ -99,3 +99,7 @@ Variabel configuration untuk email diantaranya adalah server, port, penanda untu
 Flask menggunakan paket logging dari Python untuk menulis log dan  sudah memiliki kemampuan untuk mengirim log via email. Yang perlu dilakukan untuk mengirimkan pesan log tersebut ke email adalah menambahkan sebuah instance SMTPHandler ke objek Flask logger, yang bernama app.logger  kita hanya akan mengaktifkan email logger jika aplikasi dijalankan tanpa debug mode saat nilai app.debug berisi True juga saat server email ada di file configuration.
 
 Kode-kode di atas akan membuat sebuah instance dari SMTPHandler, mengatur level-nya sehingga hanya membuat laporan error bukan warning, informational atau debugging message, lalu mengirim laporan error tersebut ke objek app.logger dari Flask. Ada dua cara untuk menguji fitur ini. Cara pailng mudah ialah dengan menggunakan server debugging SMTP dari Python. Server ini adalah server email fake , bukannya mengirim, ia akan mencetak email ke console (terminal). 
+
+Untuk menguji kode yang kita buat dengan server ini, atur MAIL_SERVER=localhost dan MAIL_PORT=8025. Jika menggunakan Linux atau Mac OS, perlu menggunakan perintah sudo sehingga perintah tersebut bisa dijalankan. Jika menggunakan Windows, pastikan membuka aplikasi cmd sebagai administrator. Hak akses admin diperlukan dikarenakan port di bawah dari 1024 adalah port yang hanya bisa dijalankan oleh administrator. 
+
+
