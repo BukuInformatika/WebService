@@ -27,7 +27,7 @@ Metode HEAD dan OPTIONS dikelola secara otomatis oleh labu, sehingga dalam prakt
 \subsubsection{Framework Cookbook}
 Secara default, fungsi tampilan flask hanya mendukung permintaan GET. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberitahu rute () decorator tentang mode yang ingin dukung. Inilah yang dilakukan di dua terakhir metode untuk POST dan GET/POST. Untuk permintaan GET, objek permintaan akan mencari argument, yaitu request.args.get(), dan untuk POST, itu akan mencari bentuk, yaitu request.from.get(). Selain itu, jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal \cite{aggarwal2014flask}.
 \subsection{Method and system for inserting POST data into the GET request to apply normal caching rules}
-Metode dan sistem untuk cache konten yang diminta HTTP POST menggunakan aturan caching standar yang terkait dengan permintaan HTTP GET diungkapkan. Ketika permintaan POST diterima, itu diubah menjadi permintaan GET dengan tag identifikasi. Tag pengidentifikasi mencakup nilai indeks yang unik untuk permintaan POST dan didasarkan pada URL permintaan POST dan payload. Ketika permintaan POST belum ditemukan sebelum URL permintaan POST dan payload disimpan di penyimpanan data. Klien kemudian menerima tanggapan pengalihan termasuk permintaan GET dengan tag identifikasi yang digunakan untuk meminta data. Ketika permintaan GET berikutnya dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}. 
+Metode dan sistem untuk cache konten yang diminta HTTP POST menggunakan aturan caching standar yang terkait dengan permintaan HTTP GET diungkapkan. Ketika permintaan POST diterima, itu diubah menjadi permintaan GET dengan tag identifikasi. Tag pengidentifikasi mencakup nilai indeks yang unik untuk permintaan POST dan didasarkan pada URL permintaan POST dan payload. Ketika permintaan POST belum ditemukan sebelum URL permintaan POST dan payload disimpan di penyimpanan data. Klien kemudian menerima tanggapan pengalihan termasuk permintaan GET dengan tag identifikasi yang digunakan untuk meminta data. Ketika permintaan GET berikutnya dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}.
 
 \section{Implementasi Pada Flask GET}
 \subsection{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
@@ -107,7 +107,5 @@ Penggunaan&Digunakan lebih untuk keperluan \\
 \label{table:contoh}
 \end{table}
 
-
-
-
-
+\section{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
+Pengiriman data ke Database-Enable XHR. Proses ini dimulai dengan sebuah XHR GET atau POST ke semua Bahasa sisi server. Sesudah server menerima permintaan, server memparsing XML atau nilai yang dikirim oleh XHR dan mengupdate database. Model request ini berdasarkan pada interaksi user, tanpa me-refresh browser. Pengiriman data ke database-enable XHR memberikan kemampuan penuh dalam mengontrol database melalui XHR \cite{prasetyo2007sistem} 
