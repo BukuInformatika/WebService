@@ -85,6 +85,14 @@ Tempate adalah suatu bahan yang menjadi dokumen atau beberapa file yang dibutuhk
 ahli dalam web bisa mengetahu pengertian dari web itu sendiri. Template atau bisa juga disebut dengan theme yaitu dokumen dari beberapa 
 file yang berisikan model-model tambahan yang akan terlihat pada saat proses dalam pembuatan dokumen-dokumen tersebut.
 
+\section{Penggunaan Template di Flask}
+Template adalah file yang berisi teks tanggapan, dengan variabel placeholder untuk bagian dinamis yang hanya akan diketahui dalam konteks permintaan. Proses yang menggantikan variabel dengan nilai aktual dan mengembalikan string respons akhir disebut rendering.
+Untuk tugas rendering template, labu menggunakan mesin template yang kuat yang disebut Jinja2. Dalam bentuk yang paling sederhana, template jinja2 adalah file yang berisi teks tanggapan. Berikut merupakan contoh Jinja2 template untuk file index.html dan user.html.
+\begin{verbatim}
+<h1>Hello world!</h1>
+<h1>Hello, {{ name }}!</h1>
+\end{verbatim}
+
 \section{debug mode}
 aplikasi flask opsional dapat dijalankan dalam mode debug. dalam mode ini, dua modul yang sangat nyaman dari server pengembangan disebut 
 reloader dan debugger diaktifkan secara default. ketika reloader diaktifkan, falsk melihat semua file kode sumber proyek Anda dan secara 
