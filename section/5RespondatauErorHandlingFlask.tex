@@ -113,3 +113,6 @@ export MAIL_PASSWORD=<your-gmail-password>
 \end{verbatim}
 
 jika menggunakna Microsoft Windows, selalu gunakan set sebagai ganti export disetiap perintah di atas.
+
+\section{Menyimpan Log Kedalam File}
+Menerima error lewat email sangat membantu, tapi terkadang tidak cukup, beberapa kesalahan yang tidak berakhir di exception Python sehingga tidak dianggap sebagai masalah penting, tapi masih berguna untuk tujuan debugging. Oleh karena itu, kita juga akan menyimpan sebuah file log untuk aplikasi ini. Mengaktifkan log file, kita membutuhkan handler lain, RotatingFileHandler perlu untuk ditambahkan ke application logger dengan cara yang tidak jauh berbeda dengan email handler.
