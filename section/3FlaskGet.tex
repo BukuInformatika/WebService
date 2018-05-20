@@ -11,6 +11,9 @@ Flask merupakan microframework yang dibangun dengan menggunakan bahasa pemrogram
 \subsection{pengertian GET request pada Flask}
 GET request merupakan cara termundah untuk mengambil data dari pengguna. GET request tidak boleh mengubah status server yang dapat mengakibatkan efek samping.  Maka dari itu pengguna harus dapat membuat request yang sama dan harus mendapatkan hasil yang sama juga secara berkala. Oleh karena itu, GET request sangat ideal untuk memungkinkan pengguna untuk membedakan atau menentukan publikasi mana untuk dilihat\cite{dwyer2016flask}
 GET merupakan sebuah method yang digunakan untuk mengambil sebuah sumber yang di identifikasikan dengan mengambil sebuah URL yang akan menampilkan operasi READ. Dengan method GET dapat mendapatkan informasi tanpa harus mengupdate database yang ada.GET digunakan untuk melempar value agar diproses ke web server dan kemudian selanjutnya value itu diberikan ke sebuah variabel untuk diproses oleh server dari web yang ada \cite{alemu2014rest}.
+\subsection{Istilah Flask GET}
+Informasi yang dikirim dari form dengan metode GET dapat terlihat oleh semua orang (semua nama variabel dan nilai-nilai variabel ditampilkan di URL). GET juga memiliki batasan pada jumlah informasi untuk mengirim. pembatasan itu sekitar 2000 karakter. Namun, karena variabel ditampilkan di URL, ini memungkinkan untuk sebagai penunjuk halaman. Dan hal ini dapat berguna dalam beberapa kasus tertentu. GET dapat digunakan untuk mengirim data yang tidak bersifat sensitif.
+Apabila data yang dikirim ke server berupa data umum dan biasanya untuk memperjelas data yang dimasukkan di form, Anda dapat menggunakan method GET, misalnya untuk form pencarian data, polling dan lainnya \cite{grinberg2018flask}.
 \subsection{Mendapatkan masukan pengguna menggunakan HTTP GET}
 Oleh karena itu, permintaan GET sangat ideal untuk memungkinkan pengguna kami menentukan publikasi mana untuk melihat. Mari kita memperluas proyek Headlines kami untuk menggabungkan memilih judul berdasarkan atas permintaan GET. Pertama, mari kita memodifikasi kode Python untuk melakukan hal berikut \cite{dwyer2016flask}:
 \begin{itemize}
@@ -26,8 +29,14 @@ Elemen (HEAD, OPTIONS, GET) yang ditampilkan di peta URL adalah metode permintaa
 Metode HEAD dan OPTIONS dikelola secara otomatis oleh labu, sehingga dalam praktiknya dapat dikatakan bahwa dalam aplikasi ini tiga rute dalam peta URL dilampirkan ke metode GET, yang digunakan ketika klien ingin meminta informasi seperti web halaman. Secara default, rute Flask merespon permintaan GET. Namun, preferensi ini dapat diubah dengan menyediakan metode argumen untuk rute () dekorator\cite{grinberg2018flask}.
 \subsubsection{Framework Cookbook}
 Secara default, fungsi tampilan flask hanya mendukung permintaan GET. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberitahu rute () decorator tentang mode yang ingin dukung. Inilah yang dilakukan di dua terakhir metode untuk POST dan GET/POST. Untuk permintaan GET, objek permintaan akan mencari argument, yaitu request.args.get(), dan untuk POST, itu akan mencari bentuk, yaitu request.from.get(). Selain itu, jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal \cite{aggarwal2014flask}.
+\subsubsection{Working with Views}
+Fungsi tampilan Flask hanya mendukung permintaan GET. Hal yang sama berlaku dalam hal pandangan berbasis kelas. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberi tahu kelas, melalui metode atribut kelas yang disebut, tentang metode HTTP ingin mendukung. Untuk permintaan GET, objek permintaan akan mencari argumen, yaitu, request.args.get (), dan untuk POST, itu akan mencari bentuk, yaitu, request.form.get (). Jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal dengan kesalahan HTTP 405. Hal yang sama berlaku untuk semua metode \cite{aggarwal2014flask}. 
 \subsection{Method and system for inserting POST data into the GET request to apply normal caching rules}
 Metode dan sistem untuk cache konten yang diminta HTTP POST menggunakan aturan caching standar yang terkait dengan permintaan HTTP GET diungkapkan. Ketika permintaan POST diterima, itu diubah menjadi permintaan GET dengan tag identifikasi. Tag pengidentifikasi mencakup nilai indeks yang unik untuk permintaan POST dan didasarkan pada URL permintaan POST dan payload. Ketika permintaan POST belum ditemukan sebelum URL permintaan POST dan payload disimpan di penyimpanan data. Klien kemudian menerima tanggapan pengalihan termasuk permintaan GET dengan tag identifikasi yang digunakan untuk meminta data. Ketika permintaan GET berikutnya dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}.
+\subsection{Process Flow}
+Permintaan GET diubah menjadi permintaan POST dan payload yang diambil sekarang dimasukkan sebagai badan permintaan POST baru ini. Permintaan POST ini kemudian dikirim ke server asal untuk mengambil konten yang diminta. Ketika server asal merespon, dua hal terjadi. Data respons dikirim kembali ke klien panggilan (blok 730). Pada saat yang sama, konten yang diterima disimpan (blok 725) \cite{sloat2009method}. 
+\subsection{Summary}
+Menurut masih aspek lain dari penemuan ini, ketika permintaan GET dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}.
 
 \section{Implementasi Pada Flask GET}
 \subsection{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
@@ -75,6 +84,8 @@ Pada skrip diatas menggunakan metode get request, yang dimana jika ditemukan URL
 \section{Keamanan Flask GET}
 \subsection{deteksi serangan dos dengan http get}
 Serangan DoS ke layanan Web disebut serangan banjir http-get dan ancamannya meningkat dari hari ke hari. Dalam jenis serangan ini, klien jahat mengirim sejumlah besar permintaan http-get ke server Web target secara otomatis. Karena permintaan http-get ini memiliki format yang sah dan dikirim melalui koneksi TCP normal, intrusion detection system (IDS) tidak dapat mendeteksi mereka. Dalam tulisan ini, kami mengusulkan teknik pendeteksian pendeteksian http-get berdasarkan analisis perilaku akses halaman. Kami mengusulkan dua algoritme deteksi, yang satu berfokus pada urutan penelusuran laman dan yang lainnya berfokus pada korelasi dengan waktu penelusuran ke ukuran informasi laman. Kami menerapkan teknik deteksi dan mengevaluasi tingkat deteksi serangan, yaitu, false positive dan false negative. Hasilnya menunjukkan bahwa teknik kami dapat mendeteksi serangan banjir http-get secara efektif \cite{yatagai2007detection}.
+\subsection{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
+Pengiriman data ke Database-Enable XHR. Proses ini dimulai dengan sebuah XHR GET atau POST ke semua Bahasa sisi server. Sesudah server menerima permintaan, server memparsing XML atau nilai yang dikirim oleh XHR dan mengupdate database. Model request ini berdasarkan pada interaksi user, tanpa me-refresh browser. Pengiriman data ke database-enable XHR memberikan kemampuan penuh dalam mengontrol database melalui XHR \cite{prasetyo2007sistem}
 
 \section{Kelebihan Metode GET pada Flask}
 Berikut ini merupakan keuntungan dari Flask GET \cite{lokhande2015efficient}:
@@ -85,7 +96,7 @@ Berikut ini merupakan keuntungan dari Flask GET \cite{lokhande2015efficient}:
 \item Dapat direfresh dengan mudah dan juga dapat di share apabila diperlukan.
 \end{enumerate}
 \subsection{Kegunaan Flask Method GET}
-Pada tabel \ref{table:contoh} merupakan kegunaan daripada Flask pada Method GET.
+Pada tabel \ref{table:contoh} merupakan kegunaan daripada Flask pada Method GET \cite{grinberg2018flask}.
 \begin{table}[h]
 \begin{tabular}{|c|c|}
 \hline
@@ -107,17 +118,6 @@ Penggunaan&Digunakan lebih untuk keperluan \\
 \label{table:contoh}
 \end{table}
 
-\section{Sistem Terintegrasi Berbasis Ajax untuk Pengelolaan Data Bencana Alam di Indonesia}
-Pengiriman data ke Database-Enable XHR. Proses ini dimulai dengan sebuah XHR GET atau POST ke semua Bahasa sisi server. Sesudah server menerima permintaan, server memparsing XML atau nilai yang dikirim oleh XHR dan mengupdate database. Model request ini berdasarkan pada interaksi user, tanpa me-refresh browser. Pengiriman data ke database-enable XHR memberikan kemampuan penuh dalam mengontrol database melalui XHR \cite{prasetyo2007sistem}
 
-\section{Method and system for inserting POST data into the GET request to apply normal caching rules}
-\subsection{Summary}
-Menurut masih aspek lain dari penemuan ini, ketika permintaan GET dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}.
 
-\section{Flask Framework Cookbook}
-\subsection{Working with Views}
-Fungsi tampilan Flask hanya mendukung permintaan GET. Hal yang sama berlaku dalam hal pandangan berbasis kelas. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberi tahu kelas, melalui metode atribut kelas yang disebut, tentang metode HTTP ingin mendukung. Untuk permintaan GET, objek permintaan akan mencari argumen, yaitu, request.args.get (), dan untuk POST, itu akan mencari bentuk, yaitu, request.form.get (). Jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal dengan kesalahan HTTP 405. Hal yang sama berlaku untuk semua metode \cite{aggarwal2014flask}. 
 
-\section{Method and system for inserting POST data into the GET request to apply normal caching rules}
-\subsection{Process Flow}
-Permintaan GET diubah menjadi permintaan POST dan payload yang diambil sekarang dimasukkan sebagai badan permintaan POST baru ini. Permintaan POST ini kemudian dikirim ke server asal untuk mengambil konten yang diminta. Ketika server asal merespon, dua hal terjadi. Data respons dikirim kembali ke klien panggilan (blok 730). Pada saat yang sama, konten yang diterima disimpan (blok 725) \cite{sloat2009method}. 
