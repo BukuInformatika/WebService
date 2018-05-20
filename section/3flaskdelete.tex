@@ -173,3 +173,21 @@ Kami menambahkan hook jQuery yang akan mengambil semua tautan hapus dan mengirim
 dari tautan hapus dan mengirimkannya sebagai permintaan DELETE kepada sistem berjalan. Pada keberhasilan itu , tentunya mengarahkan jendela browser saat ini ke daftar janji. Dengan menempatkan
  skrip ini ke dalam template dasar, itu akan membuat semua tautan "menghapus" berfungsi pada daftar janji dan halaman detail\cite{duplain2013instant}.
 
+
+
+
+\section{Deleting Rows)}
+- Delete session method, deleting rows. Akan dijelaskan dan digambarkan contohnya sehubungan dengan flask database pada python.
+Sesi database juga memiliki metode delete (). Contoh berikut menghapus peran "Moderator" dari basis data:
+>>> db.session.delete (mod_role)
+>>> db.session.commit ()
+Perhatikan penghapusan, seperti insersi dan pembaruan, hanya dijalankan ketika sesi basis data dilakukan.
+Pada code diatas dapat dirincikan bahwa db sendiri diartikan untuk database, dan session beserta delete merupakan fungsi untuk mengeksekusi mod_role
+dan setelah itu fungsi selanjutnya yaitu commit untuk pengeksekusian akhir.
+
+Selain deleting rows, ada juga modifying rows yang pada dasarnya hampir sama dengan code delete namun dibedakan seperti contohnya dibawah ini :
+>>> admin_role.name ='Administrator'
+>>> db.session.add(admin_role)
+>>> db.session.commit()
+
+Yang membedakan deleting dan modifyong rows yaitu delete melakukan fungsi hapus dan modifying melakukan fungsi menambahkan pada masing2 code contoh tadi\cite{grinberg2018flask,}
