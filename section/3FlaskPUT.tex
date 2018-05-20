@@ -126,6 +126,17 @@ Dalam melakukan penginstalan tersebut ada yang dinamakan dengan Virtualenv, apa 
 digunakan untuk membuat pengembangan di dalam lingkungan Python yang telah terisolasi dan kita bisa mengerjakan semua dalam
 proses pengembagan yang akan kita perlukan. Jadi dengan adanya Virtualenv ini kita dapat mengembangkan project yang kita buat
 dengan menggunakan bahasa pemrogramman Python.
+Sebelum menggunakan Virtualenv, tentunya kita harus melakukan instalasi terlebih dahulu.
+Virtualenv dapat diinstall dengan cara apt.
+\begin{itemize}
+	\item apt install virtualenv / apt install python-virtualenv
+atau untuk python3,
+	\item apt install python3-virtualenv
+atau bisa juga menggunakan pip
+	\item [sudo] pip install virtualenv
+\begin{itemize}
+kalian bisa menginstall menggunakan cara yang kalian sukai. Dalam penggunaan perintah [sudo], maka virtualenv akan menginstall
+secara global.
 
 \section{Konteks Aplikasi dan Permintaan}
 Ketika Flask menerima permintaan dari klien, Flask harus membuat beberapa objek tersedia untuk fungsi tampilan yang akan menanganinya. Contoh yang baik adalah objek permintaan, yang merangkum permintaan HTTP yang dikirim oleh klien. Cara yang jelas di mana Flask bisa memberikan pandangan akses fungsi ke objek permintaan adalah dengan mengirimkannya sebagai argumen, tapi itu akan memerlukan evert fungsi tampilan tunggal dalam aplikasi untuk memiliki argumen estra.
