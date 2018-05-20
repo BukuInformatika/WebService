@@ -55,6 +55,11 @@ Perhatikan bagaimana dalam fungsi tampilan ini, permintaan digunakan seolah-olah
 Catatan.
 Thread adalah urutan instruksi terkecil yang dapat dikelola secara independen. Adalah umum untuk suatu proses untuk memiliki beberapa untaian aktif, terkadang berbagi sumber daya seperti memori atau menangani file. Beberapa untaian aktif, terkadang berbagi sumber daya seperti memori atau menangani file. Server web multithreaded memulai kumpulan benang dan memilih utas dari kolam untuk menangani setiap permintaan masuk\cite{grinberg2018flask}.
 
+\subsection{Aplikasi dan Merekuest Konteks}
+flask mengaktifkan (atau mendorong) aplikasi dan meminta konteks sebelum mengirim permintaan ke aplikasi, dan menghapusnya setelah permintaan ditangani. Ketika konteks aplikasi didorong, variabel current app dan g menjadi tersedia juga. Jika salah satu variabel ini diakses tanpa aplikasi aktif atau konteks permintaan, kesalahan akan dihasilkan. Keempat variabel konteks akan dibahas secara terperinci dalam bab ini dan selanjutnya, jadi jangan khawatir jika Anda tidak mengerti mengapa itu berguna\cite{grinberg2018flask}.
+
+
+
 \section{Implementasi Flask Post - Python}
 Untuk demonstrasi, aplikasi demo posting blog menyajikan implementasi praktis API. Aplikasi ini menggunakan kerangka web Flask-Python. Selain itu, bagian ini memperkenalkan teknologi yang digunakan dan menyebutkan alasan mengapa mereka dipilih untuk proyek tersebut. Selain itu, ia menyediakan langkah demi langkah pendekatan untuk menunjukkan bagaimana sumber daya dibagi dari sumber data persisten. Oleh karena itu, API aplikasi mendasarkan prinsip REST\cite{alemu2014rest}.
 
