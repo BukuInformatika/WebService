@@ -142,3 +142,5 @@ if not app.debug:
 \end{verbatim}
 
 Disini penulis membuat file log bernama microblog.lo di dalam direktori/folder logs, yang akan dibuatkan jika belum ada. Kelas RotatingFileHandler sangat berguna karena merotasi file log, memastikan bahwa file log tidak berukuran terlalu besar saat aplikasi sudah berjalan cukup lama. Dalam kasus ini, penulis membatasi ukurannya menjadi 10KB, dan penulis menyimpan 10 file log terakhir untuk serep. 
+
+Kelas logging.Formatter akan memberikan sebuah formatting dalam penulisan pesan log. Karena pesan-pesan ini akan disimpan ke dalam sebuah file, maka kita akan menyimpan informasi sebanyak-banyaknya. Oleh karena itu, kita akan menggunakan format yang memiliki timestamp, logging level, isi pesan error dan nama file serta nomor baris yang menyebabkan sesuatu terjadi.
