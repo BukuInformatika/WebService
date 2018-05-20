@@ -308,6 +308,11 @@ def upload():
 if __name__ == '__main__':
     app.run(debug=True)
 \end{verbatim}
+
+
+Pertama tentu kita memasukan modul-modul dan membuat fungsi file yang diizinkan seperti yang terlihat dalam fungsi def allowed file(filename). Dalam fungsi index kita mengquery file dengan nama file yang kita simpan dalam database namun jika tidak ada file maka tidak akan menampilkan apapun. Fungsi index ini akan digunakan untuk merender halaman index dan menampilkan daftar file yang sudah diupload.
+
+
 dan untuk file html sebahai tampilan halaman nya sebagai berikut:
 \begin{verbatim}
 <html>
