@@ -118,6 +118,8 @@ Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ d
 
 Flask adalah kerangka mikro Python yang menyediakan fungsionalitas dasar dari kerangka web dan memungkinkan lebih banyak plug-in yang ditambahkan sehingga fungsionalitas dan set fitur dapat diperluas ke tingkat yang baru. Flask disebut sebagai kerangka mikro Python karena membuat fungsionalitas inti sederhana tetapi dapat diperluas dalam hal pengembangan. Ini juga dapat digunakan untuk menghemat waktu pembuatan aplikasi web.
 
+Sama seperti fungsi-fungsi python lainnya, fitur unggah di Flask sangat mudah. Ada dua komponen yang terlibat di sini. Pertama adalah UI yang akan mengirim file ke backend flask. Kedua adalah aplikasi Flask yang menerima file dan menyimpannya atau melakukan sesuatu yang lain dengannya. UI harus mengirim file sebagai data-bentuk-multipart. Fitur ini memungkinkan pengguna untuk mengklik tombol dan memilih file yang kemudian akan dikirim ke backend.
+
 Kita dapat memproses file yang akan diupload dengan Flask dengan mudah. Sebelumnya pastikan jangan lupa untuk mengatur atribut enctype = "multipart/form-data" pada form HTML kita, jika tidak browser tidak akan mengirimkan file Anda sama sekali. File yang diunggah disimpan di memori atau di lokasi sementara di sistem file kita. Berikut ini contoh sederhana yang menunjukkan cara kerjanya:
 
 ‘Upload.html’ memiliki tombol pemilih file dan tombol kirim..
@@ -303,7 +305,7 @@ Pembatasan File extension\\
 ALLOWED\_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])\\
 ...\\
 ALLOWED\_EXTENSIONS adalah kumpulan ekstensi file yang diizinkan. Kenapa membatasi ekstensi yang diizinkan? Kita mungkin tidak ingin pengguna orang lain dapat mengunggah semuanya di sana jika server mengirim langsung data ke klien. Dengan cara itu Anda dapat memastikan bahwa pengguna tidak dapat mengunggah file HTML yang akan menyebabkan masalah XSS. Juga pastikan untuk tidak mengizinkan file .php jika server mengeksekusinya.
-\subsection{Upload Gambar}
+\subsection{Upload Gambar dengan flask-upload}
 Kita dapat menggunakan module flask-upload untuk melakukan upload file seperti gambar contonnya berikut contoh pengimplementasiannya
 \begin{verbatim}
 from flask import Flask, render_template, request
