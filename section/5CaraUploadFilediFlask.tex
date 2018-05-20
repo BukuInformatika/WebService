@@ -240,18 +240,21 @@ Di langkah selanjutnya kita juga perlu untuk mendapatkan ekstensi file gambar un
 Setelah kita mendapat ekstensi file, kita buat nama file unik menggunakan uuid. Import uuid dan buat nama file.
 	f_name = str(uuid.uuid4()) + extension
 \end{verbatim}
-
-
 Selanjutnya Buat sebuah folder bernama Uploads pada folder static. Ini adalah tempat kita menyimpan gambar yang sudah diunggah. Tambahkan jalur ke folder Upload dalam pengaturan aplikasi.
 \begin{verbatim}
 	app.config['UPLOAD_FOLDER'] = 'static/Uploads'
 Sekarang simpan file yang dikirim ke lokasi UPLOAD_FOLDER dan kembalikan nama file sebagai respon.
-
 	file.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
 return json.dumps({'filename':f_name})
 \end{verbatim}
 
-
+Simpan perubahan di atas dan restart server. Arahkan browser ke http://localhost:5002 dan sign in menggunakan email dan password yang sah. Cobalah upload gambar menggunakan tombol browse, dan ketika selesai, periksa konsol browser. Maka akan terlihat nama file yang diunggah.
+Mari tambahkan elemen gambar untuk menampilkan gambar yang diunggah. Ganti input text read-only menjadi kode HTML berikut.
+\begin{verbatim}
+<div class="pull-right">
+    <img id="imgUpload" style="width: 140px; height: 140px;" class="img-thumbnail">
+</div>
+\end{verbatim}
 
 Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan. Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek 
 \begin{verbatim}
