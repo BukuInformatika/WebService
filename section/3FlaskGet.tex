@@ -114,3 +114,6 @@ Pengiriman data ke Database-Enable XHR. Proses ini dimulai dengan sebuah XHR GET
 \subsection{Summary}
 Menurut masih aspek lain dari penemuan ini, ketika permintaan GET dengan tag identifikasi diterima, ditentukan jika konten yang diminta telah di-cache. Jika demikian, konten yang di-cache dikembalikan ke klien. Jika tidak, permintaan POST asli dibuat kembali dan dikirim ke server asal untuk mengambil konten. Konten yang dikembalikan dikirim ke klien dan di-cache menggunakan permintaan GET dengan tag pengenal \cite{sloat2009method}.
 
+\section{Flask Framework Cookbook}
+\subsection{Working with Views}
+Fungsi tampilan Flask hanya mendukung permintaan GET. Hal yang sama berlaku dalam hal pandangan berbasis kelas. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberi tahu kelas, melalui metode atribut kelas yang disebut, tentang metode HTTP ingin mendukung. Untuk permintaan GET, objek permintaan akan mencari argumen, yaitu, request.args.get (), dan untuk POST, itu akan mencari bentuk, yaitu, request.form.get (). Jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal dengan kesalahan HTTP 405. Hal yang sama berlaku untuk semua metode \cite{aggarwal2014flask}.
