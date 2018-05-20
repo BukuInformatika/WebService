@@ -5,7 +5,7 @@ Flask merupakan sebuah microweb framework yang dicantumkan ke dalam bahasa pemro
 Flask merupakan sebuah Microweb framework yang dicantumkan ke dalam bahasa pemrograman Python berdasar dari Werkzeug toolkit dan template engine Jinja2. Berlisensi BSD. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain karena ada pustaka pihak ketiga yang menyediakan fungsi umum.
 
 \section{Error Handling di Flask}
-Error handling dalam flask akan munculnya "Internal Server Erro" pesan yang muncul di sesi terminal saat aplikasi dijalankan. Kemudian akan menampilkan  stack trace dari kesalahan yang terjadi. Stack trace sangat berguna untuk mencari error karena memberikan urutan pemanggilan mana yang menyebabkan sebuah error tersebut terjadi. Stack trace akan memperlihatkan bagian mana yang menjadi penyebabnya. Error ini muncul dari SQLAlchemy yang mencoba menulis username baru ke database, tapi database menolak karena kolom username sebelumnya sudah diatur dengan unique=True.
+Error handling dalam flask akan munculnya "Internal Server Erro" pesan yang muncul di sesi terminal saat aplikasi dijalankan. Kemudian akan menampilkan  stack trace dari kesalahan yang terjadi. Stack trace sangat berguna untuk mencari error karena memberikan urutan pemanggilan mana yang menyebabkan sebuah error tersebut terjadi. Stack trace akan memperlihatkan bagian mana yang menjadi penyebabnya. Error ini muncul dari SQLAlchemy yang mencoba menulis username baru ke database, tapi database menolak karena kolom username sebelumnya sudah diatur dengan unique True.
 
 \subsection{Debug Mode}
 Halaman error yang muncul sebelumnya cocok dipakai oleh aplikasi yang sudah diunggah ke sebuah production server. Jika ada error, user akan diberitahu dengan sebuah halaman khusus (yang nanti akan kita perbagus), dengan pesan error yang lebih detail disimpan di file log server.
@@ -150,5 +150,39 @@ Agar proses logging bisa menangkap lebih banyak pesan, dapat dilakukan dengan ca
 
 \section{Cara Memperbaiki Bug Duplikasi Username}
 Untuk memperbaiki bug username yang sebelumnya telah ditemukan, sebelumnya, RegistrationForm sudah mengimplementasi validasi untuk username, tapi validasi yang dilakukan di form edit sedit berbeda. Saat registrasi, pastikan bahwa username yang dimasukkan belum ada di database. Pada halaman edit profil kita juga harus melakukan pemeriksaan yang sama.
+\begin{verbatim}
+app/forms.py: Validate username in edit profile form.
+\end{verbatim}
 
+\begin{verbatim}
+class EditProfileForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Submit')
+
+    def __init__(self, original_username, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_username = original_username
+
+    def validate_username(self, username):
+        if username.data != self.original_username:
+            user = User.query.filter_by(username=self.username.data).first()
+            if user is not None:
+                raise ValidationError('Please use a different username.')
+\end{verbatim}
+
+Dari method validasi di atas, kita bisa lihat bahwa username yang dikirim ke method validate username() akan diperiksa dengan username asli yang ada di variabel self.original username. Jika username yang dimasukkan sama dengan username asli, maka tidak perlu ada pemeriksaan duplikasi di database. Darimana datangnya original username.
+Username asli (sebelum dilakukan perubahan) dikirim melalui konstruktur yang artinya dikirim saat pembuatan objek form berlangsung. Perhatikan kode di bawah ini. Kita mengirimkan username dari objek current user saat membuat objek form. 
+\begin{verbatim}
+app/routes.py: Validasi username di form edit profil.
+\end{verbatim}
+
+\begin{verbatim}
+@app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+    form = EditProfileForm(current_user.username)
+    # ...
+\end{verbatim}
 Solusi ini bukanlah solusi paling sempurna, karena jika ada dua atau lebih proses yang mengakses database di waktu yang bersamaan, bisa jadi kasus siapa duluan yang berhasil mengubah database, maka proses setelahnya akan mencoba mengakses yang saat diperiksa belum berubah tapi saat akan ditulis sudah berubah. Kasus ini bisa terjadi pada aplikasi yang sudah cukup besar dimana ada banyak user dan proses server yang aktif diwaktu yang bersamaan.
+
