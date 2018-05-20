@@ -148,14 +148,20 @@ Salah satu flask methode yaitu metode flaske methode yang digunakan pada saat St
 \section{Tanggapan megenai Flask}
 Ketika Flask Memanggil fungsi tampilan, itu mengharapkan nilai kembalinya ke respon br untuk permintaan tersebut. Dalam banyak kasus, responsnya adalah string sederhana yang dikirim kembali ke klien sebagai halaman HTML. Tetapi protokol HTTP membutuhkan lebih dari string sebagai tanggapan atas permintaan. Bagian yang sangat penting dari respons HTTP adalah kode status, yang secara default ditetapkan oleh Flask menjadi 200, kode yang menunjukkan bahwa permintaan dilakukan dengan sukses.
 
-\section{flask mode}
+\section{Flask Mode}
 Mode framework flask adalah mode debug, dalam mode ini aplikasi bisa lebih opsional dieksekusi dalam mode debug. Dua modul pengembangan server yang sangat mudah disebut reloader dan debugger diaktifkan secara default.
 Ketika reloader diaktifkan, flask menyimpan semua file kode sumber projek anda dan secara otomatis me-restart server ketika salah satu file diubah. 
 Memilki server yang berjalan dengan reloader diaktifkan sangat berguna selama pengembangan, karena setiap kali anda memodifikasi dan menyimpan file sumber, server secara otomatis memulai ulang dan mengambil perubahan.
 
+\section{Database di Flask}
+Pada pembahasan ini kita akan menggunakan ekstensi yang salah satunya yaitu Flask-SQLAlchemy, ekstensi flask untuk menggunakn paket SQLAlchemy yang sudah dipackage sedemikian rupa sehingga lebih soft terhadap kode flask.
+SQLAlchemy adalah sebuah Object Relational Mapper atau dengan singkatan ORM. ORM memungkinkan aplikasi untuk menggunakan database dengan data high level seperti kelas, objek, method dari pada menggunakan tabel dan kode SQL secara langsung. 
+Tugas ORM adalah mentranslate operasi high level menjadi perintah database.
+
 \section{Flask Security Architecture}
 Arsitektur keamanan flask yaitu salah satu dari penggunaan teknologi yang ada. Yang dimaksud dengan arsitektur keamanan flask yaitu dapat digunakan untuk meyediakan suatu RAdAC yang menggambarkan bagimana dilakukannya dalam sebuah prototipe sistem di RAdAC. Yang dimaksud dari RAdAC adalah teknologi baru yang begitu penting dan sudah banyak mendapatkan perhatian dari banyak karena sebagai cara untuk mengubah kebijakan informasi pada saat ini.
 
+<<<<<<< HEAD
 \section{Database di Flask}
 Pada pembahasan ini kita akan menggunakan ekstensi yang salah satunya yaitu Flask-SQLAlchemy, ekstensi flask untuk menggunakn paket SQLAlchemy yang sudah dipackage sedemikian rupa sehingga lebih soft terhadap kode flask. 
 SQLAlchemy adalah sebuah Object Relational Mapper atau dengan singkatan ORM. ORM memungkinkan aplikasi untuk menggunakan database dengan data high level seperti kelas, objek, method dari pada menggunakan tabel dan kode SQL secara langsung. 
@@ -163,6 +169,18 @@ Tugas ORM adalah mentranslate operasi high level menjadi perintah database.
 
 
 
+=======
+\section{Ikthisar Flask API}
+Flask API adalah pengganti drop-in untuk Flask yang menyediakan implementasi API yang dapat dijelajahi mirip dengan apa yang disediakan oleh kerangka kerja REST Django. Ini memberi Anda konten yang dirundingkan dengan benar dan respons parsing permintaan cerdas:
+Ambil, perbarui atau hapus instance catatan
+Dapatkan / 1 /
+HTTP 200 OK
+content-Type: aplikasi / json
+{
+     "url": "http: //127.0.01: 5000/1 /".
+     "text": "membangun kodez"
+}.
+>>>>>>> ee07abb51221a57372efd77dfea21a28ffe21978
 
 
 
