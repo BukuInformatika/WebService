@@ -234,10 +234,23 @@ Periksa apakah request adalah POST, jika iya, baca file dari request tersebut.
 \end{verbatim}
 Di langkah selanjutnya kita juga perlu untuk mendapatkan ekstensi file gambar untuk menyimpan file tersebut. Import os dan bagi nama ekstensi dari nama file.
 \begin{verbatim}    
-1	extension = os.path.splitext(file.filename)[1]
+	extension = os.path.splitext(file.filename)[1]
 Setelah kita mendapat ekstensi file, kita buat nama file unik menggunakan uuid. Import uuid dan buat nama file.
-1	f_name = str(uuid.uuid4()) + extension
+	f_name = str(uuid.uuid4()) + extension
 \end{verbatim}
+
+
+Selanjutnya Buat sebuah folder bernama Uploads pada folder static. Ini adalah tempat kita menyimpan gambar yang sudah diunggah. Tambahkan jalur ke folder Upload dalam pengaturan aplikasi.
+\begin{verbatim}
+	app.config['UPLOAD_FOLDER'] = 'static/Uploads'
+Sekarang simpan file yang dikirim ke lokasi UPLOAD_FOLDER dan kembalikan nama file sebagai respon.
+
+	file.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
+return json.dumps({'filename':f_name})
+\end{verbatim}
+
+
+
 Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan. Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek 
 \begin{verbatim}
 \end{verse}.files [file]. 
@@ -308,11 +321,7 @@ def upload():
 if __name__ == '__main__':
     app.run(debug=True)
 \end{verbatim}
-
-
 Pertama tentu kita memasukan modul-modul dan membuat fungsi file yang diizinkan seperti yang terlihat dalam fungsi def allowed file(filename). Dalam fungsi index kita mengquery file dengan nama file yang kita simpan dalam database namun jika tidak ada file maka tidak akan menampilkan apapun. Fungsi index ini akan digunakan untuk merender halaman index dan menampilkan daftar file yang sudah diupload.
-
-
 dan untuk file html sebahai tampilan halaman nya sebagai berikut:
 \begin{verbatim}
 <html>
