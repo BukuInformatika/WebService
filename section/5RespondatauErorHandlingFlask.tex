@@ -146,3 +146,7 @@ Disini penulis membuat file log bernama microblog.lo di dalam direktori/folder l
 Kelas logging.Formatter akan memberikan sebuah formatting dalam penulisan pesan log. Karena pesan-pesan ini akan disimpan ke dalam sebuah file, maka kita akan menyimpan informasi sebanyak-banyaknya. Oleh karena itu, kita akan menggunakan format yang memiliki timestamp, logging level, isi pesan error dan nama file serta nomor baris yang menyebabkan sesuatu terjadi.
 
 Agar proses logging bisa menangkap lebih banyak pesan, dapat dilakukan dengan cara menurunkan logging level ke kategori INFO yang biasanya digunakan untuk application logger maupun file logger handler. Jika tidak familiar dengan kategori loggin, ada DEBUG, INFO, WARNING, ERROR, dan CRITICAL.  Ketika aplikasi ini berjalan di server produksi, entri log akan memberi tahu server direstart.
+
+
+\section{Cara Memperbaiki Bug Duplikasi Username}
+Untuk memperbaiki bug username yang sebelumnya telah ditemukan, sebelumnya, RegistrationForm sudah mengimplementasi validasi untuk username, tapi validasi yang dilakukan di form edit sedit berbeda. Saat registrasi, pastikan bahwa username yang dimasukkan belum ada di database. Pada halaman edit profil kita juga harus melakukan pemeriksaan yang sama.
