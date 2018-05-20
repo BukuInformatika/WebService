@@ -116,4 +116,8 @@ Menurut masih aspek lain dari penemuan ini, ketika permintaan GET dengan tag ide
 
 \section{Flask Framework Cookbook}
 \subsection{Working with Views}
-Fungsi tampilan Flask hanya mendukung permintaan GET. Hal yang sama berlaku dalam hal pandangan berbasis kelas. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberi tahu kelas, melalui metode atribut kelas yang disebut, tentang metode HTTP ingin mendukung. Untuk permintaan GET, objek permintaan akan mencari argumen, yaitu, request.args.get (), dan untuk POST, itu akan mencari bentuk, yaitu, request.form.get (). Jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal dengan kesalahan HTTP 405. Hal yang sama berlaku untuk semua metode \cite{aggarwal2014flask}.
+Fungsi tampilan Flask hanya mendukung permintaan GET. Hal yang sama berlaku dalam hal pandangan berbasis kelas. Untuk mendukung atau menangani jenis permintaan lainnya, harus secara khusus memberi tahu kelas, melalui metode atribut kelas yang disebut, tentang metode HTTP ingin mendukung. Untuk permintaan GET, objek permintaan akan mencari argumen, yaitu, request.args.get (), dan untuk POST, itu akan mencari bentuk, yaitu, request.form.get (). Jika mencoba membuat permintaan GET ke metode yang hanya mendukung POST, permintaan akan gagal dengan kesalahan HTTP 405. Hal yang sama berlaku untuk semua metode \cite{aggarwal2014flask}. 
+
+\section{Method and system for inserting POST data into the GET request to apply normal caching rules}
+\subsection{Process Flow}
+Permintaan GET diubah menjadi permintaan POST dan payload yang diambil sekarang dimasukkan sebagai badan permintaan POST baru ini. Permintaan POST ini kemudian dikirim ke server asal untuk mengambil konten yang diminta. Ketika server asal merespon, dua hal terjadi. Data respons dikirim kembali ke klien panggilan (blok 730). Pada saat yang sama, konten yang diterima disimpan (blok 725) \cite{sloat2009method}. 
