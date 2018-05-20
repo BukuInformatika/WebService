@@ -150,3 +150,5 @@ Agar proses logging bisa menangkap lebih banyak pesan, dapat dilakukan dengan ca
 
 \section{Cara Memperbaiki Bug Duplikasi Username}
 Untuk memperbaiki bug username yang sebelumnya telah ditemukan, sebelumnya, RegistrationForm sudah mengimplementasi validasi untuk username, tapi validasi yang dilakukan di form edit sedit berbeda. Saat registrasi, pastikan bahwa username yang dimasukkan belum ada di database. Pada halaman edit profil kita juga harus melakukan pemeriksaan yang sama.
+
+Solusi ini bukanlah solusi paling sempurna, karena jika ada dua atau lebih proses yang mengakses database di waktu yang bersamaan, bisa jadi kasus siapa duluan yang berhasil mengubah database, maka proses setelahnya akan mencoba mengakses yang saat diperiksa belum berubah tapi saat akan ditulis sudah berubah. Kasus ini bisa terjadi pada aplikasi yang sudah cukup besar dimana ada banyak user dan proses server yang aktif diwaktu yang bersamaan.
