@@ -109,6 +109,21 @@ Untuk tugas rendering template, labu menggunakan mesin template yang kuat yang d
 <h1>Hello, {{ name }}!</h1>
 \end{verbatim}
 
+\section{Rendering Template}
+Secara default flask akan mencari template dalam subdirektori template yang terletak di dalam direktori aplikasi utama. Untuk versi hello.py berikutnya, Anda perlu membuat subdirektori template dan menyimpan template yang didefinisikan dalam contoh sebelumnya di dalamnya sebagai index.html dan user.html, masing-masing. 
+Fungsi tampilan dalam aplikasi perlu dimodifikasi untuk membuat template ini, berikut merupakan contoh template nya.
+\begin{verbatim}
+from flask import Flask, render template
+
+@app.route('/')
+def index():
+    return render template('index.html')
+
+@app.route('/user/<name>')
+def user(name):
+    return render template('user.html', name=name)
+\end{verbatim}
+
 \section{debug mode}
 aplikasi flask opsional dapat dijalankan dalam mode debug. dalam mode ini, dua modul yang sangat nyaman dari server pengembangan disebut 
 reloader dan debugger diaktifkan secara default. ketika reloader diaktifkan, falsk melihat semua file kode sumber proyek Anda dan secara 
