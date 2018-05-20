@@ -134,10 +134,23 @@ C:\>cd microblog
 Jika menggunakan Python 3, virtual environment sudah ada secara otomatis sehingga bisa langsung dibuat dengan perintah:
 
 \begin{verbatim}
-C:\microblog>python3 -m venv venv
+C:\microblog>python -m venv venv
 \end{verbatim}
 
-Perintah ini mengartikan bahwa kita memerintahkan agar Python menjalankan package venv untuk membuatkan sebuah virtual environment bernama venv. venv pertama di perintah tersebut merupakan nama package-nya sedangkan venv yang kedua merupakan nama direktori untuk menyimpan salinan interpreter Python.
+Perintah tersebut mengartikan bahwa kita memerintahkan agar Python menjalankan package venv untuk membuatkan sebuah virtual environment bernama venv. venv pertama di perintah tersebut merupakan nama package-nya sedangkan venv yang kedua merupakan nama direktori untuk menyimpan salinan interpreter Python.
+
+Apabila kita menggunanka Python versi dibawah 3.4 maka vnv masih belum menjadi package bawaan sehingga harus dipasang terlebih dahulu. Untuk versi Python-python tersebut, pasang aplikasi pihak ketika bernama virtualenv sebelum membuat virtual environment yang baru. Setelah virtualenv terpasang pada komputer maka kita dapat membuat sebuah virtual environment dengan perintah:
+
+\begin{verbatim}
+C:\microblog>virtualenv venv
+\end{verbatim}
+
+Sekarang kita seharusnya sudah memiliki virtual environment pada komputer kita. Selanjutnya, kita perintahkan kepada sistem untuk menggunakan virtual environment untuk mengaktifkannya dengan perintah:
+
+\begin{verbatim}
+C:\microblog>virtualenv venv
+\end{verbatim}
+
 
 
 \section{konfigurasi Python Flask + Swagger}
