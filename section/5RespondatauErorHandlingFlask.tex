@@ -243,3 +243,5 @@ def page_not_found(error):
 	return render_template('404.htm'), 404
 \end{verbatim}
 Di mana perlu menentukan kode kesalahan klien atau server dan menerapkan metode yang berfungsi untuk mengembalikan konten halaman, ditambah denga beberapa kode - kode yang error..
+
+Untuk memastikan  generator respons kesalahan yang berkemampuan produksi, Jika menggunakan zf-development-mode di aplikasi yang disediakan secara default dalam aplikasi kerangka, maka mode tersebut dapat mengubah penggunaan whoops dengan menambahkan konfigurasi ke file config / autoload / development.local.php. Saat mengaktifkan mode pengembangan, whoops akan diaktifkan, ketika menonaktifkan mode pengembangan, maka akan menggunakan generator produksi yang sudah ada.
