@@ -28,6 +28,12 @@ Jinja 2 adalah mesin templating populer untuk Python. Sistem template web mengga
 
 Flask sering disebut sebagai kerangka mikro. Ini bertujuan untuk menjaga inti dari aplikasi sederhana namun dapat diperluas. Flask tidak memiliki lapisan abstraksi bawaan untuk penanganan basis data, juga tidak memiliki dukungan validasi. Sebaliknya, Flask mendukung ekstensi untuk menambahkan fungsionalitas seperti itu ke aplikasi. Beberapa ekstensi Flask populer dibahas nanti dalam tutorial.
 
+WSGI
+Web Server Gateway Interface (WSGI) telah diadopsi sebagai standar untuk pengembangan aplikasi web Python. WSGI adalah spesifikasi untuk antarmuka universal antara server web dan aplikasi web.
+
+Werkzeug
+Ini adalah toolkit WSGI, yang mengimplementasikan permintaan, objek respons, dan fungsi utilitas lainnya. Ini memungkinkan membangun kerangka web di atasnya. Kerangka Flask menggunakan Werkzeug sebagai salah satu basisnya.
+
 Jadi bagaimana tepatnya Flask menangani unggahan? Yah itu akan menyimpannya di memori webserver jika file-file tersebut masuk akal kecil jika tidak di lokasi sementara (seperti yang dikembalikan oleh tempfile.gettempdir). Tapi bagaimana Anda menentukan ukuran file maksimum setelah pengunggahan dibatalkan? Secara default, Flask dengan senang hati akan menerima unggahan file ke jumlah memori yang tidak terbatas, tetapi Anda dapat membatasi itu dengan menetapkan kunci konfigurasi 
 
 \begin{verbatim}
