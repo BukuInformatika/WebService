@@ -151,8 +151,24 @@ C:\microblog>virtualenv venv
 Sekarang kita seharusnya sudah memiliki virtual environment pada komputer kita. Selanjutnya, kita perintahkan kepada sistem untuk menggunakan virtual environment untuk mengaktifkannya dengan perintah:
 
 \begin{verbatim}
-C:\microblog>virtualenv venv
+C:\microblog>venv\Scripts\activate
+
 \end{verbatim}
+
+Sekarang setelah kita memiliki virtual environment dan menjalankannya pad sistem, selanjutnya kita tambahkan microframework Flask untuk membuat web service di dalamnya.
+
+\begin{verbatim}
+(venv) C:\microblog>pip install Flask
+\end{verbatim}
+
+Pada kasus ini kita ingin membuat aplikasi microblogging dengan memiliki sebauh heading yang menyambut visitor dalam website yang telah kita bangun. Untuk itu kita akan mengabaikan fakta bahwa aplikasi ini belum memiliki konsep user karena baru akan kita buat . Untuk mengemulasi seorang user, penulis akan menggunakan dictionary Python sebagai berikut:
+
+\begin{verbatim}
+user = {'username': 'Miguel'}
+\end{verbatim}
+
+Proses pembuatan user tersebut dikenal juga dengan istilah mocking yang memungkinkan kita untuk fokus menyelesaikan salah satu bagian aplikasi dan mengabaikan bagian yang belum selesai. Dalam kasus ini kita ingin menyelesaikan tampilan web tanpa perlu memikirkan bagaimana sistem manajemen user-nya dan bisa terus bekerja.
+
 
 
 
@@ -180,7 +196,7 @@ Sekarang mari siapkan aplikasi untuk pengembangan dan mulai:
 Saat anda mengakses API melalui UI web Swagger. Hal ini karena tidak mungkin untuk mengatur header otorisasi yang dienkode base64 dari UI angkuh. Bagi mereka yang bertanya-tanya "apa yang angkuh", saya akan mendefinisikan Swagger sebagai alat untuk proyek berbasis API yang menciptakan UI web yang bagus untuk melakukan uji langsung API dan juga mengekspor skema API yang dapat digunakan untuk memahami Definisi API.
 
 \subsection{Flask Swagger dengan Restful}
-Untuk pengguanaan swagger memerlukan waktu yang lama begitu juga saat menggunakan Flask-RESTful, tetapi dalam kebutuhan dokumen yang di perlukan swagger maka muncul perintah untuk beralih ke Flask-RESTPlus. Ini didasarkan pada Flask-RESTful, jadi untuk bermigrasi hanya diperlukan dengan cara mengubah impor - dari flask_restful impor ... ke flask_restplus impor .... Selain dokumentasi swagger, dari situlah akan menambah ruang nama.
+Untuk pengguanaan swagger memerlukan waktu yang lama begitu juga saat menggunakan \verb|Flask-RESTful| , tetapi dalam kebutuhan dokumen yang di perlukan swagger maka muncul perintah untuk beralih ke \verb|Flask-RESTful|. Ini didasarkan pada \verb|Flask-RESTful|, jadi untuk bermigrasi hanya diperlukan dengan cara mengubah impor dari \verb|flask_restful|  impor ke \verb|Flask_RESTful| impor Selain dokumentasi swagger, dari situlah akan menambah ruang nama.
 
 
 \section{Kesimpulan}
