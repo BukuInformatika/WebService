@@ -189,3 +189,9 @@ mereka sendiri tentang URL dan fungsi tampilan, sumber daya negara (misalnya, fi
 termos. dalam banyak hal, cetak biru sangat mirip dengan aplikasi flask itu sendiri. Namun, cetak biru bukanlah aplikasi flask 
 independen dan tidak dapat dijalankan secara independen sebagai aplikasi itu sendiri, seperti yang dijelaskan dalam dokumentasi flask 
 resmi.
+
+flask dibangun di atas jinja, jadi meskipun mungkin untuk menggunakan jinja tanpa tabung, jinja masih merupakan bagian tak terpisahkan 
+dari flask, dan flask menyediakan beberapa metode untuk bekerja secara langsung dengan jinja. umumnya, flask tidak menganggap apa pun 
+tentang struktur aplikasi Anda kecuali apa yang Anda katakan, dan lebih suka menyediakan fungsionalitas melalui plugin opsional. jinja 
+agak eksepsi untuk ini. flask memberi Anda jinja secara default, dan menganggap bahwa Anda menyimpan semua templat jinja Anda dalam 
+subdirektori templat nama aplikasi Anda.
