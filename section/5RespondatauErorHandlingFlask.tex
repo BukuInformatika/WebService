@@ -186,3 +186,39 @@ def edit_profile():
 \end{verbatim}
 Solusi ini bukanlah solusi paling sempurna, karena jika ada dua atau lebih proses yang mengakses database di waktu yang bersamaan, bisa jadi kasus siapa duluan yang berhasil mengubah database, maka proses setelahnya akan mencoba mengakses yang saat diperiksa belum berubah tapi saat akan ditulis sudah berubah. Kasus ini bisa terjadi pada aplikasi yang sudah cukup besar dimana ada banyak user dan proses server yang aktif diwaktu yang bersamaan.
 
+\section{bagaimana menangani Kesalahan dalam Flask}
+\subsection{Logging}
+Logging digunakan untuk mengumpulkan dan menyimpan informasi berharga tentang eksekusi aplikasi, yang dapat digunakan untuk tujuan pemecahan masalah. Logging termasuk baik menyimpan data ke file log, mengirimnya ke layanan pemantauan, log peristiwa Windows, syslog Unix, dll. Informasi, disimpan dan / atau dikirim, dapat berupa pesan teks, call stack, segala aplikasi dan lingkungan terkait, yang dapat digunakan nanti untuk debugging.
+Di bawah ini Anda bisa melihat konfigurasi penebangan dan bagaimana menggunakannya dalam aplikasi Flask:
+
+\begin{verbatim}
+import logging
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def about():
+    app.logger.warning('A warning message is sent.')
+    app.logger.error('An error message is sent.')
+ app.logger.info('Information: 3 + 2 = %d', 5)
+    return "about"
+#config.py
+class BaseConfig(object):
+    DEBUG = False
+    TESTING = False
+    # sqlite :memory: identifier is the default if no filepath is present
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    SECRET_KEY = '1d94e52c-1c89-4515-b87a-f48cf3cb7f0b'
+    LOGGING_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    LOGGING_LOCATION = 'bookshelf.log'
+    LOGGING_LEVEL = logging.DEBUG
+def configure_app(app):
+    config_name = os.getenv('FLASK_CONFIGURATION', 'default')
+    app.config.from_object(config[config_name])
+    app.config.from_pyfile('config.cfg', silent=True)
+    # Configure logging
+    handler = logging.FileHandler(app.config['LOGGING_LOCATION'])
+    handler.setLevel(app.config['LOGGING_LEVEL'])
+    formatter = logging.Formatter(app.config['LOGGING_FORMAT'])
+    handler.setFormatter(formatter)
+    app.logger.addHandler(handler)
+\end{verbatim}
