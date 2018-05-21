@@ -225,3 +225,11 @@ def configure_app(app):
 
 \subsection{Error Management}
 Flask memungkinkan untuk menangani sebuah kesalahan ke kode status HTTP yang telah diberikan. Ada dua jenis kesalahan pada suaty aplikasi dan suatu rute. Kesalahan aplikasi mengacu pada masalah yang ada dalam kode aplikasi hingga menangkap pengecualian yang dibangkitkan, dan lain-lain. Kesalahan rute adalah kesalahan tentang URL yang hilang atau salah.
+
+Flask menyediakan pengembang dengan sarana untuk menerapkan penangan kesalahan mereka sendiri melalui dekorator errorhandler.
+\begin{verbatim}
+@ app.errorhandler ( 404 )
+def  page_not_found ( kesalahan ):
+	app.logger.error ( ' Halaman tidak ditemukan: % s ' , (request.path))
+	return render_template ( ' 404.htm ' ), 404
+ \end{verbatim}
