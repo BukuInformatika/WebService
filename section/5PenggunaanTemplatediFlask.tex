@@ -70,6 +70,11 @@ tweepy\
 …tweepy.py
 \end{verbatim}
 
+\subsection{Perilaku Konteks Jinja}
+Variabel-variabel ini ditambahkan ke variabel, mereka bukan variabel global. Perbedaannya adalah bahwa secara default akan muncul dalam 
+konteks template yang diimpor, ini sebagian karena pertimbangan kinerja, sebagian untuk menjaga hal-hal eksplisit. Secara eksplisit 
+meneruskan permintaan ke makro sebagai parameter, atau atribut dari objek permintaan yang anda minati. 
+
 \section{Pengertian Flask}
 Flask merupakan sebuah framework kecil bagi sebagian besar standard serta cukup kecil untuk disebut sebagai micro-framework. 
 Karena termasuk framework yang kecil, membuat atau menjadikan kita mudah membaca dan memahami semua kode sumbernya. 
