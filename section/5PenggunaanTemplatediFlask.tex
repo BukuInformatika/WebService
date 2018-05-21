@@ -102,12 +102,34 @@ kekurangn yang terdapat pada framework tersebut. Yang pertama programmer akan da
 Kedua adalah kemungkinan adanya penambahan biaya yang di beratkan dai penggunaan frameworknya, lalu  pengerjaan cepat tetapi tenaga yang 
 harus dikeluarkan lebih besar. Dan terakhir yaitu kecepatan eksekusi masih belum bisa dipredeksi.
 
+\begin{table} [ht]
+\caption{Kerugian Flask dalam tabel}
+\centering
+\begin {tabular} {|cc|}
+\hline
+a. Pembuat memiliki banyak batasan & \\
+\hline
+b. Penambahan biaya &\\
+\hline
+c. Singkat tetapi mebebankan satu pihak & \\
+\hline
+d. Kecepatan eksekusi tidak dapat diprediksi & \\
+\hline
+\end{tabular}
+\label{ltabel}
+\end{table}
+
 \section{Pengertian Template}
 Tempate adalah suatu bahan yang menjadi dokumen atau beberapa file yang dibutuhkan dalam membuat website. Pada awalnya, seorang yang 
 ahli dalam web bisa mengetahu pengertian dari web itu sendiri. Template atau bisa juga disebut dengan theme yaitu dokumen dari beberapa 
 file yang berisikan model-model tambahan yang akan terlihat pada saat proses dalam pembuatan dokumen-dokumen tersebut.
 
 \section{Penggunaan Template di Flask}
+Jika kita dapat memisahkan logic dengan layout dari sebuah halaman web, tentu aplikasi kita dapat menjadi terorganisasi. Kita bahkan 
+bisa membuat tampilan halaman web kita dan kita yang membuat application logic dengan python. Template membantu memcapai pemisahan 
+antara presentasi dan bussines logic. Di flask template ditulis sebagai file yang berbeda, disimpan di folder templates yang terdapat di 
+dalam aplikasi package.
+
 Template adalah file yang berisi teks tanggapan, dengan variabel placeholder untuk bagian dinamis yang hanya akan diketahui dalam konteks permintaan. Proses yang menggantikan variabel dengan nilai aktual dan mengembalikan string respons akhir disebut rendering.
 Untuk tugas rendering template, labu menggunakan mesin template yang kuat yang disebut Jinja2. Dalam bentuk yang paling sederhana, template jinja2 adalah file yang berisi teks tanggapan. Berikut merupakan contoh Jinja2 template untuk file index.html dan user.html.
 \begin{verbatim}
