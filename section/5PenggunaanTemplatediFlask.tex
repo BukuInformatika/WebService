@@ -152,6 +152,9 @@ def user(name):
     return render template('user.html', name=name)
 \end{verbatim}
 
+Fungsi render\_template \(\) disediakan oleh labu terintegrasi oleh mesin template Jinja2 dengan aplikasi. Fungsi ini mengambil file name dari template sebagai argumen pertama. Argumen tambahan apa pun adalah pasangan nilai-kunci yang mewakili nilai aktual untuk variabel yang direvisi dalam template. 
+Dalam contoh ini, template kedua menerima variabel nama. Argumen kata kunci seperti nama\ = nama dalam contoh sebelumnya cukup umum, tetapi mereka mungkin tampak membingungkan dan sulit dipahami jika Anda tidak terbiasa dengannya. \"nama\" di sebelah kiri mewakili nama argumen, yang digunakan di placeholder yang ditulis dalam template. \"nama\" di sisi kanan adalah variabel dalam lingkup saat ini yang memberikan nilai untuk argumen dengan nama yang sama. Meskipun ini adalah pola umum, menggunakan nama variabel yang sama di kedua sisi tidak diperlukan. 
+
 \section{debug mode}
 aplikasi flask opsional dapat dijalankan dalam mode debug. dalam mode ini, dua modul yang sangat nyaman dari server pengembangan disebut 
 reloader dan debugger diaktifkan secara default. ketika reloader diaktifkan, falsk melihat semua file kode sumber proyek Anda dan secara 
