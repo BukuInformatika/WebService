@@ -139,6 +139,10 @@ Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ d
 
 Flask adalah kerangka mikro Python yang menyediakan fungsionalitas dasar dari kerangka web dan memungkinkan lebih banyak plug-in yang ditambahkan sehingga fungsionalitas dan set fitur dapat diperluas ke tingkat yang baru. Flask disebut sebagai kerangka mikro Python karena membuat fungsionalitas inti sederhana tetapi dapat diperluas dalam hal pengembangan. Ini juga dapat digunakan untuk menghemat waktu pembuatan aplikasi web.
 
+ Flask menggunakan Jinja Template Engine dan Werkzeug Toolkit WSGI. Struktur flask adalah kategori menjadi dua bagian "File statis & file Templat", file templat memiliki semua templat Jinja termasuk laman Html, di mana sebagai file statis memiliki semua kode statis yang diperlukan untuk situs web seperti kode CSS, kode JavaScript, dan file Gambar
+
+
+
 Sama seperti fungsi-fungsi python lainnya, fitur unggah di Flask sangat mudah. Ada dua komponen yang terlibat di sini. Pertama adalah UI yang akan mengirim file ke backend flask. Kedua adalah aplikasi Flask yang menerima file dan menyimpannya atau melakukan sesuatu yang lain dengannya. UI harus mengirim file sebagai data-bentuk-multipart. Fitur ini memungkinkan pengguna untuk mengklik tombol dan memilih file yang kemudian akan dikirim ke backend.
 
 Kita dapat memproses file yang akan diupload dengan Flask dengan mudah. Sebelumnya pastikan jangan lupa untuk mengatur atribut enctype = "multipart/form-data" pada form HTML kita, jika tidak browser tidak akan mengirimkan file Anda sama sekali. File yang diunggah disimpan di memori atau di lokasi sementara di sistem file kita. Berikut ini contoh sederhana yang menunjukkan cara kerjanya:
