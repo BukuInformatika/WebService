@@ -222,3 +222,6 @@ def configure_app(app):
     handler.setFormatter(formatter)
     app.logger.addHandler(handler)
 \end{verbatim}
+
+\subsection{Error Management}
+Flask memungkinkan untuk menangani sebuah kesalahan ke kode status HTTP yang telah diberikan. Ada dua jenis kesalahan pada suaty aplikasi dan suatu rute. Kesalahan aplikasi mengacu pada masalah yang ada dalam kode aplikasi hingga menangkap pengecualian yang dibangkitkan, dan lain-lain. Kesalahan rute adalah kesalahan tentang URL yang hilang atau salah.
