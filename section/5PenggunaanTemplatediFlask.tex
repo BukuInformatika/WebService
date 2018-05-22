@@ -1,0 +1,205 @@
+%Resume Cara menggunakan template di flask Kelompok 3 D4TI2B
+%\begin{enumerate}
+%\Fikri aldi nugraha                  1164038
+%\Nur Arkhamia Batubara               1164049 
+%\Miftahul Hasanah                    1164046 
+%\Si Made Angga Dwitya P              1164053 
+%\Widary Anggraini Mindo V Siahaan    1164057
+%\end{enumerate}
+
+\section {Pengenalan Mengenai Flask}
+Templet adalah suatu file yang berisi data statis serta placeholder untuk data statis serta placeholder untuk data dinamis. Sebuah 
+template dirender dengan data spesifik untuk menghasilkan dokumen akhir, flaks menggunakan pustaka template jinja untuk membuat 
+template. Di aplikasi anda, anda dapat akan menggunakan template untuk merender HTML yang akan ditampilkan di browser pengguna.
+
+Flaks merupakan micro web framework yang dituliskan dengan Bahasa pemograman Phyton, Flaks disebut juga micro framework karena tidak 
+membutuhkan alat-alat tertentu atau pustaka. Flaks tidak memiliki suatu database abstraction layer, validasi form, atau komponen lain 
+di mana sudah ada pustaka pihak ketiga yang menyediakan fungsi umum. Flaks mendukung ekstensi yang dapat menambah fitur aplikasi 
+seolah-olah mereka mendukung ekstensi yang dapat menambahkan fitur aplikasi seolah-olah mereka diimplementasikan dalam flaks itu 
+sendiri.
+
+Flask dapat membantu kita membuat situs dengan sangat cepat meskipun dengan library yang sederhana. Flaks jauh lebih ringan dan cepat 
+karena flaks dibuat untuk menyederhanakan inti framework-nya seminimal mungkin, dengan tagline web development one drop at a time. 
+Flaks dapat membantu kita membuat situs dengan sangat cepat meskipun dengan library yang sederhana. 
+
+Flaks ini didasarkan pada Werkzeug WSGI toolkit dan jinja-jinja template engine dan keduanya adalah proyek-proyek Pocoo yang dibuat 
+ketika Ronacher dan Georg Brandl sedang membangun system papan bulletin yang di tulis dalam Phyton. Fitur yang terdapat pada Flaks :
+\begin{enumerate)
+\item Berisi pengembangan server dan debugger
+\item Dukungan terintegrasi untuk pengujian unit
+\item RESTful request dispatching
+\item Menggunakan Jinja-jinja template engine
+\item Dukungan untuk secure cookies
+\item Berbasis Ucnicode
+\item Dokumentasi yang ekstensif
+\end{enumerate}
+
+Terdapat berbagai macam framework yang bisa digunakan untuk membuat website. Karena banyaknya framework tersebut membuat para 
+programmer menjadi dipermudah dengan adanya berbagai aneka macam framework yang tersedia. Salah satu framework yang bisa dibilang 
+banyak dipakai adalah framework pada Python. Python adalah Bahasa pemrograman yang digunakan dalam penggunaan dalam pembuatan website. 
+Di Python terdapat berbagai macem framework yang digunakan mulai dari Flask hingga FullyLoaded yaitu Django dan Web2py.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/5logoflask.JPG}}
+\caption{Logo Flask}
+\label{logo}
+\end{figure}
+
+Pada gambar \ref{logo} merupakan logo dari framework flask.
+
+\subsection{Belajar Flaks URI}
+Sebelum merancang sebuah web alangkah baiknya anda memikirnya untuk mencari template yang sesui dengan isi dari tujuan web anda.  URI 
+adalah singkatan untuk Uniform Resource Identifier atau standar uniform penamaan identifier suatu sumber daya resource di web. Sumber 
+daya disini bisa berupa gambar, video, audio, berkas, ebook halaman HTML, berkas PDF dan lain-lain. 
+
+
+Flask yaitu suatu microframework yang dapat diibangun dengan menggunakan Bahasa pemrograman yaitu python. Flask digunakan untuk 
+mengembangkan sebuah aplikasi web dan lain-lain. Flask juga berarti sebuah pengerjaan aplikasi web menjadi sangat mudah dan simple 
+karena disini kita bisa menjalankan sebuah web hanya dengan menggunakan 1file python. Flask ini membuat susunan kerja benar benar 
+sangat ringan dan mudah tetapi juga bisa dikembangkan dengan mudah.  Dan disini akan dijelaskan juga mengenai tentang bagaimana 
+penggunaan template flask.
+
+Aplikasi flask memiliki lebih banyaj view function dengan semakin banyaknya URL yang akan kita buat, jadi bayangkan jika kita mengubah 
+salah satu layout maka kita harus memperbaharui HTML di view function lainnya.  Templates membantu mencapai pemisahan Antara 
+presentation 
+dan business logic, di flask template ditulissebagai file yang berbeda disimpan di folder templates yang ada di dalam application 
+package. 
+Jadi setelah kita berada di direktori microblog, buat direktori untuk menyimpan templates. 
+
+\subsection{Membuat Struktur Projek}
+Untuk membuat folder static dan templates di dalam folder tweepy, folder static digunakan untuk menyimpan file-file gambar dan css. 
+Sedangkan folder templates digunakan untuk menyimpan file-file html. Setelah itu buat file schema .sql dan tweepy .py satu level dengan 
+folder static dan teplates. Struktur projek akan terlihat seperti dibawah ini:
+\begin{verbatim}
+tweepy\
+..static\
+…template\
+…schema.sql
+…tweepy.py
+\end{verbatim}
+
+\subsection{Perilaku Konteks Jinja}
+Variabel-variabel ini ditambahkan ke variabel, mereka bukan variabel global. Perbedaannya adalah bahwa secara default akan muncul dalam 
+konteks template yang diimpor, ini sebagian karena pertimbangan kinerja, sebagian untuk menjaga hal-hal eksplisit. Secara eksplisit 
+meneruskan permintaan ke makro sebagai parameter, atau atribut dari objek permintaan yang anda minati. 
+
+\section{Pengertian Flask}
+Flask merupakan sebuah framework kecil bagi sebagian besar standard serta cukup kecil untuk disebut sebagai micro-framework. 
+Karena termasuk framework yang kecil, membuat atau menjadikan kita mudah membaca dan memahami semua kode sumbernya. 
+Walaupun termasuk kedalam kategori micro framework, bukan berarti flask memiliki banyak kekurangan dibanding framework lainnya, ia menydiakan inti yang solid dengan layanan dasar, sementara ektensi menyediakan sisanya dan kita dapat memilih paket ekstensi yang diinginkan.
+
+Flask memiliki tiga dependensi utama, yaitu routing, debugging, web server gateway interface atau wsgi dan subsistem dari flask itu 
+sendiri berasal dari Werkzeug. Flask juga mendapat dukungan template yang disediakan oleh Jinja2 serta memiliki integrasi dengan  
+command-line yang berasal dari klik. Dependensi ini semuanya ditulis oleh Armin Ronacher, penulis flask.
+
+Flask tidak memiliki dukungan asli untuk mengakses database, memvalidasi formulir web, mengautentikasi pengguna, atau tugas tingkat 
+tinggi lainnya, banyak layanan utama lainnya yang dibutuhkan sebagian besar aplikasi web melalui ekstensi yang terintegrasi dengan paket 
+inti. Pengembang dapat memilih ektensi yang paling sesuai untuk proyeknya atau bahkan dapat menulis sendiri jika menginginkannya, fitur 
+ini sangat kontras dengan framework besar lainnya, dimana sebagian besar pilihan telah dibuat dan sulit atau kadang-kadang tidak mungkin 
+untuk diubah. 
+
+\subsection{Keutnungan dari flask}
+Framework flask atau flask adalah kumpulan fungsi – fungsi, maka seorang pembuat web tidak usah membuat fungsi-fungsi yang dibuat dari 
+awal, sehingga pembuatn web tinggal dapat memanggil berberapa kumpulan fungsi yang telah ditentukan teersebut. Tentunya cara-cara 
+tersebut harus sesuai dengan yang telah ditentukan oleh framework tersebut. Disamping itu juga terdapat keuntungan-keuntungan dari 
+framework flask:
+\begin{enumerate}
+\item Adanya Flask dapat mempermudah kerja dalam pembuatan aplikasi
+\item Framework flask juga dapat menghemat kerja pembuat aplikasi
+\item Dapat mengurangi personil-personil dalam pembuatan aplikasi
+\end{enumerate}
+
+\subsection{Kerugian Dari Flask}
+Didalam framework ini memiliki banyak sekali keuntungan yang didapat oleh pembuat website atau aplikasi, teapi terdapat juga bebarapa 
+kekurangn yang terdapat pada framework tersebut. Yang pertama programmer akan dapat menemukan batasan-batasan dalam pembuatan aplikasi. 
+Kedua adalah kemungkinan adanya penambahan biaya yang di beratkan dai penggunaan frameworknya, lalu  pengerjaan cepat tetapi tenaga yang 
+harus dikeluarkan lebih besar. Dan terakhir yaitu kecepatan eksekusi masih belum bisa dipredeksi.
+
+\begin{table} [ht]
+\caption{Kerugian Flask dalam tabel}
+\centering
+\begin {tabular} {|cc|}
+\hline
+a. Pembuat memiliki banyak batasan & \\
+\hline
+b. Penambahan biaya &\\
+\hline
+c. Singkat tetapi mebebankan satu pihak & \\
+\hline
+d. Kecepatan eksekusi tidak dapat diprediksi & \\
+\hline
+\end{tabular}
+\label{ltabel}
+\end{table}
+
+\section{Pengertian Template}
+Tempate adalah suatu bahan yang menjadi dokumen atau beberapa file yang dibutuhkan dalam membuat website. Pada awalnya, seorang yang 
+ahli dalam web bisa mengetahu pengertian dari web itu sendiri. Template atau bisa juga disebut dengan theme yaitu dokumen dari beberapa 
+file yang berisikan model-model tambahan yang akan terlihat pada saat proses dalam pembuatan dokumen-dokumen tersebut.
+
+\section{Penggunaan Template di Flask}
+Jika kita dapat memisahkan logic dengan layout dari sebuah halaman web, tentu aplikasi kita dapat menjadi terorganisasi. Kita bahkan 
+bisa membuat tampilan halaman web kita dan kita yang membuat application logic dengan python. Template membantu memcapai pemisahan 
+antara presentasi dan bussines logic. Di flask template ditulis sebagai file yang berbeda, disimpan di folder templates yang terdapat di 
+dalam aplikasi package.
+
+Template adalah file yang berisi teks tanggapan, dengan variabel placeholder untuk bagian dinamis yang hanya akan diketahui dalam konteks permintaan. Proses yang menggantikan variabel dengan nilai aktual dan mengembalikan string respons akhir disebut rendering.
+Untuk tugas rendering template, labu menggunakan mesin template yang kuat yang disebut Jinja2. Dalam bentuk yang paling sederhana, template jinja2 adalah file yang berisi teks tanggapan. Berikut merupakan contoh Jinja2 template untuk file index.html dan user.html.
+\begin{verbatim}
+<h1>Hello world!</h1>
+<h1>Hello, {{ name }}!</h1>
+\end{verbatim}
+
+\section{Rendering Template}
+Secara default flask akan mencari template dalam subdirektori template yang terletak di dalam direktori aplikasi utama. Untuk versi hello.py berikutnya, Anda perlu membuat subdirektori template dan menyimpan template yang didefinisikan dalam contoh sebelumnya di dalamnya sebagai index.html dan user.html, masing-masing. 
+Fungsi tampilan dalam aplikasi perlu dimodifikasi untuk membuat template ini, berikut merupakan contoh template nya.
+\begin{verbatim}
+from flask import Flask, render template
+
+@app.route('/')
+def index():
+    return render template('index.html')
+
+@app.route('/user/<name>')
+def user(name):
+    return render template('user.html', name=name)
+\end{verbatim}
+
+Fungsi render\_template \(\) disediakan oleh labu terintegrasi oleh mesin template Jinja2 dengan aplikasi. Fungsi ini mengambil file name dari template sebagai argumen pertama. Argumen tambahan apa pun adalah pasangan nilai-kunci yang mewakili nilai aktual untuk variabel yang direvisi dalam template. 
+Dalam contoh ini, template kedua menerima variabel nama. Argumen kata kunci seperti nama\ = nama dalam contoh sebelumnya cukup umum, tetapi mereka mungkin tampak membingungkan dan sulit dipahami jika Anda tidak terbiasa dengannya. \"nama\" di sebelah kiri mewakili nama argumen, yang digunakan di placeholder yang ditulis dalam template. \"nama\" di sisi kanan adalah variabel dalam lingkup saat ini yang memberikan nilai untuk argumen dengan nama yang sama. Meskipun ini adalah pola umum, menggunakan nama variabel yang sama di kedua sisi tidak diperlukan. 
+
+\section{debug mode}
+aplikasi flask opsional dapat dijalankan dalam mode debug. dalam mode ini, dua modul yang sangat nyaman dari server pengembangan disebut 
+reloader dan debugger diaktifkan secara default. ketika reloader diaktifkan, falsk melihat semua file kode sumber proyek Anda dan secara 
+otomatis me-restart server ketika salah satu file diubah. memiliki server runnung dengan reloader diaktifkan sangat berguna selama 
+pengembangan, karena setiap kali Anda memodifikasi dan menyimpan file sumber, server secara otomatis merestart dan mengambil perubahan.
+
+\section{Ekstensi flask}
+Flask  dirancang untuk diperpanjang. sengaja tidak menggunakan fungsi penting seperti basis data dan otentikasi pengguna, memberi Anda 
+kebebasan untuk memilih paket yang sesuai dengan aplikasi Anda, atau menulis sendiri jika Anda menginginkannya. berbagai macam ekstensi 
+flask untuk berbagai tujuan telah dibuat oleh komunitas, dan jika itu tidak cukup, paket python atau pustaka standar apa pun dapat 
+digunakan juga.
+
+\section{menginisialisasi momen flask}
+momen flask tergantung pada jquery.js selain moment.js. kedua pustaka ini harus termasuk di suatu tempat dalam dokumen HTML baik secara 
+langsung, dalam hal ini Anda dapat memilih versi apa yang akan digunakan, atau melalui fungsi pembantu yang disediakan oleh ekstensi. 
+yang merujuk versi pengujian pustaka ini dari jaringan pengiriman konten (CDN) ). karena boostrap sudah termasuk jquery.js, hanya 
+moment.js yang perlu ditambahkan dalam kasus ini.
+
+\section{menggunakan skrip flask}
+untuk membuat bab berikutnya lebih mudah bagi pembaca, kita akan menggunakan yang pertama dari banyak flask extension (paket yang 
+memperluas fungsi flask) bernama flask script. skrip flask memungkinkan pemrogram untuk membuat perintah yang bertindak dalam konteks 
+aplikasi flask yaitu, keadaan dalam falsk yang memungkinkan modifikasi objek flask.
+
+\section{dari paket ke cetak biru}
+penerapan Flask yang telah menjadi terlalu berat dapat dimasukkan ke dalam satu set cetak biru diskrit masing-masing dengan pemetaan 
+mereka sendiri tentang URL dan fungsi tampilan, sumber daya negara (misalnya, file JavaScript dan CSS), templat jinja, dan bahkan 
+termos. dalam banyak hal, cetak biru sangat mirip dengan aplikasi flask itu sendiri. Namun, cetak biru bukanlah aplikasi flask 
+independen dan tidak dapat dijalankan secara independen sebagai aplikasi itu sendiri, seperti yang dijelaskan dalam dokumentasi flask 
+resmi.
+
+flask dibangun di atas jinja, jadi meskipun mungkin untuk menggunakan jinja tanpa tabung, jinja masih merupakan bagian tak terpisahkan 
+dari flask, dan flask menyediakan beberapa metode untuk bekerja secara langsung dengan jinja. umumnya, flask tidak menganggap apa pun 
+tentang struktur aplikasi Anda kecuali apa yang Anda katakan, dan lebih suka menyediakan fungsionalitas melalui plugin opsional. jinja 
+agak eksepsi untuk ini. flask memberi Anda jinja secara default, dan menganggap bahwa Anda menyimpan semua templat jinja Anda dalam 
+subdirektori templat nama aplikasi Anda.
