@@ -1,0 +1,362 @@
+
+%NAMA KELOMPOK 4\\
+%Ajis Trigunawan			1164031\\
+%Alimu Dzul Ikroom		1164032\\
+%Muhammad Hanafi			1164092\\
+%Riki Karnovi			1164052\\
+%Yoga Sakti Hadi P		1164059\\
+
+
+\section{Upload File di Flask}
+
+
+\begin{figure}
+\centerline{\includegraphics[width=1\textwidth]{figures/5flask-upload.png}}
+\caption{Flask Upload}
+\end{figure}
+
+\subsection{Pengantar Flask}
+
+
+Flask framework didasarkan pada Werkzeug, dan Jinja 2, dan intensitas yang baik. Kerangka ini tidak memiliki dependensi terpisah dari
+Perpustakaan Standar Python. Labu tidak termasuk komponen yang membutuhkan pihak ketiga dukungan seperti memvalidasi formulir atau menyediakan sarana komunikasi antara aplikasi dan database. Namun, fitur tersebut dapat ditambahkan menggunakan ekstensi. Layanan yang ditawarkan oleh kerangka ini termasuk server HTTP built-in, dukungan untuk pengujian unit, dan Layanan web RESTful. Aplikasi dibangun menggunakan ini kerangka kerja adalah minitwit, flaskr, flask.pocoo.org dll.
+
+Jinja 2 adalah mesin templating populer untuk Python. Sistem template web menggabungkan template dengan sumber data tertentu untuk merender halaman web dinamis.
+
+Flask sering disebut sebagai kerangka mikro. Ini bertujuan untuk menjaga inti dari aplikasi sederhana namun dapat diperluas. Flask tidak memiliki lapisan abstraksi bawaan untuk penanganan basis data, juga tidak memiliki dukungan validasi. Sebaliknya, Flask mendukung ekstensi untuk menambahkan fungsionalitas seperti itu ke aplikasi. Beberapa ekstensi Flask populer dibahas nanti dalam tutorial.
+
+WSGI
+Web Server Gateway Interface (WSGI) telah diadopsi sebagai standar untuk pengembangan aplikasi web Python. WSGI adalah spesifikasi untuk antarmuka universal antara server web dan aplikasi web.
+
+Werkzeug
+Ini adalah toolkit WSGI, yang mengimplementasikan permintaan, objek respons, dan fungsi utilitas lainnya. Ini memungkinkan membangun kerangka web di atasnya. Kerangka Flask menggunakan Werkzeug sebagai salah satu basisnya.
+
+Jadi bagaimana tepatnya Flask menangani unggahan? Yah itu akan menyimpannya di memori webserver jika file-file tersebut masuk akal kecil jika tidak di lokasi sementara (seperti yang dikembalikan oleh tempfile.gettempdir). Tapi bagaimana Anda menentukan ukuran file maksimum setelah pengunggahan dibatalkan? Secara default, Flask dengan senang hati akan menerima unggahan file ke jumlah memori yang tidak terbatas, tetapi Anda dapat membatasi itu dengan menetapkan kunci konfigurasi 
+
+\begin{verbatim}
+MAX_CONTENT_LENGTH:
+\end{verbatim}
+
+\subsection{Cara Mengunggah File}
+
+
+Di sini Kita bisa mengupload file atau gambar dalam framework flask seperti halnya framework lainya. Akan tetapi Flask membuat kita bisa dengan mudah mengupload gambar atau file hingga menampilkannya sesuai keinginan kita. Kita disini akan menggunakan werkzeug untuk mengupload file di flask. Werkzeug yang merupakan modul bawaan flask dapat menangani itu semua.
+File yang kita upload akan kita simpan ke dalam server dan bukan database karena database didesain untuk tidak digunakan sebagai penyimpanan file sebab jika database penuh dengan file maka itu hanya akan menghancurkan database dan menurunkan performa database anda. Namun kita bisa menyimpan nama file kedalam database untuk bisa mengquery file yang tersimpan didalam server.
+
+Dibawah ini merupakan langkah-langkah yang harus anda lakukan untuk mengupload file di flask.
+
+Kita harus membuat database terlebih dahulu dan seperti biasa database yang kita gunakan adalah sqlalchemy. Database bisa terlihat sebagai berikut :
+
+\begin{verbatim}
+from app import app, db
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(500))
+    name = db.Column(db.String(64))
+\end{verbatim}
+
+\begin{verbatim}
+Kemudian kita memasukan beberapa pengaturan untuk bisa upload file, 
+dalam file __init__.py terlihat sebagai berikut :
+
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+...........
+db = SQLAlchemy(app)
+UPLOAD_FOLDER = "./app/static"
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+ALLOWED_EXTENSIONS = set(["jpg", "JPG", "JPEG", "jpeg", "png", "PNG"])
+from app import views, models
+\end{verbatim}
+
+contoh kode diatas adalah membuat pengaturan penyimpanan file yang akan di upload dan akan menyimpan file yang akan di upload dalam folder static. disini juga memberi pengaturan pada ALLOWED EXTENSIONS yang berguna memberi izin eksistensi file apa saja yang bisa kita upload.
+Sekarang kita memasukan perintah dalam file views.py yang akan digunakan untuk memproses upload file. Berikut file views.py
+\begin{verbatim}
+from flask import Flask, render_template, redirect, url_for, request, session
+from werkzeug.utils import secure_filename
+from app import app, db, ALLOWED_EXTENSIONS, UPLOAD_FOLDER
+from app.models import User
+import os
+
+def allowed_file(filename):
+    return '.' in filename and \
+            filename.rsplit('.', 1)[1].lower() \
+            in ALLOWED_EXTENSIONS
+@app.route("/", methods=["GET", "POST"])
+@app.route("/index", methods=["GET", "POST"])
+def index():
+ users = User.query.all()
+ return render_template("index.html", title="Flask - File - Upload", users=users)
+@app.route("/upload", methods=["GET", "POST"])
+def upload():
+    if request.method == "POST":
+        username = request.form["username"]
+        file = request.files["file"]
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+        file.save(os.path.join(UPLOAD_FOLDER, filename))
+            saving = User(username=username, name=filename)
+            db.session.add(saving)
+            db.session.commit()
+            return redirect(url_for('index', filename=filename))
+    return render_template("upload.html", title="Upload - New - File")
+\end{verbatim}
+Dalam fungsi def upload(): kita mengupload file dan memprosesnya untuk bisa kita simpan dalam server atau dalam folder static dan juga kita menyimpan nama file kedalam database. Jika file sudah diupload maka akan diarahkan ke halaman yang sama yaitu index dan kemudian menampilkannya.
+Kemudian dalam file html disini memiliki file bernama base.html, index.html dan upload.html. File index.html yang berisi sebagai berikut :
+\begin{verbatim}
+{% extends "base.html" %}
+{% block content %}
+<h1>Flask - File - Upload</h1>
+<a href="{{ url_for('upload') }}">Upload Gambar</a>
+<hr>
+{% for user in users %}
+  <li><b>{{ user.username }}</b></li>
+  <img src="{{ url_for('static', filename='images/' + user.name) }}" width="100" height="100">
+  <br>
+  <br>
+ {% endfor %}
+{% endblock %}
+\end{verbatim}
+
+Penanganan upload file dalam Flask ada beberapa hal yang harus disiakpak. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL mengambil file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan.
+Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure filename ().
+
+Anda dapat menentukan jalur folder upload default dan ukuran maksimum file yang diunggah dalam pengaturan konfigurasi objek Flask.
+Menentukan jalur untuk folder unggah
+\begin{verbatim}
+app.config [‘UPLOAD_FOLDER’] 
+\end{verbatim}
+Menentukan ukuran maksimum file yo diunggah - dalam byte
+\begin{verbatim}
+app.config [‘MAX_CONTENT_PATH’] 
+\end{verbatim}
+Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
+
+Flask adalah kerangka mikro Python yang menyediakan fungsionalitas dasar dari kerangka web dan memungkinkan lebih banyak plug-in yang ditambahkan sehingga fungsionalitas dan set fitur dapat diperluas ke tingkat yang baru. Flask disebut sebagai kerangka mikro Python karena membuat fungsionalitas inti sederhana tetapi dapat diperluas dalam hal pengembangan. Ini juga dapat digunakan untuk menghemat waktu pembuatan aplikasi web.
+
+ Flask menggunakan Jinja Template Engine dan Werkzeug Toolkit WSGI. Struktur flask adalah kategori menjadi dua bagian "File statis \& file Templat", file templat memiliki semua templat Jinja termasuk laman Html, di mana sebagai file statis memiliki semua kode statis yang diperlukan untuk situs web seperti kode CSS, kode JavaScript, dan file Gambar
+
+Sama seperti fungsi-fungsi python lainnya, fitur unggah di Flask sangat mudah. Ada dua komponen yang terlibat di sini. Pertama adalah UI yang akan mengirim file ke backend flask. Kedua adalah aplikasi Flask yang menerima file dan menyimpannya atau melakukan sesuatu yang lain dengannya. UI harus mengirim file sebagai data-bentuk-multipart. Fitur ini memungkinkan pengguna untuk mengklik tombol dan memilih file yang kemudian akan dikirim ke backend.
+
+Kita dapat memproses file yang akan diupload dengan Flask dengan mudah. Sebelumnya pastikan jangan lupa untuk mengatur atribut enctype = "multipart/form-data" pada form HTML kita, jika tidak browser tidak akan mengirimkan file Anda sama sekali. File yang diunggah disimpan di memori atau di lokasi sementara di sistem file kita. Berikut ini contoh sederhana yang menunjukkan cara kerjanya:
+
+‘Upload.html’ memiliki tombol pemilih file dan tombol kirim..
+\begin{verbatim}
+<html>
+   <body>
+   
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+      
+   </body>
+</html
+\end{verbatim}
+untuk routenya kita membuat parameter /upload dan menggunakan method get dan post seperti berikut ini:
+
+\begin{verbatim}
+from flask import request
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/var/www/uploads/uploaded_file.txt')
+    ...
+\end{verbatim}
+Dan jika Anda ingin tahu bagaimana file itu diberi nama pada klien sebelum diunggah ke aplikasi Anda, Anda dapat mengakses atribut filename.
+Klik Kirim setelah memilih file. Metode entri Formulir memanggil URL '/ uploadfile'. Pengunggah fungsi yang mendasarinya () melakukan operasi penyimpanan.
+
+Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan.
+	Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek request.files [file]. Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi secure filename ().
+kamu dapat menentukan jalur folder upload default dan ukuran maksimum file yang diunggah dalam pengaturan konfigurasi objek Flask.
+Menentukan jalur untuk folder unggah
+\begin{verbatim}
+app.config [‘UPLOAD_FOLDER’] 
+\end{verbatim}
+Menentukan ukuran maksimum file yo diunggah - dalam byte
+\begin{verbatim}
+app.config [‘MAX_CONTENT_PATH’] 
+\end{verbatim}
+
+
+
+konfiguring Flask-Uploads
+Sebelum kita dapat mulai menggunakan modul Flask-Uploads, kita perlu melakukan beberapa konfigurasi untuk menggunakan modul ini dengan benar. Ini mungkin tampak seperti sedikit kerja, tetapi jauh lebih mudah daripada mencoba untuk muncul dengan implementasi baru mengunggah file dalam Flask.
+
+// Pertama, kita perlu menambahkan beberapa parameter konfigurasi ke file ... / instance / flask.cfg untuk mengatur lokasi tempat file yang diunggah akan disimpan. Tambahkan baris berikut ke ... / contoh / 
+
+\begin{verbatim}
+flask.cfg:# Uploads
+UPLOADS_DEFAULT_DEST = TOP_LEVEL_DIR + '/project/static/img/'
+UPLOADS_DEFAULT_URL = 'http://localhost:5000/static/img/'
+ 
+UPLOADED_IMAGES_DEST = TOP_LEVEL_DIR + '/project/static/img/'
+UPLOADED_IMAGES_URL = 'http://localhost:5000/static/img/'
+\end{verbatim}
+Ingat bahwa disini tidak menyimpan folder ‘instance’ di repositori git ini karena folder ini berisi parameter konfigurasi sensitif dari aplikasi yang tersedia.
+
+Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
+
+Flask-Upload memungkinkan aplikasi Kamu secara fleksibel dan efisien menangani pengunggahan file dan melayani file yang diunggah. Kamu dapat membuat kumpulan unggahan yang berbeda - satu untuk lampiran dokumen, satu untuk foto, dll. - dan aplikasi dapat dikonfigurasi untuk menyimpan semuanya di tempat yang berbeda dan untuk menghasilkan URL yang berbeda untuknya.
+Konfigurasi
+Jika Kamu hanya menerapkan aplikasi yang menggunakan Flask-Upload, Kamu dapat menyesuaikan perilakunya secara ekstensif dari konfigurasi aplikasi. Periksa dokumentasi atau kode sumber aplikasi untuk melihat cara memuat konfigurasinya.
+
+
+Dalam mengimplementasi fungsi mengunggah pada Flask akan menggunakan blueimp jQuery-File-Upload untuk mengimplementasi fitur unggah file. Unduh file yang dibutuhkan dari GitHub. Ekstrak kode sumber dan tambahkan referensi skrip dibawah ini ke addWish.html.
+\begin{verbatim}
+<script src="../static/js/jquery-1.11.2.js"></script>
+ 
+<script src="../static/js/jquery.ui.widget.js"></script>
+ 
+<script type="text/javascript" src="../static/js/jquery.fileupload.js"></script>
+ 
+<script type="text/javascript" src="../static/js/jquery.fileupload-process.js"></script>
+ 
+<script type="text/javascript" src="../static/js/jquery.fileupload-ui.js"></script>
+\end{verbatim}
+
+Saat addWish.html dibuka, tambahkan kode inisialisasi plugin ke klik tombol unggah.
+
+\begin{verbatim}
+$(function() {
+    $('#fileupload').fileupload({
+        url: 'upload',
+        dataType: 'json',
+        add: function(e, data) {
+            data.submit();
+        },
+        success: function(response, status) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+})
+\end{verbatim}
+Seperti terlihat pada kode di atas, ditambahkan plugin unggah file ke tombol. Plugin unggah file mengirim file ke request handler /upload, yang akan didefinisikan dalam kode Python. Disini juga mendefinisikan sebuah fungsi add untuk mengirim data, dan kondisi success dan failure untuk menangani proses unggah yang berhasil dan gagal.
+Yang harus dilakukan selanjutnya yaitu kita definisikan file upload handler Python upload dalam app.py. Definisikan sebuah rute /uploadsebagai berikut:
+\begin{verbatim}
+	@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    # file upload handler code will be here
+    
+\end{verbatim}
+    
+Periksa apakah request adalah POST, jika iya, baca file dari request tersebut.
+\begin{verbatim}    
+	if request.method == 'POST':
+        file = request.files['file']
+        
+\end{verbatim}
+Di langkah selanjutnya kita juga perlu untuk mendapatkan ekstensi file gambar untuk menyimpan file tersebut. Import os dan bagi nama ekstensi dari nama file.
+\begin{verbatim}    
+	extension = os.path.splitext(file.filename)[1]
+Setelah kita mendapat ekstensi file, kita buat nama file unik menggunakan uuid. Import uuid dan buat nama file.
+	f_name = str(uuid.uuid4()) + extension
+\end{verbatim}
+Selanjutnya Buat sebuah folder bernama Uploads pada folder static. Ini adalah tempat kita menyimpan gambar yang sudah diunggah. Tambahkan jalur ke folder Upload dalam pengaturan aplikasi.
+\begin{verbatim}
+	app.config['UPLOAD_FOLDER'] = 'static/Uploads'
+Sekarang simpan file yang dikirim ke lokasi UPLOAD_FOLDER dan kembalikan nama file sebagai respon.
+	file.save(os.path.join(app.config['UPLOAD_FOLDER'], f_name))
+return json.dumps({'filename':f_name})
+\end{verbatim}
+Simpan perubahan di atas dan restart server. Arahkan browser ke http://localhost:5002 dan sign in menggunakan email dan password yang sah. Cobalah upload gambar menggunakan tombol browse, dan ketika selesai, periksa konsol browser. Maka akan terlihat nama file yang diunggah.
+Mari tambahkan elemen gambar untuk menampilkan gambar yang diunggah. Ganti input text read-only menjadi kode HTML berikut.
+\begin{verbatim}
+<div class="pull-right">
+    <img id="imgUpload" style="width: 140px; height: 140px;" class="img-thumbnail">
+</div>
+\end{verbatim}
+Penanganan upload file dalam Flask sangat mudah. Diperlukan formulir HTML dengan atribut enctype yang disetel ke ‘multipart / form-data’, mengeposkan file ke URL. Penangan URL menjemput file dari request.files [] objek dan menyimpannya ke lokasi yang diinginkan. Setiap file yang diunggah pertama-tama disimpan di lokasi sementara di server, sebelum benar-benar disimpan ke lokasi terakhirnya. Nama file tujuan dapat dikodekan atau dapat diperoleh dari properti nama file dari objek 
+\begin{verbatim}
+\end{verse}.files [file]. 
+\end{verbatim}
+Namun, disarankan untuk mendapatkan versi aman menggunakan fungsi 
+\begin{verbatim}
+secure_filename ().
+\end{verbatim}
+\begin{verbatim}
+Kode berikut memiliki aturan ‘/ unggah’ yang menampilkan ‘upload.html’ dari folder template, dan aturan URL ‘/ upload-file’ yang memanggil uploader () fungsi penanganan proses upload.
+‘Upload.html’ memiliki tombol pemilih file dan tombol kirim.
+<html>
+   <body>
+   
+      <form action = "http: // localhost: 5000 / uploader" method = "POST"
+         enctype = "multipart / form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit" />
+      </ form>
+      
+   </ body>
+</ html>
+\end{verbatim}
+Melayani File Statis
+Ketika Anda sedang membangun API, mungkin ada situasi di mana Anda perlu mengirim file ke UI. Misalnya, katakan, Anda ingin mengirim Gambar atau file HTML atau file lainnya. Biasanya, pengguna akan mendapatkan tautan ke file seperti misalnya "https://sourcedexter.com/wp-content/uploads/2017/07/typing\_python-course.png". Seperti yang Anda lihat, ini adalah konten statis, yang dapat Anda lihat jika Anda mengeklik tautan. Dengan kata lain, ini bisa disebut sebagai tautan unduhan.
+Untuk mencapai ini dalam labu itu sangat sederhana. Flask memiliki metode inbuilt "send\_from\_directory" yang dapat Anda gunakan untuk mengirim file. Pertama, buat folder bernama "statis" di folder akar aplikasi labu Anda.
+Anda akan melihat layar seperti yang ditunjukkan di bawah ini. Pengunggahan File Flask Klik Kirim setelah memilih file. Metode entri Formulir memanggil URL upload file. Pengunggah fungsi yang mendasarinya melakukan operasi penyimpanan.
+Berikut ini adalah kode Python aplikasi Flask.
+\begin{verbatim}
+from flask import Flask, render_template, request
+from werkzeug import secure_filename
+app = Flask(__name__)
+@app.route('/upload')
+def upload_file():
+   return render_template('upload.html')
+	
+@app.route('/uploader', methods = ['GET', 'POST'])
+def upload_file():
+   if request.method == 'POST':
+      f = request.files['file']
+      f.save(secure_filename(f.filename))
+      return 'file uploaded successfully'
+		
+if __name__ == '__main__':
+   app.run(debug = True)
+\end{verbatim}
+\
+Pembatasan File extension\\
+...\\
+ALLOWED\_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])\\
+...\\
+ALLOWED\_EXTENSIONS adalah kumpulan ekstensi file yang diizinkan. Kenapa membatasi ekstensi yang diizinkan? Kita mungkin tidak ingin pengguna orang lain dapat mengunggah semuanya di sana jika server mengirim langsung data ke klien. Dengan cara itu Anda dapat memastikan bahwa pengguna tidak dapat mengunggah file HTML yang akan menyebabkan masalah XSS. Juga pastikan untuk tidak mengizinkan file .php jika server mengeksekusinya.
+\subsection{Upload Gambar dengan flask-upload}
+Kita dapat menggunakan module flask-upload untuk melakukan upload file seperti gambar contonnya berikut contoh pengimplementasiannya
+\begin{verbatim}
+from flask import Flask, render_template, request
+from flask.ext.uploads import UploadSet, configure_uploads, IMAGES
+app = Flask(__name__)
+photos = UploadSet('photos', IMAGES)
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/img'
+configure_uploads(app, photos)
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST' and 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        return filename
+    return render_template('upload.html')
+if __name__ == '__main__':
+    app.run(debug=True)
+\end{verbatim}
+Pertama tentu kita memasukan modul-modul dan membuat fungsi file yang diizinkan seperti yang terlihat dalam fungsi def allowed file(filename). Dalam fungsi index kita mengquery file dengan nama file yang kita simpan dalam database namun jika tidak ada file maka tidak akan menampilkan apapun. Fungsi index ini akan digunakan untuk merender halaman index dan menampilkan daftar file yang sudah diupload.
+dan untuk file html sebahai tampilan halaman nya sebagai berikut:
+\begin{verbatim}
+<html>
+<head>
+    <title>Upload</title>
+</head>
+<body>
+<form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+    <input type=file name=photo>
+    <input type="submit">
+</form>
+</body>
+</html>
+\end{verbatim}
+Run server flasknya dan coba untuk melakukan upload file berupa gambar.
