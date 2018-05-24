@@ -1,0 +1,154 @@
+Format standar :
+1. untuk list dan nomor gunakan enumerate atau itemize
+	contoh :
+	berikut nama anggota kelompok
+	\begin{enumerate}
+	\item darso
+	\item karyo
+	\item doyok
+	\end{enumerate}
+	
+	\begin{enumerate}
+	\item
+	This is the first item in the numbered list.
+
+	\item
+	This is the second item in the numbered list.
+	\end{enumerate}
+
+	\begin{itemize}
+	\item
+	This is the first item in the itemized list.
+
+	\item
+	This is the first item in the itemized list.
+	This is the first item in the itemized list.
+	This is the first item in the itemized list.
+	\end{itemize}
+
+	\begin{itemize}
+	\item[]
+	This is the first item in the itemized list.
+
+	\item[]
+	This is the first item in the itemized list.
+	This is the first item in the itemized list.
+	This is the first item in the itemized list.
+	\end{itemize}
+
+2. spesial karakter menggunakan tanda \ didepannya
+	contoh :
+	\&
+	\_
+	\"dalam petik\"
+	jika spesial karakter menjadi banyak atau satu baris gunakan verb
+	contoh :
+	\verb|%$'%&$&'%'%'%&'%|
+	
+3. untuk tabel gunakan table , contoh
+
+\begin{table}[h]
+\caption{Small Table}
+\centering
+\begin{tabular}{ccc}
+\hline
+one&two&three\\
+\hline
+C&D&E\\
+\hline
+\end{tabular}
+\end{table}
+
+4. untuk rumus gunakan tag equation
+	contoh:
+	Rumus bola:
+
+	a) Luas permukaan
+	 \begin{equation}
+	     L = 4 \pi r^2 \,
+	\end{equation}
+	b) Volume
+	 \begin{equation}
+	     V = \frac{4}{3}\pi r^3
+	\end{equation}
+	
+5. 	untuk kode program menggunakan verbatim
+	\begin{verbatim}
+	a = "anu"
+	b = "itu"
+	c = a + b
+	print(c) 
+	\end{verbatim}	
+6. bab subbab subsubbab :
+	\section{Bab}
+	\subsection{Sub Bab}
+	\subsubsection{Sub Sub Bab}
+	\paragraph{paragraph}
+
+7. Tabel 
+-----
+Tables:
+ Remember to use \centering for a small table and to start the table
+ with \hline, use \hline underneath the column headers and at the end of 
+ the table, i.e.,
+
+\begin{table}[h]
+\caption{Small Table}
+\centering
+\begin{tabular}{ccc}
+\hline
+one&two&three\\
+\hline
+C&D&E\\
+\hline
+\end{tabular}
+\end{table}
+
+For a table that expands to the width of the page, write
+
+\begin{table}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc}
+\hline
+....
+\end{tabular*}
+%% Sample table notes:
+\begin{tablenotes}
+$^a$Refs.~19 and 20.
+
+$^b\kappa, \lambda>1$.
+\end{tablenotes}
+\end{table}
+
+
+8. untuk quote, Sample quote:
+\begin{quote}
+quotation...
+\end{quote}
+
+9 Untuk algoritma
+Algorithm.
+Maintains same fonts as text (as opposed to verbatim which uses fixed
+width fonts). Space at beginning of line will be maintained if you
+use \ at beginning of line.
+
+\begin{algorithm}
+{\bf state\_transition algorithm} $\{$
+\        for each neuron $j\in\{0,1,\ldots,M-1\}$
+\        $\{$   
+\            calculate the weighted sum $S_j$ using Eq. (6);
+\            if ($S_j>t_j$)
+\                    $\{$turn ON neuron; $Y_1=+1\}$   
+\            else if ($S_j<t_j$)
+\                    $\{$turn OFF neuron; $Y_1=-1\}$   
+\            else
+\                    $\{$no change in neuron state; $y_j$ remains %
+unchanged;$\}$ .
+\        $\}$   
+$\}$   
+\end{algorithm}
+
+-----
+
+
+
+
