@@ -45,6 +45,10 @@ Kebanyakan perangkat lunak dirancang dengan asumsi bahwa sistem yang dioperasika
 
 Kustomisasi oleh variabel environment tanggal ke era " dumb terminals" sebelum workstation berbasis window. Dalam situasi ini, pengguna memiliki satu layar dan menjalankan satu proses dalam satu waktu. Pewarisan environments dari proses induk ke anak sudah cukup karena semua pekerjaan dilakukan dalam subproses dari shell interaktif. Mekanisme ini telah bertahan ke dalam "era workstation windowing" tetapi keterbatasannya jelas bagi siapa saja yang telah mencoba untuk mempertahankan environment yang seragam di antara beberapa window shell. Sampai taraf tertentu, database lebar workstation, seperti Xrdb, bertindak sebagai pengganti variabel environment dalam sistem windowing. \cite{schilit1993customizing}
 
+\subsection {A Community of Dynamic Environment Servers}
+
+Server environment dinamis adalah program yang mengelola serangkaian nama dan nilai variabel (environment) dan memberikan pembaruan kepada klien yang sebelumnya telah menunjukkan minat dengan berlangganan ke server. Biasanya ada satu environment untuk setiap pengguna, ditambah environment untuk ruangan, kelompok kerja, dan sebagainya. Klien menggunakan RPC untuk mendapatkan variabel dari server, dan server menggunakan RPC untuk memberikan callback kepada klien. Fitur utama dari server environment adalah itu perubahan environment dengan cepat terlihat oleh beberapa proses melalui penggunaan callback RPC. Environment server memelihara konteks bersama untuk aplikasi seluler yang tidak terbatas pada hierarki proses atau khusus server windows. Lebih penting, bagaimanapun, adalah bahwa server environment dapat membantu memodelkan dinamika ponsel environment komputasi dengan menyediakan antarmuka yang sederhana dan standar untuk pemberitahuan perubahan. \cite{schilit1993customizing}
+
 
 
 
