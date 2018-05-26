@@ -30,10 +30,13 @@ Pengguna dapat menggunakan CLI untuk mengakses Open| SpeedShop baik secara inter
 \section{Python CLI}
 Alat baris perintah Convertextract adalah perpustakaan Python berlisensi MIT yang dibangun dari garpu perpustakaan Textract Dean Malmgren. Textract merupakan perpustakaan yang mengekstrak teks dari berbagai format file yang berbeda. Convertextract melakukan daftar khusus untuk menemukan / mengganti transformasi pada teks sumber apa pun, dan menyimpan file konversi baru tanpa mengubah pemformatan gaya dokumen asli (ukuran font, garis bawah, keberanian dll).
 
-\section{Command Line Interface}
+\section{Python CLI}
 Karena Convertextract mengharapkan untuk mengkonversi dari font 'diretas', itu akan memberikan teks yang dikonversi di Times New Roman secara default, meskipun font lain mungkin ditentukan. Di luar kotak, Convertextract saat ini mendukung tiga konversi: dari Heiltsuk Duolos, Heiltsuk Times, dan Tsilhqot’in Duolos ke Unicode. Convertextract juga mendukung konversi yang ditentukan pengguna yang dapat dijelaskan dalam dokumen Excel yang dilewatkan sebagai argumen ke Convertextract.
 
 \section{Python CLI}
-Urutan yang benar dari setiap substitusi sangat penting untuk menghasilkan output yang benar. Untuk mencegah urutan penggantian yang salah, mereka diperintahkan menurut panjangnya dari yang terpendek hingga yang terpendek. Perpustakaan Python dapat disebut baik dalam skrip Python atau langsung melalui baris perintah. Dokumentasi tentang cara menginstal dan menggunakan alat baris perintah tersedia di repositori publik3. 
+Urutan yang benar dari setiap substitusi sangat penting untuk menghasilkan output yang benar. Untuk mencegah urutan penggantian yang salah, mereka diperintahkan menurut panjangnya dari yang terpendek hingga yang terpendek. Perpustakaan Python dapat disebut baik dalam skrip Python atau langsung melalui baris perintah. Dokumentasi tentang cara menginstal dan menggunakan alat baris perintah tersedia di repositori publik3.
+
+\section{Command Line Interface}
+The Command Line Interface (CLI) merupakan komponen pusat fof Cyberaide Shell. Semua perintah yang masuk, baik langsung melalui CLI atau melalui layanan Web Shell Cyberaide ditafsirkan melalui CLI. Cyberaide Shell dibangun menggunakan Apache CLI 1.1. Kami telah mengimplementasikan peningkatan ke Apache CLI yang memudahkan untuk mengembangkan dan memanipulasi baris perintah dari dalam kode kami. Ini termasuk definisi kerangka kerja yang membutuhkan pembuatan argumen baris perintah pendek dan panjang serta dokumentasi wajib untuk semua perintah. Apache CLI didasarkan pada tiga tahap pemrosesan baris perintah: (a) definisi, (b) parsing, dan (c) interogasi.
 
 \end{document} 
