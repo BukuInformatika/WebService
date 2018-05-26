@@ -39,4 +39,7 @@ Urutan yang benar dari setiap substitusi sangat penting untuk menghasilkan outpu
 \section{Command Line Interface}
 The Command Line Interface (CLI) merupakan komponen pusat fof Cyberaide Shell. Semua perintah yang masuk, baik langsung melalui CLI atau melalui layanan Web Shell Cyberaide ditafsirkan melalui CLI. Cyberaide Shell dibangun menggunakan Apache CLI 1.1. Kami telah mengimplementasikan peningkatan ke Apache CLI yang memudahkan untuk mengembangkan dan memanipulasi baris perintah dari dalam kode kami. Ini termasuk definisi kerangka kerja yang membutuhkan pembuatan argumen baris perintah pendek dan panjang serta dokumentasi wajib untuk semua perintah. Apache CLI didasarkan pada tiga tahap pemrosesan baris perintah: (a) definisi, (b) parsing, dan (c) interogasi.
 
+\section{CLI Lanjutan}
+Tahap definisi didasarkan pada Java API yang mudah digunakan yang memungkinkan kita untuk menentukan opsi dan parameter pada perintah. Tahap parsing mengambil perintah yang diberikan dan memisahkannya untuk mengumpulkan informasi yang tepat tentang opsi dan parameter yang ditentukan. Tahap interogasi didefinisikan oleh programmer dan memungkinkan opsi dan parameter kueri untuk mengeksekusi tindakan yang tepat. 
+
 \end{document} 
