@@ -74,7 +74,7 @@ b. Pada jendela “Select Destination Directory”, pilih “next”
  e. Maka instalasi bahasa pemrograman Python sudah selesai dilakukan. 
  f. Setelah proses instalasi selesai dilakukan, langkah berikutnya yang dilakukan adalah melakukan “setting path”. 
  g. “Setting path” dilakukan dengan membuka jendela “Properties” dengan klik kanan pada “Computer”, dan pilih “Advanced System Setting”. 
- h. Pada jendela “System Properties” dan tab “Advanced”, pilih “Environment Variables”\citep{wicaksana2013user}.
+ h. Pada jendela “System Properties” dan tab “Advanced”, pilih “Environment Variables”\cite{wicaksana2013user}.
 
 \section{IDE Python}
 Nama Python berasal dari serial televisi Monty Python Flying Circus dan umum digunakan referensi Monty Python dalam kode contoh. Sebagai contoh, variabel metasyntactic sering digunakan dalam literatur Python adalah spam dan telur , bukan foo dan bar tradisional.Awalan Py- digunakan untuk menunjukkan bahwa ada sesuatu yang terkait dengan Python. Contoh penggunaan awalan ini di nama aplikasi Python atau perpustakaan termasuk Pygame, sebuah mengikat dari SDL untuk Python (yang biasa digunakan untuk membuat game); PyS60, implementasi untuk sistem operasi Symbian S60 ; PyQt dan PyGTK , yang mengikat Qt dan GTK , masing-masing, ke Python; dan PyPy , implementasi Python yang ditulis dengan Python. \cite{van2007python}
@@ -93,7 +93,35 @@ Padre, Perl IDE - Ini adalah IDE open-source yang ditulis dalam Perl, dan dituju
 PyCharm adalah IDE Python yang dikembangkan oleh JetBrains’s. IDE ini sangat direkomendasikan bagi yang terbiasa dengan IDE bahasa pemrograman lain yang didstribusikan oleh JetBrain’s. IDE ini tersedia gratis untuk versi komunitas. Tersedia untuk sistem operasi Linux, Windows, dan Mac OS. Sama dengan Spyder dan JupiterLab, PyCharm juga dapat diintegrasikan dengan library-library Python seperti NumPy, ScyPy, MatplotLib, dan lain-lain. PyCharm memiliki fitur-fitur pendukung seperti code editor, syntax highlighter, debugger, integrasi GIT, SVN, dan Mercurial.
 Ada dua versi PyCharm:
 Versi Profesional (Trial 30 hari) – Memiliki fitur lebih banyak untuk pemrograman python dan web.
-Versi Komunitas (Gratis dan opensource) – Fiturnya standar untuk pemrograman python.
+Versi Komunitas (Gratis dan opensource) – Fiturnya standar untuk pemrograman python. \cite{tateosian2015beginning}.
+
+\subsection{INSTALASI}
+Berikut ini adalah cara instalasi Python di windows :
+1.  Download dulu python terbaru.
+2.  Install (run/double klik seperti biasa).
+     Ketika keluar opsi pemilihan path installer biarkan terinstall pada root C. "C:\Python34"
+     selanjutnya ikuti proses install sampai selesai.
+3.  Setelah selesai test dulu apakah sudah berjalan dengan baik atau belum,
+     buka cmd/Command Prompt dan ketik "python"  tanpa tanda petik
+     biasanya python belum dikenali (not recognized) karena path nya tidak ketemu/dikenali oleh windows.
+4.  Masuk ke system pada Control Panel / Control Panel\System and Security\System.
+5.  Lanjut klik "Environment Variables" maka akan muncul lagi pop up "Environment Variables".
+6.  Pada bagian System variables, scroll sampai ketemu Path. (Path adalah nama Variable).
+7.  Seleksi/klik Path dan kemudian klik Edit
+     Maka akan muncul lagi pop up "Edit System variable"
+     sebelum mengedit Variable value bikin dulu backup untuk mencegah hal2 yang diluar dugaan ,buka notepad copas semua Variable value.
+8. Pada bagian paling kanan/ujung "Variable value"
+    tambahkan path  ";C:\Python34\"  tanpa tanda petik
+    dan klik OK pada jendela Edit System variable.
+    klik OK pada jendela Environment Variables.
+    klik OK pada jendela System Properties.
+    dan close Control Panel
+    keterangan : angka 34 pada ";C:\Python34\"adalah versi python yang gw gunakan harus disesuaikan dengan versi yang kamu download.
+9. Lanjut Buka lagi : cmd/Command Prompt dan ketik lagi "python" tanpa tanda petik 
+    berarti python sudah berjalan di windows kamu
+10. Lanjut coba ketik "import this" <<< tanpa tanda petik
+     Maka PC kamu sudah siap untuk python pada windows \cite{nahado2015bumbu}.
+
 
 
 
