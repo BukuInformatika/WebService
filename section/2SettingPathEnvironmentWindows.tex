@@ -29,6 +29,8 @@ Di dalam proses pengendalian environment, diperlukan sistem kontrol proses yang 
 
 Environment files dan file environment configuration yang akan menentukan nilai untuk variabel environment juga akan disimpan di dalam basis tes. Dalam satu perwujudan, environment files ini akan disimpan di dalam direktori environment tunggal. Lokasi untuk file environment configuration ini dalam basis tes pasti tergantung pada tes yang sudah mereka terapkan. \cite{janniro1997method}
 
+Bila kita memasukkan command pada baris command prompt, maka Windows akan mencari direktori tersebut untuk mencari file dengan nama yang telah dimasukkan pada command prompt. Apabila file yang dicari tersebut dapat ditemukan, selanjutnya Windows akan mengeksekusi file tersebut. Hal ini bergantung pada versi Windows yang digunakan, kita bisa menemukan di path environment variable di tempat yang berbeda. \cite{koster2002featflow}
+
 Contoh di bawah ini, ada beberapa direktori di jalur yang masing-masing dipisahkan oleh titik koma.
 PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\WinSCP;C:\Perl\site\bin;C:\Perl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS \System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86 )\Windows Live\Shared;C:\Program Files (x86)\FAHClient;
 
