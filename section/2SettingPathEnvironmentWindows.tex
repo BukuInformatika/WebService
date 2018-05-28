@@ -49,13 +49,17 @@ Jika diperlukan untuk menambah masukan dari PythonPath kita sendiri, kita bisa m
 
 Komputasi bergerak berbeda dari komputasi desktop karena sifat dinamik status sistem. Dalam penelitian kami, pengguna seluler laboratorium berinteraksi dengan komputer seluler serta dunia sistem stasioner dan tertanam. Saat pengguna bergerak, perangkat bergerak dan objek bergerak mereka menghadapi perubahan. Keadaan dinamis ini bukan hanya masalah, tetapi juga merupakan peluang bagi aplikasi untuk beradaptasi secara cerdas dengan lingkungannya.
 Menjelaskan fasilitas untuk kustomisasi aplikasi yang dinamis. Berbeda dengan praktek Unix satu kali inisialisasi saat program mulai, kustomisasi dinamis mendukung perubahan preferensi aplikasi kapan saja selama eksekusi program. Secara khusus, sistem memodifikasi preferensi aplikasi dalam menanggapi perubahan dalam lingkungan komputasi fisik.
+
 Kebanyakan perangkat lunak dirancang dengan asumsi bahwa sistem yang dioperasikannya tidak akan banyak berubah dari waktu ke waktu. Komputer dikonfigurasi sesuai dengan perangkat keras pada desktop, printer di lorong, dan server file di jaringan lokal. Setiap komputer merajut erat ke dalam lingkungan tertentu. Oleh karena itu tidak mengherankan bahwa program Unix, untuk sebagian besar, memiliki konfigurasi yang sulit diubah. Seringkali, satu-satunya saat konfigurasi dapat diatur adalah saat startup program.
 Sebaliknya, berikut ini beberapa contoh ketika mengubah nilai kustomisasi aplikasi setelah startup diperlukan:
-Pemilihan perangkat proksimat seperti printer dan display.
-Respons aplikasi untuk memigrasikan X windows di antara berbagai jenis (yaitu warna dan monokrom) dari tampilan.
-Tanggapan aplikasi menjadi "berlabuh" pada ketukan jaringan berkecepatan tinggi dibandingkan dengan operasi melalui tautan kecepatan lambat.
-Mengelola dan memoderasi sumber daya, seperti ruang disk lokal tergantung pada kinerja jaringan.
-Mendukung keamanan dalam aplikasi dengan cara mengunci otomatis berdasarkan lokasi pengguna relatif terhadap perangkat komputasi selulernya.
+\begin{itemize}
+\item Pemilihan perangkat proksimat seperti printer dan display.
+\item Respons aplikasi untuk memigrasikan X windows di antara berbagai jenis (yaitu warna dan monokrom) dari tampilan.
+\item Tanggapan aplikasi menjadi "berlabuh" pada ketukan jaringan berkecepatan tinggi dibandingkan dengan operasi melalui tautan kecepatan lambat.
+\item Mengelola dan memoderasi sumber daya, seperti ruang disk lokal tergantung pada kinerja jaringan.
+\item Mendukung keamanan dalam aplikasi dengan cara mengunci otomatis berdasarkan lokasi pengguna relatif terhadap perangkat komputasi selulernya.
+
+Kami percaya bahwa mekanisme yang ada untuk penyesuaian program membatasi kegunaan aplikasi seluler. Akibatnya dalam makalah ini kami memperkenalkan desain umum untuk rekonfigurasi aplikasi yang dinamis. Bagian berikutnya merangkum teknik Unix untuk inisialisasi dan kustomisasi dan menjelaskan mengapa ini tidak memadai untuk banyak aplikasi komputasi bergerak. Bagian ketiga menyajikan pendekatan kami berdasarkan komunitas server variabel lingkungan. Ini diikuti dengan penjelasan lebih rinci tentang antarmuka, perintah, interaksi server, dan kinerja.
 
 
 
