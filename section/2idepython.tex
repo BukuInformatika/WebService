@@ -35,7 +35,11 @@ Pernyataan Python termasuk (antara lain):
 •	The passpernyataan, yang berfungsi sebagai NOP . Ini secara sintaktis diperlukan untuk membuat blok kode kosong.
 •	The assertpernyataan, digunakan selama debugging untuk memeriksa kondisi yang seharusnya berlaku.
 •	The yieldpernyataan, yang mengembalikan nilai dari pembangkit fungsi. Dari Python 2.5, yieldjuga merupakan operator. Formulir ini digunakan untuk mengimplementasikan coroutines .
-•	The importpernyataan, yang digunakan untuk modul impor yang fungsinya atau variabel dapat digunakan dalam program saat ini.\cite{van2007python}.
+•	The importpernyataan, yang digunakan untuk modul impor yang fungsinya atau variabel dapat digunakan dalam program saat ini.
+	Ekspresi Python mirip dengan bahasa seperti C dan Java :
+•	Pada Python 2, /operator pada integer melakukan pembagian integer; itu memotong hasil ke integer. Pembagian titik-mengambang pada bilangan bulat dapat dicapai dengan mengubah salah satu bilangan bulat menjadi pelampung (misalnya float(x) / y). Dalam Python 3, hasil dari /selalu merupakan nilai floating-point. Perilaku ini dapat diaktifkan dengan menggunakan Python 2.2+ from __future__ import division. Di kedua Python 2.2+ dan Python 3, //dapat digunakan untuk melakukan pembagian integer.
+•	Dalam Python, ==bandingkan dengan nilai, berbeda dengan Java, di mana ia membandingkan dengan referensi. (Perbandingan nilai dalam Java menggunakan equals()metode ini.) Operator Python isdapat digunakan untuk membandingkan identitas objek (perbandingan berdasarkan referensi). Perbandingan dapat dirantai, misalnya a <= b <= c.
+\cite{van2007python}.
 
 \subsection{Definisi Python}
 	Pyton sendiri merupakan salah satu Language programming yang biasanya digunakan oleh para pengembang. Kebanyakan dari mereka mengembangkan aplikasi python hanya menggunakan editor yang ada maupun yang biasa. Namun tak sedikitpun para pengembang menggunakan Integrated Development Environment (IDE) untuk membantu mereka bekerja dengan proyek Python. Selain standar desktop Python IDE (integrated development environments), ada juga IDE berbasis IDEs, Sage, (dimaksudkan untuk mengembangkan ilmu pengetahuan dan program Python yang berhubungan dengan matematika), dan IDE yang di-hostingya.
