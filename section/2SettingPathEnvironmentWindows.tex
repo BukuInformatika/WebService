@@ -69,6 +69,10 @@ Server environment dinamis adalah program yang mengelola serangkaian nama dan ni
 
 Sebagai contoh, pertimbangkan dua environment variabel LOCATION dan NEAREST_PRINTER dan bagaimana mereka mungkin digunakan. Saat pengguna seluler berpindah, lokasinya dilacak oleh agen pengguna, yang memperbarui LOCATION di pengguna environment. Aplikasi yang berlangganan environment ini mendapatkan pemberitahuan, antara lain, perubahan lokasi.
 Aplikasi umumnya berlangganan environment pengguna serta sejumlah environment berdasarkan pada pengguna lokasi saat ini, misalnya, sebuah ruangan. Saat ruangan berubah, aplikasi membatalkan langganan dari sebelumnya ruang dan berlangganan ke server environment baru untuk ruangan saat ini. Environment variabel di server semacam itu mungkin menjadi NEAREST_PRINTER.
+
+Penting untuk diingat bahwa environments bersifat dinamis dan isinya mungkin sering berubah. Untuk Misalnya, environments untuk sebuah ruangan termasuk variabel untuk penghuni:
+OCCUPANTS = adams: schilit: theimer: weiser: welch 
+Variabel ini akan dipertahankan oleh pembaruan dari agen pengguna karena mereka adalah sumber informasi lokasi tentang seorang pengguna tertentu. Karena variabel OCCUPANTS berubah di environments server ruangan, program berlangganan ke ruang diberi tahu dan dapat melakukan kustomisasi ulang apa pun yang berlaku.
 \cite{schilit1993customizing}
 
 
