@@ -56,6 +56,14 @@ kami juga akan melihat bagaimana Python dapat digunakan dengan streaming Hadoop 
 
 \section{Membangun Aplikasi CLI}
 Aplikasi CLI memiliki sejumlah fitur umum:
-- mereka sering membaca dari file input standar, menulis ke file output standar, dan menghasilkan log atau kesalahan dalam file kesalahan standar. OS menyatakan bahwa file-file ini selalu tersedia. Python menyediakannya sebagai sys.stdin, sys.stdout, dan sys.stderr. Selanjutnya, fungsi seperti input () dan cetak () menggunakan file-file ini secara default.
+
+\begin{enumerate}
+
+\item mereka sering membaca dari file input standar, menulis ke file output standar, dan menghasilkan log atau kesalahan dalam file kesalahan standar. OS menyatakan bahwa file-file ini selalu tersedia. Python menyediakannya sebagai sys.stdin, sys.stdout, dan sys.stderr. Selanjutnya, fungsi seperti input () dan cetak () menggunakan file-file ini secara default.
+\item mereka sering menggunakan variabel lingkungan untuk konfigurasi. nilai-nilai ini tersedia melalui os.environ.
+\item mereka juga dapat mengandalkan fitur shell, seperti perluasan - ke direktori home pengguna, sesuatu yang dilakukan oleh os.path.expanduser ().
+\item mereka sering mengurai argumen baris perintah. sedangkan variabel sys.argv memiliki argumen string, ini aneh untuk bekerja secara langsung
+
+\end{enumerate}
 
 \end{document}  
