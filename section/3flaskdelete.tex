@@ -1,0 +1,210 @@
+\section{Pengenalan Flask Delete}
+Flask adalah sebuah framework web yang ada pada Python, dimana walaupun flask relatif kecil namun tangguh, flask sendiri dibuat dengan ide menyederhanakan inti framework seminimal mungkin.  Flask sendiri lebih mudah dipelajari dan digunakan, membuat para penggunanya bisa membangun dan mengembangkan aplikasi web dalam rentan waktu yang relatif singkat dan cepat. Flask bisa digunakan  untuk membuat website rumit yang berbasis database, memulai dengan membuat halaman statik berguna untuk memperkenalkan alur kerja, yang nantinya digunakan untuk membuat halaman lain yang lebih rumit.
+
+Flask delete merupakan method dari Database pada Flask dimana berfungsi untuk menghapus elemen database itu sendiri apabila diperlukan. Flask Delete juga merupakan
+sebuah method dari service pada rest.
+
+contoh flask delete :
+
+\begin{verbatim}
+@app.route('/delete_post/<int:post_id>')
+def delete_post(post_id):
+    posts = models.Post.delete_instance().where(models.Post.id == post_id)
+    if posts.count() == 0:
+        abort(404)
+    return redirect(url_for('index'))
+
+
+<h2>
+    <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
+</h2>
+\end{verbatim}
+
+\section{Deleting Values}
+Aplikasi dapat memaksa penggusuran nilai dengan menghapus kuncinya. penghapusan langsung dan atom.
+Di python, Anda meneruskan kunci ke fungsi delete atau metode. Ini mengembalikan satu dari tiga nilai: memchace.DELETE SUCCESSFUL jika kunci ada dan berhasil dihapus, memcache.DELETE ITEM MISSING jika tidak ada nilai dengan kunci yang diberikan, atau memcache.DELETE NETWORK FAILURE jika penghapusan tidak dapat diselesaikan karena kegagalan layanan. Konstanta ini didefinisikan sedemikian rupa sehingga jika Anda tidak peduli tentang perbedaan antara penghapusan yang berhasil dan kunci yang hilang, Anda dapat menggunakan hasilnya sebagai ekspresi bersyarat.\cite{sanderson2015programming}.
+\begin{verbatim}
+		succes = memcache.delete(key)
+		if not succes;
+			#ada masalah saat mengakses memcache
+\end{verbatim
+DELETE adalah metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE\cite{alemu2014rest}.
+SQLAlchemy dalam Flask dan Section di Flask. Anda dapat menggunakan keduanya. Database, atau SQLAlchemy, akan menyimpan kartu tanpa batas hingga Anda menghapusnya. Sesi akan menyimpan kartu di sisi klien sampai mereka menghapusnya, baik browser ditutup atau klien secara manual menghapus sesi.berikut merupakan contoh codenya.
+\begin{verbatim}
+from flask import session
+import random
+
+session['user cards'] = []
+# Default cards = empty list. Do the above to reset.
+
+def deal_card():
+  card_drawn = random.choice(CARDS)
+  session['user cards'].append(card_drawn)
+  # The "CARDS" variable is not here but it's just a list of cards.
+  CARDS.pop(CARDS.index(card_drawn))
+
+def print_cards():
+  for card in session['user cards']:
+    print(card)
+\end{verbatim}
+
+Didalam flask juga terdapat method yang berfungsi untuk mghapus yaitu method delete(). Kebanyakan method delete() ini sering digunakan untuk menghapus session (sesi) yang terdapat di database atau sebagai perbandingan nilai yang ada di database.contoh berikut menghapus peran "moderator" dari database
+\begin{verbatim}
+>>> db.section.delete(mode_role)
+>>> db.section.commit()
+\end{verbatim}
+perhatikan bahwa penghapusan. seperti sisipan dan pembaruan, dijalankan hanya ketika sesi basis data dilakukan\cite{grinberg2018flask}.
+
+Tidak hanya digunakan untuk menghapus section method delete juga digunakan untuk menghapus atau mendelete isian pada 
+database (field) dengan parameter terter tentu berikut contoh kodingannya:
+\begin{verbatim}
+@app.route("/product/delete")
+def product_delete():
+    """Delete product"""
+    product_id = request.args['id']
+    cur.execute("SELECT * from product WHERE id = (%s)", product_id)
+
+    if cur.fetchone():
+        # delete product by id
+        cur.execute("DELETE FROM product WHERE id =(%s)", product_id)
+    return redirect("/dashboard")
+\end{verbatim}
+method tersebeut bekerja dengan mengambil id pada url, kemudian dijalankan oleh query. jika queri tersebut berhasil maka
+data akan terhapus berdasarkan product id yang dijadikan parameter sebelumnya.
+
+pada fungsi sebenarnya langkah- langkah kinerjanya hampir sama dengan fungsi edit().
+pada fungsi delete di haruskan untuk menampilkan list atau daftar dari data yang akan dihapus
+yang pada supaya user atau pengguna mengetahui data apa saja yang akan dihapus. kemudian 
+setelah proses penampilan data selesai maka method atau fungsi delete bisa berjalan untuk menghapus data 
+yang dipilih dengan parameter atau acuan id atau no yang mewakili data tersebut.
+
+delete juga merupakan salah satu method HTTP yang fungsinya untuk menghapus data. seperti pada penjelasan sebelumya 
+delete digunakan untuk menghapus data pada basis data dengan acuan atau parameter tertentu untuk menghapus data tersebut.
+kalau pada method delete di HTTP ini digunakan untuk menghapus data pada resource atau sumberdaya contoh 
+pada suatu HTTP ditulis alamatsuatu web dengan DELETE/users/123 tulisan tersebut diartikan bahwa user dengan id 123
+dihapus.
+
+jadi kesimpulannya bahwa method delete dapat digunakan untuk menghapus section 
+pada login atau sebagainya. kemudian method delete juga dapat digunakan untuk menghapus isian dali database.
+dengan syarat parameter id sebagai patokan untuk menhapus data yang sesuai dengan id yang telah dipilih.
+sehingga data akan terhapus dengan tepat dan akurat dan tidak mgakibatkan bentrok data dan request terhadap data yang akan di hapus.
+
+\section{More about Flask Delete}
+Flask membuat susunan kerja yang ringan, dan mudah tetapi juga dapat dikembangkan dengan mudah. Flask juga menggantikan fungsi Apache sebagai webserver dimana flask berjalan di http://localhost:5000/.  Berbicara tentang flask dengan method delete maka akan berhubungan dengan Services Oriented. Seperti yang diketahui bahwa delete merupakan metode yang digunakan untuk menghapus sumber daya yang diidentifikasi oleh URI yang diberikan. Ini melakukan operasi DELETE. Berbicara tentang bagaimana ringkasnya pernyataan penghapusan dalam SQL. Akan di pertimbangkan juga nantinya bagaimana membuat kata kunci ini berperilaku kurang seperti nuke dengan menetapkan ketentuan untuk menghapus hanya beberapa data\cite{dwyer2016flask}.
+
+Metode DELETE dipraktikkan dengan mudah dengan cara yang sama. Apakah mungkin untuk hapus posting pengguna dengan perintah single line curl. 
+fungsi python ditambahkan ke rute aplikasi untuk menghapus rekaman dari data server Dengan demikian, fungsi,  perintah curl, dan respon yang sesuai ditunjukkan di bawah ini.
+\begin{verbatim}
+@app.route('/api/v1.0/<u_id>/post/<p_i>',methods=['DELETE'])
+def delete_post(u_id, p_id):
+	links=[]
+	links.append({"rel":"profile", "href":"http://localhost:5000/api/v1.0/user/"tu_id})
+	links.append({"rel":"profile", "href":"http://localhost:5000/api/v1.0/user/"tu_id+"/posts"})
+	post = Post.query.filter(Post.id == p_id).first()
+	if post is None:
+		return jsonify({"status": "There is no post with this id"})
+	db.session.delete(post)
+	db.session.commit()
+	return jsonify){status": "post delete succesfully", "links": links})
+
+
+$ curl -X DELETE 'http://localhost:5000/api/v1.0/2/post/4'
+
+{
+"links": [
+{
+  "href": "http://localhost:5000/api/v1.0/user/2/posts",
+  "rel": "all posts"
+}
+],
+"status": "post delete succesfully"
+}
+\end{verbatim}
+\cite{alemu2014rest}.
+
+\section{Reseting the Database}
+Sumber daya RESTful digunakan untuk mengatur API ke titik akhir yang sesuai dengan berbagai jenis data yang digunakan oleh aplikasi Anda. Setiap titik akhir disebut menggunakan metode HTTP yang berbeda. Setiap metode mengeluarkan perintah yang berbeda ke API. Misalnya, GET digunakan untuk mengambil sumber daya dari API, PUT digunakan untuk memperbarui informasinya, HAPUS untuk menghapusnya.
+
+Jika Anda menghapus file db.sqlite atau hanya ingin me-reset database Anda ke keadaan kosong, Anda dapat memasukkan perintah berikut di konsol Python Anda.
+\begin{verbatim}
+	>>>from rest_api_demo.app import initialize_app, app
+	>>>from rest_api_demo.database import reset_database
+	>>>
+	>>>initialize_app(app)
+	>>>with app.app_context();
+	. . .	reset_database()
+\end{verbatim}
+\section{Method Delete}
+pada method ini kita mengambil id pada url, kemudian kita melakukan query. Jika query berhasil dilakukan maka kita akan mendelete berdasarkan product id yang kita ambil sebelumnya.
+
+\begin{verbatim}
+@app.route("/product/delete")
+def product_delete():
+    """Delete product"""
+    product_id = request.args['id']
+    cur.execute("SELECT * from product WHERE id = (%s)", product_id)
+
+    if cur.fetchone():
+        # delete product by id
+        cur.execute("DELETE FROM product WHERE id =(%s)", product_id)
+    return redirect("/dashboard")
+
+
+
+\section{PENERAPAN FLASK DELETE PADA AJAX ( JQUERY )
+Contoh penerapan Flask Delete :
+a little jQuery will wire up all delete links to use this handler, in templates/base.html :
+
+	<script>
+	 $(function() {
+	  $(".appointment-delete-link").on("click", function() {
+	  var delete_url = $(this).attr('data-delete-url');
+	  $.ajax({
+	    url: delete_url,
+	    type: 'DELETE',
+	    success:
+          function(response) {
+		if (response.status == 'OK') { window.location = {{ url_for('appointment_list') }};
+          } else {
+	  alert('Delete failed.')
+	}
+       }
+       });
+       return false;
+     });
+     </script>
+\end{verbatim}
+Penjelasan :Kami menyediakan fungsi tampilan pertama kami yang tidak merender HTML tetapi menggunakan AJAX minimal yang berinteraksi dengan JSON.
+ini menerima permintaan DELETE HTTP dan melakukan pekerjaan. Kami tidak perlu mengekspos fungsi penghapusan melalui permintaan GET, yang akan membiarkan pengguna secara tidak sengaja menghapus basis data
+rekaman dengan browsing. Ini sangat penting ketika kami mempublikasikan kode yang dapat dipukul oleh mesin pencari dan robot lainnya. Merayapi semua halaman kami akan menghapus seluruh basis data kami!
+Flask menyediakan fungsi jsonify untuk mengubah kamus Python menjadi respons JSON\cite{duplain2013instant}.
+
+
+\section{PENERAPAN FLASK DELETE PADA AJAX PART.2 ( JQUERY )}
+Bagaimana Anda mendapatkan browser untuk mengirim permintaan HAPUS? tentunya dengan JavaScript. Perpustakaan jQuery membuat panggilan Ajax jauh lebih sederhana daripada JavaScript saja.  
+Kami menambahkan hook jQuery yang akan mengambil semua tautan hapus dan mengirimkan panggilan ajax saat diklik, sesuai dengan aktivitas pengguna. Callback on-klik mengambil URL penghapusan 
+dari tautan hapus dan mengirimkannya sebagai permintaan DELETE kepada sistem berjalan. Pada keberhasilan itu , tentunya mengarahkan jendela browser saat ini ke daftar janji. Dengan menempatkan
+ skrip ini ke dalam template dasar, itu akan membuat semua tautan "menghapus" berfungsi pada daftar janji dan halaman detail\cite{duplain2013instant}.
+
+
+
+
+\section{Deleting Rows)}
+- Delete session method, deleting rows. Akan dijelaskan dan digambarkan contohnya sehubungan dengan flask database pada python.
+Sesi database juga memiliki metode delete (). Contoh berikut menghapus peran "Moderator" dari basis data:
+\begin{verbatim}
+>>> db.session.delete (mod_role)
+>>> db.session.commit ()
+\end{verbatim}
+Perhatikan penghapusan, seperti insersi dan pembaruan, hanya dijalankan ketika sesi basis data dilakukan.
+Pada code diatas dapat dirincikan bahwa db sendiri diartikan untuk database, dan session beserta delete merupakan fungsi untuk mengeksekusi mod role
+dan setelah itu fungsi selanjutnya yaitu commit untuk pengeksekusian akhir.
+
+Selain deleting rows, ada juga modifying rows yang pada dasarnya hampir sama dengan code delete namun dibedakan seperti contohnya dibawah ini :
+\begin{verbatim}
+>>> admin_role.name ='Administrator'
+>>> db.session.add(admin_role)
+>>> db.session.commit()
+\end{verbatim}
+
+Yang membedakan deleting dan modifyong rows yaitu delete melakukan fungsi hapus dan modifying melakukan fungsi menambahkan pada masing2 code contoh tadi\cite{grinberg2018flask,}
